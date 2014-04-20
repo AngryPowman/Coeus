@@ -19,3 +19,12 @@
 *.exe
 *.out
 *.app
+*.pdb
+*.idb
+*.page
+*.tlog
+*.db
+*.exp
+*.ilk
+*.lastbuildstate
+*.unsuccessfulbuild

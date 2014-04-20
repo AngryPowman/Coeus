@@ -1,0 +1,5 @@
+﻿  TestPlugin.cpp
+  TestLibrary.cpp
+  正在生成代码...
+     正在创建库 bin64\TestLibraryd.lib 和对象 bin64\TestLibraryd.exp
+  TestLibrary_x64_vs110.vcxproj -> F:\zpublic\3rdparty\poco\Foundation\testsuite\bin64\TestLibraryd.dll
