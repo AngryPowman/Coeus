@@ -1,0 +1,20 @@
+{
+    "belief":
+    [
+        {
+            "belief_name"   : "宇宙联邦",
+            "belief_desc"   : "崇尚智慧生物创建的星际文明，主张权利与民主。认为智慧生物的大脑才是创造一切的本源，应该借助科技来武装自己。善于利用机械、时空的力量。",
+            "belief_pic"    : "images/badge/badge_u_federal.png"
+        },
+        {
+            "belief_name"   : "命运之力",
+            "belief_desc"   : "崇尚自然与生命，主张怜爱与守护。认为时空生态存在即合理，任意事物都是不可侵犯并应该与之共存的。善于利用自然、命运的力量。",
+            "belief_pic"    : "images/badge/badge_destiny_power.png"
+        },
+        {
+            "belief_name"   : "黑暗教廷",
+            "belief_desc"   : "崇尚堕落与自由，主张怜爱与守护。认为适者生存，生物间具有阶级关系，只要有能力便可以侵入其它种族。善于利用破坏、领域的力量。",
+            "belief_pic"    : "images/badge/badge_dark.png"
+        }
+    ]
+}

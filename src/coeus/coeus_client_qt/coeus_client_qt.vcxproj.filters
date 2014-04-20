@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="qt_main">
+      <UniqueIdentifier>{ca0eaca8-30d6-4cf5-82f7-23c0db1bdc9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{6a433345-93ef-4af2-bc54-1009a84babb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\logic">
+      <UniqueIdentifier>{8d552d89-8e7c-4bac-b857-d27953ebbd50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\ui">
+      <UniqueIdentifier>{e1b3638f-326c-4364-8aff-2ab856ee955e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\common">
+      <UniqueIdentifier>{f8361b72-5938-47ac-b075-3c330b3bb8f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\network">
+      <UniqueIdentifier>{693e0336-e957-41e2-99c5-6550941eb307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="qt_main\Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="qt_main\Generated Files\Debug">
+      <UniqueIdentifier>{8e908dd6-2b8b-4b3e-82d7-43e02e4b1399}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="qt_main\Generated Files\Release">
+      <UniqueIdentifier>{536f4439-7439-43c1-8163-c775190041d0}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="core\network\handlers">
+      <UniqueIdentifier>{8a4f8277-af68-4e19-a4b8-9f79f2d9867a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\config">
+      <UniqueIdentifier>{d5b238b3-5922-4fc7-b3a1-dc7e588f7667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\config\cofiguration">
+      <UniqueIdentifier>{f8b83fdc-8b22-4239-a2f9-132e6605fdaa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>qt_main</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_login.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_login.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="game_login.cpp">
+      <Filter>core\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="game_network.cpp">
+      <Filter>core\network</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_network.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_network.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_setting.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_setting.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="game_setting.cpp">
+      <Filter>core\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="widget_manager.cpp">
+      <Filter>core\common</Filter>
+    </ClCompile>
+    <ClCompile Include="login_handler.cpp">
+      <Filter>core\network\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="game_main.cpp">
+      <Filter>core\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_main.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_main.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="game_character_creator.cpp">
+      <Filter>core\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_character_creator.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_character_creator.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="belif_config.cpp">
+      <Filter>core\config\cofiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="login_config.cpp">
+      <Filter>core\config\cofiguration</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_login_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_gamesys_setting_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>core\common</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_create_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_opcode_registry.h">
+      <Filter>core\network</Filter>
+    </ClInclude>
+    <ClInclude Include="widget_manager.h">
+      <Filter>core\common</Filter>
+    </ClInclude>
+    <ClInclude Include="qt_coeus_common.h">
+      <Filter>core\common</Filter>
+    </ClInclude>
+    <ClInclude Include="game_handler.h">
+      <Filter>core\network</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_game_main_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_launcher.h">
+      <Filter>qt_main</Filter>
+    </ClInclude>
+    <ClInclude Include="belif_config.h">
+      <Filter>core\config\cofiguration</Filter>
+    </ClInclude>
+    <ClInclude Include="login_config.h">
+      <Filter>core\config\cofiguration</Filter>
+    </ClInclude>
+    <ClInclude Include="config_loader.h">
+      <Filter>core\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="coeus_client_qt.qrc">
+      <Filter>qt_main</Filter>
+    </CustomBuild>
+    <CustomBuild Include="login_dialog.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_login.h">
+      <Filter>core\logic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="gamesys_setting_dialog.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_network.h">
+      <Filter>core\network</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_create_dialog.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_setting.h">
+      <Filter>core\logic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_main_dialog.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_main.h">
+      <Filter>core\logic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_character_creator.h">
+      <Filter>core\logic</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="coeus_client_qt.rc" />
+  </ItemGroup>
+</Project>

@@ -28,3 +28,6 @@
 *.ilk
 *.lastbuildstate
 *.unsuccessfulbuild
+*.log
+*.sdf
+*.opensdf
