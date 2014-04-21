@@ -6,11 +6,10 @@ void Configuration::initialize(ConfigManager* manager)
     manager->registerConfig(this);
 }
 
-bool Configuration::loadConfig(const std::string& filename, Json::Value& value)
+bool Configuration::readConfig(const std::string& filename, Json::Value& value)
 {
     _filename = filename;
 
-    std::ios::sync_with_stdio(false);
     std::ifstream fs;
     fs.open(filename, std::ios::in);
     if (!fs.is_open())
@@ -30,5 +29,41 @@ bool Configuration::loadConfig(const std::string& filename, Json::Value& value)
     bool parseResult = Json::Reader::parse(configBuffer, value, false);
     SAFE_DELETE_ARR(configBuffer);
 
+    fs.close();
+
     return parseResult;
+}
+
+bool Configuration::writeConfig(const std::string& filename, const Json::Value& rootValue, bool useStyleWriter/* = false*/)
+{
+    Json::Writer* writer;
+    if (useStyleWriter)
+    {
+        writer = new Json::StyledWriter;
+    }
+    else
+    {
+        writer = new Json::FastWriter;
+    }
+
+    std::string jsonContent = writer->write(rootValue);
+
+    if (!jsonContent.empty())
+    {
+        std::ofstream ofs;
+        ofs.open(filename, std::ios::out);
+        if (!ofs.is_open())
+        {
+            return false;   
+        }
+
+        ofs << jsonContent;
+
+        ofs.close();
+
+        return true;
+    }
+    
+
+    return false;
 }

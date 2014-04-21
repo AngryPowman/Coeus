@@ -4,6 +4,8 @@
 #include "ui_login_dialog.h"
 #include "qt_coeus_common.h"
 
+#define PASSWORD_HOLDER_TEXT (QStringLiteral("[要更改已保存的密码，请输入新密码]"))
+
 class GameSetting;
 class GameLogin : public QMainWindow
 {
@@ -27,14 +29,15 @@ signals:
 
 private slots:
     void slotOpenSettingDialog();
-    //void slotPopMainMenu();
     void slotOnLoginBtn();
     void slotMoveGravatarAnimation();
     void slotOnBackBtn();
-    void changePanel(Panel panel);
     void slotAutoLoginCheckedChanged(bool checked);
+    void slotPasswordEdited(QString);
+    void slotAccountEdited(QString);
 
 private:
+    void changePanel(Panel panel);
     void loginProcess();
     void setAnimationControlEnabled(bool enabled);
     void showErrorString(const QString& str);
@@ -43,6 +46,9 @@ private:
     Ui::LoginDialog _loginDialog;
 
 private:
+    bool _useConfigPasswordDigest;
+    bool _isPasswordDigest;
+    std::string _passwordDigest;
     Panel _currentPanel;
     bool _isLoginProcess;
     QTimer* _moveGravatar;

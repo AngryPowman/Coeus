@@ -7,7 +7,9 @@
 enum Gender
 {
     Female = 0,   // 女性
-    Male          // 男性
+    Male,         // 男性
+
+    GenderMax
 };
 
 enum Belief

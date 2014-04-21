@@ -12,8 +12,14 @@ public:
     GameMain(QWidget* parent = 0);
     virtual ~GameMain();
 
+public:
+    void initControl();
+
+private slots:
+    void slotOnAboutQT();
+
 private:
-    Ui::GameMainDialog _gameMainDialog;
+    Ui::GameMainDialog _ui;
 };
 
 #endif // !__GAME_MAIN_H__

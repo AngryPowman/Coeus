@@ -20,6 +20,9 @@
    <iconset resource="coeus_client_qt.qrc">
     <normaloff>:/coeus_client_qt/coeus_boy.png</normaloff>:/coeus_client_qt/coeus_boy.png</iconset>
   </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
   </property>
@@ -201,7 +204,7 @@
           <string/>
          </property>
          <property name="text">
-          <string>123456</string>
+          <string/>
          </property>
          <property name="maxLength">
           <number>32</number>
@@ -229,7 +232,7 @@
           <bool>true</bool>
          </property>
          <property name="currentText">
-          <string>138001655@qq.com</string>
+          <string/>
          </property>
          <property name="maxCount">
           <number>64</number>

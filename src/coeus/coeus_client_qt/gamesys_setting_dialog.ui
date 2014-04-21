@@ -91,7 +91,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="widget">
      <attribute name="title">
       <string>游戏性</string>
      </attribute>
@@ -581,6 +581,9 @@
       <width>231</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
     <property name="standardButtons">
      <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>

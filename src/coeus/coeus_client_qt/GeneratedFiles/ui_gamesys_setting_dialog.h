@@ -237,6 +237,7 @@ public:
         buttonBox = new QDialogButtonBox(centralwidget);
         buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(190, 260, 231, 23));
+        buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         buttonBox->setCenterButtons(false);
         GameSysSettingDialog->setCentralWidget(centralwidget);

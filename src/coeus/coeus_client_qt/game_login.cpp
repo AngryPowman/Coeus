@@ -5,11 +5,16 @@
 #include "widget_manager.h"
 #include "game_common/game_define.h"
 #include "game_common/game_util.h"
+#include "login_config.h"
 
 GameLogin::GameLogin(QWidget *parent)
-    : QMainWindow(parent), _currentPanel(Panel::PANEL_DEFAULT)
+    : QMainWindow(parent), 
+    _currentPanel(Panel::PANEL_DEFAULT),
+    _useConfigPasswordDigest(false),
+    _isPasswordDigest(false)
 {
     _loginDialog.setupUi(this);
+
     initControl();
 }
 
@@ -19,18 +24,38 @@ GameLogin::~GameLogin()
 
 void GameLogin::initControl()
 {
-    qDebug() << "initControl::current tid = " << QThread::currentThread()->currentThreadId();
-    _loginDialog.menu->setVisible(false);
-    _gravatarOriginX = _loginDialog.graphicsGravatar->geometry().left();
-    _frameLoginInitialPoint = _loginDialog.frameLogin->pos();
-
-    //初始化菜单
     connect(_loginDialog.mnuGame_Setting, SIGNAL(triggered()), this, SLOT(slotOpenSettingDialog()));
     connect(_loginDialog.clbSettings, SIGNAL(clicked()), this, SLOT(slotOpenSettingDialog()));
     connect(_loginDialog.btnLogin, SIGNAL(clicked()), this, SLOT(slotOnLoginBtn()));
     connect(_loginDialog.btnBack, SIGNAL(clicked()), this, SLOT(slotOnBackBtn()));
     connect(_loginDialog.chkAutoLogin, SIGNAL(clicked(bool)), this, SLOT(slotAutoLoginCheckedChanged(bool)));
+    connect(_loginDialog.txtPassword, SIGNAL(textEdited(QString)), this, SLOT(slotPasswordEdited(QString)));
+    connect(_loginDialog.cmbAccount, SIGNAL(currentTextChanged(QString)), this, SLOT(slotAccountEdited(QString)));
 
+    //固定窗体大小
+    this->setFixedSize(this->geometry().width(), this->geometry().height());
+
+    //读配置
+    _loginDialog.cmbAccount->setCurrentText(LoginConfig::getInstance().savedAccount().c_str());
+    _useConfigPasswordDigest = LoginConfig::getInstance().getRememberPassword();
+    if (LoginConfig::getInstance().getRememberPassword() == true)
+    {
+        _loginDialog.txtPassword->setPlaceholderText(PASSWORD_HOLDER_TEXT);
+        _passwordDigest = LoginConfig::getInstance().savedPassword().c_str();
+        _isPasswordDigest = true;
+    }
+
+    _gravatarOriginX = _loginDialog.graphicsGravatar->geometry().left();
+    _frameLoginInitialPoint = _loginDialog.frameLogin->pos();
+
+
+    // 加载背景
+    //QPixmap pixmap = QPixmap("./images/coeus_boy.png").scaled(this->size());
+    //palette(this->palette());
+    //palette.setBrush(QPalette::Background, QBrush(pixmap));
+    //this->setPalette(palette);
+
+    // 加载头像
     QImage* image = new QImage();
     if (image->load("./images/avatar/AngryPowman.jpg"))
     {
@@ -61,10 +86,24 @@ void GameLogin::slotOnLoginBtn()
         return;
     }
 
-    if (_loginDialog.txtPassword->text().length() > 32)
+    //如果当前使用的不是已保存的密码，则检查空
+    if (_isPasswordDigest == false)
     {
-        QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("你的密码这么长，你家里人知道吗？"));
-        return;
+        if (_loginDialog.txtPassword->text().length() == 0)
+        {
+            QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("不输入密码就登录，你是猴子请过来的逗比吗？"));
+            _loginDialog.txtPassword->selectAll();
+            _loginDialog.txtPassword->setFocus();
+            return;
+        }
+
+        if (_loginDialog.txtPassword->text().length() > 32)
+        {
+            QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("你的密码这么长，你家里人知道吗？"));
+            _loginDialog.txtPassword->selectAll();
+            _loginDialog.txtPassword->setFocus();
+            return;
+        }
     }
 
     switch (_currentPanel)
@@ -112,13 +151,16 @@ void GameLogin::loginProcess()
     this->repaint();
     if (GameNetwork::getInstance().connectServer())
     {
-        //send ...
         _loginDialog.lblStateTips->setText(QStringLiteral("正在验证用户名和密码"));
         Protocol::CSLoginReq loginReq;
         loginReq.account = _loginDialog.cmbAccount->currentText().toStdString();
 
-        std::string passwordDigest = GameUtil::toPasswordDigest(_loginDialog.txtPassword->text().toStdString());
-        loginReq.password = passwordDigest;
+        if (_isPasswordDigest == false)
+        {
+            _passwordDigest = GameUtil::toPasswordDigest(_loginDialog.txtPassword->text().toStdString());
+        }
+
+        loginReq.password = _passwordDigest;
 
         GameNetwork::getInstance().sendMessage(Opcodes::CSLoginReq, loginReq);
     }
@@ -196,7 +238,7 @@ void GameLogin::onConnectFailed(const QAbstractSocket::SocketError& error)
     switch (error)
     {
         case QAbstractSocket::ConnectionRefusedError:
-            statusText += QStringLiteral("服务器拒绝了你的连接请求。"); break;
+            statusText += QStringLiteral("无法连接到服务器。"); break;
         case QAbstractSocket::RemoteHostClosedError:
             break;
         case QAbstractSocket::HostNotFoundError:
@@ -260,6 +302,15 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
         {
             _loginDialog.lblStateTips->setText(QStringLiteral("登录成功，正在获取游戏数据"));
 
+            //保存登录配置
+            LoginConfig::getInstance().setRememberPassword(_loginDialog.chkRememberPassword);
+            LoginConfig::getInstance().setAutoLogin(_loginDialog.chkAutoLogin);
+            LoginConfig::getInstance().saveAccount(
+                _loginDialog.cmbAccount->currentText().toStdString(), 
+                _passwordDigest);
+
+            LoginConfig::getInstance().saveToFile();
+
             //显示游戏主界面
             GameMain* gameMain = WidgetManager::getInstance().gameMain();
             gameMain->show();
@@ -286,5 +337,38 @@ void GameLogin::slotAutoLoginCheckedChanged(bool checked)
     if (checked)
     {
         _loginDialog.chkRememberPassword->setChecked(true);
+    }
+}
+
+void GameLogin::slotPasswordEdited(QString)
+{
+    if (_loginDialog.txtPassword->text().length() != 0)
+    {
+        _isPasswordDigest = false;
+    }
+    else
+    {
+        _isPasswordDigest = _useConfigPasswordDigest;
+        if (_useConfigPasswordDigest)
+        {
+            _passwordDigest = LoginConfig::getInstance().savedPassword().c_str();
+        }
+    }
+}
+
+void GameLogin::slotAccountEdited(QString)
+{
+    if (_useConfigPasswordDigest)
+    {
+        if (_loginDialog.cmbAccount->currentText().toStdString() != LoginConfig::getInstance().savedAccount())
+        {
+            _isPasswordDigest = false;
+            _loginDialog.txtPassword->setPlaceholderText("");
+        }
+        else
+        {
+            _isPasswordDigest = true;
+            _loginDialog.txtPassword->setPlaceholderText(PASSWORD_HOLDER_TEXT);
+        }
     }
 }

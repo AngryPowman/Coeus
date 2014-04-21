@@ -75,6 +75,7 @@ public:
         QIcon icon;
         icon.addFile(QStringLiteral(":/coeus_client_qt/coeus_boy.png"), QSize(), QIcon::Normal, QIcon::Off);
         LoginDialog->setWindowIcon(icon);
+        LoginDialog->setAutoFillBackground(true);
         LoginDialog->setToolButtonStyle(Qt::ToolButtonIconOnly);
         LoginDialog->setUnifiedTitleAndToolBarOnMac(false);
         action_R = new QAction(LoginDialog);
@@ -296,8 +297,8 @@ public:
         chkRememberPassword->setText(QApplication::translate("LoginDialog", "\350\256\260\344\275\217\345\257\206\347\240\201", 0));
         lblAccount->setText(QApplication::translate("LoginDialog", "\345\270\220\345\217\267\357\274\232", 0));
         txtPassword->setInputMask(QString());
-        txtPassword->setText(QApplication::translate("LoginDialog", "123456", 0));
-        cmbAccount->setCurrentText(QApplication::translate("LoginDialog", "138001655@qq.com", 0));
+        txtPassword->setText(QString());
+        cmbAccount->setCurrentText(QString());
         lblStateTips->setText(QString());
         lblErrorTip->setText(QString());
         btnLogin->setText(QApplication::translate("LoginDialog", "\347\231\273\345\275\225", 0));

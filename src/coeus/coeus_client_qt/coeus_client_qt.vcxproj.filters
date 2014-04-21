@@ -108,6 +108,12 @@
     <ClCompile Include="login_config.cpp">
       <Filter>core\config\cofiguration</Filter>
     </ClCompile>
+    <ClCompile Include="create_character_handler.cpp">
+      <Filter>core\network\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="character_config.cpp">
+      <Filter>core\config\cofiguration</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_login_dialog.h">
@@ -148,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="config_loader.h">
       <Filter>core\config</Filter>
+    </ClInclude>
+    <ClInclude Include="character_config.h">
+      <Filter>core\config\cofiguration</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

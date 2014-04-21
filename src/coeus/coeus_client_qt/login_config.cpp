@@ -1,55 +1,44 @@
 #include "login_config.h"
 #include "game_common/path_definition.h"
 
-const std::vector<const std::string*>&& LoginConfig::acountList() const
+void LoginConfig::saveAccount(const std::string& account, const std::string& password)
 {
-    std::vector<const std::string*> accountList;
-    accountList.resize(_accountPairs.size());
-
-    for (size_t i = 0; i < _accountPairs.size(); ++i)
-    {
-        accountList[i] = &_accountPairs[i].account;
-    }
-
-    return std::forward<std::vector<const std::string*>>(accountList);
+    _saveAccount.account = account;
+    _saveAccount.password = password;
 }
 
-const std::string&& LoginConfig::password(const std::string& account) const
+const std::string& LoginConfig::savedAccount() const
 {
-    for (size_t i = 0; i < _accountPairs.size(); ++i)
-    {
-        if (_accountPairs[i].account == account)
-        {
-            return std::forward<const std::string>(_accountPairs[i].password);
-        }
-    }
+    return _saveAccount.account;
+}
 
-    return std::forward<const std::string>("");
+const std::string& LoginConfig::savedPassword() const
+{
+    return _saveAccount.password;
 }
 
 bool LoginConfig::parse()
 {
     Json::Value value;
-    LOAD_CONFIG(ConfigFile::LoginConfigPath, value);
+    READ_CONFIG(ConfigFile::LoginConfigPath, value);
 
     _autoLogin = value["auto_login"].asBool();
     _rememberPassword = value["remember_password"].asBool();
-
-    const Json::Value& usersArrayValue = value["users"];
-    _accountPairs.resize(usersArrayValue.size());
-
-    for (uint16 i = 0; i < usersArrayValue.size(); ++i)
-    {
-        _accountPairs[i].account = usersArrayValue[i]["account"].asString();
-        _accountPairs[i].password = usersArrayValue[i]["password"].asString();
-    }
+    _saveAccount.account = value["account"].asString();
+    _saveAccount.password = value["password"].asString();
 
     return true;
 }
 
-void LoginConfig::save()
+bool LoginConfig::saveToFile()
 {
+    Json::Value value;
+    value["auto_login"] = _autoLogin;
+    value["remember_password"] = _rememberPassword;
+    value["account"] = _saveAccount.account;
+    value["password"] = _saveAccount.password;
 
+    WRITE_CONFIG(ConfigFile::LoginConfigPath, value, true);
 }
 
 void LoginConfig::setAutoLogin(bool value)

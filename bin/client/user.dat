@@ -1,15 +1,6 @@
 {
-	"auto_login" : false,
-	"remember_password" : true,
-	"users" :
-	[
-		{
-			"account"  : "138001655@qq.com",
-			"password" : "4FBF6734A3F6173255259F94E00C0711"
-		},
-		{
-			"account"  : "138001655_2@qq.com",
-			"password" : "4FBF6734A3F6173255259F94E00C0711"
-		}
-	]
+   "account" : "138001655@qq.com",
+   "auto_login" : true,
+   "password" : "4fbf6734a3f6173255259f94e00c0711",
+   "remember_password" : true
 }

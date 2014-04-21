@@ -38,8 +38,15 @@ public:
 
     static void initEnvironment()
     {
+        std::ios::sync_with_stdio(false);
         QApplication::setStyle(QStyleFactory::create("Fusion"));
-        QTextCodec::setCodecForLocale(QTextCodec::codecForName("system"));
+        //QTextCodec::setCodecForLocale(QTextCodec::codecForName("system"));
+
+        QTextCodec *codec = QTextCodec::codecForName("system");
+        QTextCodec::setCodecForLocale(codec);
+        QTextCodec::setCodecForLocale(QTextCodec::codecForLocale());
+
+
     }
 };
 

@@ -1,0 +1,26 @@
+{
+	"character" :
+	[
+		{
+			"name"   : "镜子猎人",
+			"detail" : "镜子猎人是侦测、挖掘宝物的高手，对发光的宝石非常感兴趣。热衷于探险，从不惧怕黑暗丛林内的未知与神秘是他们的优点。其实是因为金钱的诱惑力实在太大，使得他们甘心为之冒险。",
+			"avatar" : ["images/chracters/mirrorhunter_female_avatar.png", "images/chracters/mirrorhunter_male_avatar.png"],
+			"cg"     : ["images/chracters/mirrorhunter_female_cg.jpg", "images/chracters/mirrorhunter_male_cg.jpg"],
+			"splash" : ["images/chracters/mirrorhunter_female_splash.jpg", "images/chracters/mirrorhunter_male_splash.jpg"]
+		},
+		{
+			"name"   : "时空旅行者",
+			"detail" : "时空旅行者是由混沌联盟挑选出来的部队之一，他们有特殊的位面穿越技巧。也因为和位面出入口的管理员混的太熟，因此每次进入不同位面时都能省不少钱。",
+			"avatar" : ["images/chracters/traveller_female_avatar.png", "images/chracters/traveller_male_avatar.png"],
+			"cg"     : ["images/chracters/traveller_female_cg.jpg", "images/chracters/traveller_male_cg.jpg"],
+			"splash" : ["images/chracters/traveller_female_splash.jpg", "images/chracters/traveller_male_splash.jpg"]
+		},
+		{
+			"name"   : "大发明家",
+			"detail" : "大发明家都是一群高智商的天才科学家，他们精通数学、物理、化学等数十个自然学科。他们对精良装备和机械有着近乎狂热的追求。当然，他们也是烧钱的主儿，否则根本没能力准备更多的材料进行研究。",
+			"avatar" : ["images/chracters/inventor_female_avatar.png", "images/chracters/inventor_male_avatar.png"],
+			"cg"     : ["images/chracters/inventor_female_cg.jpg", "images/chracters/inventor_male_cg.jpg"],
+			"splash" : ["images/chracters/inventor_female_splash.jpg", "images/chracters/inventor_male_splash.jpg"]
+		}
+	]
+}

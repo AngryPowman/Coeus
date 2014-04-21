@@ -13,9 +13,9 @@ class LoginConfig
     : public Configuration, public Venus::Singleton<LoginConfig>
 {
 public:
-    void addNewAcountRecord(const std::string& account, const std::string& password);
-    const std::vector<const std::string*>&& acountList() const;
-    const std::string&& password(const std::string& account) const;
+    void saveAccount(const std::string& account, const std::string& password);
+    const std::string& savedAccount() const;
+    const std::string& savedPassword() const;
     void setAutoLogin(bool value);
     bool getAutoLogin();
     void setRememberPassword(bool value);
@@ -23,10 +23,10 @@ public:
 
 public:
     bool parse();
-    void save();
+    bool saveToFile();
 
 private:
-    std::vector<AccountPair> _accountPairs;
+    AccountPair _saveAccount;
     bool _autoLogin;
     bool _rememberPassword;
 };

@@ -19,7 +19,12 @@ public:
     // 该方法用于加载一个json配置文件，并把其根节点解析到value
     // @filename : json配置文件的全路径
     // @value    : 储存json配置根节点内容的变量
-	bool loadConfig(const std::string& filename, Json::Value& value);
+	bool readConfig(const std::string& filename, Json::Value& value);
+
+    // 该方法用于把Json对象写回到json配置文件
+    // @filename : json配置文件的全路径
+    // @value    : 储存json配置根节点内容的变量
+    bool writeConfig(const std::string& filename, const Json::Value& rootValue, bool useStyleWriter = false);
 
     // 返回配置文件的文件名
     const std::string& filename() { return _filename; }
@@ -27,15 +32,18 @@ public:
     // 子类必须重写该方法，用于对配置文件内容进行解析
 	virtual bool parse() = 0;
 
-    // 重写该方法，用于保存内容到配置文件
-    virtual void save() { };
+    // 重写该方法，用于把内存中的业务数据序列化为Json对象
+    virtual bool saveToFile() { return true; };
 
 private:
     std::string _filename;
     ConfigManager* _manager;
 };
 
-#define LOAD_CONFIG(config_file, value) \
-    if (!Configuration::loadConfig(config_file, value)) return false
+#define READ_CONFIG(config_file, value) \
+    if (!Configuration::readConfig(config_file, value)) return false
+
+#define WRITE_CONFIG(config_file, value, use_style_writer) \
+    return Configuration::writeConfig(config_file, value, use_style_writer)
 
 #endif

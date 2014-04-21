@@ -27,6 +27,7 @@ bool GameService::initialize()
 {
 	try
 	{
+        std::ios::sync_with_stdio(false);
         ConfigLoader::getInstance().initialize(ConfigManager::getInstancePtr());
 		ConfigManager::getInstance().start();
         ConfigManager::getInstance().wait();

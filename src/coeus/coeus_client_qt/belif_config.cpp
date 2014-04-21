@@ -4,7 +4,7 @@
 bool BeliefConfig::parse()
 {
     Json::Value value;
-    LOAD_CONFIG(ConfigFile::BelifConfigPath, value);
+    READ_CONFIG(ConfigFile::BelifConfigPath, value);
 
     const Json::Value& jsonRoot = value["belief"];
     if (jsonRoot == Json::nullValue)

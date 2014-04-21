@@ -5,7 +5,7 @@
 bool ServerConfig::parse()
 {
     Json::Value value;
-    LOAD_CONFIG(ConfigFile::ServerConfig, value);
+    READ_CONFIG(ConfigFile::ServerConfig, value);
 
     phpServerAddress = value["global"]["php_server_address"].asString();
 

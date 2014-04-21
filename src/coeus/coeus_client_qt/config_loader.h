@@ -1,10 +1,11 @@
 #ifndef __CONFIG_LOADER_H__
 #define __CONFIG_LOADER_H__
 
+#include "game_common/config/config_manager.h"
 #include "venus_net/singleton.h"
 #include "login_config.h"
 #include "belif_config.h"
-#include "game_common/config/config_manager.h"
+#include "character_config.h"
 
 class ConfigLoader
     : public Venus::Singleton<ConfigLoader>
@@ -14,6 +15,7 @@ public:
     {
         LoginConfig::getInstance().initialize(manager);
         BeliefConfig::getInstance().initialize(manager);
+        CharacterConfig::getInstance().initialize(manager);
     }
 };
 

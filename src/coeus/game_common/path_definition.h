@@ -19,8 +19,9 @@ namespace ConfigFile
     CFG_PATH(ServerConfig, "./config/server_config.json");
 
     // for client
-    CFG_PATH(LoginConfigPath, "./user.dat");
-    CFG_PATH(BelifConfigPath, "./config/belief_config.json");
+    CFG_PATH(LoginConfigPath,     "./user.dat");
+    CFG_PATH(BelifConfigPath,     "./config/belief.json");
+    CFG_PATH(CharacterConfigPath, "./config/character.json");
 };
 
 #endif
