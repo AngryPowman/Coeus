@@ -38,31 +38,35 @@ void GameSession::characterCreateHandler(const NetworkPacket::Ptr& packet)
     Protocol::CSCreateCharacterReq createCharacterRequest;
     DECODE_MESSAGE(createCharacterRequest, packet);
 
-    if (!createCharacterRequest.nickname.empty())
+    if (createCharacterRequest.nickname.empty())
     {
-        Protocol::SCCreateCharacterRsp response;
-        response.result = (createCharacterRequest.belief > Belief::Holy && createCharacterRequest.belief < Belief::BeliefMax);
-        response.result = (createCharacterRequest.gender == Gender::Female || createCharacterRequest.gender == Gender::Male);
-        response.result = (createCharacterRequest.character_type > CharacterCareer::MirrorHunter && createCharacterRequest.character_type < CharacterCareer::CharacterCareerMax);
-       
-        if (response.result && GameDatabase::getInstance().createCharacter(
-            _userGuid, 
-            createCharacterRequest.character_type,
-            createCharacterRequest.nickname,
-            createCharacterRequest.gender,
-            createCharacterRequest.belief))
-        {
-            Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
-            if (player != nullptr)
-            {
-                PlayerDB* playerDB = player->DB();
-                playerDB->player_id = _userGuid;
-                playerDB->belief = createCharacterRequest.belief;
-                playerDB->character_type = createCharacterRequest.character_type;
-                playerDB->gender = createCharacterRequest.gender;
-            }
+        debug_log("Nickname empty in character create request.");
+        return;
+    }
 
-            this->send_message(Opcodes::SCCreateCharacterRsp, response);
+    Protocol::SCCreateCharacterRsp response;
+    response.result = (createCharacterRequest.belief > Belief::UniverseFederal && createCharacterRequest.belief < Belief::BeliefMax);
+    response.result = (createCharacterRequest.gender == Gender::Female || createCharacterRequest.gender == Gender::Male);
+    response.result = (createCharacterRequest.character_type >= CharacterType::MirrorHunter && createCharacterRequest.character_type < CharacterType::CharacterTypeMax);
+       
+    if (response.result && GameDatabase::getInstance().createCharacter(
+        _userGuid, 
+        createCharacterRequest.character_type,
+        createCharacterRequest.nickname,
+        createCharacterRequest.gender,
+        createCharacterRequest.belief))
+    {
+        Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
+        if (player != nullptr)
+        {
+            PlayerDB* playerDB = player->DB();
+            playerDB->nickname = createCharacterRequest.nickname;
+            playerDB->player_id = _userGuid;
+            playerDB->belief = createCharacterRequest.belief;
+            playerDB->character_type = createCharacterRequest.character_type;
+            playerDB->gender = createCharacterRequest.gender;
         }
+
+        this->send_message(Opcodes::SCCreateCharacterRsp, response);
     }
 }

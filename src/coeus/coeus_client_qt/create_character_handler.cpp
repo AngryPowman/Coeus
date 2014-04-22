@@ -9,3 +9,12 @@ void GameHandler::randomNicknameHandler(const NetworkPacket::Ptr& packet)
 
     WidgetManager::getInstance().gameCharacterCreator()->onGetRandomNicknameRsp(randomNicknameRsp);
 }
+
+
+void GameHandler::createCharacterHandler(const NetworkPacket::Ptr& packet)
+{
+    Protocol::SCCreateCharacterRsp createCharacterRsp;
+    DECODE_MESSAGE(createCharacterRsp, packet);
+
+    WidgetManager::getInstance().gameCharacterCreator()->onCreateCharacterRsp(createCharacterRsp);
+}

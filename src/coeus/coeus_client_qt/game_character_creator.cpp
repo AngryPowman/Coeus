@@ -1,6 +1,7 @@
 #include "game_character_creator.h"
 #include "belif_config.h"
 #include "character_config.h"
+#include "game_main.h"
 
 GameCharacterCreator::GameCharacterCreator(QWidget* parent /*= 0*/)
     : QMainWindow(parent)
@@ -21,6 +22,7 @@ void GameCharacterCreator::initControl()
     connect(_ui.cmbAvatarList, SIGNAL(currentIndexChanged(int)), this, SLOT(slotAvatarListIndexChanged(int)));
     connect(_ui.optMale,SIGNAL(clicked()),this,SLOT(slotOnGenderChanged()));
     connect(_ui.optFemale,SIGNAL(clicked()),this,SLOT(slotOnGenderChanged()));
+    connect(_ui.btnCreate, SIGNAL(clicked()), this, SLOT(slotOnCreateBtn())); 
 
     //固定窗体大小
     this->setFixedSize(this->geometry().width(), this->geometry().height());
@@ -117,13 +119,52 @@ void GameCharacterCreator::slotOnRandomNickname()
 
 void GameCharacterCreator::slotOnGenderChanged()
 {
+    int currentIndex = _ui.cmbAvatarList->currentIndex();
     Gender currentGender = Gender::Female;
     if (_ui.optMale->isChecked()) currentGender = Gender::Male;
 
     loadCharacter(currentGender);
+
+    _ui.cmbAvatarList->setCurrentIndex(currentIndex);
+}
+
+void GameCharacterCreator::slotOnCreateBtn()
+{
+    if (_ui.txtNickname->text().length() == 0)
+    {
+        QMessageBox::information(this, "提示", "行走江湖岂能无名无姓？");
+        _ui.txtNickname->selectAll();
+        _ui.txtNickname->setFocus();
+        return;
+    }
+
+    Protocol::CSCreateCharacterReq createCharacterReq;
+    createCharacterReq.nickname = _ui.txtNickname->text().toStdString();
+    createCharacterReq.belief = _ui.cmbBelif->currentIndex();
+    createCharacterReq.gender = _ui.optMale->isChecked() ? Gender::Male : Gender::Female;
+    createCharacterReq.character_type = _ui.cmbAvatarList->currentIndex();
+
+    GameNetwork::getInstance().sendMessage(Opcodes::CSCreateCharacterReq, createCharacterReq);
 }
 
 void GameCharacterCreator::onGetRandomNicknameRsp(const Protocol::SCGetRandomNameRsp& randomNicknameRsp)
 {
     _ui.txtNickname->setText(QString::fromStdString(randomNicknameRsp.random_name.c_str()));
+}
+
+void GameCharacterCreator::onCreateCharacterRsp(const Protocol::SCCreateCharacterRsp& createCharacterRsp)
+{
+    if (createCharacterRsp.result == false)
+    {
+        QMessageBox::critical(this, QStringLiteral("失败"), QStringLiteral("无法创建角色。"));
+        exit(0);
+    }
+    else
+    {
+        //显示游戏主界面
+        GameMain* gameMain = WidgetManager::getInstance().gameMain();
+        gameMain->show();
+
+        this->close();
+    }
 }

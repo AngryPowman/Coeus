@@ -316,15 +316,16 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
 
             LoginConfig::getInstance().saveToFile();
 
-            //显示游戏主界面
-            GameMain* gameMain = WidgetManager::getInstance().gameMain();
-            gameMain->show();
-
             if (loginRsp.character_create_require == true)
             {
-                GameCharacterCreator* characterCreator = WidgetManager::getInstance().gameCharacterCreator(gameMain);
+                GameCharacterCreator* characterCreator = WidgetManager::getInstance().gameCharacterCreator();
                 characterCreator->setWindowModality(Qt::WindowModality::WindowModal);
                 characterCreator->show();
+            }
+            else
+            {
+                GameMain* gameMain = WidgetManager::getInstance().gameMain();
+                gameMain->show();
             }
 
             this->close();

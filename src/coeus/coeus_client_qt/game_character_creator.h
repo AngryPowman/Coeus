@@ -19,12 +19,14 @@ public:
 
 public:
     void onGetRandomNicknameRsp(const Protocol::SCGetRandomNameRsp& randomNicknameRsp);
+    void onCreateCharacterRsp(const Protocol::SCCreateCharacterRsp& createCharacterRsp);
 
 private slots:
     void slotBelifChanged(int index);
     void slotAvatarListIndexChanged(int index);
     void slotOnRandomNickname();
     void slotOnGenderChanged();
+    void slotOnCreateBtn();
 
 private:
     Ui::CharacterCreateDialog _ui;

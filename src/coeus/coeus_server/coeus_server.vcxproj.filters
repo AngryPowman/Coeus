@@ -24,7 +24,7 @@
       <Filter>data</Filter>
     </ClCompile>
     <ClCompile Include="user_service_handler.cpp">
-      <Filter>handler</Filter>
+      <Filter>session\handler</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
       <Filter>logic\player</Filter>
@@ -45,10 +45,10 @@
       <Filter>config</Filter>
     </ClCompile>
     <ClCompile Include="character_create_handler.cpp">
-      <Filter>handler</Filter>
+      <Filter>session\handler</Filter>
     </ClCompile>
     <ClCompile Include="properties_handler.cpp">
-      <Filter>handler</Filter>
+      <Filter>session\handler</Filter>
     </ClCompile>
     <ClCompile Include="prepare_statement_manager.cpp">
       <Filter>data</Filter>
@@ -82,11 +82,11 @@
     <Filter Include="logic\player">
       <UniqueIdentifier>{08a7a91c-a7b1-4c12-a433-4bda64e71928}</UniqueIdentifier>
     </Filter>
-    <Filter Include="handler">
-      <UniqueIdentifier>{a93f03ad-ddf5-4f68-9bf5-01eff465b944}</UniqueIdentifier>
-    </Filter>
     <Filter Include="config">
       <UniqueIdentifier>{67c30c9b-066b-4eaf-a03f-a5a05ed5a82a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="session\handler">
+      <UniqueIdentifier>{a93f03ad-ddf5-4f68-9bf5-01eff465b944}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -106,9 +106,6 @@
       <Filter>define</Filter>
     </ClInclude>
     <ClInclude Include="game_service_application.h">
-      <Filter>service</Filter>
-    </ClInclude>
-    <ClInclude Include="game_opcode_registry.h">
       <Filter>service</Filter>
     </ClInclude>
     <ClInclude Include="game_session.h">
@@ -158,6 +155,9 @@
     </ClInclude>
     <ClInclude Include="prepare_statement_manager.h">
       <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="game_opcode_registry.h">
+      <Filter>session</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

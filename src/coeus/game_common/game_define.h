@@ -14,17 +14,19 @@ enum Gender
 
 enum Belief
 {
-    Holy = 0,           // 神圣教廷
-    TechHarbinger,      // 科技先驱
-    DarkBoundary,       // 黑暗边界
+    UniverseFederal = 0, // 宇宙联邦
+    PowerOfDestiny,      // 自然之力
+    Dark,                // 黑暗教廷
     BeliefMax
 };
 
-enum CharacterCareer
+enum CharacterType
 {
     MirrorHunter = 0,   // 镜子猎人
-    Mechanic,           // 机械师
-    CharacterCareerMax
+    SpaceTraveler,      // 时空旅行者
+    Inventor,           // 大发明家
+
+    CharacterTypeMax,
 };
 
 enum LoginResult

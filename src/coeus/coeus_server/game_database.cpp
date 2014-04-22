@@ -110,7 +110,7 @@ bool GameDatabase::createCharacter(uint64 userGuid, uint8 characterType, const s
         Poco::Data::use(gender),
         Poco::Data::use(belief);
 
-    return (preparedStatement.execute() > 0);
+    return (preparedStatement.execute() == 0);
 }
 
 bool GameDatabase::saveCharacterInfo(uint64 userGuid, PlayerDB* playerDB)
