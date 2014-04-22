@@ -33,12 +33,12 @@ QT_BEGIN_NAMESPACE
 class Ui_LoginDialog
 {
 public:
-    QAction *action_R;
-    QAction *action_3;
-    QAction *action_5;
+    QAction *actionRegister;
+    QAction *actionHomepage;
+    QAction *actionHelp;
     QAction *mnuGame_Setting;
-    QAction *action_X;
-    QAction *action_A;
+    QAction *actionExit;
+    QAction *actionAbout;
     QWidget *centralWidget;
     QFrame *frameLogin;
     QWidget *loginWidget;
@@ -78,21 +78,21 @@ public:
         LoginDialog->setAutoFillBackground(true);
         LoginDialog->setToolButtonStyle(Qt::ToolButtonIconOnly);
         LoginDialog->setUnifiedTitleAndToolBarOnMac(false);
-        action_R = new QAction(LoginDialog);
-        action_R->setObjectName(QStringLiteral("action_R"));
-        action_R->setEnabled(true);
-        action_R->setVisible(true);
-        action_3 = new QAction(LoginDialog);
-        action_3->setObjectName(QStringLiteral("action_3"));
-        action_5 = new QAction(LoginDialog);
-        action_5->setObjectName(QStringLiteral("action_5"));
+        actionRegister = new QAction(LoginDialog);
+        actionRegister->setObjectName(QStringLiteral("actionRegister"));
+        actionRegister->setEnabled(true);
+        actionRegister->setVisible(true);
+        actionHomepage = new QAction(LoginDialog);
+        actionHomepage->setObjectName(QStringLiteral("actionHomepage"));
+        actionHelp = new QAction(LoginDialog);
+        actionHelp->setObjectName(QStringLiteral("actionHelp"));
         mnuGame_Setting = new QAction(LoginDialog);
         mnuGame_Setting->setObjectName(QStringLiteral("mnuGame_Setting"));
         mnuGame_Setting->setShortcutContext(Qt::WidgetShortcut);
-        action_X = new QAction(LoginDialog);
-        action_X->setObjectName(QStringLiteral("action_X"));
-        action_A = new QAction(LoginDialog);
-        action_A->setObjectName(QStringLiteral("action_A"));
+        actionExit = new QAction(LoginDialog);
+        actionExit->setObjectName(QStringLiteral("actionExit"));
+        actionAbout = new QAction(LoginDialog);
+        actionAbout->setObjectName(QStringLiteral("actionAbout"));
         centralWidget = new QWidget(LoginDialog);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         frameLogin = new QFrame(centralWidget);
@@ -255,15 +255,15 @@ public:
         LoginDialog->setMenuBar(menuBar);
 
         menuBar->addAction(menu->menuAction());
-        menu->addAction(action_R);
+        menu->addAction(actionRegister);
         menu->addSeparator();
         menu->addAction(mnuGame_Setting);
         menu->addSeparator();
-        menu->addAction(action_5);
-        menu->addAction(action_A);
-        menu->addAction(action_3);
+        menu->addAction(actionHelp);
+        menu->addAction(actionAbout);
+        menu->addAction(actionHomepage);
         menu->addSeparator();
-        menu->addAction(action_X);
+        menu->addAction(actionExit);
 
         retranslateUi(LoginDialog);
 
@@ -273,17 +273,17 @@ public:
     void retranslateUi(QMainWindow *LoginDialog)
     {
         LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "\345\217\253\346\210\221\350\213\261\351\233\204", 0));
-        action_R->setText(QApplication::translate("LoginDialog", "\346\263\250\345\206\214\345\270\220\345\217\267(&R)...", 0));
+        actionRegister->setText(QApplication::translate("LoginDialog", "\346\263\250\345\206\214\345\270\220\345\217\267(&R)...", 0));
 #ifndef QT_NO_TOOLTIP
-        action_R->setToolTip(QApplication::translate("LoginDialog", "\346\263\250\345\206\214\345\270\220\345\217\267(R)", 0));
+        actionRegister->setToolTip(QApplication::translate("LoginDialog", "\346\263\250\345\206\214\345\270\220\345\217\267(R)", 0));
 #endif // QT_NO_TOOLTIP
-        action_3->setText(QApplication::translate("LoginDialog", "\350\256\277\351\227\256\345\256\230\347\275\221", 0));
-        action_5->setText(QApplication::translate("LoginDialog", "\345\270\256\345\212\251(&H)...", 0));
-        action_5->setShortcut(QApplication::translate("LoginDialog", "F1", 0));
+        actionHomepage->setText(QApplication::translate("LoginDialog", "\350\256\277\351\227\256\345\256\230\347\275\221", 0));
+        actionHelp->setText(QApplication::translate("LoginDialog", "\345\270\256\345\212\251(&H)...", 0));
+        actionHelp->setShortcut(QApplication::translate("LoginDialog", "F1", 0));
         mnuGame_Setting->setText(QApplication::translate("LoginDialog", "\350\256\276\347\275\256(&S)...", 0));
         mnuGame_Setting->setShortcut(QApplication::translate("LoginDialog", "F12", 0));
-        action_X->setText(QApplication::translate("LoginDialog", "\351\200\200\345\207\272(&X)", 0));
-        action_A->setText(QApplication::translate("LoginDialog", "\345\205\263\344\272\216(&A)", 0));
+        actionExit->setText(QApplication::translate("LoginDialog", "\351\200\200\345\207\272(&X)", 0));
+        actionAbout->setText(QApplication::translate("LoginDialog", "\345\205\263\344\272\216(&A)", 0));
         chkAutoLogin->setText(QApplication::translate("LoginDialog", "\350\207\252\345\212\250\347\231\273\345\275\225", 0));
         lblPassword->setText(QApplication::translate("LoginDialog", "\345\257\206\347\240\201\357\274\232", 0));
 #ifndef QT_NO_TOOLTIP

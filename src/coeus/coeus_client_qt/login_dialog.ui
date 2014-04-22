@@ -520,19 +520,19 @@
     <property name="title">
      <string>功能(&amp;G)</string>
     </property>
-    <addaction name="action_R"/>
+    <addaction name="actionRegister"/>
     <addaction name="separator"/>
     <addaction name="mnuGame_Setting"/>
     <addaction name="separator"/>
-    <addaction name="action_5"/>
-    <addaction name="action_A"/>
-    <addaction name="action_3"/>
+    <addaction name="actionHelp"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionHomepage"/>
     <addaction name="separator"/>
-    <addaction name="action_X"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menu"/>
   </widget>
-  <action name="action_R">
+  <action name="actionRegister">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -546,12 +546,12 @@
     <bool>true</bool>
    </property>
   </action>
-  <action name="action_3">
+  <action name="actionHomepage">
    <property name="text">
     <string>访问官网</string>
    </property>
   </action>
-  <action name="action_5">
+  <action name="actionHelp">
    <property name="text">
     <string>帮助(&amp;H)...</string>
    </property>
@@ -570,12 +570,12 @@
     <enum>Qt::WidgetShortcut</enum>
    </property>
   </action>
-  <action name="action_X">
+  <action name="actionExit">
    <property name="text">
     <string>退出(&amp;X)</string>
    </property>
   </action>
-  <action name="action_A">
+  <action name="actionAbout">
    <property name="text">
     <string>关于(&amp;A)</string>
    </property>

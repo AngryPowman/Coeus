@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_GameLogin_t {
-    QByteArrayData data[13];
-    char stringdata[192];
+    QByteArrayData data[18];
+    char stringdata[280];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,13 +41,21 @@ QT_MOC_LITERAL(8, 104, 13),
 QT_MOC_LITERAL(9, 118, 27),
 QT_MOC_LITERAL(10, 146, 7),
 QT_MOC_LITERAL(11, 154, 18),
-QT_MOC_LITERAL(12, 173, 17)
+QT_MOC_LITERAL(12, 173, 17),
+QT_MOC_LITERAL(13, 191, 22),
+QT_MOC_LITERAL(14, 214, 14),
+QT_MOC_LITERAL(15, 229, 15),
+QT_MOC_LITERAL(16, 245, 18),
+QT_MOC_LITERAL(17, 264, 14)
     },
     "GameLogin\0changePanelSignal\0\0Panel\0"
     "panel\0slotOpenSettingDialog\0slotOnLoginBtn\0"
     "slotMoveGravatarAnimation\0slotOnBackBtn\0"
     "slotAutoLoginCheckedChanged\0checked\0"
     "slotPasswordEdited\0slotAccountEdited\0"
+    "slotOpenHomepageAction\0slotHelpAction\0"
+    "slotAboutAction\0slotRegisterAction\0"
+    "slotExitAction\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,7 +65,7 @@ static const uint qt_meta_data_GameLogin[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -65,16 +73,21 @@ static const uint qt_meta_data_GameLogin[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   54,    2, 0x06,
+       1,    1,   79,    2, 0x06,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   57,    2, 0x08,
-       6,    0,   58,    2, 0x08,
-       7,    0,   59,    2, 0x08,
-       8,    0,   60,    2, 0x08,
-       9,    1,   61,    2, 0x08,
-      11,    1,   64,    2, 0x08,
-      12,    1,   67,    2, 0x08,
+       5,    0,   82,    2, 0x08,
+       6,    0,   83,    2, 0x08,
+       7,    0,   84,    2, 0x08,
+       8,    0,   85,    2, 0x08,
+       9,    1,   86,    2, 0x08,
+      11,    1,   89,    2, 0x08,
+      12,    1,   92,    2, 0x08,
+      13,    0,   95,    2, 0x08,
+      14,    0,   96,    2, 0x08,
+      15,    0,   97,    2, 0x08,
+      16,    0,   98,    2, 0x08,
+      17,    0,   99,    2, 0x08,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -87,6 +100,11 @@ static const uint qt_meta_data_GameLogin[] = {
     QMetaType::Void, QMetaType::Bool,   10,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -104,6 +122,11 @@ void GameLogin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 5: _t->slotAutoLoginCheckedChanged((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 6: _t->slotPasswordEdited((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 7: _t->slotAccountEdited((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 8: _t->slotOpenHomepageAction(); break;
+        case 9: _t->slotHelpAction(); break;
+        case 10: _t->slotAboutAction(); break;
+        case 11: _t->slotRegisterAction(); break;
+        case 12: _t->slotExitAction(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -143,13 +166,13 @@ int GameLogin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 13)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 13;
     }
     return _id;
 }

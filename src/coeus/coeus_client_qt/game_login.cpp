@@ -13,7 +13,7 @@ GameLogin::GameLogin(QWidget *parent)
     _useConfigPasswordDigest(false),
     _isPasswordDigest(false)
 {
-    _loginDialog.setupUi(this);
+    _ui.setupUi(this);
 
     initControl();
 }
@@ -24,29 +24,34 @@ GameLogin::~GameLogin()
 
 void GameLogin::initControl()
 {
-    connect(_loginDialog.mnuGame_Setting, SIGNAL(triggered()), this, SLOT(slotOpenSettingDialog()));
-    connect(_loginDialog.clbSettings, SIGNAL(clicked()), this, SLOT(slotOpenSettingDialog()));
-    connect(_loginDialog.btnLogin, SIGNAL(clicked()), this, SLOT(slotOnLoginBtn()));
-    connect(_loginDialog.btnBack, SIGNAL(clicked()), this, SLOT(slotOnBackBtn()));
-    connect(_loginDialog.chkAutoLogin, SIGNAL(clicked(bool)), this, SLOT(slotAutoLoginCheckedChanged(bool)));
-    connect(_loginDialog.txtPassword, SIGNAL(textEdited(QString)), this, SLOT(slotPasswordEdited(QString)));
-    connect(_loginDialog.cmbAccount, SIGNAL(currentTextChanged(QString)), this, SLOT(slotAccountEdited(QString)));
+    connect(_ui.mnuGame_Setting, SIGNAL(triggered()), this, SLOT(slotOpenSettingDialog()));
+    connect(_ui.clbSettings, SIGNAL(clicked()), this, SLOT(slotOpenSettingDialog()));
+    connect(_ui.btnLogin, SIGNAL(clicked()), this, SLOT(slotOnLoginBtn()));
+    connect(_ui.btnBack, SIGNAL(clicked()), this, SLOT(slotOnBackBtn()));
+    connect(_ui.chkAutoLogin, SIGNAL(clicked(bool)), this, SLOT(slotAutoLoginCheckedChanged(bool)));
+    connect(_ui.txtPassword, SIGNAL(textEdited(QString)), this, SLOT(slotPasswordEdited(QString)));
+    connect(_ui.cmbAccount, SIGNAL(currentTextChanged(QString)), this, SLOT(slotAccountEdited(QString)));
+    connect(_ui.actionHomepage, SIGNAL(triggered()), this, SLOT(slotOpenHomepageAction()));
+    connect(_ui.actionHelp, SIGNAL(triggered()), this, SLOT(slotHelpAction()));
+    connect(_ui.actionAbout, SIGNAL(triggered()), this, SLOT(slotAboutAction()));
+    connect(_ui.actionRegister, SIGNAL(triggered()), this, SLOT(slotRegisterAction()));
+    connect(_ui.actionExit, SIGNAL(triggered()), this, SLOT(slotExitAction()));
 
     //固定窗体大小
     this->setFixedSize(this->geometry().width(), this->geometry().height());
 
     //读配置
-    _loginDialog.cmbAccount->setCurrentText(LoginConfig::getInstance().savedAccount().c_str());
+    _ui.cmbAccount->setCurrentText(LoginConfig::getInstance().savedAccount().c_str());
     _useConfigPasswordDigest = LoginConfig::getInstance().getRememberPassword();
     if (LoginConfig::getInstance().getRememberPassword() == true)
     {
-        _loginDialog.txtPassword->setPlaceholderText(PASSWORD_HOLDER_TEXT);
+        _ui.txtPassword->setPlaceholderText(PASSWORD_HOLDER_TEXT);
         _passwordDigest = LoginConfig::getInstance().savedPassword().c_str();
         _isPasswordDigest = true;
     }
 
-    _gravatarOriginX = _loginDialog.graphicsGravatar->geometry().left();
-    _frameLoginInitialPoint = _loginDialog.frameLogin->pos();
+    _gravatarOriginX = _ui.graphicsGravatar->geometry().left();
+    _frameLoginInitialPoint = _ui.frameLogin->pos();
 
 
     // 加载背景
@@ -60,12 +65,12 @@ void GameLogin::initControl()
     if (image->load("./images/avatar/AngryPowman.jpg"))
     {
         //调整图片尺寸适应头像显示区域
-        QImage scaleAvatarImage = image->scaled(_loginDialog.graphicsGravatar->width(), _loginDialog.graphicsGravatar->height());
+        QImage scaleAvatarImage = image->scaled(_ui.graphicsGravatar->width(), _ui.graphicsGravatar->height());
 
         //创建图形场景
         QGraphicsScene* graphicsScene = new QGraphicsScene();
         graphicsScene->addPixmap(QPixmap::fromImage(scaleAvatarImage));
-        _loginDialog.graphicsGravatar->setScene(graphicsScene);
+        _ui.graphicsGravatar->setScene(graphicsScene);
     }
 }
 
@@ -79,29 +84,29 @@ void GameLogin::slotOpenSettingDialog()
 
 void GameLogin::slotOnLoginBtn()
 {
-    if (GameUtil::checkEmailValid(_loginDialog.cmbAccount->currentText().toStdString()) == false)
+    if (GameUtil::checkEmailValid(_ui.cmbAccount->currentText().toStdString()) == false)
     {
         QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("别乱写个帐号忽悠我。"));
-        _loginDialog.cmbAccount->setFocus();
+        _ui.cmbAccount->setFocus();
         return;
     }
 
     //如果当前使用的不是已保存的密码，则检查空
     if (_isPasswordDigest == false)
     {
-        if (_loginDialog.txtPassword->text().length() == 0)
+        if (_ui.txtPassword->text().length() == 0)
         {
             QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("不输入密码就登录，你是猴子请过来的逗比吗？"));
-            _loginDialog.txtPassword->selectAll();
-            _loginDialog.txtPassword->setFocus();
+            _ui.txtPassword->selectAll();
+            _ui.txtPassword->setFocus();
             return;
         }
 
-        if (_loginDialog.txtPassword->text().length() > 32)
+        if (_ui.txtPassword->text().length() > 32)
         {
             QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("你的密码这么长，你家里人知道吗？"));
-            _loginDialog.txtPassword->selectAll();
-            _loginDialog.txtPassword->setFocus();
+            _ui.txtPassword->selectAll();
+            _ui.txtPassword->setFocus();
             return;
         }
     }
@@ -123,22 +128,22 @@ void GameLogin::slotOnLoginBtn()
 
 void GameLogin::slotMoveGravatarAnimation()
 {
-    static int end_x = _loginDialog.loginWidget->geometry().width() / 2 -  _loginDialog.graphicsGravatar->geometry().width() / 2;
-    static int end_y = _loginDialog.graphicsGravatar->geometry().top();
+    static int end_x = _ui.loginWidget->geometry().width() / 2 -  _ui.graphicsGravatar->geometry().width() / 2;
+    static int end_y = _ui.graphicsGravatar->geometry().top();
 
     static int frame_count = 1;
     frame_count++;
 
     float speed = (18 - (frame_count * 0.05));
 
-    float x = _loginDialog.graphicsGravatar->pos().x() + (speed > 0 ? speed : 1);
-    float y = _loginDialog.graphicsGravatar->pos().y();
+    float x = _ui.graphicsGravatar->pos().x() + (speed > 0 ? speed : 1);
+    float y = _ui.graphicsGravatar->pos().y();
 
-    _loginDialog.graphicsGravatar->move(x, y);
+    _ui.graphicsGravatar->move(x, y);
 
     if (x >= end_x)
     {
-        _loginDialog.graphicsGravatar->move(end_x, y);
+        _ui.graphicsGravatar->move(end_x, y);
         _moveGravatar->stop();
 
         loginProcess();
@@ -147,17 +152,17 @@ void GameLogin::slotMoveGravatarAnimation()
 
 void GameLogin::loginProcess()
 {
-    _loginDialog.lblStateTips->setText(QStringLiteral("正在连接服务器"));
+    _ui.lblStateTips->setText(QStringLiteral("正在连接服务器"));
     this->repaint();
     if (GameNetwork::getInstance().connectServer())
     {
-        _loginDialog.lblStateTips->setText(QStringLiteral("正在验证用户名和密码"));
+        _ui.lblStateTips->setText(QStringLiteral("正在验证用户名和密码"));
         Protocol::CSLoginReq loginReq;
-        loginReq.account = _loginDialog.cmbAccount->currentText().toStdString();
+        loginReq.account = _ui.cmbAccount->currentText().toStdString();
 
         if (_isPasswordDigest == false)
         {
-            _passwordDigest = GameUtil::toPasswordDigest(_loginDialog.txtPassword->text().toStdString());
+            _passwordDigest = GameUtil::toPasswordDigest(_ui.txtPassword->text().toStdString());
         }
 
         loginReq.password = _passwordDigest;
@@ -169,13 +174,13 @@ void GameLogin::loginProcess()
 void GameLogin::setAnimationControlEnabled(bool enabled)
 {
     //设置控件状态
-    _loginDialog.cmbAccount->setVisible(enabled);
-    _loginDialog.txtPassword->setVisible(enabled);
-    _loginDialog.chkRememberPassword->setVisible(enabled);
-    _loginDialog.chkAutoLogin->setVisible(enabled);
-    _loginDialog.lblAccount->setVisible(enabled);
-    _loginDialog.lblPassword->setVisible(enabled);
-    _loginDialog.lblStateTips->setText("");
+    _ui.cmbAccount->setVisible(enabled);
+    _ui.txtPassword->setVisible(enabled);
+    _ui.chkRememberPassword->setVisible(enabled);
+    _ui.chkAutoLogin->setVisible(enabled);
+    _ui.lblAccount->setVisible(enabled);
+    _ui.lblPassword->setVisible(enabled);
+    _ui.lblStateTips->setText("");
 }
 
 void GameLogin::showErrorString(const QString& str)
@@ -189,19 +194,19 @@ void GameLogin::changePanel(Panel panel)
     _currentPanel = panel;
     if (panel == PANEL_DEFAULT)
     {
-        _loginDialog.frameLogin->move(_frameLoginInitialPoint);
-        _loginDialog.frameLogin->setVisible(true);
-        _loginDialog.frameServerSelector->setVisible(false);
+        _ui.frameLogin->move(_frameLoginInitialPoint);
+        _ui.frameLogin->setVisible(true);
+        _ui.frameServerSelector->setVisible(false);
         setAnimationControlEnabled(true);
-        _loginDialog.graphicsGravatar->move(_gravatarOriginX, _loginDialog.graphicsGravatar->pos().y());
+        _ui.graphicsGravatar->move(_gravatarOriginX, _ui.graphicsGravatar->pos().y());
 
-        _loginDialog.btnLogin->setText(QStringLiteral("登录"));
+        _ui.btnLogin->setText(QStringLiteral("登录"));
     }
     else if (panel == PANEL_LOGINNING)
     {
-        _loginDialog.frameLogin->move(_frameLoginInitialPoint);
-        _loginDialog.frameLogin->setVisible(true);
-        _loginDialog.frameServerSelector->setVisible(false);
+        _ui.frameLogin->move(_frameLoginInitialPoint);
+        _ui.frameLogin->setVisible(true);
+        _ui.frameServerSelector->setVisible(false);
         setAnimationControlEnabled(false);
 
         _moveGravatar = new QTimer(this);
@@ -209,15 +214,15 @@ void GameLogin::changePanel(Panel panel)
         _moveGravatar->setSingleShot(false);
         _moveGravatar->start(1);
 
-        _loginDialog.btnLogin->setText(QStringLiteral("取消"));
+        _ui.btnLogin->setText(QStringLiteral("取消"));
     }
     else
     {
-        _loginDialog.frameServerSelector->move(_frameLoginInitialPoint);
-        _loginDialog.frameServerSelector->setVisible(true);
-        _loginDialog.frameLogin->setVisible(false);
+        _ui.frameServerSelector->move(_frameLoginInitialPoint);
+        _ui.frameServerSelector->setVisible(true);
+        _ui.frameLogin->setVisible(false);
 
-        _loginDialog.btnLogin->setText(QStringLiteral("进入游戏"));
+        _ui.btnLogin->setText(QStringLiteral("进入游戏"));
 
     }
 }
@@ -287,7 +292,7 @@ void GameLogin::onConnectFailed(const QAbstractSocket::SocketError& error)
     if (!statusText.isEmpty())
     {
         statusText += errorCodeText;
-        //this->_loginDialog.lblErrorTip->setText(statusText);
+        //this->_ui.lblErrorTip->setText(statusText);
         QMessageBox::critical(this, QStringLiteral("登录失败"), statusText);
     }
 
@@ -300,13 +305,13 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
     {
         if (loginRsp.login_result)
         {
-            _loginDialog.lblStateTips->setText(QStringLiteral("登录成功，正在获取游戏数据"));
+            _ui.lblStateTips->setText(QStringLiteral("登录成功，正在获取游戏数据"));
 
             //保存登录配置
-            LoginConfig::getInstance().setRememberPassword(_loginDialog.chkRememberPassword);
-            LoginConfig::getInstance().setAutoLogin(_loginDialog.chkAutoLogin);
+            LoginConfig::getInstance().setRememberPassword(_ui.chkRememberPassword);
+            LoginConfig::getInstance().setAutoLogin(_ui.chkAutoLogin);
             LoginConfig::getInstance().saveAccount(
-                _loginDialog.cmbAccount->currentText().toStdString(), 
+                _ui.cmbAccount->currentText().toStdString(), 
                 _passwordDigest);
 
             LoginConfig::getInstance().saveToFile();
@@ -336,13 +341,13 @@ void GameLogin::slotAutoLoginCheckedChanged(bool checked)
 {
     if (checked)
     {
-        _loginDialog.chkRememberPassword->setChecked(true);
+        _ui.chkRememberPassword->setChecked(true);
     }
 }
 
 void GameLogin::slotPasswordEdited(QString)
 {
-    if (_loginDialog.txtPassword->text().length() != 0)
+    if (_ui.txtPassword->text().length() != 0)
     {
         _isPasswordDigest = false;
     }
@@ -360,15 +365,40 @@ void GameLogin::slotAccountEdited(QString)
 {
     if (_useConfigPasswordDigest)
     {
-        if (_loginDialog.cmbAccount->currentText().toStdString() != LoginConfig::getInstance().savedAccount())
+        if (_ui.cmbAccount->currentText().toStdString() != LoginConfig::getInstance().savedAccount())
         {
             _isPasswordDigest = false;
-            _loginDialog.txtPassword->setPlaceholderText("");
+            _ui.txtPassword->setPlaceholderText("");
         }
         else
         {
             _isPasswordDigest = true;
-            _loginDialog.txtPassword->setPlaceholderText(PASSWORD_HOLDER_TEXT);
+            _ui.txtPassword->setPlaceholderText(PASSWORD_HOLDER_TEXT);
         }
     }
+}
+
+void GameLogin::slotOpenHomepageAction()
+{
+    QDesktopServices::openUrl(QUrl("http://coeus.powman.org"));
+}
+
+void GameLogin::slotHelpAction()
+{
+    QMessageBox::information(this, QStringLiteral("帮助"), QStringLiteral("就这么个玩意儿你还想要什么帮助？"));
+}
+
+void GameLogin::slotAboutAction()
+{
+    QMessageBox::about(this, QStringLiteral("关于"), "Author by AngryPowman\n\nhttp://powman.org");
+}
+
+void GameLogin::slotRegisterAction()
+{
+    QDesktopServices::openUrl(QUrl("http://coeus.powman.org/register"));
+}
+
+void GameLogin::slotExitAction()
+{
+    exit(0);
 }

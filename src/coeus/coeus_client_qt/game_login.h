@@ -35,6 +35,11 @@ private slots:
     void slotAutoLoginCheckedChanged(bool checked);
     void slotPasswordEdited(QString);
     void slotAccountEdited(QString);
+    void slotOpenHomepageAction();
+    void slotHelpAction();
+    void slotAboutAction();
+    void slotRegisterAction();
+    void slotExitAction();
 
 private:
     void changePanel(Panel panel);
@@ -43,7 +48,7 @@ private:
     void showErrorString(const QString& str);
 
 private:
-    Ui::LoginDialog _loginDialog;
+    Ui::LoginDialog _ui;
 
 private:
     bool _useConfigPasswordDigest;

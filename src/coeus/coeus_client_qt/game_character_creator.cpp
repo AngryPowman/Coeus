@@ -88,7 +88,13 @@ void GameCharacterCreator::slotAvatarListIndexChanged(int index)
         _ui.lblCharacterName->setText(characterList[index].name.c_str());
         _ui.lblCharacterDetail->setText(characterList[index].detail.c_str());
 
-        // 加载头像
+        // 加载背景
+        /*QPixmap pixmap = QPixmap(characterList[index].splash[currentGender].c_str()).scaled(this->size());
+        QPalette palette(this->palette());
+        palette.setBrush(QPalette::Background, QBrush(pixmap));
+        this->setPalette(palette);*/
+
+        // 加载半身CG
         QImage* image = new QImage();
         if (image->load(characterList[index].cg[currentGender].c_str()))
         {

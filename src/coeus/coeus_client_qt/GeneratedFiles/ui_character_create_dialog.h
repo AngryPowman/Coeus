@@ -51,7 +51,7 @@ public:
     {
         if (CharacterCreateDialog->objectName().isEmpty())
             CharacterCreateDialog->setObjectName(QStringLiteral("CharacterCreateDialog"));
-        CharacterCreateDialog->resize(592, 397);
+        CharacterCreateDialog->resize(601, 400);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -66,7 +66,7 @@ public:
         CharacterCreateDialog->setWindowIcon(icon);
         graphicsCG = new QGraphicsView(CharacterCreateDialog);
         graphicsCG->setObjectName(QStringLiteral("graphicsCG"));
-        graphicsCG->setGeometry(QRect(10, 10, 196, 294));
+        graphicsCG->setGeometry(QRect(10, 10, 196, 296));
         graphicsCG->setStyleSheet(QStringLiteral("border-color: rgb(85, 170, 255);"));
         graphicsCG->setFrameShape(QFrame::Box);
         graphicsCG->setFrameShadow(QFrame::Plain);
@@ -81,7 +81,7 @@ public:
         buttonGroup->setObjectName(QStringLiteral("buttonGroup"));
         buttonGroup->addButton(optFemale);
         optFemale->setObjectName(QStringLiteral("optFemale"));
-        optFemale->setGeometry(QRect(60, 310, 66, 21));
+        optFemale->setGeometry(QRect(70, 310, 56, 21));
         optFemale->setFont(font);
         QIcon icon1;
         icon1.addFile(QStringLiteral("../../../bin/client/images/female.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -91,7 +91,7 @@ public:
         optMale = new QRadioButton(CharacterCreateDialog);
         buttonGroup->addButton(optMale);
         optMale->setObjectName(QStringLiteral("optMale"));
-        optMale->setGeometry(QRect(135, 310, 66, 21));
+        optMale->setGeometry(QRect(150, 310, 56, 21));
         optMale->setFont(font);
         QIcon icon2;
         icon2.addFile(QStringLiteral("../../../bin/client/images/male.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -104,7 +104,7 @@ public:
         label->setFont(font);
         lblCharacterName = new QLabel(CharacterCreateDialog);
         lblCharacterName->setObjectName(QStringLiteral("lblCharacterName"));
-        lblCharacterName->setGeometry(QRect(335, 5, 131, 41));
+        lblCharacterName->setGeometry(QRect(340, 15, 131, 41));
         QFont font1;
         font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font1.setPointSize(19);
@@ -119,35 +119,35 @@ public:
         label_3->setFont(font);
         txtNickname = new QLineEdit(CharacterCreateDialog);
         txtNickname->setObjectName(QStringLiteral("txtNickname"));
-        txtNickname->setGeometry(QRect(225, 255, 221, 20));
+        txtNickname->setGeometry(QRect(225, 255, 246, 20));
         label_4 = new QLabel(CharacterCreateDialog);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(225, 290, 54, 12));
         label_4->setFont(font);
         cmbBelif = new QComboBox(CharacterCreateDialog);
         cmbBelif->setObjectName(QStringLiteral("cmbBelif"));
-        cmbBelif->setGeometry(QRect(225, 310, 221, 22));
+        cmbBelif->setGeometry(QRect(225, 310, 246, 22));
         btnRandom = new QPushButton(CharacterCreateDialog);
         btnRandom->setObjectName(QStringLiteral("btnRandom"));
-        btnRandom->setGeometry(QRect(455, 255, 56, 23));
+        btnRandom->setGeometry(QRect(480, 255, 56, 23));
         btnRandom->setFont(font);
         btnCheckNickname = new QPushButton(CharacterCreateDialog);
         btnCheckNickname->setObjectName(QStringLiteral("btnCheckNickname"));
-        btnCheckNickname->setGeometry(QRect(515, 255, 56, 23));
+        btnCheckNickname->setGeometry(QRect(540, 255, 56, 23));
         btnCheckNickname->setFont(font);
         btnCreate = new QPushButton(CharacterCreateDialog);
         btnCreate->setObjectName(QStringLiteral("btnCreate"));
-        btnCreate->setGeometry(QRect(460, 350, 111, 36));
+        btnCreate->setGeometry(QRect(485, 355, 111, 36));
         btnCreate->setFont(font);
         lblCharacterDetail = new QLabel(CharacterCreateDialog);
         lblCharacterDetail->setObjectName(QStringLiteral("lblCharacterDetail"));
-        lblCharacterDetail->setGeometry(QRect(226, 65, 351, 141));
+        lblCharacterDetail->setGeometry(QRect(226, 80, 351, 126));
         lblCharacterDetail->setTextFormat(Qt::RichText);
         lblCharacterDetail->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         lblCharacterDetail->setWordWrap(true);
         line = new QFrame(CharacterCreateDialog);
         line->setObjectName(QStringLiteral("line"));
-        line->setGeometry(QRect(225, 210, 356, 16));
+        line->setGeometry(QRect(225, 210, 366, 16));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
         line_2 = new QFrame(CharacterCreateDialog);
@@ -157,7 +157,7 @@ public:
         line_2->setFrameShadow(QFrame::Sunken);
         frameBadge = new QFrame(CharacterCreateDialog);
         frameBadge->setObjectName(QStringLiteral("frameBadge"));
-        frameBadge->setGeometry(QRect(165, 10, 64, 64));
+        frameBadge->setGeometry(QRect(275, 5, 64, 64));
         frameBadge->setFrameShape(QFrame::StyledPanel);
         frameBadge->setFrameShadow(QFrame::Raised);
         cmbAvatarList = new QComboBox(CharacterCreateDialog);
