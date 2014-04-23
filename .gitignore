@@ -38,3 +38,4 @@
 /3rdparty/poco/Data/MySQL/obj
 *.suo
 *.sdf
+/3rdparty/poco/lib
