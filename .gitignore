@@ -20,6 +20,7 @@
 *.out
 *.app
 *.pdb
+*.suo
 *.idb
 *.page
 *.tlog
@@ -31,3 +32,6 @@
 *.log
 *.sdf
 *.opensdf
+*.res
+*.suo
+*.user
