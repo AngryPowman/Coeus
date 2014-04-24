@@ -22,6 +22,7 @@ namespace ConfigFile
     CFG_PATH(LoginConfigPath,     "./user.dat");
     CFG_PATH(BelifConfigPath,     "./config/belief.json");
     CFG_PATH(CharacterConfigPath, "./config/character.json");
+    CFG_PATH(NPCConfigPath,       "./config/npc.json");
 };
 
 #endif

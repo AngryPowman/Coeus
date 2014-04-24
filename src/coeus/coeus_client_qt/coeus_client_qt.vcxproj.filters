@@ -114,6 +114,9 @@
     <ClCompile Include="character_config.cpp">
       <Filter>core\config\cofiguration</Filter>
     </ClCompile>
+    <ClCompile Include="npc_config.cpp">
+      <Filter>core\config\cofiguration</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_login_dialog.h">
@@ -158,6 +161,12 @@
     <ClInclude Include="character_config.h">
       <Filter>core\config\cofiguration</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_npc_dialogue_box.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="npc_config.h">
+      <Filter>core\config\cofiguration</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -189,6 +198,9 @@
     </CustomBuild>
     <CustomBuild Include="game_character_creator.h">
       <Filter>core\logic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="npc_dialogue_box.ui">
+      <Filter>core\ui</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

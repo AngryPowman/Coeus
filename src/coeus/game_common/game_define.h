@@ -1,8 +1,16 @@
 #ifndef __GAME_DEFINE_H__
 #define __GAME_DEFINE_H__
 
+#include "venus_net/common.h"
+
 #define DB_TYPE_SQLITE (0x1)
 #define DB_TYPE_MYSQL  (0x2)
+
+typedef std::vector<uint32> SceneList;
+typedef std::vector<uint32> ItemList;
+typedef std::vector<uint32> CardList;
+typedef std::vector<std::string> DialoguePart;
+typedef std::vector<DialoguePart> Dialogues;
 
 enum Gender
 {

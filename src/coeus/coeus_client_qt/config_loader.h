@@ -6,6 +6,7 @@
 #include "login_config.h"
 #include "belif_config.h"
 #include "character_config.h"
+#include "npc_config.h"
 
 class ConfigLoader
     : public Venus::Singleton<ConfigLoader>
@@ -16,6 +17,7 @@ public:
         LoginConfig::getInstance().initialize(manager);
         BeliefConfig::getInstance().initialize(manager);
         CharacterConfig::getInstance().initialize(manager);
+        NPCConfig::getInstance().initialize(manager);
     }
 };
 

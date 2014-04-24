@@ -27,6 +27,7 @@ bool Configuration::readConfig(const std::string& filename, Json::Value& value)
     fs.read(configBuffer, filesize);
 
     bool parseResult = Json::Reader::parse(configBuffer, value, false);
+    std::string error = Json::Reader::getFormatedErrorMessages();
     SAFE_DELETE_ARR(configBuffer);
 
     fs.close();
