@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>801</width>
+    <height>625</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>NPC编辑器</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>175</x>
+     <y>10</y>
+     <width>621</width>
+     <height>606</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>基础数据</string>
+    </attribute>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>15</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>15</y>
+       <width>301</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="cursorMoveStyle">
+      <enum>Qt::LogicalMoveStyle</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>45</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>名字</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>45</y>
+       <width>301</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>75</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>称谓</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>75</y>
+       <width>301</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>105</y>
+       <width>261</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>105</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>头像文件</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButton">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>105</y>
+       <width>37</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="popupMode">
+      <enum>QToolButton::DelayedPopup</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="">
+    <attribute name="title">
+     <string>智能行为</string>
+    </attribute>
+    <widget class="QTabWidget" name="tabWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>135</y>
+       <width>601</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>移动场景数据</string>
+      </attribute>
+      <widget class="QCheckBox" name="checkBox_5">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>5</y>
+         <width>196</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>允许随机移动到其它场景</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBox_7">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>395</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>周期内正态分布触发</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>370</y>
+         <width>54</width>
+         <height>12</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>移动频率</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>125</x>
+         <y>370</y>
+         <width>151</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>次/每12小时（服务器时间）</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox_2">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>365</y>
+         <width>56</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>1</number>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="treeWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>30</y>
+         <width>581</width>
+         <height>321</height>
+        </rect>
+       </property>
+       <attribute name="headerCascadingSectionResizes">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="headerHighlightSections">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="headerShowSortIndicator" stdset="0">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>场景</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>移动机率</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>测试场景</string>
+        </property>
+        <property name="text">
+         <string>100%</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>场景1</string>
+         </property>
+         <property name="text">
+          <string>30%</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>场景2</string>
+         </property>
+         <property name="text">
+          <string>70%</string>
+         </property>
+        </item>
+       </item>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>物品偏好数据</string>
+      </attribute>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>30</y>
+         <width>586</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <attribute name="headerCascadingSectionResizes">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="headerHighlightSections">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="headerShowSortIndicator" stdset="0">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>分类</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>权值</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>武器</string>
+        </property>
+        <property name="checkState">
+         <enum>Checked</enum>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>生化武器</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>激光武器</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>10</y>
+         <width>241</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>当NPC拥有好感度属性时，该数据才会有效。</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>战斗牌组编辑</string>
+      </attribute>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_2">
+     <property name="geometry">
+      <rect>
+       <x>105</x>
+       <y>75</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>有好感度属性</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>75</y>
+       <width>106</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>可发起攻击</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>95</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>接受求偶</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>35</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>等级</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox">
+     <property name="geometry">
+      <rect>
+       <x>45</x>
+       <y>35</y>
+       <width>86</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>120</number>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_4">
+     <property name="geometry">
+      <rect>
+       <x>105</x>
+       <y>95</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>接受赠送物品</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>5</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>常规属性</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>596</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>剧情对白</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>随机任务</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QTreeWidget" name="treeWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>10</y>
+     <width>166</width>
+     <height>606</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>NPC</string>
+    </property>
+   </column>
+   <item>
+    <property name="text">
+     <string>新手世界</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>1001 - 老肉鸡</string>
+     </property>
+    </item>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

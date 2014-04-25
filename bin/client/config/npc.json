@@ -4,9 +4,9 @@
         "name"  : "老肉鸡",                         // NPC名字（如：王二）
         "title" : "首席淫秽鉴定官",                 // NPC称号（如：武器店老板）
         "avatar" : "images/npc/zapline_avatar.png", // NPC头像
+		"level" : 50,                               // NPC等级
         "ai_properties" :
         {
-            "level" : 50,                           // NPC等级
             "attackable" : true,                    // 可发起攻击
             "favorable" : true,                     // 有好感度属性
             "marriageable" : true,                  // 允许求偶
