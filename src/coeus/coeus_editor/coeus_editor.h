@@ -1,19 +1,19 @@
-#ifndef COEUS_EDITOR_H
-#define COEUS_EDITOR_H
+#ifndef __COEUS_EDITOR_MAIN_H__
+#define __COEUS_EDITOR_MAIN_H__
 
 #include <QtWidgets/QMainWindow>
 #include "ui_coeus_editor.h"
 
-class coeus_editor : public QMainWindow
+class CoeusEditorMain : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    coeus_editor(QWidget *parent = 0);
-    ~coeus_editor();
+    CoeusEditorMain(QWidget *parent = 0);
+    ~CoeusEditorMain();
 
 private:
-    Ui::coeus_editorClass ui;
+    Ui::CoeusEditorMain ui;
 };
 
 #endif // COEUS_EDITOR_H

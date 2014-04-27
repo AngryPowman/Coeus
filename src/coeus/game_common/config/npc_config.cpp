@@ -14,6 +14,7 @@ bool NPCConfig::parse()
         npcData.id = npcValue["id"].asUInt();
         npcData.name = npcValue["name"].asString();
         npcData.title = npcValue["title"].asString();
+        npcData.category = npcValue["category"].asString();
         npcData.avatar = npcValue["avatar"].asString();
 
         //Ω‚ŒˆAI Ù–‘

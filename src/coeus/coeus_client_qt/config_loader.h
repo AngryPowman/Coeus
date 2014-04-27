@@ -4,9 +4,9 @@
 #include "game_common/config/config_manager.h"
 #include "venus_net/singleton.h"
 #include "login_config.h"
-#include "belif_config.h"
 #include "character_config.h"
-#include "npc_config.h"
+#include "game_common/config/npc_config.h"
+#include "game_common/config/belif_config.h"
 
 class ConfigLoader
     : public Venus::Singleton<ConfigLoader>

@@ -102,9 +102,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_game_character_creator.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="belif_config.cpp">
-      <Filter>core\config\cofiguration</Filter>
-    </ClCompile>
     <ClCompile Include="login_config.cpp">
       <Filter>core\config\cofiguration</Filter>
     </ClCompile>
@@ -112,9 +109,6 @@
       <Filter>core\network\handlers</Filter>
     </ClCompile>
     <ClCompile Include="character_config.cpp">
-      <Filter>core\config\cofiguration</Filter>
-    </ClCompile>
-    <ClCompile Include="npc_config.cpp">
       <Filter>core\config\cofiguration</Filter>
     </ClCompile>
   </ItemGroup>
@@ -149,9 +143,6 @@
     <ClInclude Include="game_launcher.h">
       <Filter>qt_main</Filter>
     </ClInclude>
-    <ClInclude Include="belif_config.h">
-      <Filter>core\config\cofiguration</Filter>
-    </ClInclude>
     <ClInclude Include="login_config.h">
       <Filter>core\config\cofiguration</Filter>
     </ClInclude>
@@ -163,9 +154,6 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_npc_dialogue_box.h">
       <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="npc_config.h">
-      <Filter>core\config\cofiguration</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

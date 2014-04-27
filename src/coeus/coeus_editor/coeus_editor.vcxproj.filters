@@ -1,74 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;cxx;c;def</Extensions>
+    <Filter Include="core">
+      <UniqueIdentifier>{ebae434c-0794-4663-81fb-b9fb63fbce67}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h</Extensions>
+    <Filter Include="core\npc_editor">
+      <UniqueIdentifier>{2d610f8f-da01-4ad7-90ed-cfd7e86e971c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Form Files">
-      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
+    <Filter Include="main">
+      <UniqueIdentifier>{c778e713-05ab-4d5e-b44f-161ee4b23b09}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
-      <Extensions>qrc;*</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
-    <Filter Include="Generated Files">
+    <Filter Include="main\Generated Files">
       <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="Generated Files\Debug">
+    <Filter Include="main\Generated Files\Debug">
       <UniqueIdentifier>{1bafb64b-6583-47ea-b99e-f2bd2d037b1f}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="Generated Files\Release">
+    <Filter Include="main\Generated Files\Release">
       <UniqueIdentifier>{50353a1f-f275-4576-8284-926e4eff0e6d}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="coeus_editor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_coeus_editor.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>main\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_coeus_editor.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_coeus_editor.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>main\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coeus_editor.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_npc_editor.cpp">
+      <Filter>main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_npc_editor.cpp">
+      <Filter>main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="npc_editor.cpp">
+      <Filter>core\npc_editor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="coeus_editor.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="coeus_editor.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="coeus_editor.qrc">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="stdafx.h">
-      <Filter>Header Files</Filter>
+      <Filter>ui</Filter>
     </CustomBuild>
     <CustomBuild Include="GeneratedFiles\ui_coeus_editor.h">
-      <Filter>Generated Files</Filter>
+      <Filter>main\Generated Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="coeus_editor.qrc">
+      <Filter>main</Filter>
+    </CustomBuild>
+    <CustomBuild Include="stdafx.h">
+      <Filter>main</Filter>
+    </CustomBuild>
+    <CustomBuild Include="coeus_editor.h">
+      <Filter>core</Filter>
+    </CustomBuild>
+    <CustomBuild Include="widget_npc_editor.ui">
+      <Filter>ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="npc_editor.h">
+      <Filter>core\npc_editor</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_widget_npc_editor.h">
+      <Filter>main\Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 #ifndef __BELIEF_CONFIG_H__
 #define __BELIEF_CONFIG_H__
 
-#include "game_common/config/configuration.h"
+#include "configuration.h"
 
 struct Belif
 {

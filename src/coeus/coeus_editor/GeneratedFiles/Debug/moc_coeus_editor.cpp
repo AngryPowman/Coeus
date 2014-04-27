@@ -19,24 +19,24 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_coeus_editor_t {
+struct qt_meta_stringdata_CoeusEditorMain_t {
     QByteArrayData data[1];
-    char stringdata[14];
+    char stringdata[17];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_coeus_editor_t, stringdata) + ofs \
+    offsetof(qt_meta_stringdata_CoeusEditorMain_t, stringdata) + ofs \
         - idx * sizeof(QByteArrayData) \
     )
-static const qt_meta_stringdata_coeus_editor_t qt_meta_stringdata_coeus_editor = {
+static const qt_meta_stringdata_CoeusEditorMain_t qt_meta_stringdata_CoeusEditorMain = {
     {
-QT_MOC_LITERAL(0, 0, 12)
+QT_MOC_LITERAL(0, 0, 15)
     },
-    "coeus_editor\0"
+    "CoeusEditorMain\0"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_coeus_editor[] = {
+static const uint qt_meta_data_CoeusEditorMain[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_coeus_editor[] = {
        0        // eod
 };
 
-void coeus_editor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void CoeusEditorMain::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,26 +60,26 @@ void coeus_editor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     Q_UNUSED(_a);
 }
 
-const QMetaObject coeus_editor::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_coeus_editor.data,
-      qt_meta_data_coeus_editor,  qt_static_metacall, 0, 0}
+const QMetaObject CoeusEditorMain::staticMetaObject = {
+    { &QMainWindow::staticMetaObject, qt_meta_stringdata_CoeusEditorMain.data,
+      qt_meta_data_CoeusEditorMain,  qt_static_metacall, 0, 0}
 };
 
 
-const QMetaObject *coeus_editor::metaObject() const
+const QMetaObject *CoeusEditorMain::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *coeus_editor::qt_metacast(const char *_clname)
+void *CoeusEditorMain::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_coeus_editor.stringdata))
-        return static_cast<void*>(const_cast< coeus_editor*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_CoeusEditorMain.stringdata))
+        return static_cast<void*>(const_cast< CoeusEditorMain*>(this));
     return QMainWindow::qt_metacast(_clname);
 }
 
-int coeus_editor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int CoeusEditorMain::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)

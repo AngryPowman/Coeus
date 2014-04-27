@@ -15,12 +15,11 @@ public:
 
 public:
 	void registerConfig(Configuration* configuration);
-    void loadConfig(Configuration* configuration);
-    void destroyConfig(Configuration* configuration);
 	void start();
 	void wait();
 
 private:
+    void loadConfig(Configuration* configuration);
     Configuration* getConfiguration();
 	void workerThread();
 

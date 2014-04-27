@@ -13,7 +13,7 @@ bool BeliefConfig::parse()
     }
 
     _belifList.resize(jsonRoot.size());
-    for (int i = 0; i < jsonRoot.size(); ++i)
+    for (size_t i = 0; i < jsonRoot.size(); ++i)
     {
         const Json::Value& jsonIndexValue = jsonRoot[i];
         if (jsonIndexValue == Json::nullValue)

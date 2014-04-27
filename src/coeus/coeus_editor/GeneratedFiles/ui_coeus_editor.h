@@ -26,7 +26,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_coeus_editorClass
+class Ui_CoeusEditorMain
 {
 public:
     QWidget *centralWidget;
@@ -42,12 +42,12 @@ public:
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
-    void setupUi(QMainWindow *coeus_editorClass)
+    void setupUi(QMainWindow *CoeusEditorMain)
     {
-        if (coeus_editorClass->objectName().isEmpty())
-            coeus_editorClass->setObjectName(QStringLiteral("coeus_editorClass"));
-        coeus_editorClass->resize(746, 515);
-        centralWidget = new QWidget(coeus_editorClass);
+        if (CoeusEditorMain->objectName().isEmpty())
+            CoeusEditorMain->setObjectName(QStringLiteral("CoeusEditorMain"));
+        CoeusEditorMain->resize(746, 515);
+        centralWidget = new QWidget(CoeusEditorMain);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         toolBox = new QToolBox(centralWidget);
         toolBox->setObjectName(QStringLiteral("toolBox"));
@@ -64,7 +64,7 @@ public:
         toolBox->addItem(page, QString::fromUtf8("\346\270\270\346\210\217\346\225\260\346\215\256"));
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
-        page_2->setGeometry(QRect(0, 0, 81, 384));
+        page_2->setGeometry(QRect(0, 0, 98, 28));
         toolBox->addItem(page_2, QString::fromUtf8("\345\205\266\345\256\203"));
         stackedWidget = new QStackedWidget(centralWidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
@@ -75,40 +75,40 @@ public:
         page_4 = new QWidget();
         page_4->setObjectName(QStringLiteral("page_4"));
         stackedWidget->addWidget(page_4);
-        coeus_editorClass->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(coeus_editorClass);
+        CoeusEditorMain->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(CoeusEditorMain);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 746, 23));
-        coeus_editorClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(coeus_editorClass);
+        CoeusEditorMain->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(CoeusEditorMain);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        coeus_editorClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(coeus_editorClass);
+        CoeusEditorMain->addToolBar(Qt::TopToolBarArea, mainToolBar);
+        statusBar = new QStatusBar(CoeusEditorMain);
         statusBar->setObjectName(QStringLiteral("statusBar"));
-        coeus_editorClass->setStatusBar(statusBar);
+        CoeusEditorMain->setStatusBar(statusBar);
 
-        retranslateUi(coeus_editorClass);
+        retranslateUi(CoeusEditorMain);
 
         toolBox->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(0);
 
 
-        QMetaObject::connectSlotsByName(coeus_editorClass);
+        QMetaObject::connectSlotsByName(CoeusEditorMain);
     } // setupUi
 
-    void retranslateUi(QMainWindow *coeus_editorClass)
+    void retranslateUi(QMainWindow *CoeusEditorMain)
     {
-        coeus_editorClass->setWindowTitle(QApplication::translate("coeus_editorClass", "coeus_editor", 0));
-        pushButton->setText(QApplication::translate("coeus_editorClass", "NPC", 0));
-        pushButton_2->setText(QApplication::translate("coeus_editorClass", "\344\273\273\345\212\241", 0));
-        toolBox->setItemText(toolBox->indexOf(page), QApplication::translate("coeus_editorClass", "\346\270\270\346\210\217\346\225\260\346\215\256", 0));
-        toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("coeus_editorClass", "\345\205\266\345\256\203", 0));
+        CoeusEditorMain->setWindowTitle(QApplication::translate("CoeusEditorMain", "coeus_editor", 0));
+        pushButton->setText(QApplication::translate("CoeusEditorMain", "NPC", 0));
+        pushButton_2->setText(QApplication::translate("CoeusEditorMain", "\344\273\273\345\212\241", 0));
+        toolBox->setItemText(toolBox->indexOf(page), QApplication::translate("CoeusEditorMain", "\346\270\270\346\210\217\346\225\260\346\215\256", 0));
+        toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("CoeusEditorMain", "\345\205\266\345\256\203", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class coeus_editorClass: public Ui_coeus_editorClass {};
+    class CoeusEditorMain: public Ui_CoeusEditorMain {};
 } // namespace Ui
 
 QT_END_NAMESPACE

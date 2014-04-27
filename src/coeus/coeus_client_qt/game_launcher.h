@@ -6,11 +6,11 @@
 #include <QtWidgets/QApplication>
 #include "widget_manager.h"
 #include "game_opcode_registry.h"
-#include "game_common/config/config_manager.h"
 
 //configurations
-#include "belif_config.h"
 #include "config_loader.h"
+#include "game_common/config/config_manager.h"
+#include "game_common/config/belif_config.h"
 
 class GameLauncher
 {

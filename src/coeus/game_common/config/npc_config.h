@@ -1,8 +1,8 @@
 #ifndef __NPC_CONFIG_H__
 #define __NPC_CONFIG_H__
 
-#include "game_common/config/configuration.h"
 #include "game_common/game_define.h"
+#include "configuration.h"
 
 struct NPCData
 {
@@ -33,19 +33,22 @@ struct NPCData
     uint16 id;
     std::string name;
     std::string title;
+    std::string category;
     std::string avatar;
     AIData ai;
     DialoguesData dialogues;
 };
 
+typedef std::map<uint32, NPCData> NPCDataList;
 class NPCConfig
 	: public Configuration, public Venus::Singleton<NPCConfig>
 {
 public:
 	bool parse();
+    const NPCDataList& getNPCList() { return _npcList; }
 
 private:
-    std::map<uint32, NPCData> _npcList;
+    NPCDataList _npcList;
 };
 
 #endif // !__NPC_CONFIG_H__

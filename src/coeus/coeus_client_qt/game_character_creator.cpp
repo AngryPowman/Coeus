@@ -1,5 +1,5 @@
 #include "game_character_creator.h"
-#include "belif_config.h"
+#include "game_common/config/belif_config.h"
 #include "character_config.h"
 #include "game_main.h"
 

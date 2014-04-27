@@ -43,6 +43,12 @@
     <ClInclude Include="config\configuration.h">
       <Filter>config</Filter>
     </ClInclude>
+    <ClInclude Include="config\npc_config.h">
+      <Filter>config\game_config</Filter>
+    </ClInclude>
+    <ClInclude Include="config\belif_config.h">
+      <Filter>config\game_config</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -56,6 +62,9 @@
     </Filter>
     <Filter Include="config">
       <UniqueIdentifier>{d6d14767-e97d-4199-b07c-f40082187ebb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\game_config">
+      <UniqueIdentifier>{048b9dee-b9c9-461c-8594-2c29827c6313}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +93,12 @@
     </ClCompile>
     <ClCompile Include="config\config_manager.cpp">
       <Filter>config</Filter>
+    </ClCompile>
+    <ClCompile Include="config\npc_config.cpp">
+      <Filter>config\game_config</Filter>
+    </ClCompile>
+    <ClCompile Include="config\belif_config.cpp">
+      <Filter>config\game_config</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

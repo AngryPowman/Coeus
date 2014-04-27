@@ -17,11 +17,6 @@ void ConfigManager::registerConfig(Configuration* configuration)
     _configurations.push(configuration);
 }
 
-void ConfigManager::destroyConfig(Configuration* configuration)
-{
-    SAFE_DELETE(configuration);
-}
-
 void ConfigManager::loadConfig(Configuration* configuration)
 {
     if (!configuration->parse())
