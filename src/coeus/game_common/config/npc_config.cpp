@@ -60,8 +60,49 @@ bool NPCConfig::parse()
 
         npcData.ai.surrender = aiPropertiesValue["surrender"].asBool();
 
+
+        //解析对话树
+        const Json::Value& dialoguesValue = npcValue["dialogues"];
+        const Json::Value& dialogueTreeValue = dialoguesValue["dialogue_tree"];
+        for (const Json::Value& dialogueValue : dialogueTreeValue)
+        {
+            NPCData::DialogueNode dialogueNode;
+            dialogueNode.show_condition_script = dialogueValue["show_condition_script"].asString();
+            dialogueNode.event_script = dialogueValue["event_script"].asString();
+            for (const Json::Value& contentPartValue : dialogueValue["dialogue_content"])
+                dialogueNode.dialogueParts.push_back(contentPartValue.asString());
+
+            //解析选项对话节点
+            const Json::Value& optionDialogueArr = dialogueValue["dialogue_options"];
+            std::function<void(NPCData::OptionDialogueNodeList&, const Json::Value&)> parseOptionNodeProcessFunc
+                = [&parseOptionNodeProcessFunc](NPCData::OptionDialogueNodeList& optionNodeList, const Json::Value& childOptionDialogueArr)
+            {
+                for (const Json::Value& optionDialogueValue : childOptionDialogueArr)
+                {
+                    NPCData::OptionDialogueNode optionDialogueNode;
+                    optionDialogueNode.show_condition_script = optionDialogueValue["show_condition_script"].asString();
+                    optionDialogueNode.execute_condition_script = optionDialogueValue["execute_condition_script"].asString();
+                    optionDialogueNode.event_script = optionDialogueValue["event_script"].asString();
+                    optionDialogueNode.option_content = optionDialogueValue["option_content"].asString();
+                    for (const Json::Value& contentPartValue : optionDialogueValue["dialogue_content"])
+                        optionDialogueNode.dialogueParts.push_back(contentPartValue.asString());
+
+                    parseOptionNodeProcessFunc(optionDialogueNode.dialogue_options, optionDialogueValue["dialogue_options"]);
+
+                    optionNodeList.push_back(optionDialogueNode);
+                }
+            };
+
+            parseOptionNodeProcessFunc(dialogueNode.dialogue_options, optionDialogueArr);
+            npcData.dialogues.dialogue_tree.push_back(dialogueNode);
+        }
+
+        //挑战者不满足挑战条件
+
         _npcList[npcData.id] = npcData;
     }
+
+
 
     return true;
 }

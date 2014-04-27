@@ -8,10 +8,18 @@ NPCEditor::NPCEditor(QWidget *parent)
     _ui.setupUi(this);
     loadNPCTreeList();
 
-    QSignalMapper* signalMapper = new QSignalMapper(this);
-    const QObjectList& list = this->children();
+    memset(_dialogueTreeMenuActions, 0, DTC_M_MAX);
+    init();
+}
 
-    std::function<void (QObject*)> func = [&func, this](QObject* parentObject)
+NPCEditor::~NPCEditor()
+{
+
+}
+
+void NPCEditor::init()
+{
+    std::function<void(QObject*)> func = [&func, this](QObject* parentObject)
     {
         foreach(QObject* object, parentObject->children())
         {
@@ -46,11 +54,55 @@ NPCEditor::NPCEditor(QWidget *parent)
     connect(_ui.tvDialoguesTree, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(slotOnDialoguesTreeContextMenu(const QPoint&)));
 
     _saveStateLock = false;
-}
 
-NPCEditor::~NPCEditor()
-{
+    //初始化对话树菜单
+    _dialogueTreeContextMenu = new QMenu(this);
+    _dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE] = new QAction(QStringLiteral("添加对话(&S)..."), _dialogueTreeContextMenu);
+    connect(_dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE], SIGNAL(triggered(bool)), this, SLOT(slotOnAddDialogueAction(bool)));
+    
+    _dialogueTreeMenuActions[DTC_M_ADD_OPTION] = new QAction(QStringLiteral("添加选项(&O)..."), _dialogueTreeContextMenu);
+    
+    _dialogueTreeMenuActions[DTC_M_EDIT_ITEM] = new QAction(QStringLiteral("编辑(&I)..."), _dialogueTreeContextMenu);
+    _dialogueTreeMenuActions[DTC_M_EDIT_ITEM]->setShortcut(QKeySequence(Qt::Key_Space));
+    
+    _dialogueTreeMenuActions[DTC_M_RESET_CONDITION] = new QAction(QStringLiteral("重置条件"), _dialogueTreeContextMenu);
+    
+    // ---
+    _dialogueTreeMenuActions[DTC_M_MOVE_UP] = new QAction(QStringLiteral("上移"), _dialogueTreeContextMenu);
+    _dialogueTreeMenuActions[DTC_M_MOVE_UP]->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Up));
+    
+    _dialogueTreeMenuActions[DTC_M_MOVE_DOWN] = new QAction(QStringLiteral("下移"), _dialogueTreeContextMenu);
+    _dialogueTreeMenuActions[DTC_M_MOVE_DOWN]->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Down));
+    
+    // ---
+    _dialogueTreeMenuActions[DTC_M_CUT] = new QAction(QStringLiteral("剪切(&T)"), _dialogueTreeContextMenu);
+    _dialogueTreeMenuActions[DTC_M_CUT]->setShortcut(QKeySequence::StandardKey::Cut);
+    
+    _dialogueTreeMenuActions[DTC_M_COPY] = new QAction(QStringLiteral("复制(&C)"), _dialogueTreeContextMenu);
+    _dialogueTreeMenuActions[DTC_M_COPY]->setShortcut(QKeySequence::StandardKey::Copy);
+    
+    _dialogueTreeMenuActions[DTC_M_PASTE] = new QAction(QStringLiteral("粘贴(&P)"), _dialogueTreeContextMenu);
+    _dialogueTreeMenuActions[DTC_M_PASTE]->setShortcut(QKeySequence::StandardKey::Paste);
+    
+    _dialogueTreeMenuActions[DTC_M_DELETE] = new QAction(QStringLiteral("删除(&D)"), _dialogueTreeContextMenu);
+    _dialogueTreeMenuActions[DTC_M_DELETE]->setShortcut(QKeySequence::StandardKey::Delete);
+    
+    _dialogueTreeMenuActions[DTC_M_SELECT_ALL] = new QAction(QStringLiteral("全选(&A)"), _dialogueTreeContextMenu);
+    _dialogueTreeMenuActions[DTC_M_SELECT_ALL]->setShortcut(QKeySequence::StandardKey::SelectAll);
 
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE]);
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_ADD_OPTION]);
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_EDIT_ITEM]);
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_RESET_CONDITION]);
+    _dialogueTreeContextMenu->addSeparator();
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_MOVE_UP]);
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_MOVE_DOWN]);
+    _dialogueTreeContextMenu->addSeparator();
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_CUT]);
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_COPY]);
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_PASTE]);
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_DELETE]);
+    _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_SELECT_ALL]);
 }
 
 void NPCEditor::loadNPCTreeList()
@@ -155,31 +207,109 @@ void NPCEditor::slotOnDialoguesTreeContextMenu(const QPoint& point)
     if (curItem == nullptr)
     {
         _ui.tvDialoguesTree->setCurrentItem(nullptr);
-        return;
+        updateDialogueTreeContextMenu(DT_NONE);
+    }
+    else
+    {
+
     }
 
-    QMenu popMenu(this);
+    _dialogueTreeContextMenu->exec(QCursor::pos());
+}
 
+void NPCEditor::slotOnAddDialogueAction(bool check)
+{
 
-    QAction* newDialogue = new QAction(QStringLiteral("添加对话"), &popMenu);
-    QAction* insertOption = new QAction(QStringLiteral("添加选项"), &popMenu);
-    // ---
-    QAction* editCondition = new QAction(QStringLiteral("编辑触发条件(&C)..."), &popMenu);
-    QAction* resetCondition = new QAction(QStringLiteral("重置条件"), &popMenu);
-    // ---
-    QAction* delCurrent = new QAction(QStringLiteral("删除(&D)"), &popMenu);
+}
 
-    popMenu.addAction(newDialogue);
-    popMenu.addAction(insertOption);
-    popMenu.addSeparator();
-    popMenu.addAction(editCondition);
-    popMenu.addAction(resetCondition);
-    popMenu.addSeparator();
-    popMenu.addAction(delCurrent);
-    popMenu.addAction(newDialogue);
-    popMenu.addAction(newDialogue);
+void NPCEditor::slotOnAddOptionAction(bool check)
+{
 
+}
 
-    popMenu.exec(QCursor::pos());
-    
+void NPCEditor::slotOnEditItemAction(bool check)
+{
+
+}
+
+void NPCEditor::slotOnResetConditionAction(bool check)
+{
+
+}
+
+void NPCEditor::slotOnMoveUpAction(bool check)
+{
+
+}
+
+void NPCEditor::slotOnMoveDownAction(bool check)
+{
+
+}
+
+void NPCEditor::slotOnCutAction(bool check)
+{
+
+}
+
+void NPCEditor::slotOnCopyAction(bool check)
+{
+
+}
+
+void NPCEditor::slotOnPasteAction(bool check)
+{
+
+}
+
+void NPCEditor::slotOnDeleteAction(bool check)
+{
+
+}
+
+void NPCEditor::slotOnSeleteAllAction(bool check)
+{
+
+}
+
+void NPCEditor::updateDialogueTreeContextMenu(DialogueTreeNodeType nodeType)
+{
+    switch (nodeType)
+    {
+    case NPCEditor::DT_NONE:
+        _dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_ADD_OPTION]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_EDIT_ITEM]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_RESET_CONDITION]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_MOVE_UP]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_MOVE_DOWN]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_CUT]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_COPY]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_DELETE]->setEnabled(false);
+        break;
+    case NPCEditor::DT_DIALOGUE:
+        _dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_ADD_OPTION]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_EDIT_ITEM]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_RESET_CONDITION]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_MOVE_UP]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_MOVE_DOWN]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_CUT]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_COPY]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_DELETE]->setEnabled(true);
+        break;
+    case NPCEditor::DT_DIALOGUE_OPTION:
+        _dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_ADD_OPTION]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_EDIT_ITEM]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_RESET_CONDITION]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_MOVE_UP]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_MOVE_DOWN]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_CUT]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_COPY]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_DELETE]->setEnabled(true);
+        break;
+    default:
+        break;
+    }
 }

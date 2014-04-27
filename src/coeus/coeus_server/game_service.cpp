@@ -12,7 +12,7 @@
 	if (result) \
 	debug_log(x); \
 	else \
-	error_log(s);
+    error_log(s); return false;
 
 GameService::GameService()
 {
@@ -31,6 +31,7 @@ bool GameService::initialize()
         ConfigLoader::getInstance().initialize(ConfigManager::getInstancePtr());
 		ConfigManager::getInstance().start();
         ConfigManager::getInstance().wait();
+
 		CHECK_INITIALIZE(GameDatabase::getInstance().initialize(), "Database init OK.", "Database init failed.");
 		CHECK_INITIALIZE(PlayerManager::getInstance().initialize(), "PlayerManager init OK.", "PlayerManager init failed.");
 		CHECK_INITIALIZE(GameSessionManager::getInstance().initialize(), "GameSessionManager init OK.", "GameSessionManager init failed.");

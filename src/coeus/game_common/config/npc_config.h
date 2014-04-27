@@ -21,9 +21,26 @@ struct NPCData
         CardList cards;                 // 使用的牌组
     };
 
+    struct OptionDialogueNode;
+    typedef std::vector<OptionDialogueNode> OptionDialogueNodeList;
+    struct DialogueNode
+    {
+        std::string show_condition_script;
+        std::string event_script;
+        DialogueParts dialogueParts;
+        OptionDialogueNodeList dialogue_options;
+    };
+
+    struct OptionDialogueNode : public DialogueNode
+    {
+        std::string execute_condition_script;
+        std::string option_content;
+        OptionDialogueNodeList dialogue_options;
+    };
+
     struct DialoguesData
     {
-        Dialogues general;              //普通场合下
+        std::vector<DialogueNode> dialogue_tree;
         Dialogues attack_BadConditions; //挑战者不满足挑战条件
         Dialogues attack_Ask;           //挑战者发起挑战时
         Dialogues attacksk_Won;         //胜利的场合

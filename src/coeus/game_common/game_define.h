@@ -9,8 +9,8 @@
 typedef std::vector<uint32> SceneList;
 typedef std::vector<uint32> ItemList;
 typedef std::vector<uint32> CardList;
-typedef std::vector<std::string> DialoguePart;
-typedef std::vector<DialoguePart> Dialogues;
+typedef std::vector<std::string> DialogueParts;
+typedef std::vector<DialogueParts> Dialogues;
 
 enum Gender
 {

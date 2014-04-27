@@ -378,7 +378,7 @@ public:
         new QListWidgetItem(lstDialoguesType);
         new QListWidgetItem(lstDialoguesType);
         lstDialoguesType->setObjectName(QStringLiteral("lstDialoguesType"));
-        lstDialoguesType->setGeometry(QRect(1, 4, 136, 571));
+        lstDialoguesType->setGeometry(QRect(1, 4, 136, 566));
         QSizePolicy sizePolicy5(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy5.setHorizontalStretch(0);
         sizePolicy5.setVerticalStretch(0);
@@ -417,9 +417,6 @@ public:
         tvDialoguesTree->setRootIsDecorated(true);
         tvDialoguesTree->setAnimated(true);
         stackedWidgetDialogueTree->addWidget(stackedWidgetDialogueTreePage1);
-        lstDialoguesType->raise();
-        lstDialoguesType->raise();
-        tvDialoguesTree->raise();
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
         listWidget_2 = new QListWidget(page_3);

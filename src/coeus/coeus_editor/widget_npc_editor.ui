@@ -587,7 +587,7 @@
            <x>1</x>
            <y>4</y>
            <width>136</width>
-           <height>571</height>
+           <height>566</height>
           </rect>
          </property>
          <property name="sizePolicy">
@@ -658,7 +658,7 @@
          <property name="currentIndex">
           <number>0</number>
          </property>
-         <widget class="QWidget" name="stackedWidgetDialogueTreePage1" native="true">
+         <widget class="QWidget" name="stackedWidgetDialogueTreePage1">
           <widget class="QTreeWidget" name="tvDialoguesTree">
            <property name="geometry">
             <rect>
@@ -766,9 +766,6 @@
             </item>
            </item>
           </widget>
-          <zorder>lstDialoguesType</zorder>
-          <zorder>lstDialoguesType</zorder>
-          <zorder>tvDialoguesTree</zorder>
          </widget>
          <widget class="QWidget" name="page_3">
           <widget class="QListWidget" name="listWidget_2">
