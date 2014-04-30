@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>836</width>
+    <width>1057</width>
     <height>657</height>
    </rect>
   </property>
@@ -645,7 +645,7 @@
           <rect>
            <x>143</x>
            <y>1</y>
-           <width>397</width>
+           <width>621</width>
            <height>574</height>
           </rect>
          </property>
@@ -664,7 +664,7 @@
             <rect>
              <x>0</x>
              <y>5</y>
-             <width>396</width>
+             <width>621</width>
              <height>566</height>
             </rect>
            </property>
@@ -680,21 +680,24 @@
            <property name="editTriggers">
             <set>QAbstractItemView::NoEditTriggers</set>
            </property>
-           <property name="alternatingRowColors">
-            <bool>false</bool>
-           </property>
-           <property name="selectionBehavior">
-            <enum>QAbstractItemView::SelectRows</enum>
-           </property>
-           <property name="textElideMode">
-            <enum>Qt::ElideLeft</enum>
-           </property>
            <property name="rootIsDecorated">
             <bool>true</bool>
            </property>
            <property name="animated">
             <bool>true</bool>
            </property>
+           <attribute name="headerCascadingSectionResizes">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="headerDefaultSectionSize">
+            <number>180</number>
+           </attribute>
+           <attribute name="headerHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="headerMinimumSectionSize">
+            <number>120</number>
+           </attribute>
            <column>
             <property name="text">
              <string>节点</string>
@@ -702,69 +705,9 @@
            </column>
            <column>
             <property name="text">
-             <string>触发/显示条件</string>
+             <string>值</string>
             </property>
            </column>
-           <column>
-            <property name="text">
-             <string>对白</string>
-            </property>
-           </column>
-           <item>
-            <property name="text">
-             <string>[对话] </string>
-            </property>
-            <property name="text">
-             <string>[无]</string>
-            </property>
-            <property name="text">
-             <string>[&quot;Toril在那场惊天大战中牺牲了自己。要是他当初没公布混沌之门的秘密，也不会落到这样的下场。真是不作死就不会死啊……&quot;]</string>
-            </property>
-            <item>
-             <property name="text">
-              <string>[@选项]</string>
-             </property>
-             <property name="text">
-              <string>[无]</string>
-             </property>
-             <property name="text">
-              <string>&quot;Toril的宇宙气修炼到了什么水平？&quot;</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>[对话]</string>
-              </property>
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="text">
-               <string>[&quot;据说已经处于巅峰时期了，是有名的强者之一。&quot;, &quot;最可怕的是他能一心二用，在科技上的造诣也达到了让人仰望的境界。&quot;]</string>
-              </property>
-             </item>
-            </item>
-            <item>
-             <property name="text">
-              <string>[@选项]</string>
-             </property>
-             <property name="text">
-              <string>[&quot;等级&quot; &gt; 20]</string>
-             </property>
-             <property name="text">
-              <string>&quot;是否有办法与Toril的灵魂沟通？&quot;</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>[对话]</string>
-              </property>
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="text">
-               <string>[&quot;唔..传闻是这样的。当宇宙气修炼到一定程度之后，死后便能保持灵魂不灭。从科学角度解释，其实是意识能量，即反物质。&quot;, &quot;但沟通的办法却十分困难，因为他当年属于自我引爆，不仅把肉体消散，意识能量也受到了极大影响。&quot;]</string>
-              </property>
-             </item>
-            </item>
-           </item>
           </widget>
          </widget>
          <widget class="QWidget" name="page_3">

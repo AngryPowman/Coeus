@@ -1,85 +1,95 @@
 [
     {
-        "id"    : 1001,                             // NPCΨһID
-        "name"  : "���⼦",                         // NPC���֣��磺������
-        "title" : "��ϯ���������",                 // NPC�ƺţ��磺�������ϰ壩
-		"category" : "ά��˹NPC",					// NPC���ࣨ������ע�ã�
-        "avatar" : "images/npc/zapline_avatar.png", // NPCͷ��
+        "id"    : 1001,                             // NPC唯一ID
+        "name"  : "老肉鸡",                         // NPC名字（如：王二）
+        "title" : "首席淫秽鉴定官",                 // NPC称号（如：武器店老板）
+		"category" : "维纳斯NPC",					// NPC分类（仅作备注用）
+        "avatar" : "images/npc/zapline_avatar.png", // NPC头像
         "ai_properties" :
         {
-			"level" : 50,                           // NPC�ȼ�
-            "attackable" : true,                    // �ɷ��𹥻�
-            "favorable" : true,                     // �кøж�����
-            "marriageable" : false,                  // ������ż
-            "presentable" : true,                   // ����������Ʒ
-            "movealbe" : true,                      // �Ƿ�����ߵ������ӳ���
-            "movement_scene" : [1,2,3],             // ���ܻ����ߵĳ���
-            "favorite_items" : [4, 8, 10],          // ϲ������Ʒ����
-            "hate_items" : [1, 3, 5],               // �������Ʒ����
-            "cards" : [1001,1002,1003,1004,1005],   // ս��ʱʹ�õĿ���
-            "surrender" : true                      // ս��ʱ�Ƿ��Ͷ��
+			"level" : 50,                           // NPC等级
+            "attackable" : true,                    // 可发起攻击
+            "favorable" : true,                     // 有好感度属性
+            "marriageable" : false,                 // 允许求偶
+            "presentable" : true,                   // 接受赠送物品
+            "movealbe" : true,                      // 是否会游走到其它子场景
+            "movement_scene" : [1,2,3],             // 可能会游走的场景
+            "favorite_items" : [4, 8, 10],          // 喜欢的物品类型
+            "hate_items" : [1, 3, 5],               // 讨厌的物品类型
+            "cards" : [1001,1002,1003,1004,1005],   // 战斗时使用的卡组
+            "surrender" : true                      // 战斗时是否会投降
         },
 
-        //�Ի�����
+        //对话数据
         "dialogues" :
         {
-            //��ͨ�����£�ÿ�δ򿪵�ʱ��������֣�
+            //普通场合下（每次打开的时候随机出现）
             "dialogue_tree":
             [
 				{
 					"show_condition_script" : "{$level >= 30};",
 					"event_script" : "",
-					"dialogue_content" : ["Toril���ǳ������ս���������Լ���Ҫ��������û��������֮�ŵ����ܣ�Ҳ�����䵽�������³������ǲ������Ͳ�����������"],
+					"dialogue_content" : 
+					[
+						"Toril在那场惊天大战中牺牲了自己。", 
+						"要是他当初没公布混沌之门的秘密，也不会落到这样的下场。",
+						"真是不作死就不会死啊……"
+					],
 					"dialogue_options" :
 					[
 						{
 							"show_condition_script" : "{$level >= 30};",
 							"execute_condition_script" : "{$is_gate_active(1001) == true};",
 							"event_script" : "",
-							"option_content" : "Toril����������������ʲôˮƽ��",
-							"dialogue_content" : ["��˵�Ѿ������۷�ʱ���ˣ���������ǿ��֮һ������µ�������һ�Ķ��ã��ڿƼ��ϵ�����Ҳ�ﵽ�����������ľ��硣"],
+							"option_content" : "Toril的宇宙气修炼到了什么水平？",
+							"dialogue_content" : 
+							[
+								"据说已经处于巅峰时期了，是有名的强者之一。", 
+								"最可怕的是他能一心二用", 
+								"在科技上的造诣也达到了让人仰望的境界。"
+							],
 							"dialogue_options":[]
 						}
 					]
 				}
             ],
-            //��ս�߲�������ս����
+            //挑战者不满足挑战条件
             "attack_bad_conditions" : 
             [
-                ["�������ڵ�ʵ�����Ҳ�м�ں���ս����"],
-                ["���꣬�����ʵ�������ҵ�һ����ָͷ�����Ƕ��֡�"],
-                ["���꣬�����ʵ�������ҵ�һ����ָͷ�����Ƕ��֡�"]
+                ["以你现在的实力，我不屑于和你战斗。"],
+                ["少年，以你的实力，连我的一根手指头都不是对手。"],
+                ["少年，以你的实力，连我的一根手指头都不是对手。"]
             ],
-            //��ս�߷�����սʱ
+            //挑战者发起挑战时
             "attack_ask" : 
             [
-                ["��ȷ��Ҫ��������"],
-                ["����ս��֮ǰ�����������ա�"]
+                ["你确认要这样做？"],
+                ["在挑战我之前，建议先买保险。"]
             ],
-            //ʤ���ĳ���
+            //胜利的场合
             "attack_won" : 
             [
-                ["��ȥ����ʮ��������"],
-                ["��ûһ���ܴ������"]
+                ["回去练几十年再来吧"],
+                ["就没一个能打的了吗？"]
             ],
-            //ʧ�ܵĳ���
+            //失败的场合
             "attack_failed" : 
             [
-                ["�Ҹղ�ֻ�����˲���һ�ɹ�����"]
+                ["我刚才只是用了不到一成功力。"]
             ]
         },
         
-        //�øж��¼�
+        //好感度事件
         "favor_events":
         [
             {
                 "value" : 50,
-                "dialogue" : ["��������ô�����˵ķ��ϣ��Ҿ�����㶫�����ˡ�", "�š�������������ɡ�"],
+                "dialogue" : ["看在你这么会做人的份上，我就送你点东西好了。", "嗯……就送你这个吧。"],
                 "event_id" : ""
             },
             {
                 "value" : 100,
-                "dialogue" : ["������о��������ƣ������������Ե�ķ��ϣ��Ϸ�ʹ��ڸ���"],
+                "dialogue" : ["最近在研究最新姿势，看在你和我有缘的份上，老夫就传授给你"],
                 "event_id" : ""
             }
         ]

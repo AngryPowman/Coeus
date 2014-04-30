@@ -27,7 +27,7 @@ struct NPCData
     {
         std::string show_condition_script;
         std::string event_script;
-        DialogueParts dialogueParts;
+        DialogueParts dialogue_parts;
         OptionDialogueNodeList dialogue_options;
     };
 

@@ -97,7 +97,7 @@ public:
     {
         if (NPCEditor->objectName().isEmpty())
             NPCEditor->setObjectName(QStringLiteral("NPCEditor"));
-        NPCEditor->resize(836, 657);
+        NPCEditor->resize(1057, 657);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -391,19 +391,14 @@ public:
         lstDialoguesType->setBatchSize(200);
         stackedWidgetDialogueTree = new QStackedWidget(tab_2);
         stackedWidgetDialogueTree->setObjectName(QStringLiteral("stackedWidgetDialogueTree"));
-        stackedWidgetDialogueTree->setGeometry(QRect(143, 1, 397, 574));
+        stackedWidgetDialogueTree->setGeometry(QRect(143, 1, 621, 574));
         sizePolicy5.setHeightForWidth(stackedWidgetDialogueTree->sizePolicy().hasHeightForWidth());
         stackedWidgetDialogueTree->setSizePolicy(sizePolicy5);
         stackedWidgetDialogueTreePage1 = new QWidget();
         stackedWidgetDialogueTreePage1->setObjectName(QStringLiteral("stackedWidgetDialogueTreePage1"));
         tvDialoguesTree = new QTreeWidget(stackedWidgetDialogueTreePage1);
-        QTreeWidgetItem *__qtreewidgetitem5 = new QTreeWidgetItem(tvDialoguesTree);
-        QTreeWidgetItem *__qtreewidgetitem6 = new QTreeWidgetItem(__qtreewidgetitem5);
-        new QTreeWidgetItem(__qtreewidgetitem6);
-        QTreeWidgetItem *__qtreewidgetitem7 = new QTreeWidgetItem(__qtreewidgetitem5);
-        new QTreeWidgetItem(__qtreewidgetitem7);
         tvDialoguesTree->setObjectName(QStringLiteral("tvDialoguesTree"));
-        tvDialoguesTree->setGeometry(QRect(0, 5, 396, 566));
+        tvDialoguesTree->setGeometry(QRect(0, 5, 621, 566));
         QSizePolicy sizePolicy6(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy6.setHorizontalStretch(0);
         sizePolicy6.setVerticalStretch(0);
@@ -411,11 +406,12 @@ public:
         tvDialoguesTree->setSizePolicy(sizePolicy6);
         tvDialoguesTree->setContextMenuPolicy(Qt::CustomContextMenu);
         tvDialoguesTree->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        tvDialoguesTree->setAlternatingRowColors(false);
-        tvDialoguesTree->setSelectionBehavior(QAbstractItemView::SelectRows);
-        tvDialoguesTree->setTextElideMode(Qt::ElideLeft);
         tvDialoguesTree->setRootIsDecorated(true);
         tvDialoguesTree->setAnimated(true);
+        tvDialoguesTree->header()->setCascadingSectionResizes(true);
+        tvDialoguesTree->header()->setDefaultSectionSize(180);
+        tvDialoguesTree->header()->setHighlightSections(false);
+        tvDialoguesTree->header()->setMinimumSectionSize(120);
         stackedWidgetDialogueTree->addWidget(stackedWidgetDialogueTreePage1);
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
@@ -531,35 +527,8 @@ public:
         lstDialoguesType->setSortingEnabled(__sortingEnabled3);
 
         QTreeWidgetItem *___qtreewidgetitem11 = tvDialoguesTree->headerItem();
-        ___qtreewidgetitem11->setText(2, QApplication::translate("NPCEditor", "\345\257\271\347\231\275", 0));
-        ___qtreewidgetitem11->setText(1, QApplication::translate("NPCEditor", "\350\247\246\345\217\221/\346\230\276\347\244\272\346\235\241\344\273\266", 0));
+        ___qtreewidgetitem11->setText(1, QApplication::translate("NPCEditor", "\345\200\274", 0));
         ___qtreewidgetitem11->setText(0, QApplication::translate("NPCEditor", "\350\212\202\347\202\271", 0));
-
-        const bool __sortingEnabled4 = tvDialoguesTree->isSortingEnabled();
-        tvDialoguesTree->setSortingEnabled(false);
-        QTreeWidgetItem *___qtreewidgetitem12 = tvDialoguesTree->topLevelItem(0);
-        ___qtreewidgetitem12->setText(2, QApplication::translate("NPCEditor", "[\"Toril\345\234\250\351\202\243\345\234\272\346\203\212\345\244\251\345\244\247\346\210\230\344\270\255\347\211\272\347\211\262\344\272\206\350\207\252\345\267\261\343\200\202\350\246\201\346\230\257\344\273\226\345\275\223\345\210\235\346\262\241\345\205\254\345\270\203\346\267\267\346\262\214\344\271\213\351\227\250\347\232\204\347\247\230\345\257\206\357\274\214\344\271\237\344\270\215\344\274\232\350\220\275\345\210\260\350\277\231\346\240\267\347\232\204\344\270\213\345\234\272\343\200\202\347\234\237\346\230\257\344\270\215\344\275\234\346\255\273\345\260\261\344\270\215\344\274\232\346\255\273\345\225\212\342\200\246\342\200\246\"]", 0));
-        ___qtreewidgetitem12->setText(1, QApplication::translate("NPCEditor", "[\346\227\240]", 0));
-        ___qtreewidgetitem12->setText(0, QApplication::translate("NPCEditor", "[\345\257\271\350\257\235] ", 0));
-        QTreeWidgetItem *___qtreewidgetitem13 = ___qtreewidgetitem12->child(0);
-        ___qtreewidgetitem13->setText(2, QApplication::translate("NPCEditor", "\"Toril\347\232\204\345\256\207\345\256\231\346\260\224\344\277\256\347\202\274\345\210\260\344\272\206\344\273\200\344\271\210\346\260\264\345\271\263\357\274\237\"", 0));
-        ___qtreewidgetitem13->setText(1, QApplication::translate("NPCEditor", "[\346\227\240]", 0));
-        ___qtreewidgetitem13->setText(0, QApplication::translate("NPCEditor", "[@\351\200\211\351\241\271]", 0));
-        QTreeWidgetItem *___qtreewidgetitem14 = ___qtreewidgetitem13->child(0);
-        ___qtreewidgetitem14->setText(2, QApplication::translate("NPCEditor", "[\"\346\215\256\350\257\264\345\267\262\347\273\217\345\244\204\344\272\216\345\267\205\345\263\260\346\227\266\346\234\237\344\272\206\357\274\214\346\230\257\346\234\211\345\220\215\347\232\204\345\274\272\350\200\205\344\271\213\344\270\200\343\200\202\", \"\346\234\200\345\217\257\346\200\225\347\232\204\346\230\257\344\273\226\350\203\275\344\270\200\345\277\203\344\272\214\347\224\250\357\274\214\345\234\250\347\247\221\346\212\200\344\270\212\347\232\204\351\200\240\350\257\243\344\271\237\350\276\276\345\210\260\344\272\206\350\256\251\344\272\272\344\273\260\346\234\233\347\232\204\345\242\203\347\225\214\343\200\202\"]", 0));
-        ___qtreewidgetitem14->setText(1, QApplication::translate("NPCEditor", "-", 0));
-        ___qtreewidgetitem14->setText(0, QApplication::translate("NPCEditor", "[\345\257\271\350\257\235]", 0));
-        QTreeWidgetItem *___qtreewidgetitem15 = ___qtreewidgetitem12->child(1);
-        ___qtreewidgetitem15->setText(2, QApplication::translate("NPCEditor", "\"\346\230\257\345\220\246\346\234\211\345\212\236\346\263\225\344\270\216Toril\347\232\204\347\201\265\351\255\202\346\262\237\351\200\232\357\274\237\"", 0));
-        ___qtreewidgetitem15->setText(1, QApplication::translate("NPCEditor", "[\"\347\255\211\347\272\247\" > 20]", 0));
-        ___qtreewidgetitem15->setText(0, QApplication::translate("NPCEditor", "[@\351\200\211\351\241\271]", 0));
-        QTreeWidgetItem *___qtreewidgetitem16 = ___qtreewidgetitem15->child(0);
-        ___qtreewidgetitem16->setText(2, QApplication::translate("NPCEditor", "[\"\345\224\224..\344\274\240\351\227\273\346\230\257\350\277\231\346\240\267\347\232\204\343\200\202\345\275\223\345\256\207\345\256\231\346\260\224\344\277\256\347\202\274\345\210\260\344\270\200\345\256\232\347\250\213\345\272\246\344\271\213\345\220\216\357\274\214\346\255\273\345\220\216\344\276\277\350\203\275\344\277\235\346\214\201\347\201\265\351\255\202\344\270\215\347\201\255\343\200\202\344\273\216\347\247\221\345\255\246\350\247\222\345\272\246\350\247\243\351\207\212\357\274\214\345\205\266\345\256\236\346\230\257\346\204\217\350\257\206\350\203\275\351\207\217\357\274\214\345\215\263\345\217\215\347\211\251\350\264\250\343\200\202\", \"\344\275\206\346\262\237\351\200\232\347\232\204\345\212\236\346\263\225\345\215\264\345\215\201\345\210\206\345\233\260\351\232\276\357\274\214\345\233\240\344\270\272\344\273\226\345\275\223\345\271\264\345\261\236\344\272\216\350\207\252\346\210\221\345\274\225\347\210\206\357\274\214\344\270\215\344\273\205\346\212\212\350\202\211\344\275\223\346\266\210\346\225"
-                        "\243\357\274\214\346\204\217\350\257\206\350\203\275\351\207\217\344\271\237\345\217\227\345\210\260\344\272\206\346\236\201\345\244\247\345\275\261\345\223\215\343\200\202\"]", 0));
-        ___qtreewidgetitem16->setText(1, QApplication::translate("NPCEditor", "-", 0));
-        ___qtreewidgetitem16->setText(0, QApplication::translate("NPCEditor", "[\345\257\271\350\257\235]", 0));
-        tvDialoguesTree->setSortingEnabled(__sortingEnabled4);
-
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("NPCEditor", "\345\211\247\346\203\205\345\257\271\347\231\275", 0));
     } // retranslateUi
 

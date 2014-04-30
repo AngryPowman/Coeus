@@ -3,11 +3,9 @@
 #include "game_common/config/npc_config.h"
 
 NPCEditor::NPCEditor(QWidget *parent)
-    : QWidget(parent)
+    : QMainWindow(parent)
 {
     _ui.setupUi(this);
-    loadNPCTreeList();
-
     memset(_dialogueTreeMenuActions, 0, DTC_M_MAX);
     init();
 }
@@ -19,6 +17,12 @@ NPCEditor::~NPCEditor()
 
 void NPCEditor::init()
 {
+    //加载配置
+    ConfigManager manager;
+    NPCConfig::getInstance().initialize(&manager);
+    manager.start();
+    manager.wait();
+
     std::function<void(QObject*)> func = [&func, this](QObject* parentObject)
     {
         foreach(QObject* object, parentObject->children())
@@ -103,17 +107,16 @@ void NPCEditor::init()
     _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_PASTE]);
     _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_DELETE]);
     _dialogueTreeContextMenu->addAction(_dialogueTreeMenuActions[DTC_M_SELECT_ALL]);
+
+    //加载数据
+    loadNPCTreeList();
 }
 
 void NPCEditor::loadNPCTreeList()
 {
-    ConfigManager manager;
-    NPCConfig::getInstance().initialize(&manager);
-    manager.start();
-    manager.wait();
+    _ui.tvNpcList->clear();
 
     const NPCDataList& npcList = NPCConfig::getInstance().getNPCList();
-    _ui.tvNpcList->clear();
     for (auto iter = npcList.begin(); iter != npcList.end(); ++iter)
     {
         const NPCData& npcData = iter->second;
@@ -141,21 +144,75 @@ void NPCEditor::slotNPCItemClicked(QTreeWidgetItem* item, int column)
     _saveStateLock = true;
     if (item->type() == NPCNodeType::NPCItem)
     {
-        const NPCData* npcData = QVariant(item->data(0, Qt::UserRole)).value<const NPCData*>();
-        if (npcData != nullptr)
+        _currentNPC = const_cast<NPCData*>(QVariant(item->data(0, Qt::UserRole)).value<const NPCData*>());
+        if (_currentNPC != nullptr)
         {
-            this->setWindowTitle(QStringLiteral("NPC编辑器 - [") + QString(npcData->name.c_str()) + "]");
-            _ui.txtNPCId->setText(QString::number(npcData->id));
-            _ui.txtNPCName->setText(QString(npcData->name.c_str()));
-            _ui.txtNPCTitle->setText(QString(npcData->title.c_str()));
-            _ui.txtNPCAvatar->setText(QString(npcData->avatar.c_str()));
-            _ui.spbLevel->setValue(npcData->ai.level);
-            _ui.chkAttackable->setChecked(npcData->ai.attackable);
-            _ui.chkFavorable->setChecked(npcData->ai.favorable);
-            _ui.chkMarriageable->setChecked(npcData->ai.marriageable);
-            _ui.chkPresentable->setChecked(npcData->ai.presentable);
-            _ui.chkMovealbe->setChecked(npcData->ai.movealbe);
-            _ui.chkSurrender->setChecked(npcData->ai.surrender);
+            /************************************************************************/
+            /* 基本数据                                                             */
+            /************************************************************************/
+            this->setWindowTitle(QStringLiteral("NPC编辑器 - [") + QString(_currentNPC->name.c_str()) + "]");
+            _ui.txtNPCId->setText(QString::number(_currentNPC->id));
+            _ui.txtNPCName->setText(QString(_currentNPC->name.c_str()));
+            _ui.txtNPCTitle->setText(QString(_currentNPC->title.c_str()));
+            _ui.txtNPCAvatar->setText(QString(_currentNPC->avatar.c_str()));
+
+            /************************************************************************/
+            /* 智能行为                                                             */
+            /************************************************************************/
+            _ui.spbLevel->setValue(_currentNPC->ai.level);
+            _ui.chkAttackable->setChecked(_currentNPC->ai.attackable);
+            _ui.chkFavorable->setChecked(_currentNPC->ai.favorable);
+            _ui.chkMarriageable->setChecked(_currentNPC->ai.marriageable);
+            _ui.chkPresentable->setChecked(_currentNPC->ai.presentable);
+            _ui.chkMovealbe->setChecked(_currentNPC->ai.movealbe);
+            _ui.chkSurrender->setChecked(_currentNPC->ai.surrender);
+
+            /************************************************************************/
+            /* 剧情对白                                                             */
+            /************************************************************************/
+            _ui.tvDialoguesTree->clear();
+
+            //增加父节点
+            QTreeWidgetItem* npcRootItem = addNPCNode(_currentNPC->id, _currentNPC->name);
+
+            //载入随机对白
+            for (const NPCData::DialogueNode& dialogueNode : _currentNPC->dialogues.dialogue_tree)
+            {
+                QTreeWidgetItem* rootDialogueItem = addDialogueRootNode(npcRootItem, dialogueNode.dialogue_parts);
+                QTreeWidgetItem* showConditionScriptItem = addShowConditionScriptNode(rootDialogueItem, dialogueNode.show_condition_script);
+                QTreeWidgetItem* eventScriptItem = addEventScriptNode(rootDialogueItem, dialogueNode.event_script);
+                QTreeWidgetItem* dialoguesItem = addDialoguesNode(rootDialogueItem, dialogueNode.dialogue_parts);
+
+                if (!dialogueNode.dialogue_options.empty())
+                {
+                    QTreeWidgetItem* optionsRootItem = addOptionNode(rootDialogueItem);
+                
+                    //rootDialogueItem->setData(0, Qt::UserRole, QVariant((const void*)&dialogueNode));
+                    //dialogueTreeItem->setData(1, Qt::UserRole, QVariant((const void*)&dialogueNode.show_condition_script));
+                    //dialogueTreeItem->setData(2, Qt::UserRole, QVariant((const void*)&dialogueNode.dialogueParts));
+
+                    std::function<void(const NPCData::OptionDialogueNodeList&, QTreeWidgetItem*)> loadOptionNodeProcessFunc
+                        = [&loadOptionNodeProcessFunc, this](const NPCData::OptionDialogueNodeList& optionNodeList, QTreeWidgetItem* parentNode)
+                    {
+                        for (const NPCData::OptionDialogueNode& optionDialogueNode : optionNodeList)
+                        {
+                            QTreeWidgetItem* showConditionItem = addShowConditionScriptNode(parentNode, optionDialogueNode.show_condition_script);
+                            QTreeWidgetItem* executeConditionItem = addExecuteConditionScriptNode(parentNode, optionDialogueNode.execute_condition_script);
+                            QTreeWidgetItem* eventScriptItem = addEventScriptNode(parentNode, optionDialogueNode.event_script);
+                            QTreeWidgetItem* optionContentItem = addOptionContentNode(parentNode, optionDialogueNode.option_content);
+                            QTreeWidgetItem* dialoguesItem = addDialoguesNode(parentNode, optionDialogueNode.dialogue_parts);
+
+                            if (!optionDialogueNode.dialogue_options.empty())
+                            {
+                                QTreeWidgetItem* optionsRootItem = addOptionNode(parentNode);
+                                loadOptionNodeProcessFunc(optionDialogueNode.dialogue_options, optionsRootItem);
+                            }
+                        }
+                    };
+
+                    loadOptionNodeProcessFunc(dialogueNode.dialogue_options, optionsRootItem);
+                }
+            }
         }
     }
     _saveStateLock = false;
@@ -204,16 +261,15 @@ void NPCEditor::slotOnListDialoguesTypeItemClicked(QListWidgetItem* item)
 void NPCEditor::slotOnDialoguesTreeContextMenu(const QPoint& point)
 {
     QTreeWidgetItem* curItem = _ui.tvDialoguesTree->itemAt(point);
-    if (curItem == nullptr)
-    {
-        _ui.tvDialoguesTree->setCurrentItem(nullptr);
-        updateDialogueTreeContextMenu(DT_NONE);
-    }
-    else
-    {
+    _ui.tvDialoguesTree->setCurrentItem(curItem);
 
+    DialogueTreeNodeType nodeType = DT_NONE;
+    if (curItem != nullptr)
+    {
+        nodeType = (DialogueTreeNodeType)curItem->type();
     }
 
+    updateDialogueTreeContextMenu(nodeType);
     _dialogueTreeContextMenu->exec(QCursor::pos());
 }
 
@@ -276,7 +332,7 @@ void NPCEditor::updateDialogueTreeContextMenu(DialogueTreeNodeType nodeType)
 {
     switch (nodeType)
     {
-    case NPCEditor::DT_NONE:
+    case DialogueTreeNodeType::DT_NONE:
         _dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE]->setEnabled(true);
         _dialogueTreeMenuActions[DTC_M_ADD_OPTION]->setEnabled(false);
         _dialogueTreeMenuActions[DTC_M_EDIT_ITEM]->setEnabled(false);
@@ -287,7 +343,7 @@ void NPCEditor::updateDialogueTreeContextMenu(DialogueTreeNodeType nodeType)
         _dialogueTreeMenuActions[DTC_M_COPY]->setEnabled(false);
         _dialogueTreeMenuActions[DTC_M_DELETE]->setEnabled(false);
         break;
-    case NPCEditor::DT_DIALOGUE:
+    case DialogueTreeNodeType::DT_DIALOGUE_CONTENT:
         _dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE]->setEnabled(true);
         _dialogueTreeMenuActions[DTC_M_ADD_OPTION]->setEnabled(true);
         _dialogueTreeMenuActions[DTC_M_EDIT_ITEM]->setEnabled(true);
@@ -298,7 +354,7 @@ void NPCEditor::updateDialogueTreeContextMenu(DialogueTreeNodeType nodeType)
         _dialogueTreeMenuActions[DTC_M_COPY]->setEnabled(true);
         _dialogueTreeMenuActions[DTC_M_DELETE]->setEnabled(true);
         break;
-    case NPCEditor::DT_DIALOGUE_OPTION:
+    /*case DialogueTreeNodeType::DT_DIALOGUE_OPTION:
         _dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE]->setEnabled(true);
         _dialogueTreeMenuActions[DTC_M_ADD_OPTION]->setEnabled(false);
         _dialogueTreeMenuActions[DTC_M_EDIT_ITEM]->setEnabled(true);
@@ -308,8 +364,114 @@ void NPCEditor::updateDialogueTreeContextMenu(DialogueTreeNodeType nodeType)
         _dialogueTreeMenuActions[DTC_M_CUT]->setEnabled(true);
         _dialogueTreeMenuActions[DTC_M_COPY]->setEnabled(true);
         _dialogueTreeMenuActions[DTC_M_DELETE]->setEnabled(true);
-        break;
+        break;*/
+    case DialogueTreeNodeType::DT_OPTION:
+        _dialogueTreeMenuActions[DTC_M_ADD_DIALOGUE]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_ADD_OPTION]->setEnabled(false);
+        _dialogueTreeMenuActions[DTC_M_EDIT_ITEM]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_RESET_CONDITION]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_MOVE_UP]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_MOVE_DOWN]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_CUT]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_COPY]->setEnabled(true);
+        _dialogueTreeMenuActions[DTC_M_DELETE]->setEnabled(true);
     default:
         break;
     }
+}
+
+QString NPCEditor::formatStringList(const std::vector<std::string>& strList)
+{
+    QString dialogueContents("[");
+    for (auto iter = strList.begin(); iter != strList.end(); ++iter)
+    {
+        dialogueContents += "\"" + QString(iter->c_str()) + "\"";
+        if (iter != strList.end() - 1)
+        {
+            dialogueContents += ",";
+        }
+    }
+    dialogueContents += "]";
+
+    return dialogueContents;
+}
+
+QTreeWidgetItem* NPCEditor::addNPCNode(int npcId, const std::string& name)
+{
+    return new QTreeWidgetItem(
+        _ui.tvDialoguesTree,
+        QStringList(QString(QString::number(npcId) + " : " + name.c_str())),
+        DialogueTreeNodeType::DT_NPC_ROOT
+    );
+}
+
+QTreeWidgetItem* NPCEditor::addDialogueRootNode(QTreeWidgetItem* parent, const DialogueParts& dialogueParts)
+{
+    QList<QString> strlist_rootDialogueItem;
+    strlist_rootDialogueItem.append(QStringLiteral("NPC会话"));
+    strlist_rootDialogueItem.append(formatStringList(dialogueParts));
+    return new QTreeWidgetItem(parent, strlist_rootDialogueItem, DialogueTreeNodeType::DT_DIALOGUE_ROOT);
+}
+
+QTreeWidgetItem* NPCEditor::addShowConditionScriptNode(QTreeWidgetItem* parent, const std::string& script)
+{
+    QList<QString> strlist_showConditionItem;
+    strlist_showConditionItem.append(QStringLiteral("显示条件脚本"));
+    strlist_showConditionItem.append(script.c_str());
+    return new QTreeWidgetItem(parent, strlist_showConditionItem, DialogueTreeNodeType::DT_SHOW_CONDITION);;
+}
+
+QTreeWidgetItem* NPCEditor::addExecuteConditionScriptNode(QTreeWidgetItem* parent, const std::string& script)
+{
+    QList<QString> strlist_executeConditionItem;
+    strlist_executeConditionItem.append(QStringLiteral("执行条件脚本"));
+    strlist_executeConditionItem.append(script.c_str());
+    return new QTreeWidgetItem(parent, strlist_executeConditionItem, DialogueTreeNodeType::DT_EXECUTE_CONDITION);
+}
+
+QTreeWidgetItem* NPCEditor::addEventScriptNode(QTreeWidgetItem* parent, const std::string& script)
+{
+    QList<QString> strlist_eventScriptItem;
+    strlist_eventScriptItem.append(QStringLiteral("事件脚本"));
+    strlist_eventScriptItem.append(script.c_str());
+    return new QTreeWidgetItem(parent, strlist_eventScriptItem, DialogueTreeNodeType::DT_EVENT_SCRIPT);
+}
+
+QTreeWidgetItem* NPCEditor::addOptionNode(QTreeWidgetItem* parent)
+{
+    QList<QString> strlist_optionsItem;
+    strlist_optionsItem.append(QStringLiteral("[玩家选项]"));
+    return new QTreeWidgetItem(parent, strlist_optionsItem, DialogueTreeNodeType::DT_OPTION);
+}
+
+
+QTreeWidgetItem* NPCEditor::addOptionContentNode(QTreeWidgetItem* parent, const std::string& content)
+{
+    QList<QString> strlist_optionCotentItem;
+    strlist_optionCotentItem.append(QStringLiteral("选项内容"));
+    return new QTreeWidgetItem(parent, strlist_optionCotentItem, DialogueTreeNodeType::DT_OPTION_CONTENT);
+}
+
+QTreeWidgetItem* NPCEditor::addDialoguesNode(QTreeWidgetItem* parent, const DialogueParts& dialogueParts)
+{
+    QList<QString> strlist_rootDialogueItem;
+    strlist_rootDialogueItem.append(QStringLiteral("[情节对白]"));
+    strlist_rootDialogueItem.append(formatStringList(dialogueParts));
+
+    QTreeWidgetItem* dialoguesItem
+        = new QTreeWidgetItem(
+            parent, 
+            strlist_rootDialogueItem,
+            DialogueTreeNodeType::DT_DIALOGUE_ROOT);
+
+    for (size_t i = 0; i < dialogueParts.size(); ++i)
+    {
+        QList<QString> strlist_dialogueItem;
+        strlist_dialogueItem.append("[" + QString::number(i) + "]");
+        strlist_dialogueItem.append(dialogueParts[i].c_str());
+        QTreeWidgetItem* dialogueItem
+            = new QTreeWidgetItem(dialoguesItem, strlist_dialogueItem, DialogueTreeNodeType::DT_DIALOGUE_CONTENT);
+    }
+
+    return dialoguesItem;
 }

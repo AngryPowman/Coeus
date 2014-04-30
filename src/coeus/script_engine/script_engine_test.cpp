@@ -42,5 +42,6 @@ int main()
 	std::cout<<"script bool result:"<<result.result.boolVar<<" script msg: "<<result.resultMsg<<std::endl;
 
 	ScriptEngine::Uninit();
+    getchar();
 	return 0;
 }

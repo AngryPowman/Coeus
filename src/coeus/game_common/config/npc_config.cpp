@@ -70,7 +70,7 @@ bool NPCConfig::parse()
             dialogueNode.show_condition_script = dialogueValue["show_condition_script"].asString();
             dialogueNode.event_script = dialogueValue["event_script"].asString();
             for (const Json::Value& contentPartValue : dialogueValue["dialogue_content"])
-                dialogueNode.dialogueParts.push_back(contentPartValue.asString());
+                dialogueNode.dialogue_parts.push_back(contentPartValue.asString());
 
             //解析选项对话节点
             const Json::Value& optionDialogueArr = dialogueValue["dialogue_options"];
@@ -85,7 +85,7 @@ bool NPCConfig::parse()
                     optionDialogueNode.event_script = optionDialogueValue["event_script"].asString();
                     optionDialogueNode.option_content = optionDialogueValue["option_content"].asString();
                     for (const Json::Value& contentPartValue : optionDialogueValue["dialogue_content"])
-                        optionDialogueNode.dialogueParts.push_back(contentPartValue.asString());
+                        optionDialogueNode.dialogue_parts.push_back(contentPartValue.asString());
 
                     parseOptionNodeProcessFunc(optionDialogueNode.dialogue_options, optionDialogueValue["dialogue_options"]);
 

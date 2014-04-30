@@ -75,15 +75,21 @@
     <CustomBuild Include="coeus_editor.h">
       <Filter>core</Filter>
     </CustomBuild>
-    <CustomBuild Include="widget_npc_editor.ui">
-      <Filter>ui</Filter>
-    </CustomBuild>
     <CustomBuild Include="npc_editor.h">
+      <Filter>core\npc_editor</Filter>
+    </CustomBuild>
+    <CustomBuild Include="widget_npc_editor.ui">
+      <Filter>core\npc_editor</Filter>
+    </CustomBuild>
+    <CustomBuild Include="window_npc_editor.ui">
       <Filter>core\npc_editor</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_widget_npc_editor.h">
+      <Filter>main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_window_npc_editor.h">
       <Filter>main\Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
