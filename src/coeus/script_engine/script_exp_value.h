@@ -25,10 +25,14 @@ bool _IsValidStrValue(const char* exp,std::string& value)
 		value += *exp;
 		++exp;
 	}
-	_SkipSpace(&exp);
-	if (!*exp)
+	if (*exp == String_Sign)
 	{
-		return true;
+		++exp;
+		_SkipSpace(&exp);
+		if (!*exp)
+		{
+			return true;
+		}
 	}
 	return false;
 }
@@ -144,6 +148,7 @@ bool IsValidBasicValue(const char* exp,ScriptParam& param)
 	_SkipSpace(&exp);
 	if (*exp == String_Sign)
 	{
+		++exp;
 		std::string strValue;
 		if (_IsValidStrValue(exp,strValue))
 		{
