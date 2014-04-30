@@ -4,7 +4,7 @@
 
 struct ScriptResult
 {
-	ScriptResult(){};
+	ScriptResult(){ result.boolVar = false; };
 	ScriptResult(const ScriptResult& rhs){*this = rhs;};
 	void operator=(const ScriptResult& rhs);
 

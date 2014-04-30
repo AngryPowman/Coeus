@@ -1,5 +1,6 @@
 #include "script_engine.h"
 #include "scripter.h"
+#include "script_util_executor.h"
 #include <map>
 #include <mutex>
 
@@ -63,6 +64,8 @@ bool ScriptEngine::QueryFunction(const char* funcName, ScriptExecuter& excuter)
 
 void ScriptEngine::Init()
 {
+	AddFunction("float_equal", ScriptExecuter(floatEqual));
+	AddFunction("astrue", ScriptExecuter(asTrueFunc));
 	CScripter::Init();
 }
 

@@ -40,3 +40,4 @@
 *.sdf
 /3rdparty/poco/lib
 *.pch
+/vsprojects/*.suo

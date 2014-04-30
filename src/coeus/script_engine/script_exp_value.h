@@ -25,10 +25,14 @@ bool _IsValidStrValue(const char* exp,std::string& value)
 		value += *exp;
 		++exp;
 	}
-	_SkipSpace(&exp);
-	if (!*exp)
+	if (*exp == String_Sign)
 	{
-		return true;
+		++exp;
+		_SkipSpace(&exp);
+		if (!*exp)
+		{
+			return true;
+		}
 	}
 	return false;
 }
@@ -46,7 +50,19 @@ bool _IsValidHexValue(const char* exp, int& value)
 		}
 		else
 		{
-			value += *exp - 'a' + 10;
+			const char& currChar = *exp;
+			if (currChar>='a' && currChar<='f')
+			{
+				value += currChar - 'a' + 10;
+			}
+			else if (currChar>='A' && currChar<='F')
+			{
+				value += currChar - 'A' + 10;
+			}
+			else
+			{
+				return false;
+			}
 		}
 		++exp;
 	}
@@ -144,6 +160,7 @@ bool IsValidBasicValue(const char* exp,ScriptParam& param)
 	_SkipSpace(&exp);
 	if (*exp == String_Sign)
 	{
+		++exp;
 		std::string strValue;
 		if (_IsValidStrValue(exp,strValue))
 		{
