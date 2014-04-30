@@ -20,3 +20,8 @@ void floatEqual(const ScriptParamVec& params, ScriptParam& result, std::string& 
 		result = false;
 	}
 }
+
+void asTrueFunc(const ScriptParamVec& params, ScriptParam& result, std::string& msg)
+{
+	result = true;
+}

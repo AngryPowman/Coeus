@@ -65,6 +65,7 @@ bool ScriptEngine::QueryFunction(const char* funcName, ScriptExecuter& excuter)
 void ScriptEngine::Init()
 {
 	AddFunction("float_equal", ScriptExecuter(floatEqual));
+	AddFunction("astrue", ScriptExecuter(asTrueFunc));
 	CScripter::Init();
 }
 
