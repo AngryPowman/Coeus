@@ -25,6 +25,10 @@ void CScripter::Init()
 	defaultEqualComparator = new CCompare_Equal;
 	comparatorSet.insert(defaultEqualComparator);
 	comparatorSet.insert(new CCompare_Not_Equal);
+	comparatorSet.insert(new CCompare_Bigger);
+	comparatorSet.insert(new CCompare_Not_Smaller);
+	comparatorSet.insert(new CCompare_Smaller);
+	comparatorSet.insert(new CCompare_Not_Bigger);
 }
 
 void CScripter::Uninit()

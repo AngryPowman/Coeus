@@ -4,7 +4,7 @@
 int main()
 {
 	ScriptEngine::Init();
-	std::string str = "{2 != 2,'equal'};";
+	std::string str = "{2 <= 0xaa,'false'};";
 
 	ScriptResult result = ScriptEngine::Run(str);
 

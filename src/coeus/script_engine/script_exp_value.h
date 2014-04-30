@@ -50,7 +50,19 @@ bool _IsValidHexValue(const char* exp, int& value)
 		}
 		else
 		{
-			value += *exp - 'a' + 10;
+			const char& currChar = *exp;
+			if (currChar>='a' && currChar<='f')
+			{
+				value += currChar - 'a' + 10;
+			}
+			else if (currChar>='A' && currChar<='F')
+			{
+				value += currChar - 'A' + 10;
+			}
+			else
+			{
+				return false;
+			}
 		}
 		++exp;
 	}
