@@ -24,6 +24,7 @@ void CScripter::Init()
 {
 	defaultEqualComparator = new CCompare_Equal;
 	comparatorSet.insert(defaultEqualComparator);
+	comparatorSet.insert(new CCompare_Not_Equal);
 }
 
 void CScripter::Uninit()
@@ -296,11 +297,6 @@ bool CScripter::RunScript(const char* script,std::string& errMsg,bool& excuteRes
 	}
 	if (!_ExcuteExp(rightExp.c_str(), rightResult, errMsg))
 	{
-		return false;
-	}
-	if (leftResult.type() != rightResult.type())
-	{
-		errMsg = "mismatch type compare";
 		return false;
 	}
 	excuteResult = comparator->IsTrue(leftResult, rightResult);

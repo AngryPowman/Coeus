@@ -4,7 +4,7 @@
 int main()
 {
 	ScriptEngine::Init();
-	std::string str = "{float_equal(1.0,2.0,10),'not equal'};";
+	std::string str = "{2 != 2,'equal'};";
 
 	ScriptResult result = ScriptEngine::Run(str);
 
