@@ -43,6 +43,24 @@
     <Filter Include="core\config\cofiguration">
       <UniqueIdentifier>{f8b83fdc-8b22-4239-a2f9-132e6605fdaa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\logic\character_creator">
+      <UniqueIdentifier>{34c79a9f-e416-4373-b718-bfc833f00d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\logic\map">
+      <UniqueIdentifier>{03b43bbd-8d04-4ddb-85a4-39cc701390bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\logic\chat">
+      <UniqueIdentifier>{a764118f-d444-418d-8a70-5cc7eb26fbea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\logic\status_bar">
+      <UniqueIdentifier>{267c4ac7-9866-40a7-9522-4ac028ed5996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\logic\login">
+      <UniqueIdentifier>{b068c244-ab3e-4670-bdd3-b08d257c1846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\logic\setting">
+      <UniqueIdentifier>{b9a4a3e2-1618-49ce-ad49-00f3a81d02e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -56,9 +74,6 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_game_login.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="game_login.cpp">
-      <Filter>core\logic</Filter>
     </ClCompile>
     <ClCompile Include="game_network.cpp">
       <Filter>core\network</Filter>
@@ -75,9 +90,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_game_setting.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="game_setting.cpp">
-      <Filter>core\logic</Filter>
-    </ClCompile>
     <ClCompile Include="widget_manager.cpp">
       <Filter>core\common</Filter>
     </ClCompile>
@@ -93,9 +105,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_game_main.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="game_character_creator.cpp">
-      <Filter>core\logic</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_game_character_creator.cpp">
       <Filter>qt_main\Generated Files\Debug</Filter>
     </ClCompile>
@@ -110,6 +119,42 @@
     </ClCompile>
     <ClCompile Include="character_config.cpp">
       <Filter>core\config\cofiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_status_bar_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_status_bar_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="game_status_bar_widget.cpp">
+      <Filter>core\logic\status_bar</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_chat_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_chat_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="game_chat_widget.cpp">
+      <Filter>core\logic\chat</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_map_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_map_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="game_map_widget.cpp">
+      <Filter>core\logic\map</Filter>
+    </ClCompile>
+    <ClCompile Include="game_character_creator.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
+    <ClCompile Include="game_login.cpp">
+      <Filter>core\logic\login</Filter>
+    </ClCompile>
+    <ClCompile Include="game_setting.cpp">
+      <Filter>core\logic\setting</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +200,15 @@
     <ClInclude Include="GeneratedFiles\ui_npc_dialogue_box.h">
       <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_game_statusbar_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_game_chat_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_game_map_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -162,9 +216,6 @@
     </CustomBuild>
     <CustomBuild Include="login_dialog.ui">
       <Filter>core\ui</Filter>
-    </CustomBuild>
-    <CustomBuild Include="game_login.h">
-      <Filter>core\logic</Filter>
     </CustomBuild>
     <CustomBuild Include="gamesys_setting_dialog.ui">
       <Filter>core\ui</Filter>
@@ -175,20 +226,41 @@
     <CustomBuild Include="character_create_dialog.ui">
       <Filter>core\ui</Filter>
     </CustomBuild>
-    <CustomBuild Include="game_setting.h">
-      <Filter>core\logic</Filter>
-    </CustomBuild>
     <CustomBuild Include="game_main_dialog.ui">
       <Filter>core\ui</Filter>
     </CustomBuild>
     <CustomBuild Include="game_main.h">
       <Filter>core\logic</Filter>
     </CustomBuild>
-    <CustomBuild Include="game_character_creator.h">
-      <Filter>core\logic</Filter>
-    </CustomBuild>
     <CustomBuild Include="npc_dialogue_box.ui">
       <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_statusbar_widget.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_status_bar_widget.h">
+      <Filter>core\logic\status_bar</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_chat_widget.h">
+      <Filter>core\logic\chat</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_chat_widget.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_map_widget.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_map_widget.h">
+      <Filter>core\logic\map</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_character_creator.h">
+      <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_login.h">
+      <Filter>core\logic\login</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_setting.h">
+      <Filter>core\logic\setting</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

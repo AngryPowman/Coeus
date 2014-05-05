@@ -183,9 +183,9 @@
       <property name="geometry">
        <rect>
         <x>175</x>
-        <y>20</y>
+        <y>24</y>
         <width>266</width>
-        <height>66</height>
+        <height>58</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">

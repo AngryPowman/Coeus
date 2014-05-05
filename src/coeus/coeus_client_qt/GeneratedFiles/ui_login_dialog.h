@@ -141,7 +141,7 @@ public:
         lblAccount->setFont(font);
         gridLayoutWidget = new QWidget(loginWidget);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(175, 20, 266, 66));
+        gridLayoutWidget->setGeometry(QRect(175, 24, 266, 58));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
