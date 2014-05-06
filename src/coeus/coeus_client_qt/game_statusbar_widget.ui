@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>226</width>
+    <width>216</width>
     <height>676</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="maximumSize">
    <size>
-    <width>316</width>
-    <height>16777215</height>
+    <width>216</width>
+    <height>676</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -86,7 +86,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="lblNickname">
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;愤怒的泡面&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
@@ -96,26 +96,19 @@
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QLabel" name="label_9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="text">
-            <string>等级：32</string>
+            <string>职业：镜子猎人</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
            </property>
           </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::Fixed</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
          </item>
         </layout>
        </item>
@@ -129,7 +122,7 @@
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QLCDNumber" name="lcdNumber">
+          <widget class="QLCDNumber" name="lcdPower">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -161,10 +154,10 @@
             <enum>QLCDNumber::Flat</enum>
            </property>
            <property name="value" stdset="0">
-            <double>65535.000000000000000</double>
+            <double>0.000000000000000</double>
            </property>
            <property name="intValue" stdset="0">
-            <number>65535</number>
+            <number>0</number>
            </property>
           </widget>
          </item>
@@ -204,17 +197,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>我的属性</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_6"/>
    </item>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -243,12 +226,20 @@
         </widget>
        </item>
        <item>
-        <widget class="QProgressBar" name="progressBar_3">
+        <widget class="QProgressBar" name="progressHp">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
          </property>
          <property name="styleSheet">
           <string notr="true">QProgressBar::chunk {
@@ -281,62 +272,6 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <widget class="QLabel" name="label_14">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>36</width>
-           <height>12</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>体力值</string>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QProgressBar" name="progressBar">
-         <property name="styleSheet">
-          <string notr="true">QProgressBar::chunk {
-    background-color: rgb(65, 125, 255);
-}</string>
-         </property>
-         <property name="value">
-          <number>50</number>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="textVisible">
-          <bool>true</bool>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="invertedAppearance">
-          <bool>false</bool>
-         </property>
-         <property name="textDirection">
-          <enum>QProgressBar::TopToBottom</enum>
-         </property>
-         <property name="format">
-          <string>1000/2000</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
         <widget class="QLabel" name="label_10">
@@ -361,7 +296,15 @@
         </widget>
        </item>
        <item>
-        <widget class="QProgressBar" name="progressBar_2">
+        <widget class="QProgressBar" name="progressExp">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="autoFillBackground">
           <bool>false</bool>
          </property>
@@ -406,7 +349,7 @@
       </sizepolicy>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">

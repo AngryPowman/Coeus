@@ -10,6 +10,9 @@ public:
     void loginHandler(const NetworkPacket::Ptr& packet);
     void randomNicknameHandler(const NetworkPacket::Ptr& packet);
     void createCharacterHandler(const NetworkPacket::Ptr& packet);
+
+    //properties
+    void propertiesHandler(const NetworkPacket::Ptr& packet);
 };
 
 #endif // __GAME_HANDLER_H__

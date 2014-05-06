@@ -20,14 +20,13 @@ public:
 public:
     void initControl();
 
+public:
+
 private slots:
     void slotOnAboutQT();
 
 private:
     Ui::GameMainDialog* _ui;
-    GameStatusBarWidget* _gameStatusBarWidget;
-    GameMapWidget* _gameMapWidget;
-    GameChatWidget* _gameChatWidget;
 };
 
 #endif // !__GAME_MAIN_H__

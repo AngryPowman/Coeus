@@ -156,6 +156,9 @@
     <ClCompile Include="game_setting.cpp">
       <Filter>core\logic\setting</Filter>
     </ClCompile>
+    <ClCompile Include="properties_handler.cpp">
+      <Filter>core\network\handlers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_login_dialog.h">

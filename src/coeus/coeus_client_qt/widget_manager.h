@@ -33,6 +33,9 @@ class GameLogin;
 class GameSetting;
 class GameCharacterCreator;
 class GameMain;
+class GameStatusBarWidget;
+class GameMapWidget;
+class GameChatWidget;
 
 class WidgetManager : public Venus::Singleton<WidgetManager>
 {
@@ -41,14 +44,13 @@ public:
         : _gameLogin(nullptr), 
         _gameSetting(nullptr),
         _gameCharacterCreator(nullptr),
-        _gameMain(nullptr)
+        _gameMain(nullptr),
+        _gameStatusBarWidget(nullptr)
     {
     }
 
     virtual ~WidgetManager()
     {
-        //SAFE_DELETE(_gameLogin);
-        //SAFE_DELETE(_gameSetting);
     }
 
 private:
@@ -68,12 +70,18 @@ public:
     GameSetting* gameSetting(QWidget* parent = nullptr);
     GameCharacterCreator* gameCharacterCreator(QWidget* parent = nullptr);
     GameMain* gameMain(QWidget* parent = nullptr);
+    GameStatusBarWidget* gameStatusBarWidget(QWidget* parent = nullptr);
+    GameMapWidget* gameMapWidget(QWidget* parent = nullptr);
+    GameChatWidget* gameChatWidget(QWidget* parent = nullptr);
 
 private:
     GameLogin*   _gameLogin;
     GameSetting* _gameSetting;
     GameCharacterCreator* _gameCharacterCreator;
     GameMain* _gameMain;
+    GameStatusBarWidget* _gameStatusBarWidget;
+    GameMapWidget* _gameMapWidget;
+    GameChatWidget* _gameChatWidget;
 };
 
 #endif // !__WIDGET_MANAGER_H__

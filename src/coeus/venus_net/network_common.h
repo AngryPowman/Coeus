@@ -21,8 +21,8 @@ public:
     virtual ~NetworkMessage(){}
 
     virtual int32 byteSize() = 0;
-    virtual void encode(byte* buffer, size_t size) = 0;
-    virtual void decode(const byte* buffer, size_t size) = 0;
+    virtual void encode(byte* buffer, int32 size) = 0;
+    virtual void decode(const byte* buffer, int32 size) = 0;
 };
 
 // NetworkPacket类用于包装网络收到的数据流

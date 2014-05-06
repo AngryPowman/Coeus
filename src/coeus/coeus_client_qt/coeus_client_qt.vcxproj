@@ -241,6 +241,7 @@
     <ClCompile Include="login_config.cpp" />
     <ClCompile Include="login_handler.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="properties_handler.cpp" />
     <ClCompile Include="widget_manager.cpp" />
   </ItemGroup>
   <ItemGroup>

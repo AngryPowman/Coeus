@@ -8,6 +8,7 @@ OPCODE_REGISTER_BEGIN(GameOpcodeRegistry, GameHandler)
     REGISTER_HANDLER(Opcodes::SCLoginRsp, loginHandler);
     REGISTER_HANDLER(Opcodes::SCGetRandomNameRsp, randomNicknameHandler);
     REGISTER_HANDLER(Opcodes::SCCreateCharacterRsp, createCharacterHandler);
+    REGISTER_HANDLER(Opcodes::SCPropertiesRsp, propertiesHandler);
 OPCODE_REGISTER_END()
 
 #endif
