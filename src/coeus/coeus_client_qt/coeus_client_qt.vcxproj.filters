@@ -61,6 +61,24 @@
     <Filter Include="core\logic\setting">
       <UniqueIdentifier>{b9a4a3e2-1618-49ce-ad49-00f3a81d02e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="core\logic\item">
+      <UniqueIdentifier>{5dae979f-be33-4842-a81a-540958b0a292}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -159,6 +177,15 @@
     <ClCompile Include="properties_handler.cpp">
       <Filter>core\network\handlers</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_item_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_item_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="game_item_widget.cpp">
+      <Filter>core\logic\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_login_dialog.h">
@@ -210,6 +237,9 @@
       <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_game_map_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_game_item_widget.h">
       <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -264,6 +294,12 @@
     </CustomBuild>
     <CustomBuild Include="game_setting.h">
       <Filter>core\logic\setting</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_item_widget.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_item_widget.h">
+      <Filter>core\logic\item</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

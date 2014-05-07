@@ -45,7 +45,9 @@ public:
         _gameSetting(nullptr),
         _gameCharacterCreator(nullptr),
         _gameMain(nullptr),
-        _gameStatusBarWidget(nullptr)
+        _gameStatusBarWidget(nullptr),
+        _gameMapWidget(nullptr),
+        _gameChatWidget(nullptr)
     {
     }
 
