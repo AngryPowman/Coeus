@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>457</width>
-    <height>327</height>
+    <width>604</width>
+    <height>391</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>457</width>
+     <width>604</width>
      <height>23</height>
     </rect>
    </property>
@@ -56,12 +56,44 @@
     </property>
     <addaction name="actionAbout_QT"/>
    </widget>
+   <widget class="QMenu" name="menuSidebar">
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>menuSidebar</string>
+    </property>
+    <addaction name="action_CharacterDetails"/>
+    <addaction name="action_Bag"/>
+    <addaction name="action_Equipment"/>
+    <addaction name="action_World"/>
+    <addaction name="action_Friends"/>
+   </widget>
    <addaction name="menu_G"/>
    <addaction name="menu"/>
+   <addaction name="menuSidebar"/>
   </widget>
-  <widget class="QToolBar" name="toolBar">
+  <widget class="QToolBar" name="tbLeftSide">
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftToolBarArea</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
    </property>
    <attribute name="toolBarArea">
     <enum>LeftToolBarArea</enum>
@@ -69,6 +101,11 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="action_CharacterDetails"/>
+   <addaction name="action_Bag"/>
+   <addaction name="action_Equipment"/>
+   <addaction name="action_World"/>
+   <addaction name="action_Friends"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="windowTitle">
@@ -119,6 +156,75 @@
   <action name="actionAbout_QT">
    <property name="text">
     <string>About QT</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>空间储物器</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="action111">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="coeus_client_qt.qrc">
+     <normaloff>:/coeus_client_qt/AngryPowman.jpg</normaloff>:/coeus_client_qt/AngryPowman.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>111</string>
+   </property>
+  </action>
+  <action name="action_CharacterDetails">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>属性</string>
+   </property>
+   <property name="toolTip">
+    <string>属性(C)</string>
+   </property>
+   <property name="shortcut">
+    <string>I</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="action_Bag">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>储物器</string>
+   </property>
+  </action>
+  <action name="action_Equipment">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>装备</string>
+   </property>
+  </action>
+  <action name="action_Friends">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>伙伴</string>
+   </property>
+  </action>
+  <action name="action_World">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>世界</string>
    </property>
   </action>
  </widget>

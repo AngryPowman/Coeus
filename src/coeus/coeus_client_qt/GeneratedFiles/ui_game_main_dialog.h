@@ -33,18 +33,26 @@ public:
     QAction *action_A;
     QAction *action_E;
     QAction *actionAbout_QT;
+    QAction *action;
+    QAction *action111;
+    QAction *action_CharacterDetails;
+    QAction *action_Bag;
+    QAction *action_Equipment;
+    QAction *action_Friends;
+    QAction *action_World;
     QWidget *centralwidget;
     QMenuBar *menubar;
     QMenu *menu_G;
     QMenu *menu;
-    QToolBar *toolBar;
+    QMenu *menuSidebar;
+    QToolBar *tbLeftSide;
     QToolBar *toolBar_2;
 
     void setupUi(QMainWindow *GameMainDialog)
     {
         if (GameMainDialog->objectName().isEmpty())
             GameMainDialog->setObjectName(QStringLiteral("GameMainDialog"));
-        GameMainDialog->resize(457, 327);
+        GameMainDialog->resize(604, 391);
         GameMainDialog->setDocumentMode(false);
         GameMainDialog->setDockOptions(QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks);
         GameMainDialog->setUnifiedTitleAndToolBarOnMac(true);
@@ -64,27 +72,61 @@ public:
         action_E->setObjectName(QStringLiteral("action_E"));
         actionAbout_QT = new QAction(GameMainDialog);
         actionAbout_QT->setObjectName(QStringLiteral("actionAbout_QT"));
+        action = new QAction(GameMainDialog);
+        action->setObjectName(QStringLiteral("action"));
+        action->setIconVisibleInMenu(true);
+        action111 = new QAction(GameMainDialog);
+        action111->setObjectName(QStringLiteral("action111"));
+        action111->setCheckable(true);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/coeus_client_qt/AngryPowman.jpg"), QSize(), QIcon::Normal, QIcon::Off);
+        action111->setIcon(icon);
+        action_CharacterDetails = new QAction(GameMainDialog);
+        action_CharacterDetails->setObjectName(QStringLiteral("action_CharacterDetails"));
+        action_CharacterDetails->setCheckable(true);
+        action_CharacterDetails->setShortcutContext(Qt::ApplicationShortcut);
+        action_Bag = new QAction(GameMainDialog);
+        action_Bag->setObjectName(QStringLiteral("action_Bag"));
+        action_Bag->setCheckable(true);
+        action_Equipment = new QAction(GameMainDialog);
+        action_Equipment->setObjectName(QStringLiteral("action_Equipment"));
+        action_Equipment->setCheckable(true);
+        action_Friends = new QAction(GameMainDialog);
+        action_Friends->setObjectName(QStringLiteral("action_Friends"));
+        action_Friends->setCheckable(true);
+        action_World = new QAction(GameMainDialog);
+        action_World->setObjectName(QStringLiteral("action_World"));
+        action_World->setCheckable(true);
         centralwidget = new QWidget(GameMainDialog);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         centralwidget->setLayoutDirection(Qt::LeftToRight);
         GameMainDialog->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GameMainDialog);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 457, 23));
+        menubar->setGeometry(QRect(0, 0, 604, 23));
         menu_G = new QMenu(menubar);
         menu_G->setObjectName(QStringLiteral("menu_G"));
         menu = new QMenu(menubar);
         menu->setObjectName(QStringLiteral("menu"));
+        menuSidebar = new QMenu(menubar);
+        menuSidebar->setObjectName(QStringLiteral("menuSidebar"));
+        menuSidebar->setTearOffEnabled(true);
         GameMainDialog->setMenuBar(menubar);
-        toolBar = new QToolBar(GameMainDialog);
-        toolBar->setObjectName(QStringLiteral("toolBar"));
-        GameMainDialog->addToolBar(Qt::LeftToolBarArea, toolBar);
+        tbLeftSide = new QToolBar(GameMainDialog);
+        tbLeftSide->setObjectName(QStringLiteral("tbLeftSide"));
+        tbLeftSide->setMovable(false);
+        tbLeftSide->setAllowedAreas(Qt::LeftToolBarArea);
+        tbLeftSide->setIconSize(QSize(48, 48));
+        tbLeftSide->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        tbLeftSide->setFloatable(false);
+        GameMainDialog->addToolBar(Qt::LeftToolBarArea, tbLeftSide);
         toolBar_2 = new QToolBar(GameMainDialog);
         toolBar_2->setObjectName(QStringLiteral("toolBar_2"));
         GameMainDialog->addToolBar(Qt::TopToolBarArea, toolBar_2);
 
         menubar->addAction(menu_G->menuAction());
         menubar->addAction(menu->menuAction());
+        menubar->addAction(menuSidebar->menuAction());
         menu_G->addAction(action_B);
         menu_G->addSeparator();
         menu_G->addAction(action_E);
@@ -95,6 +137,16 @@ public:
         menu_G->addSeparator();
         menu_G->addAction(action_C);
         menu->addAction(actionAbout_QT);
+        menuSidebar->addAction(action_CharacterDetails);
+        menuSidebar->addAction(action_Bag);
+        menuSidebar->addAction(action_Equipment);
+        menuSidebar->addAction(action_World);
+        menuSidebar->addAction(action_Friends);
+        tbLeftSide->addAction(action_CharacterDetails);
+        tbLeftSide->addAction(action_Bag);
+        tbLeftSide->addAction(action_Equipment);
+        tbLeftSide->addAction(action_World);
+        tbLeftSide->addAction(action_Friends);
 
         retranslateUi(GameMainDialog);
 
@@ -112,9 +164,21 @@ public:
         action_A->setText(QApplication::translate("GameMainDialog", "\346\210\220\345\260\261(&A)", 0));
         action_E->setText(QApplication::translate("GameMainDialog", "\350\243\205\345\244\207(&E)", 0));
         actionAbout_QT->setText(QApplication::translate("GameMainDialog", "About QT", 0));
+        action->setText(QApplication::translate("GameMainDialog", "\347\251\272\351\227\264\345\202\250\347\211\251\345\231\250", 0));
+        action111->setText(QApplication::translate("GameMainDialog", "111", 0));
+        action_CharacterDetails->setText(QApplication::translate("GameMainDialog", "\345\261\236\346\200\247", 0));
+#ifndef QT_NO_TOOLTIP
+        action_CharacterDetails->setToolTip(QApplication::translate("GameMainDialog", "\345\261\236\346\200\247(C)", 0));
+#endif // QT_NO_TOOLTIP
+        action_CharacterDetails->setShortcut(QApplication::translate("GameMainDialog", "I", 0));
+        action_Bag->setText(QApplication::translate("GameMainDialog", "\345\202\250\347\211\251\345\231\250", 0));
+        action_Equipment->setText(QApplication::translate("GameMainDialog", "\350\243\205\345\244\207", 0));
+        action_Friends->setText(QApplication::translate("GameMainDialog", "\344\274\231\344\274\264", 0));
+        action_World->setText(QApplication::translate("GameMainDialog", "\344\270\226\347\225\214", 0));
         menu_G->setTitle(QApplication::translate("GameMainDialog", "\346\270\270\346\210\217(&G)", 0));
         menu->setTitle(QApplication::translate("GameMainDialog", "\345\205\263\344\272\216", 0));
-        toolBar->setWindowTitle(QApplication::translate("GameMainDialog", "toolBar", 0));
+        menuSidebar->setTitle(QApplication::translate("GameMainDialog", "menuSidebar", 0));
+        tbLeftSide->setWindowTitle(QApplication::translate("GameMainDialog", "toolBar", 0));
         toolBar_2->setWindowTitle(QApplication::translate("GameMainDialog", "toolBar_2", 0));
     } // retranslateUi
 

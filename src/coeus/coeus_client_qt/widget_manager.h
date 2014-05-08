@@ -36,18 +36,20 @@ class GameMain;
 class GameStatusBarWidget;
 class GameMapWidget;
 class GameChatWidget;
+class GameBag;
 
 class WidgetManager : public Venus::Singleton<WidgetManager>
 {
 public:
     WidgetManager()
-        : _gameLogin(nullptr), 
+        : _gameLogin(nullptr),
         _gameSetting(nullptr),
         _gameCharacterCreator(nullptr),
         _gameMain(nullptr),
         _gameStatusBarWidget(nullptr),
         _gameMapWidget(nullptr),
-        _gameChatWidget(nullptr)
+        _gameChatWidget(nullptr),
+        _gameBag(nullptr)
     {
     }
 
@@ -75,6 +77,7 @@ public:
     GameStatusBarWidget* gameStatusBarWidget(QWidget* parent = nullptr);
     GameMapWidget* gameMapWidget(QWidget* parent = nullptr);
     GameChatWidget* gameChatWidget(QWidget* parent = nullptr);
+    GameBag* gameBag(QWidget* parent = nullptr);
 
 private:
     GameLogin*   _gameLogin;
@@ -84,6 +87,7 @@ private:
     GameStatusBarWidget* _gameStatusBarWidget;
     GameMapWidget* _gameMapWidget;
     GameChatWidget* _gameChatWidget;
+    GameBag* _gameBag;
 };
 
 #endif // !__WIDGET_MANAGER_H__

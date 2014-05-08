@@ -24,6 +24,7 @@ public:
 
 private slots:
     void slotOnAboutQT();
+    void slotOnBagActionTriggered(bool checked);
 
 private:
     Ui::GameMainDialog* _ui;

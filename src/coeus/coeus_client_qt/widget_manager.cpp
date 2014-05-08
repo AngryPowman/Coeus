@@ -6,6 +6,7 @@
 #include "game_status_bar_widget.h"
 #include "game_map_widget.h"
 #include "game_chat_widget.h"
+#include "game_bag.h"
 
 GameLogin* WidgetManager::gameLogin(QWidget* parent /*= nullptr*/)
 {
@@ -40,4 +41,9 @@ GameMapWidget* WidgetManager::gameMapWidget(QWidget* parent /*= nullptr*/)
 GameChatWidget* WidgetManager::gameChatWidget(QWidget* parent /*= nullptr*/)
 {
     return tryInit<GameChatWidget>(_gameChatWidget, parent);
+}
+
+GameBag* WidgetManager::gameBag(QWidget* parent /*= nullptr*/)
+{
+    return tryInit<GameBag>(_gameBag, parent);
 }
