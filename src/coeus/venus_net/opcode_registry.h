@@ -31,7 +31,7 @@ class OpcodeRegistry
 public:
     OpcodeRegistry(){}
     virtual ~OpcodeRegistry(){}
-	OpcodeHandler<T>& operator[](uint32 opcode)
+    std::vector<OpcodeHandler<T>>& operator[](uint32 opcode)
 	{
 		return _opcodeTable[opcode];
 	}
@@ -41,8 +41,11 @@ public:
         auto iter = _opcodeTable.find(packet->opcode);
         if (iter != _opcodeTable.end())
         {
-            OpcodeHandler<T>& handler = iter->second;
-            handler.handler(target, packet);
+            std::vector<OpcodeHandler<T>>& handlerList = iter->second;
+            for (const OpcodeHandler<T>& handler : handlerList)
+            {
+                handler.handler(target, packet);
+            }
         }
     }
 
@@ -53,11 +56,23 @@ public:
 
     void registerMessage(uint32 opcode, const OpcodeHandler<T>& handler)
     {
-        _opcodeTable.insert(std::make_pair(opcode, handler));
+        auto iter = _opcodeTable.find(opcode);
+        if (iter != _opcodeTable.end())
+        {
+            std::vector<OpcodeHandler<T>>& handlerList = iter->second;
+            handlerList.push_back(handler);
+        }
+        else
+        {
+            std::vector<OpcodeHandler<T>> handlerList;
+            handlerList.push_back(handler);
+
+            _opcodeTable.insert(std::make_pair(opcode, handlerList));
+        }
     }
 
 private:
-     adap_map<uint32, OpcodeHandler<T>> _opcodeTable;
+     adap_map< uint32, std::vector<OpcodeHandler<T>> > _opcodeTable;
 };
 
 #define OPCODE_REGISTER_BEGIN(REGISTRY_NAME, CB_TARGET) \

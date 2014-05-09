@@ -40,7 +40,16 @@ public:
     {
         if (GameBag->objectName().isEmpty())
             GameBag->setObjectName(QStringLiteral("GameBag"));
-        GameBag->resize(649, 448);
+        GameBag->setWindowModality(Qt::WindowModal);
+        GameBag->resize(581, 369);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(GameBag->sizePolicy().hasHeightForWidth());
+        GameBag->setSizePolicy(sizePolicy);
+        GameBag->setAnimated(false);
+        GameBag->setDocumentMode(false);
+        GameBag->setUnifiedTitleAndToolBarOnMac(false);
         centralWidget = new QWidget(GameBag);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);

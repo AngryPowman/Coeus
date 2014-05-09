@@ -39,3 +39,23 @@ void GameStatusBarWidget::onPropertiesRsp(const Protocol::SCPropertiesRsp& prope
 
     _ui->lcdPower->display(static_cast<int>(propertiesRsp.basic_properties.power));
 }
+
+void GameStatusBarWidget::updateLevel(uint16 level)
+{
+
+}
+
+void GameStatusBarWidget::updateCareer(uint8 career)
+{
+
+}
+
+void GameStatusBarWidget::updateHP(uint32 hp, uint32 maxHp)
+{
+
+}
+
+void GameStatusBarWidget::updateExp(uint32 exp)
+{
+
+}

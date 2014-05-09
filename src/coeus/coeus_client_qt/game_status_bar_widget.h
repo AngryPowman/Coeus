@@ -21,6 +21,12 @@ public:
     void onPropertiesRsp(const Protocol::SCPropertiesRsp& propertiesRsp);
 
 private:
+    void updateLevel(uint16 level);
+    void updateCareer(uint8 career);
+    void updateHP(uint32 hp, uint32 maxHp);
+    void updateExp(uint32 exp);
+
+private:
     Ui::GameStatusBarWidget* _ui;
 };
 

@@ -37,6 +37,7 @@ public:
     QGraphicsView *graphicsGravatar;
     QVBoxLayout *verticalLayout;
     QLabel *lblNickname;
+    QLabel *label;
     QHBoxLayout *horizontalLayout;
     QLabel *label_9;
     QGridLayout *gridLayout_4;
@@ -69,7 +70,8 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(GameStatusBarWidget->sizePolicy().hasHeightForWidth());
         GameStatusBarWidget->setSizePolicy(sizePolicy);
-        GameStatusBarWidget->setMaximumSize(QSize(216, 676));
+        GameStatusBarWidget->setMinimumSize(QSize(216, 0));
+        GameStatusBarWidget->setMaximumSize(QSize(216, 16777215));
         verticalLayout_3 = new QVBoxLayout(GameStatusBarWidget);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         horizontalLayout_2 = new QHBoxLayout();
@@ -101,6 +103,11 @@ public:
         lblNickname->setObjectName(QStringLiteral("lblNickname"));
 
         verticalLayout->addWidget(lblNickname);
+
+        label = new QLabel(GameStatusBarWidget);
+        label->setObjectName(QStringLiteral("label"));
+
+        verticalLayout->addWidget(label);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -296,6 +303,7 @@ public:
                         "\234\250\347\272\277\347\216\251\345\256\266\343\200\202</p><p>\350\256\277\351\227\256\357\274\232<a href=\"http://cn.gravatar.com/\"><span style=\" text-decoration: underline; color:#0000ff;\">http://cn.gravatar.com/</span></a></p></body></html>", 0));
 #endif // QT_NO_WHATSTHIS
         lblNickname->setText(QApplication::translate("GameStatusBarWidget", "<html><head/><body><p><span style=\" font-weight:600;\">\346\204\244\346\200\222\347\232\204\346\263\241\351\235\242</span></p></body></html>", 0));
+        label->setText(QApplication::translate("GameStatusBarWidget", "\347\255\211\347\272\247\357\274\2321", 0));
         label_9->setText(QApplication::translate("GameStatusBarWidget", "\350\201\214\344\270\232\357\274\232\351\225\234\345\255\220\347\214\216\344\272\272", 0));
         label_11->setText(QApplication::translate("GameStatusBarWidget", "\346\210\230\346\226\227\345\212\233", 0));
         label_12->setText(QApplication::translate("GameStatusBarWidget", "\347\224\237\345\221\275\345\200\274", 0));
