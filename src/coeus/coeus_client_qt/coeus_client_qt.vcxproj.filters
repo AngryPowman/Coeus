@@ -64,6 +64,21 @@
     <Filter Include="core\logic\bag">
       <UniqueIdentifier>{5dae979f-be33-4842-a81a-540958b0a292}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -222,6 +237,15 @@
     <ClCompile Include="character_creator_left_guides_widget.cpp">
       <Filter>core\logic\character_creator</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_summary_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_summary_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="character_creator_summary_page.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_login_dialog.h">
@@ -298,6 +322,9 @@
     </ClInclude>
     <ClInclude Include="ui_definition.h">
       <Filter>core\common</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_creator_summary_page.h">
+      <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -392,6 +419,12 @@
       <Filter>core\ui</Filter>
     </CustomBuild>
     <CustomBuild Include="character_creator_left_guides_widget.h">
+      <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_summary_page.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_summary_page.h">
       <Filter>core\logic\character_creator</Filter>
     </CustomBuild>
   </ItemGroup>

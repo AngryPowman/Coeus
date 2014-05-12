@@ -16,8 +16,8 @@ public:
     virtual ~CharacterCreator();
 
 private:
-    virtual bool validateCurrentPage();
-    virtual int nextId() const;
+    //virtual bool validateCurrentPage();
+    //virtual int nextId() const;
 
 private:
     Ui::CharacterCreator* _ui;

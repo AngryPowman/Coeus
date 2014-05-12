@@ -15,8 +15,8 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QWizardPage>
 
@@ -25,8 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_CharacterCreator_CharacteristicPage
 {
 public:
-    QGroupBox *groupBox;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout;
     QCheckBox *checkBox_23;
     QCheckBox *checkBox_29;
@@ -61,6 +60,7 @@ public:
     QCheckBox *checkBox_31;
     QCheckBox *checkBox_32;
     QCheckBox *checkBox_33;
+    QLabel *label;
 
     void setupUi(QWizardPage *CharacterCreator_CharacteristicPage)
     {
@@ -69,182 +69,189 @@ public:
         CharacterCreator_CharacteristicPage->resize(600, 400);
         CharacterCreator_CharacteristicPage->setMinimumSize(QSize(600, 400));
         CharacterCreator_CharacteristicPage->setMaximumSize(QSize(600, 400));
-        groupBox = new QGroupBox(CharacterCreator_CharacteristicPage);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(177, 84, 418, 310));
-        widget = new QWidget(groupBox);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(18, 21, 385, 280));
-        gridLayout = new QGridLayout(widget);
+        layoutWidget = new QWidget(CharacterCreator_CharacteristicPage);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(186, 75, 385, 280));
+        gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        checkBox_23 = new QCheckBox(widget);
+        checkBox_23 = new QCheckBox(layoutWidget);
         checkBox_23->setObjectName(QStringLiteral("checkBox_23"));
 
         gridLayout->addWidget(checkBox_23, 9, 0, 1, 1);
 
-        checkBox_29 = new QCheckBox(widget);
+        checkBox_29 = new QCheckBox(layoutWidget);
         checkBox_29->setObjectName(QStringLiteral("checkBox_29"));
 
         gridLayout->addWidget(checkBox_29, 9, 2, 1, 1);
 
-        checkBox = new QCheckBox(widget);
+        checkBox = new QCheckBox(layoutWidget);
         checkBox->setObjectName(QStringLiteral("checkBox"));
 
         gridLayout->addWidget(checkBox, 0, 0, 1, 1);
 
-        checkBox_19 = new QCheckBox(widget);
+        checkBox_19 = new QCheckBox(layoutWidget);
         checkBox_19->setObjectName(QStringLiteral("checkBox_19"));
 
         gridLayout->addWidget(checkBox_19, 0, 2, 1, 1);
 
-        checkBox_12 = new QCheckBox(widget);
+        checkBox_12 = new QCheckBox(layoutWidget);
         checkBox_12->setObjectName(QStringLiteral("checkBox_12"));
 
         gridLayout->addWidget(checkBox_12, 1, 1, 1, 1);
 
-        checkBox_10 = new QCheckBox(widget);
+        checkBox_10 = new QCheckBox(layoutWidget);
         checkBox_10->setObjectName(QStringLiteral("checkBox_10"));
 
         gridLayout->addWidget(checkBox_10, 0, 1, 1, 1);
 
-        checkBox_2 = new QCheckBox(widget);
+        checkBox_2 = new QCheckBox(layoutWidget);
         checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
 
         gridLayout->addWidget(checkBox_2, 1, 0, 1, 1);
 
-        checkBox_18 = new QCheckBox(widget);
+        checkBox_18 = new QCheckBox(layoutWidget);
         checkBox_18->setObjectName(QStringLiteral("checkBox_18"));
 
         gridLayout->addWidget(checkBox_18, 2, 2, 1, 1);
 
-        checkBox_3 = new QCheckBox(widget);
+        checkBox_3 = new QCheckBox(layoutWidget);
         checkBox_3->setObjectName(QStringLiteral("checkBox_3"));
 
         gridLayout->addWidget(checkBox_3, 2, 0, 1, 1);
 
-        checkBox_5 = new QCheckBox(widget);
+        checkBox_5 = new QCheckBox(layoutWidget);
         checkBox_5->setObjectName(QStringLiteral("checkBox_5"));
 
         gridLayout->addWidget(checkBox_5, 3, 0, 1, 1);
 
-        checkBox_20 = new QCheckBox(widget);
+        checkBox_20 = new QCheckBox(layoutWidget);
         checkBox_20->setObjectName(QStringLiteral("checkBox_20"));
 
         gridLayout->addWidget(checkBox_20, 3, 1, 1, 1);
 
-        checkBox_17 = new QCheckBox(widget);
+        checkBox_17 = new QCheckBox(layoutWidget);
         checkBox_17->setObjectName(QStringLiteral("checkBox_17"));
 
         gridLayout->addWidget(checkBox_17, 3, 2, 1, 1);
 
-        checkBox_13 = new QCheckBox(widget);
+        checkBox_13 = new QCheckBox(layoutWidget);
         checkBox_13->setObjectName(QStringLiteral("checkBox_13"));
 
         gridLayout->addWidget(checkBox_13, 4, 0, 1, 1);
 
-        checkBox_11 = new QCheckBox(widget);
+        checkBox_11 = new QCheckBox(layoutWidget);
         checkBox_11->setObjectName(QStringLiteral("checkBox_11"));
 
         gridLayout->addWidget(checkBox_11, 4, 2, 1, 1);
 
-        checkBox_14 = new QCheckBox(widget);
+        checkBox_14 = new QCheckBox(layoutWidget);
         checkBox_14->setObjectName(QStringLiteral("checkBox_14"));
 
         gridLayout->addWidget(checkBox_14, 5, 0, 1, 1);
 
-        checkBox_9 = new QCheckBox(widget);
+        checkBox_9 = new QCheckBox(layoutWidget);
         checkBox_9->setObjectName(QStringLiteral("checkBox_9"));
 
         gridLayout->addWidget(checkBox_9, 2, 1, 1, 1);
 
-        checkBox_16 = new QCheckBox(widget);
+        checkBox_16 = new QCheckBox(layoutWidget);
         checkBox_16->setObjectName(QStringLiteral("checkBox_16"));
 
         gridLayout->addWidget(checkBox_16, 1, 2, 1, 1);
 
-        checkBox_6 = new QCheckBox(widget);
+        checkBox_6 = new QCheckBox(layoutWidget);
         checkBox_6->setObjectName(QStringLiteral("checkBox_6"));
 
         gridLayout->addWidget(checkBox_6, 4, 1, 1, 1);
 
-        checkBox_15 = new QCheckBox(widget);
+        checkBox_15 = new QCheckBox(layoutWidget);
         checkBox_15->setObjectName(QStringLiteral("checkBox_15"));
 
         gridLayout->addWidget(checkBox_15, 5, 1, 1, 1);
 
-        checkBox_21 = new QCheckBox(widget);
+        checkBox_21 = new QCheckBox(layoutWidget);
         checkBox_21->setObjectName(QStringLiteral("checkBox_21"));
 
         gridLayout->addWidget(checkBox_21, 5, 2, 1, 1);
 
-        checkBox_4 = new QCheckBox(widget);
+        checkBox_4 = new QCheckBox(layoutWidget);
         checkBox_4->setObjectName(QStringLiteral("checkBox_4"));
 
         gridLayout->addWidget(checkBox_4, 6, 0, 1, 1);
 
-        checkBox_22 = new QCheckBox(widget);
+        checkBox_22 = new QCheckBox(layoutWidget);
         checkBox_22->setObjectName(QStringLiteral("checkBox_22"));
 
         gridLayout->addWidget(checkBox_22, 6, 2, 1, 1);
 
-        checkBox_30 = new QCheckBox(widget);
+        checkBox_30 = new QCheckBox(layoutWidget);
         checkBox_30->setObjectName(QStringLiteral("checkBox_30"));
 
         gridLayout->addWidget(checkBox_30, 6, 1, 1, 1);
 
-        checkBox_28 = new QCheckBox(widget);
+        checkBox_28 = new QCheckBox(layoutWidget);
         checkBox_28->setObjectName(QStringLiteral("checkBox_28"));
 
         gridLayout->addWidget(checkBox_28, 7, 0, 1, 1);
 
-        checkBox_24 = new QCheckBox(widget);
+        checkBox_24 = new QCheckBox(layoutWidget);
         checkBox_24->setObjectName(QStringLiteral("checkBox_24"));
 
         gridLayout->addWidget(checkBox_24, 7, 1, 1, 1);
 
-        checkBox_7 = new QCheckBox(widget);
+        checkBox_7 = new QCheckBox(layoutWidget);
         checkBox_7->setObjectName(QStringLiteral("checkBox_7"));
 
         gridLayout->addWidget(checkBox_7, 8, 0, 1, 1);
 
-        checkBox_25 = new QCheckBox(widget);
+        checkBox_25 = new QCheckBox(layoutWidget);
         checkBox_25->setObjectName(QStringLiteral("checkBox_25"));
 
         gridLayout->addWidget(checkBox_25, 7, 2, 1, 1);
 
-        checkBox_8 = new QCheckBox(widget);
+        checkBox_8 = new QCheckBox(layoutWidget);
         checkBox_8->setObjectName(QStringLiteral("checkBox_8"));
 
         gridLayout->addWidget(checkBox_8, 8, 2, 1, 1);
 
-        checkBox_27 = new QCheckBox(widget);
+        checkBox_27 = new QCheckBox(layoutWidget);
         checkBox_27->setObjectName(QStringLiteral("checkBox_27"));
 
         gridLayout->addWidget(checkBox_27, 9, 1, 1, 1);
 
-        checkBox_26 = new QCheckBox(widget);
+        checkBox_26 = new QCheckBox(layoutWidget);
         checkBox_26->setObjectName(QStringLiteral("checkBox_26"));
 
         gridLayout->addWidget(checkBox_26, 8, 1, 1, 1);
 
-        checkBox_31 = new QCheckBox(widget);
+        checkBox_31 = new QCheckBox(layoutWidget);
         checkBox_31->setObjectName(QStringLiteral("checkBox_31"));
 
         gridLayout->addWidget(checkBox_31, 10, 0, 1, 1);
 
-        checkBox_32 = new QCheckBox(widget);
+        checkBox_32 = new QCheckBox(layoutWidget);
         checkBox_32->setObjectName(QStringLiteral("checkBox_32"));
 
         gridLayout->addWidget(checkBox_32, 10, 1, 1, 1);
 
-        checkBox_33 = new QCheckBox(widget);
+        checkBox_33 = new QCheckBox(layoutWidget);
         checkBox_33->setObjectName(QStringLiteral("checkBox_33"));
 
         gridLayout->addWidget(checkBox_33, 10, 2, 1, 1);
 
+        label = new QLabel(CharacterCreator_CharacteristicPage);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(186, 18, 391, 49));
+        QFont font;
+        font.setPointSize(9);
+        font.setKerning(true);
+        font.setStyleStrategy(QFont::PreferAntialias);
+        label->setFont(font);
+        label->setTextFormat(Qt::AutoText);
+        label->setWordWrap(true);
 
         retranslateUi(CharacterCreator_CharacteristicPage);
 
@@ -254,7 +261,6 @@ public:
     void retranslateUi(QWizardPage *CharacterCreator_CharacteristicPage)
     {
         CharacterCreator_CharacteristicPage->setWindowTitle(QApplication::translate("CharacterCreator_CharacteristicPage", "\346\200\247\346\240\274\347\211\271\345\276\201", 0));
-        groupBox->setTitle(QApplication::translate("CharacterCreator_CharacteristicPage", "\350\247\222\350\211\262\346\200\247\346\240\274\344\270\216\345\201\217\345\245\275", 0));
         checkBox_23->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\345\206\267\346\267\241", 0));
         checkBox_29->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\346\207\222\346\203\260", 0));
         checkBox->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\345\226\204\350\211\257", 0));
@@ -288,6 +294,7 @@ public:
         checkBox_31->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\346\210\220\347\206\237", 0));
         checkBox_32->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\345\206\262\345\212\250", 0));
         checkBox_33->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\347\231\275\347\233\256", 0));
+        label->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "<html><head/><body><p>\350\247\222\350\211\262\346\200\247\346\240\274\345\260\206\345\206\263\345\256\232\344\275\240\344\270\216\346\270\270\346\210\217NPC\344\271\213\351\227\264\347\232\204\344\272\244\344\272\222\346\200\247\345\222\214\345\245\221\345\220\210\345\272\246\357\274\214\350\277\231\344\272\233\345\206\263\345\256\232\344\271\237\344\274\232\345\206\263\345\256\232\344\270\273\347\272\277\345\211\247\346\203\205\347\232\204\350\265\260\345\220\221\343\200\202</p></body></html>", 0));
     } // retranslateUi
 
 };

@@ -6,131 +6,121 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>164</width>
-    <height>400</height>
+    <width>129</width>
+    <height>199</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>164</width>
-    <height>400</height>
-   </size>
-  </property>
   <property name="maximumSize">
    <size>
-    <width>164</width>
-    <height>16777215</height>
+    <width>129</width>
+    <height>199</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QFrame" name="frame">
+  <widget class="QLabel" name="lblPage_2">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>163</width>
-     <height>400</height>
+     <x>39</x>
+     <y>41</y>
+     <width>48</width>
+     <height>16</height>
     </rect>
    </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;职业信仰&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
-   <property name="minimumSize">
-    <size>
-     <width>163</width>
-     <height>400</height>
-    </size>
+  </widget>
+  <widget class="QLabel" name="lblPage_1">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>21</y>
+     <width>48</width>
+     <height>16</height>
+    </rect>
    </property>
-   <property name="maximumSize">
-    <size>
-     <width>164</width>
-     <height>400</height>
-    </size>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;基本资料&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
+  </widget>
+  <widget class="QLabel" name="lblArrow">
+   <property name="geometry">
+    <rect>
+     <x>22</x>
+     <y>3</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
    </property>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>48</x>
-      <y>63</y>
-      <width>78</width>
-      <height>114</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QLabel" name="lblPage_0">
-       <property name="text">
-        <string>进入世界</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLabel" name="lblPage_3">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;性格与偏好&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLabel" name="lblPage_4">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;个人史诗&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLabel" name="lblPage_2">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;职业与信仰&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLabel" name="lblPage_1">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;基本资料&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="lblArrow">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="coeus_client_qt.qrc">:/coeus_client_qt/right_arrow.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLabel" name="lblPage_5">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;创建完成&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="coeus_client_qt.qrc">:/coeus_client_qt/right_arrow.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPage_5">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>101</y>
+     <width>48</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;创建完成&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPage_0">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>3</y>
+     <width>48</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>进入世界</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPage_3">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>61</y>
+     <width>48</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;性格偏好&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPage_4">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>81</y>
+     <width>48</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;个人史诗&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
   </widget>
  </widget>
  <resources>

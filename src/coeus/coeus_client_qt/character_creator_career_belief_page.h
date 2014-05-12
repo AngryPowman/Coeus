@@ -17,11 +17,11 @@ public:
 
 public:
     void initControl();
-    void loadBelifList();
+    //void loadBelifList();
     void loadCharacter(Gender gender);
 
 private slots:
-    void slotBelifChanged(int index);
+    //void slotBelifChanged(int index);
     void slotAvatarListIndexChanged(int index);
     void slotOnGenderChanged();
 

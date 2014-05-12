@@ -26,13 +26,18 @@ public:
     {
         if (CharacterCreator->objectName().isEmpty())
             CharacterCreator->setObjectName(QStringLiteral("CharacterCreator"));
-        CharacterCreator->resize(640, 440);
-        CharacterCreator->setMinimumSize(QSize(600, 400));
-        CharacterCreator->setMaximumSize(QSize(640, 440));
+        CharacterCreator->resize(640, 500);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(CharacterCreator->sizePolicy().hasHeightForWidth());
+        CharacterCreator->setSizePolicy(sizePolicy);
+        CharacterCreator->setMinimumSize(QSize(600, 500));
+        CharacterCreator->setMaximumSize(QSize(640, 500));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         CharacterCreator->setFont(font);
-        CharacterCreator->setWizardStyle(QWizard::NStyles);
+        CharacterCreator->setWizardStyle(QWizard::AeroStyle);
 
         retranslateUi(CharacterCreator);
 
@@ -41,7 +46,7 @@ public:
 
     void retranslateUi(QWizard *CharacterCreator)
     {
-        CharacterCreator->setWindowTitle(QApplication::translate("CharacterCreator", "\345\210\233\345\273\272\350\247\222\350\211\262", 0));
+        Q_UNUSED(CharacterCreator);
     } // retranslateUi
 
 };

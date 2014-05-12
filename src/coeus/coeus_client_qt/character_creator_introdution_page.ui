@@ -25,16 +25,13 @@
   <property name="windowTitle">
    <string>创建角色</string>
   </property>
-  <property name="title">
-   <string>创建角色</string>
-  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>174</x>
      <y>54</y>
      <width>412</width>
-     <height>70</height>
+     <height>76</height>
     </rect>
    </property>
    <property name="font">

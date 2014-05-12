@@ -38,6 +38,7 @@ public:
     QRadioButton *radioButton_2;
     QRadioButton *radioButton_3;
     QRadioButton *radioButton_4;
+    QLabel *label_3;
     QButtonGroup *buttonGroup;
     QButtonGroup *buttonGroup_2;
 
@@ -119,6 +120,16 @@ public:
 
         gridLayout->addWidget(radioButton_4, 3, 0, 1, 1);
 
+        label_3 = new QLabel(CharacterCreator_EpicPage);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(165, 30, 418, 49));
+        QFont font;
+        font.setPointSize(9);
+        font.setKerning(true);
+        font.setStyleStrategy(QFont::PreferAntialias);
+        label_3->setFont(font);
+        label_3->setTextFormat(Qt::AutoText);
+        label_3->setWordWrap(true);
 
         retranslateUi(CharacterCreator_EpicPage);
 
@@ -137,6 +148,7 @@ public:
         radioButton_2->setText(QApplication::translate("CharacterCreator_EpicPage", "\346\210\221\347\224\237\345\234\250\344\270\200\344\270\252\345\257\214\345\217\257\346\225\214\345\233\275\347\232\204\345\256\266\345\272\255\357\274\214\345\256\266\346\227\217\346\234\211\347\235\200\345\244\247\351\207\217\351\253\230\347\247\221\346\212\200\344\272\247\344\270\232\357\274\214\346\230\257\344\270\252\345\257\214\344\272\214\344\273\243", 0));
         radioButton_3->setText(QApplication::translate("CharacterCreator_EpicPage", "\346\210\221\347\224\237\345\234\250\344\270\200\344\270\252\346\231\256\351\200\232\345\256\266\345\272\255\357\274\214\350\231\275\344\270\215\350\203\275\346\214\245\351\207\221\345\246\202\345\234\237\357\274\214\345\200\222\344\271\237\344\270\260\350\241\243\350\266\263\351\243\237", 0));
         radioButton_4->setText(QApplication::translate("CharacterCreator_EpicPage", "\346\210\221\345\207\272\347\224\237\345\234\250\344\270\200\344\270\252\350\264\253\350\213\246\345\256\266\345\272\255\357\274\214\344\270\211\351\244\220\344\270\215\351\245\261\357\274\214\344\275\206\351\252\250\345\255\220\351\207\214\346\270\264\346\234\233\347\253\231\345\234\250\345\256\207\345\256\231\344\271\213\345\267\205", 0));
+        label_3->setText(QApplication::translate("CharacterCreator_EpicPage", "<html><head/><body><p>\344\270\252\344\272\272\345\217\262\350\257\227\347\232\204\351\200\211\346\213\251\345\260\206\345\206\263\345\256\232\346\270\270\346\210\217\346\225\205\344\272\213\347\232\204\345\217\221\345\261\225\350\267\257\347\272\277\357\274\214\344\270\215\345\220\214\351\200\211\346\213\251\344\274\232\347\273\204\345\220\210\345\207\272\344\270\215\344\270\200\346\240\267\347\232\204\345\211\247\346\203\205\345\210\206\346\224\257\343\200\202</p></body></html>", 0));
     } // retranslateUi
 
 };

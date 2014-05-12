@@ -3,6 +3,7 @@
 #include "game_common/config/belif_config.h"
 #include "character_config.h"
 #include "game_main.h"
+#include "character_creator_left_guides_widget.h"
 #include "widget_manager.h"
 
 CharacterCreator_BaseInfoPage::CharacterCreator_BaseInfoPage(QWidget *parent)
@@ -11,8 +12,10 @@ CharacterCreator_BaseInfoPage::CharacterCreator_BaseInfoPage(QWidget *parent)
     _ui = new Ui::CharacterCreator_BaseInfoPage;
     _ui->setupUi(this);
 
-    CharacterCreator_LeftGuidesWidget* leftWidget = WidgetManager::getInstance().characterCreator_LeftGuidesWidget(this);
-    this->layout()->addWidget(leftWidget);
+    QVBoxLayout* layout = new QVBoxLayout(this);
+    CharacterCreator_LeftGuidesWidget* leftWidget = new CharacterCreator_LeftGuidesWidget(this);
+    leftWidget->setCurrentPage(BASEINFO_PAGE);
+    layout->addWidget(leftWidget);
 }
 
 CharacterCreator_BaseInfoPage::~CharacterCreator_BaseInfoPage()

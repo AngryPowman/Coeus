@@ -8,11 +8,12 @@ CharacterCreator::CharacterCreator(QWidget* parent /*= 0*/)
     _ui = new Ui::CharacterCreator;
     _ui->setupUi(this);
 
-    addPage(WidgetManager::getInstance().characterCreator_IntrodutionPage(this));
-    addPage(WidgetManager::getInstance().characterCreator_BaseInfoPage(this));
-    addPage(WidgetManager::getInstance().characterCreator_CareerBeliefPage(this));
-    addPage(WidgetManager::getInstance().characterCreator_CharacteristicPage(this));
-    addPage(WidgetManager::getInstance().characterCreator_EpicPage(this));
+    addPage(WidgetManager::getInstance().characterCreator_IntrodutionPage());
+    addPage(WidgetManager::getInstance().characterCreator_BaseInfoPage());
+    addPage(WidgetManager::getInstance().characterCreator_CareerBeliefPage());
+    addPage(WidgetManager::getInstance().characterCreator_CharacteristicPage());
+    addPage(WidgetManager::getInstance().characterCreator_EpicPage());
+    addPage(WidgetManager::getInstance().characterCreator_SummaryPage());
 }
 
 CharacterCreator::~CharacterCreator()
@@ -20,7 +21,7 @@ CharacterCreator::~CharacterCreator()
 
 }
 
-bool CharacterCreator::validateCurrentPage()
+/*bool CharacterCreator::validateCurrentPage()
 {
     return true;
 }
@@ -29,4 +30,4 @@ int CharacterCreator::nextId() const
 {
     return 0;
 }
-
+*/

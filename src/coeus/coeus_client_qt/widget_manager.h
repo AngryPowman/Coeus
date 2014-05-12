@@ -17,7 +17,7 @@
 #include "character_creator_characteristic_page.h"
 #include "character_creator_career_belief_page.h"
 #include "character_creator_epic_page.h"
-#include "character_creator_left_guides_widget.h"
+#include "character_creator_summary_page.h"
 
 #define DEFINE_WIDGET(type, name)             \
     private: type* _##name;                   \
@@ -58,7 +58,7 @@ public:
     DEFINE_WIDGET(CharacterCreator_CharacteristicPage, characterCreator_CharacteristicPage);
     DEFINE_WIDGET(CharacterCreator_EpicPage, characterCreator_EpicPage);
     DEFINE_WIDGET(CharacterCreator_CareerBeliefPage, characterCreator_CareerBeliefPage);
-    DEFINE_WIDGET(CharacterCreator_LeftGuidesWidget, characterCreator_LeftGuidesWidget);
+    DEFINE_WIDGET(CharacterCreator_SummaryPage, characterCreator_SummaryPage);
 
 };
 

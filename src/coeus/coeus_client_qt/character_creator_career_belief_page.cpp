@@ -2,12 +2,21 @@
 #include "ui_character_creator_career_belief_page.h"
 #include "game_common/config/belif_config.h"
 #include "character_config.h"
+#include "character_creator_left_guides_widget.h"
+#include "widget_manager.h"
 
 CharacterCreator_CareerBeliefPage::CharacterCreator_CareerBeliefPage(QWidget *parent)
     : QWizardPage(parent)
 {
     _ui = new Ui::CharacterCreator_CareerBeliefPage();
     _ui->setupUi(this);
+
+    QVBoxLayout* layout = new QVBoxLayout(this);
+    CharacterCreator_LeftGuidesWidget* leftWidget = new CharacterCreator_LeftGuidesWidget(this);
+    leftWidget->setCurrentPage(CAREER_BELIEF_PAGE);
+    layout->addWidget(leftWidget);
+
+    initControl();
 }
 
 CharacterCreator_CareerBeliefPage::~CharacterCreator_CareerBeliefPage()
@@ -18,16 +27,17 @@ CharacterCreator_CareerBeliefPage::~CharacterCreator_CareerBeliefPage()
 
 void CharacterCreator_CareerBeliefPage::initControl()
 {
-    connect(_ui->cmbBelif, SIGNAL(currentIndexChanged(int)), this, SLOT(slotBelifChanged(int)));
+    //connect(_ui->cmbBelif, SIGNAL(currentIndexChanged(int)), this, SLOT(slotBelifChanged(int)));
     connect(_ui->cmbAvatarList, SIGNAL(currentIndexChanged(int)), this, SLOT(slotAvatarListIndexChanged(int)));
     connect(_ui->optMale, SIGNAL(clicked()), this, SLOT(slotOnGenderChanged()));
     connect(_ui->optFemale, SIGNAL(clicked()), this, SLOT(slotOnGenderChanged()));
 
     //从配置加载数据
-    loadBelifList();
+    //loadBelifList();
     loadCharacter(Gender::Male);
 }
 
+/*
 void CharacterCreator_CareerBeliefPage::loadBelifList()
 {
     const BelifList& belifList = BeliefConfig::getInstance().belifList();
@@ -40,7 +50,7 @@ void CharacterCreator_CareerBeliefPage::loadBelifList()
     {
         slotBelifChanged(0);
     }
-}
+}*/
 
 void CharacterCreator_CareerBeliefPage::loadCharacter(Gender gender)
 {
@@ -61,6 +71,7 @@ void CharacterCreator_CareerBeliefPage::loadCharacter(Gender gender)
     }
 }
 
+/*
 void CharacterCreator_CareerBeliefPage::slotBelifChanged(int index)
 {
     const BelifList& belifList = BeliefConfig::getInstance().belifList();
@@ -69,7 +80,7 @@ void CharacterCreator_CareerBeliefPage::slotBelifChanged(int index)
 
     _ui->frameBadge->setObjectName("frame_badge");
     _ui->frameBadge->setStyleSheet(styleSheetString);
-}
+}*/
 
 void CharacterCreator_CareerBeliefPage::slotAvatarListIndexChanged(int index)
 {

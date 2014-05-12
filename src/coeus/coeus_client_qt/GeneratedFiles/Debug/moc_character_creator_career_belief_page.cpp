@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CharacterCreator_CareerBeliefPage_t {
-    QByteArrayData data[6];
-    char stringdata[106];
+    QByteArrayData data[5];
+    char stringdata[89];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,15 +30,13 @@ struct qt_meta_stringdata_CharacterCreator_CareerBeliefPage_t {
 static const qt_meta_stringdata_CharacterCreator_CareerBeliefPage_t qt_meta_stringdata_CharacterCreator_CareerBeliefPage = {
     {
 QT_MOC_LITERAL(0, 0, 33),
-QT_MOC_LITERAL(1, 34, 16),
-QT_MOC_LITERAL(2, 51, 0),
-QT_MOC_LITERAL(3, 52, 5),
-QT_MOC_LITERAL(4, 58, 26),
-QT_MOC_LITERAL(5, 85, 19)
+QT_MOC_LITERAL(1, 34, 26),
+QT_MOC_LITERAL(2, 61, 0),
+QT_MOC_LITERAL(3, 62, 5),
+QT_MOC_LITERAL(4, 68, 19)
     },
     "CharacterCreator_CareerBeliefPage\0"
-    "slotBelifChanged\0\0index\0"
-    "slotAvatarListIndexChanged\0"
+    "slotAvatarListIndexChanged\0\0index\0"
     "slotOnGenderChanged\0"
 };
 #undef QT_MOC_LITERAL
@@ -49,7 +47,7 @@ static const uint qt_meta_data_CharacterCreator_CareerBeliefPage[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -57,12 +55,10 @@ static const uint qt_meta_data_CharacterCreator_CareerBeliefPage[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   29,    2, 0x08,
-       4,    1,   32,    2, 0x08,
-       5,    0,   35,    2, 0x08,
+       1,    1,   24,    2, 0x08,
+       4,    0,   27,    2, 0x08,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int,    3,
     QMetaType::Void, QMetaType::Int,    3,
     QMetaType::Void,
 
@@ -74,9 +70,8 @@ void CharacterCreator_CareerBeliefPage::qt_static_metacall(QObject *_o, QMetaObj
     if (_c == QMetaObject::InvokeMetaMethod) {
         CharacterCreator_CareerBeliefPage *_t = static_cast<CharacterCreator_CareerBeliefPage *>(_o);
         switch (_id) {
-        case 0: _t->slotBelifChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->slotAvatarListIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 2: _t->slotOnGenderChanged(); break;
+        case 0: _t->slotAvatarListIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->slotOnGenderChanged(); break;
         default: ;
         }
     }
@@ -107,13 +102,13 @@ int CharacterCreator_CareerBeliefPage::qt_metacall(QMetaObject::Call _c, int _id
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 2;
     }
     return _id;
 }

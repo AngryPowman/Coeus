@@ -25,12 +25,12 @@ void CharacterCreator_LeftGuidesWidget::setCurrentPage(const CharacterCreatorPag
         _ui->lblPage_5
     };
 
-    for (int i = 0; i < page; ++i)
+    for (int i = 0; i < PAGE_MAX_FLAG; ++i)
     {
         pageLables[i]->setStyleSheet("color:rgb(158, 158, 158)");
     }
 
-    for (int i = page; i < PAGE_MAX_FLAG; ++i)
+    for (int i = 0; i <= page; ++i)
     {
         pageLables[i]->setStyleSheet("color:rgb(0, 0, 0)");
     }

@@ -7,19 +7,25 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>440</height>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
     <width>600</width>
-    <height>400</height>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>640</width>
-    <height>440</height>
+    <height>500</height>
    </size>
   </property>
   <property name="font">
@@ -27,11 +33,8 @@
     <family>微软雅黑</family>
    </font>
   </property>
-  <property name="windowTitle">
-   <string>创建角色</string>
-  </property>
   <property name="wizardStyle">
-   <enum>QWizard::NStyles</enum>
+   <enum>QWizard::AeroStyle</enum>
   </property>
  </widget>
  <resources/>
