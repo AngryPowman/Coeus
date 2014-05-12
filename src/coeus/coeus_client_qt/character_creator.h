@@ -1,11 +1,11 @@
 #ifndef __CHARACTER_CREATOR_H__
 #define __CHARACTER_CREATOR_H__
 
-#include "qt_coeus_common.h"
-#include "game_common/game_define.h"
 #include <QWizard>
+#include "game_common/game_define.h"
 
 namespace Ui { class CharacterCreator; };
+namespace Protocol { struct CSCreateCharacterReq; };
 
 class CharacterCreator : public QWizard
 {
@@ -16,11 +16,12 @@ public:
     virtual ~CharacterCreator();
 
 private:
-    //virtual bool validateCurrentPage();
+    bool validateCurrentPage();
     //virtual int nextId() const;
 
 private:
     Ui::CharacterCreator* _ui;
+    Protocol::CSCreateCharacterReq* _createRequest;
 };
 
 #endif // !__CHARACTER_CREATOR_H__

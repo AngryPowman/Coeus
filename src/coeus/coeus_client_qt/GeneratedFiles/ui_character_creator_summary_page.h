@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QTextBrowser>
@@ -25,6 +26,7 @@ class Ui_CharacterCreator_SummaryPage
 public:
     QTextBrowser *textBrowser;
     QLabel *label;
+    QCheckBox *checkBox;
 
     void setupUi(QWizardPage *CharacterCreator_SummaryPage)
     {
@@ -38,7 +40,11 @@ public:
         textBrowser->setGeometry(QRect(189, 42, 397, 256));
         label = new QLabel(CharacterCreator_SummaryPage);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(189, 303, 397, 34));
+        label->setGeometry(QRect(189, 330, 397, 31));
+        label->setWordWrap(true);
+        checkBox = new QCheckBox(CharacterCreator_SummaryPage);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setGeometry(QRect(189, 306, 112, 16));
 
         retranslateUi(CharacterCreator_SummaryPage);
 
@@ -48,7 +54,8 @@ public:
     void retranslateUi(QWizardPage *CharacterCreator_SummaryPage)
     {
         CharacterCreator_SummaryPage->setWindowTitle(QApplication::translate("CharacterCreator_SummaryPage", "CharacterCreator_SummaryPage", 0));
-        label->setText(QApplication::translate("CharacterCreator_SummaryPage", "\347\202\271\345\207\273[Finish]\346\214\211\351\222\256\345\256\214\346\210\220\345\210\233\345\273\272\345\271\266\350\277\233\345\205\245\346\270\270\346\210\217\357\274\201\347\202\271\345\207\273[\344\270\212\344\270\200\346\255\245]\345\217\257\344\273\245\344\277\256\346\224\271\350\247\222\350\211\262\344\277\241\346\201\257\343\200\202", 0));
+        label->setText(QApplication::translate("CharacterCreator_SummaryPage", "\347\202\271\345\207\273[Finish]\346\214\211\351\222\256\345\256\214\346\210\220\345\210\233\345\273\272\345\271\266\350\277\233\345\205\245\346\270\270\346\210\217\357\274\201\347\202\271\345\207\273[\344\270\212\344\270\200\346\255\245]\345\217\257\344\273\245\344\277\256\346\224\271\350\247\222\350\211\262\344\277\241\346\201\257\343\200\202[\350\277\224\345\233\236\347\231\273\345\275\225\347\225\214\351\235\242]\346\224\276\345\274\203\346\234\254\346\254\241\345\210\233\345\273\272\343\200\202", 0));
+        checkBox->setText(QApplication::translate("CharacterCreator_SummaryPage", "\346\210\221\346\216\245\345\217\227\344\273\245\344\270\212\346\217\217\350\277\260", 0));
     } // retranslateUi
 
 };

@@ -20,8 +20,23 @@ CharacterCreator_BaseInfoPage::CharacterCreator_BaseInfoPage(QWidget *parent)
 
 CharacterCreator_BaseInfoPage::~CharacterCreator_BaseInfoPage()
 {
-
+    delete _ui;
 }
+
+bool CharacterCreator_BaseInfoPage::validatePage()
+{
+    if (_ui->txtNickname->text().size() == 0)
+    {
+        _ui->lblTip->setText(QStringLiteral("<font color=red>êÇ³Æ²»ÄÜÎª¿Õ¡£</font>"));
+        return false;
+    }
+
+    registerField("nickname", _ui->txtNickname);
+    _ui->lblTip->setText(QStringLiteral(""));
+
+    return true;
+}
+
 /*
 void CharacterCreator_BaseInfoPage::slotOnRandomNickname()
 {

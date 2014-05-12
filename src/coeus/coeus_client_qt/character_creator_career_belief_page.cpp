@@ -126,3 +126,13 @@ void CharacterCreator_CareerBeliefPage::slotOnGenderChanged()
 
     _ui->cmbAvatarList->setCurrentIndex(currentIndex);
 }
+
+bool CharacterCreator_CareerBeliefPage::validatePage()
+{
+    //createRequest->gender = _ui->optMale->isChecked() ? Gender::Male : Gender::Female;
+    //createRequest->character_type = _ui->cmbAvatarList->currentIndex();
+    registerField("gender", _ui->optMale);
+    registerField("character_type", _ui->cmbAvatarList);
+
+    return true;
+}

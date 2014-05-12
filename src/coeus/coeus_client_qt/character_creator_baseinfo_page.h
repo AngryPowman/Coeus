@@ -1,7 +1,7 @@
 #ifndef CHARACTER_CREATOR_BASEINFO_PAGE_H
 #define CHARACTER_CREATOR_BASEINFO_PAGE_H
 
-#include "qt_coeus_common.h"
+#include <QWizardPage>
 #include "game_common/game_define.h"
 
 namespace Ui { class CharacterCreator_BaseInfoPage; };
@@ -15,6 +15,9 @@ public:
     ~CharacterCreator_BaseInfoPage();
 
 public:
+    // validation implement
+    bool validatePage();
+
     //void onGetRandomNicknameRsp(const Protocol::SCGetRandomNameRsp& randomNicknameRsp);
     //void onCreateCharacterRsp(const Protocol::SCCreateCharacterRsp& createCharacterRsp);
 

@@ -28,6 +28,7 @@ public:
     QPushButton *btnCheckNickname;
     QLabel *label_3;
     QLabel *label;
+    QLabel *lblTip;
 
     void setupUi(QWizardPage *CharacterCreator_BaseInfoPage)
     {
@@ -71,6 +72,11 @@ public:
         label->setFont(font1);
         label->setTextFormat(Qt::AutoText);
         label->setWordWrap(true);
+        lblTip = new QLabel(CharacterCreator_BaseInfoPage);
+        lblTip->setObjectName(QStringLiteral("lblTip"));
+        lblTip->setGeometry(QRect(219, 246, 367, 16));
+        lblTip->setTextFormat(Qt::RichText);
+        lblTip->setWordWrap(true);
 
         retranslateUi(CharacterCreator_BaseInfoPage);
 
@@ -82,8 +88,9 @@ public:
         CharacterCreator_BaseInfoPage->setWindowTitle(QApplication::translate("CharacterCreator_BaseInfoPage", "\345\237\272\346\234\254\350\265\204\346\226\231", 0));
         txtNickname->setPlaceholderText(QApplication::translate("CharacterCreator_BaseInfoPage", "\350\257\267\350\276\223\345\205\245\346\270\270\346\210\217\346\230\265\347\247\260", 0));
         btnCheckNickname->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "\346\243\200\346\237\245", 0));
-        label_3->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "\346\230\265\347\247\260", 0));
+        label_3->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "\346\270\270\346\210\217\346\230\265\347\247\260", 0));
         label->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "<html><head/><body><p>\346\270\270\346\210\217\346\230\265\347\247\260\351\225\277\345\272\246\344\270\2724-20\344\270\252\345\255\227\347\254\246\357\274\214\345\217\257\347\224\261\345\244\247\345\260\217\345\206\231\350\213\261\346\226\207\345\255\227\346\257\215\343\200\201\346\225\260\345\255\227\343\200\201\344\270\255\346\226\207\343\200\201\344\270\213\345\210\222\347\272\277\347\273\204\346\210\220\343\200\202</p><p>\347\202\271\345\207\273[\346\243\200\346\237\245]\346\214\211\351\222\256\351\252\214\350\257\201\350\276\223\345\205\245\346\230\265\347\247\260\346\230\257\345\220\246\345\217\257\347\224\250\343\200\202</p></body></html>", 0));
+        lblTip->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "<html><head/><body><p><br/></p></body></html>", 0));
     } // retranslateUi
 
 };

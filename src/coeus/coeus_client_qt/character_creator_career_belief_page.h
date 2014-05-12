@@ -2,7 +2,6 @@
 #define CHARACTER_CREATOR_CAREER_BELIEF_PAGE_H
 
 #include <QWizardPage>
-#include "qt_coeus_common.h"
 #include "game_common/game_define.h"
 
 namespace Ui {class CharacterCreator_CareerBeliefPage;};
@@ -19,6 +18,7 @@ public:
     void initControl();
     //void loadBelifList();
     void loadCharacter(Gender gender);
+    bool validatePage();
 
 private slots:
     //void slotBelifChanged(int index);

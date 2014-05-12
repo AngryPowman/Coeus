@@ -29,9 +29,9 @@
    <property name="geometry">
     <rect>
      <x>189</x>
-     <y>42</y>
+     <y>72</y>
      <width>397</width>
-     <height>256</height>
+     <height>259</height>
     </rect>
    </property>
   </widget>
@@ -39,13 +39,29 @@
    <property name="geometry">
     <rect>
      <x>189</x>
-     <y>303</y>
-     <width>397</width>
+     <y>21</y>
+     <width>400</width>
      <height>34</height>
     </rect>
    </property>
    <property name="text">
-    <string>点击[Finish]按钮完成创建并进入游戏！点击[上一步]可以修改角色信息。</string>
+    <string>恭喜你！你已经完成了所有信息的填写。勾选[我同意以上描述]并点击[完成创建]进入游戏。</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>345</y>
+     <width>112</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>我同意以上描述</string>
    </property>
   </widget>
  </widget>

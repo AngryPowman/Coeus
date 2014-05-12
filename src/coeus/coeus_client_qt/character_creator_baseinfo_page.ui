@@ -89,7 +89,7 @@
     </font>
    </property>
    <property name="text">
-    <string>昵称</string>
+    <string>游戏昵称</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -113,6 +113,25 @@
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTip">
+   <property name="geometry">
+    <rect>
+     <x>219</x>
+     <y>246</y>
+     <width>367</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::RichText</enum>
    </property>
    <property name="wordWrap">
     <bool>true</bool>

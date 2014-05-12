@@ -25,48 +25,46 @@
   <property name="windowTitle">
    <string>性格特征</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>186</x>
-     <y>75</y>
-     <width>385</width>
-     <height>280</height>
+     <y>15</y>
+     <width>391</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <stylestrategy>PreferAntialias</stylestrategy>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;角色性格将决定你与游戏NPC之间的交互性和契合度，这些决定也会决定主线剧情的走向。&lt;/p&gt;&lt;p&gt;最多可以选择12项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>187</x>
+     <y>93</y>
+     <width>388</width>
+     <height>256</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="9" column="0">
-     <widget class="QCheckBox" name="checkBox_23">
-      <property name="text">
-       <string>冷淡</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="2">
-     <widget class="QCheckBox" name="checkBox_29">
-      <property name="text">
-       <string>懒惰</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QCheckBox" name="checkBox">
       <property name="text">
        <string>善良</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QCheckBox" name="checkBox_19">
-      <property name="text">
-       <string>高智商</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QCheckBox" name="checkBox_12">
-      <property name="text">
-       <string>见多识广</string>
       </property>
      </widget>
     </item>
@@ -77,6 +75,13 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="2">
+     <widget class="QCheckBox" name="checkBox_19">
+      <property name="text">
+       <string>高智商</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QCheckBox" name="checkBox_2">
       <property name="text">
@@ -84,10 +89,17 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="2">
-     <widget class="QCheckBox" name="checkBox_18">
+    <item row="1" column="1">
+     <widget class="QCheckBox" name="checkBox_12">
       <property name="text">
-       <string>感性</string>
+       <string>见多识广</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QCheckBox" name="checkBox_16">
+      <property name="text">
+       <string>多重人格</string>
       </property>
      </widget>
     </item>
@@ -95,6 +107,20 @@
      <widget class="QCheckBox" name="checkBox_3">
       <property name="text">
        <string>贪生怕死</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QCheckBox" name="checkBox_9">
+      <property name="text">
+       <string>温柔</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QCheckBox" name="checkBox_18">
+      <property name="text">
+       <string>感性</string>
       </property>
      </widget>
     </item>
@@ -126,10 +152,17 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="2">
-     <widget class="QCheckBox" name="checkBox_11">
+    <item row="4" column="1">
+     <widget class="QCheckBox" name="checkBox_6">
       <property name="text">
-       <string>喜欢钻研</string>
+       <string>同性恋</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QCheckBox" name="checkBox_33">
+      <property name="text">
+       <string>猥琐</string>
       </property>
      </widget>
     </item>
@@ -137,27 +170,6 @@
      <widget class="QCheckBox" name="checkBox_14">
       <property name="text">
        <string>乐于助人</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QCheckBox" name="checkBox_9">
-      <property name="text">
-       <string>温柔</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QCheckBox" name="checkBox_16">
-      <property name="text">
-       <string>多重人格</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QCheckBox" name="checkBox_6">
-      <property name="text">
-       <string>同性恋</string>
       </property>
      </widget>
     </item>
@@ -182,17 +194,17 @@
       </property>
      </widget>
     </item>
+    <item row="6" column="1">
+     <widget class="QCheckBox" name="checkBox_32">
+      <property name="text">
+       <string>冲动</string>
+      </property>
+     </widget>
+    </item>
     <item row="6" column="2">
      <widget class="QCheckBox" name="checkBox_22">
       <property name="text">
        <string>左撇子</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QCheckBox" name="checkBox_30">
-      <property name="text">
-       <string>随和</string>
       </property>
      </widget>
     </item>
@@ -210,13 +222,6 @@
       </property>
      </widget>
     </item>
-    <item row="8" column="0">
-     <widget class="QCheckBox" name="checkBox_7">
-      <property name="text">
-       <string>虚荣</string>
-      </property>
-     </widget>
-    </item>
     <item row="7" column="2">
      <widget class="QCheckBox" name="checkBox_25">
       <property name="text">
@@ -224,17 +229,10 @@
       </property>
      </widget>
     </item>
-    <item row="8" column="2">
-     <widget class="QCheckBox" name="checkBox_8">
+    <item row="8" column="0">
+     <widget class="QCheckBox" name="checkBox_7">
       <property name="text">
-       <string>淡泊名利</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QCheckBox" name="checkBox_27">
-      <property name="text">
-       <string>好色</string>
+       <string>虚荣</string>
       </property>
      </widget>
     </item>
@@ -245,54 +243,35 @@
       </property>
      </widget>
     </item>
-    <item row="10" column="0">
+    <item row="8" column="2">
+     <widget class="QCheckBox" name="checkBox_8">
+      <property name="text">
+       <string>淡泊名利</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
      <widget class="QCheckBox" name="checkBox_31">
       <property name="text">
        <string>成熟</string>
       </property>
      </widget>
     </item>
-    <item row="10" column="1">
-     <widget class="QCheckBox" name="checkBox_32">
+    <item row="9" column="1">
+     <widget class="QCheckBox" name="checkBox_27">
       <property name="text">
-       <string>冲动</string>
+       <string>好色</string>
       </property>
      </widget>
     </item>
-    <item row="10" column="2">
-     <widget class="QCheckBox" name="checkBox_33">
+    <item row="9" column="2">
+     <widget class="QCheckBox" name="checkBox_29">
       <property name="text">
-       <string>白目</string>
+       <string>懒惰</string>
       </property>
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>186</x>
-     <y>18</y>
-     <width>391</width>
-     <height>49</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-     <stylestrategy>PreferAntialias</stylestrategy>
-     <kerning>true</kerning>
-    </font>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;角色性格将决定你与游戏NPC之间的交互性和契合度，这些决定也会决定主线剧情的走向。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="textFormat">
-    <enum>Qt::AutoText</enum>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
