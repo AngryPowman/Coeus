@@ -5,6 +5,7 @@
 #include "game_map_widget.h"
 #include "game_chat_widget.h"
 #include "game_bag.h"
+#include "widget_manager.h"
 
 GameMain::GameMain(QWidget* parent /*= 0*/)
     : QMainWindow(parent)
@@ -25,7 +26,9 @@ void GameMain::initControl()
     // init game ui layout
     QSplitter* splitterMain = new QSplitter(Qt::Horizontal, this);
     splitterMain->setStretchFactor(1, 1);
-    GameStatusBarWidget* gameStatusBarWidget = WidgetManager::getInstance().gameStatusBarWidget(splitterMain);
+    GameStatusBarWidget* gameStatusBarWidget
+        = WidgetManager::getInstance().gameStatusBarWidget(dynamic_cast<QWidget*>(splitterMain));
+
     gameStatusBarWidget->initStatus(3740133615);
 
     QSplitter* splitterRight = new QSplitter(Qt::Vertical, splitterMain);

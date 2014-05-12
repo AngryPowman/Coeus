@@ -1,7 +1,7 @@
 ﻿#include "game_login.h"
 #include "game_setting.h"
 #include "game_main.h"
-#include "game_character_creator.h"
+#include "character_creator.h"
 #include "widget_manager.h"
 #include "game_common/game_define.h"
 #include "game_common/game_util.h"
@@ -318,7 +318,7 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
 
             if (loginRsp.character_create_require == true)
             {
-                GameCharacterCreator* characterCreator = WidgetManager::getInstance().gameCharacterCreator();
+                CharacterCreator* characterCreator = WidgetManager::getInstance().characterCreator();
                 characterCreator->setWindowModality(Qt::WindowModality::WindowModal);
                 characterCreator->show();
             }

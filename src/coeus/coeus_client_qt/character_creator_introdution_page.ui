@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CharacterCreator_IntrodutionPage</class>
+ <widget class="QWizardPage" name="CharacterCreator_IntrodutionPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>创建角色</string>
+  </property>
+  <property name="title">
+   <string>创建角色</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>174</x>
+     <y>54</y>
+     <width>412</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+     <stylestrategy>PreferAntialias</stylestrategy>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在进入游戏世界之前，必须创建一个属于你的游戏角色，它将代表着你的虚拟身份参与到游戏世界中。&lt;br/&gt;&lt;br/&gt;其中包括你的基本身份属性、初始形象、性格以及个人史诗。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="coeus_client_qt.qrc"/>
+ </resources>
+ <connections/>
+</ui>

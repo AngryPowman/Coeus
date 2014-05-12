@@ -1,55 +1,42 @@
 #ifndef __WIDGET_MANAGER_H__
 #define __WIDGET_MANAGER_H__
 
-/*
-#define WIDGET_DEFINE(obj_type, func_name) \
-    private: static obj_type* _m_##func_name;               \
-    public:                                                 \
-    static obj_type* func_name(QWidget* parent = nullptr)   \
-    {                                                       \
-        return tryInit<obj_type>(_m_##func_name, parent);   \
-    }                                                       \
-    static obj_type* relloc_##func_name(QWidget* parent = nullptr) \
-    {                                                       \
-        destroy_##func_name();                              \
-        return func_name(parent);                           \
-    }                                                       \
-    static void destroy_##func_name()                       \
-    {                                                       \
-        SAFE_DELETE(_m_##func_name);                        \
-    }
-
-#define WIDGET_DESTROY(func_name) \
-    destroy_##func_name()
-
-#define WIDGET_STATIC_INIT(obj_type, func_name) \
-    obj_type* WidgetManager::_m_##func_name = nullptr
-*/
-
 #include "venus_net/singleton.h"
 #include <QWidget>
+#include "widget_manager.h"
+#include "game_login.h"
+#include "game_setting.h"
+#include "character_creator.h"
+#include "game_main.h"
+#include "game_status_bar_widget.h"
+#include "game_map_widget.h"
+#include "game_chat_widget.h"
+#include "game_bag.h"
+#include "character_creator_baseinfo_page.h"
+#include "character_creator_introdution_page.h"
+#include "character_creator_characteristic_page.h"
+#include "character_creator_career_belief_page.h"
+#include "character_creator_epic_page.h"
+#include "character_creator_left_guides_widget.h"
 
-class GameLogin;
-class GameSetting;
-class GameCharacterCreator;
-class GameMain;
-class GameStatusBarWidget;
-class GameMapWidget;
-class GameChatWidget;
-class GameBag;
+#define DEFINE_WIDGET(type, name)             \
+    private: type* _##name;                   \
+    public:                                   \
+    type* name(QWidget* parent = nullptr) \
+    {                                     \
+        static bool is_init = false;  \
+        if (!is_init)                 \
+        {\
+            _##name = new type(parent);   \
+            is_init = true;               \
+        }\
+        return (_##name);                 \
+     }
 
 class WidgetManager : public Venus::Singleton<WidgetManager>
 {
 public:
     WidgetManager()
-        : _gameLogin(nullptr),
-        _gameSetting(nullptr),
-        _gameCharacterCreator(nullptr),
-        _gameMain(nullptr),
-        _gameStatusBarWidget(nullptr),
-        _gameMapWidget(nullptr),
-        _gameChatWidget(nullptr),
-        _gameBag(nullptr)
     {
     }
 
@@ -57,37 +44,23 @@ public:
     {
     }
 
-private:
-    template <typename T>
-    T* tryInit(T*& object, QWidget* parent = nullptr)
-    {
-        if (object == nullptr)
-        {
-            object = new T(parent);
-        }
-
-        return object;
-    }
-
 public:
-    GameLogin* gameLogin(QWidget* parent = nullptr);
-    GameSetting* gameSetting(QWidget* parent = nullptr);
-    GameCharacterCreator* gameCharacterCreator(QWidget* parent = nullptr);
-    GameMain* gameMain(QWidget* parent = nullptr);
-    GameStatusBarWidget* gameStatusBarWidget(QWidget* parent = nullptr);
-    GameMapWidget* gameMapWidget(QWidget* parent = nullptr);
-    GameChatWidget* gameChatWidget(QWidget* parent = nullptr);
-    GameBag* gameBag(QWidget* parent = nullptr);
+    DEFINE_WIDGET(GameLogin, gameLogin);
+    DEFINE_WIDGET(GameSetting, gameSetting);
+    DEFINE_WIDGET(CharacterCreator, characterCreator);
+    DEFINE_WIDGET(GameMain, gameMain);
+    DEFINE_WIDGET(GameStatusBarWidget, gameStatusBarWidget);
+    DEFINE_WIDGET(GameMapWidget, gameMapWidget);
+    DEFINE_WIDGET(GameChatWidget, gameChatWidget);
+    DEFINE_WIDGET(GameBag, gameBag);
+    DEFINE_WIDGET(CharacterCreator_IntrodutionPage, characterCreator_IntrodutionPage);
+    DEFINE_WIDGET(CharacterCreator_BaseInfoPage, characterCreator_BaseInfoPage);
+    DEFINE_WIDGET(CharacterCreator_CharacteristicPage, characterCreator_CharacteristicPage);
+    DEFINE_WIDGET(CharacterCreator_EpicPage, characterCreator_EpicPage);
+    DEFINE_WIDGET(CharacterCreator_CareerBeliefPage, characterCreator_CareerBeliefPage);
+    DEFINE_WIDGET(CharacterCreator_LeftGuidesWidget, characterCreator_LeftGuidesWidget);
 
-private:
-    GameLogin*   _gameLogin;
-    GameSetting* _gameSetting;
-    GameCharacterCreator* _gameCharacterCreator;
-    GameMain* _gameMain;
-    GameStatusBarWidget* _gameStatusBarWidget;
-    GameMapWidget* _gameMapWidget;
-    GameChatWidget* _gameChatWidget;
-    GameBag* _gameBag;
 };
+
 
 #endif // !__WIDGET_MANAGER_H__

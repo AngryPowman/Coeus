@@ -93,9 +93,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_game_setting.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="widget_manager.cpp">
-      <Filter>core\common</Filter>
-    </ClCompile>
     <ClCompile Include="login_handler.cpp">
       <Filter>core\network\handlers</Filter>
     </ClCompile>
@@ -106,12 +103,6 @@
       <Filter>qt_main\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_game_main.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_character_creator.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_character_creator.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="login_config.cpp">
@@ -150,9 +141,6 @@
     <ClCompile Include="game_map_widget.cpp">
       <Filter>core\logic\map</Filter>
     </ClCompile>
-    <ClCompile Include="game_character_creator.cpp">
-      <Filter>core\logic\character_creator</Filter>
-    </ClCompile>
     <ClCompile Include="game_login.cpp">
       <Filter>core\logic\login</Filter>
     </ClCompile>
@@ -171,6 +159,69 @@
     <ClCompile Include="game_bag.cpp">
       <Filter>core\logic\bag</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="character_creator.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
+    <ClCompile Include="character_creator_baseinfo_page.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_baseinfo_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_baseinfo_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="character_creator_characteristic_page.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_characteristic_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_characteristic_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="character_creator_epic_page.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_epic_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_epic_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="character_creator_introdution_page.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_introdution_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_introdution_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="character_creator_career_belief_page.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_career_belief_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_career_belief_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_left_guides_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_left_guides_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="character_creator_left_guides_widget.cpp">
+      <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_login_dialog.h">
@@ -181,9 +232,6 @@
     </ClInclude>
     <ClInclude Include="utils.h">
       <Filter>core\common</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_create_dialog.h">
-      <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="game_opcode_registry.h">
       <Filter>core\network</Filter>
@@ -227,6 +275,30 @@
     <ClInclude Include="GeneratedFiles\ui_game_bag_dialog.h">
       <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_creator_characteristic_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_creator_epic_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_creator_introdution_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_creator_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_creator_baseinfo_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_creator_career_belief_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_character_creator_left_guides_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_definition.h">
+      <Filter>core\common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -240,9 +312,6 @@
     </CustomBuild>
     <CustomBuild Include="game_network.h">
       <Filter>core\network</Filter>
-    </CustomBuild>
-    <CustomBuild Include="character_create_dialog.ui">
-      <Filter>core\ui</Filter>
     </CustomBuild>
     <CustomBuild Include="game_main_dialog.ui">
       <Filter>core\ui</Filter>
@@ -271,9 +340,6 @@
     <CustomBuild Include="game_map_widget.h">
       <Filter>core\logic\map</Filter>
     </CustomBuild>
-    <CustomBuild Include="game_character_creator.h">
-      <Filter>core\logic\character_creator</Filter>
-    </CustomBuild>
     <CustomBuild Include="game_login.h">
       <Filter>core\logic\login</Filter>
     </CustomBuild>
@@ -285,6 +351,48 @@
     </CustomBuild>
     <CustomBuild Include="game_bag.h">
       <Filter>core\logic\bag</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator.h">
+      <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_baseinfo_page.h">
+      <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_characteristic_page.h">
+      <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_epic_page.h">
+      <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_introdution_page.h">
+      <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_characteristic_page.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_epic_page.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_introdution_page.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_dialog.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_baseinfo_page.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_career_belief_page.h">
+      <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_career_belief_page.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_left_guides_widget.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_creator_left_guides_widget.h">
+      <Filter>core\logic\character_creator</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

@@ -3,8 +3,8 @@
 
 #include <QtWidgets>
 #include <QMainWindow>
+#include <QWizardPage>
 #include "game_network.h"
-#include "widget_manager.h"
 #include "protocol/opcodes.h"
 #include "protocol/protocol.h"
 

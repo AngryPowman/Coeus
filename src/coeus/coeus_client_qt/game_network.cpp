@@ -3,6 +3,7 @@
 #include "game_handler.h"
 #include "game_opcode_registry.h"
 #include "qt_coeus_common.h"
+#include "widget_manager.h"
 
 GameNetwork::GameNetwork()
     : _blockPacketization(std::bind(&GameNetwork::onMessage, this, std::placeholders::_1))

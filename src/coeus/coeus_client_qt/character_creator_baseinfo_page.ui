@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CharacterCreator_BaseInfoPage</class>
+ <widget class="QWizardPage" name="CharacterCreator_BaseInfoPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>601</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>601</width>
+    <height>398</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>基本资料</string>
+  </property>
+  <property name="title">
+   <string>基本资料</string>
+  </property>
+  <widget class="QLineEdit" name="txtNickname">
+   <property name="geometry">
+    <rect>
+     <x>183</x>
+     <y>211</y>
+     <width>409</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入游戏昵称</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCheckNickname">
+   <property name="geometry">
+    <rect>
+     <x>519</x>
+     <y>237</y>
+     <width>73</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>检查</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>183</x>
+     <y>192</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>游戏昵称</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="coeus_client_qt.qrc"/>
+ </resources>
+ <connections/>
+</ui>

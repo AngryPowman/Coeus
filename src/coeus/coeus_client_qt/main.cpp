@@ -1,6 +1,19 @@
 #include "game_launcher.h"
 #include <QtPlugin>
 
+#if defined(_WIN32)
+#ifdef _DEBUG
+#define DEBUG_CLIENTBLOCK    new( _CLIENT_BLOCK, __FILE__, __LINE__)
+#else
+#define DEBUG_CLIENTBLOCK
+#endif
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#ifdef _DEBUG
+#define new DEBUG_CLIENTBLOCK
+#endif
+#endif
+
 Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin);
 
 #if QT_VERSION < QT_VERSION_CHECK(5,2,1)
@@ -13,6 +26,11 @@ QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
 
 int main(int argc, char *argv[])
 {
-    GameLauncher launcher;
-    return launcher.run(argc, argv);
+    int ret = GameLauncher::run(argc, argv);
+
+#if defined(_WIN32)
+    _CrtDumpMemoryLeaks();
+#endif
+    
+    return ret;
 }
