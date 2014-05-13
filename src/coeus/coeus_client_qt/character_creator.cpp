@@ -30,6 +30,11 @@ CharacterCreator::~CharacterCreator()
 
 bool CharacterCreator::validateCurrentPage()
 {
+    if (this->page(this->nextId())->isFinalPage())
+    {
+        WidgetManager::getInstance().characterCreator_SummaryPage()->updateDescriptions();
+    }
+
     return currentPage()->validatePage();
 }
 /*

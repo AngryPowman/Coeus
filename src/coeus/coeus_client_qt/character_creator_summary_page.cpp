@@ -6,8 +6,8 @@
 CharacterCreator_SummaryPage::CharacterCreator_SummaryPage(QWidget *parent)
     : QWizardPage(parent)
 {
-    ui = new Ui::CharacterCreator_SummaryPage();
-    ui->setupUi(this);
+    _ui = new Ui::CharacterCreator_SummaryPage();
+    _ui->setupUi(this);
 
     QVBoxLayout* layout = new QVBoxLayout(this);
     CharacterCreator_LeftGuidesWidget* leftWidget = new CharacterCreator_LeftGuidesWidget(this);
@@ -17,6 +17,11 @@ CharacterCreator_SummaryPage::CharacterCreator_SummaryPage(QWidget *parent)
 
 CharacterCreator_SummaryPage::~CharacterCreator_SummaryPage()
 {
-    delete ui;
+    delete _ui;
+}
+
+void CharacterCreator_SummaryPage::updateDescriptions()
+{
+    _ui->txtMyEpic->setText(QStringLiteral(""));
 }
 

@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>CharacterCreator_SummaryPage</string>
   </property>
-  <widget class="QTextBrowser" name="textBrowser">
+  <widget class="QTextBrowser" name="txtMyEpic">
    <property name="geometry">
     <rect>
      <x>189</x>

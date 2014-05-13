@@ -42,7 +42,7 @@
     </font>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;角色性格将决定你与游戏NPC之间的交互性和契合度，这些决定也会决定主线剧情的走向。&lt;/p&gt;&lt;p&gt;最多可以选择12项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;角色性格将决定你与游戏NPC之间的交互性和契合度，也会影响剧情的走向。&lt;/p&gt;&lt;p&gt;最多可以选择12项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -51,7 +51,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>187</x>
@@ -62,212 +62,302 @@
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QCheckBox" name="checkBox">
+     <widget class="QCheckBox" name="chkCharacteristic_0">
       <property name="text">
        <string>善良</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>0</UInt>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QCheckBox" name="checkBox_10">
+     <widget class="QCheckBox" name="chkCharacteristic_10">
       <property name="text">
        <string>娘炮</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>10</UInt>
       </property>
      </widget>
     </item>
     <item row="0" column="2">
-     <widget class="QCheckBox" name="checkBox_19">
+     <widget class="QCheckBox" name="chkCharacteristic_20">
       <property name="text">
        <string>高智商</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>20</UInt>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QCheckBox" name="checkBox_2">
+     <widget class="QCheckBox" name="chkCharacteristic_1">
       <property name="text">
        <string>有责任心</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>1</UInt>
       </property>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QCheckBox" name="checkBox_12">
+     <widget class="QCheckBox" name="chkCharacteristic_11">
       <property name="text">
        <string>见多识广</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>11</UInt>
       </property>
      </widget>
     </item>
     <item row="1" column="2">
-     <widget class="QCheckBox" name="checkBox_16">
+     <widget class="QCheckBox" name="chkCharacteristic_21">
       <property name="text">
        <string>多重人格</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>21</UInt>
       </property>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QCheckBox" name="checkBox_3">
+     <widget class="QCheckBox" name="chkCharacteristic_2">
       <property name="text">
        <string>贪生怕死</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>2</UInt>
       </property>
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QCheckBox" name="checkBox_9">
+     <widget class="QCheckBox" name="chkCharacteristic_12">
       <property name="text">
        <string>温柔</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>12</UInt>
       </property>
      </widget>
     </item>
     <item row="2" column="2">
-     <widget class="QCheckBox" name="checkBox_18">
+     <widget class="QCheckBox" name="chkCharacteristic_22">
       <property name="text">
        <string>感性</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>22</UInt>
       </property>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QCheckBox" name="checkBox_5">
+     <widget class="QCheckBox" name="chkCharacteristic_3">
       <property name="text">
        <string>英勇</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>3</UInt>
       </property>
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QCheckBox" name="checkBox_20">
+     <widget class="QCheckBox" name="chkCharacteristic_13">
       <property name="text">
        <string>热爱自由</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>13</UInt>
       </property>
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QCheckBox" name="checkBox_17">
+     <widget class="QCheckBox" name="chkCharacteristic_23">
       <property name="text">
        <string>理性</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>23</UInt>
       </property>
      </widget>
     </item>
     <item row="4" column="0">
-     <widget class="QCheckBox" name="checkBox_13">
+     <widget class="QCheckBox" name="chkCharacteristic_4">
       <property name="text">
        <string>技术宅</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>4</UInt>
       </property>
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QCheckBox" name="checkBox_6">
+     <widget class="QCheckBox" name="chkCharacteristic_14">
       <property name="text">
        <string>同性恋</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>14</UInt>
       </property>
      </widget>
     </item>
     <item row="4" column="2">
-     <widget class="QCheckBox" name="checkBox_33">
+     <widget class="QCheckBox" name="chkCharacteristic_24">
       <property name="text">
        <string>猥琐</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>24</UInt>
       </property>
      </widget>
     </item>
     <item row="5" column="0">
-     <widget class="QCheckBox" name="checkBox_14">
+     <widget class="QCheckBox" name="chkCharacteristic_5">
       <property name="text">
        <string>乐于助人</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>5</UInt>
       </property>
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QCheckBox" name="checkBox_15">
+     <widget class="QCheckBox" name="chkCharacteristic_15">
       <property name="text">
        <string>虚伪</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>15</UInt>
       </property>
      </widget>
     </item>
     <item row="5" column="2">
-     <widget class="QCheckBox" name="checkBox_21">
+     <widget class="QCheckBox" name="chkCharacteristic_25">
       <property name="text">
        <string>浪漫</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>25</UInt>
       </property>
      </widget>
     </item>
     <item row="6" column="0">
-     <widget class="QCheckBox" name="checkBox_4">
+     <widget class="QCheckBox" name="chkCharacteristic_6">
       <property name="text">
        <string>自大</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>6</UInt>
       </property>
      </widget>
     </item>
     <item row="6" column="1">
-     <widget class="QCheckBox" name="checkBox_32">
+     <widget class="QCheckBox" name="chkCharacteristic_16">
       <property name="text">
        <string>冲动</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>16</UInt>
       </property>
      </widget>
     </item>
     <item row="6" column="2">
-     <widget class="QCheckBox" name="checkBox_22">
+     <widget class="QCheckBox" name="chkCharacteristic_26">
       <property name="text">
        <string>左撇子</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>26</UInt>
       </property>
      </widget>
     </item>
     <item row="7" column="0">
-     <widget class="QCheckBox" name="checkBox_28">
+     <widget class="QCheckBox" name="chkCharacteristic_7">
       <property name="text">
        <string>完美主义</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>7</UInt>
       </property>
      </widget>
     </item>
     <item row="7" column="1">
-     <widget class="QCheckBox" name="checkBox_24">
+     <widget class="QCheckBox" name="chkCharacteristic_17">
       <property name="text">
        <string>内向</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>17</UInt>
       </property>
      </widget>
     </item>
     <item row="7" column="2">
-     <widget class="QCheckBox" name="checkBox_25">
+     <widget class="QCheckBox" name="chkCharacteristic_27">
       <property name="text">
        <string>自私</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>27</UInt>
       </property>
      </widget>
     </item>
     <item row="8" column="0">
-     <widget class="QCheckBox" name="checkBox_7">
+     <widget class="QCheckBox" name="chkCharacteristic_8">
       <property name="text">
        <string>虚荣</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>8</UInt>
       </property>
      </widget>
     </item>
     <item row="8" column="1">
-     <widget class="QCheckBox" name="checkBox_26">
+     <widget class="QCheckBox" name="chkCharacteristic_18">
       <property name="text">
        <string>单纯</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>18</UInt>
       </property>
      </widget>
     </item>
     <item row="8" column="2">
-     <widget class="QCheckBox" name="checkBox_8">
+     <widget class="QCheckBox" name="chkCharacteristic_28">
       <property name="text">
-       <string>淡泊名利</string>
+       <string>认真谨慎</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>28</UInt>
       </property>
      </widget>
     </item>
     <item row="9" column="0">
-     <widget class="QCheckBox" name="checkBox_31">
+     <widget class="QCheckBox" name="chkCharacteristic_9">
       <property name="text">
        <string>成熟</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>9</UInt>
       </property>
      </widget>
     </item>
     <item row="9" column="1">
-     <widget class="QCheckBox" name="checkBox_27">
+     <widget class="QCheckBox" name="chkCharacteristic_19">
       <property name="text">
-       <string>好色</string>
+       <string>浮躁</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>19</UInt>
       </property>
      </widget>
     </item>
     <item row="9" column="2">
-     <widget class="QCheckBox" name="checkBox_29">
+     <widget class="QCheckBox" name="chkCharacteristic_29">
       <property name="text">
        <string>懒惰</string>
+      </property>
+      <property name="characteristicValue" stdset="0">
+       <UInt>29</UInt>
       </property>
      </widget>
     </item>

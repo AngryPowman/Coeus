@@ -316,7 +316,7 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
 
             LoginConfig::getInstance().saveToFile();
 
-            if (loginRsp.character_create_require == true)
+            if (static_cast<bool>(loginRsp.character_create_require) == true)
             {
                 CharacterCreator* characterCreator = WidgetManager::getInstance().characterCreator();
                 characterCreator->setWindowModality(Qt::WindowModality::WindowModal);

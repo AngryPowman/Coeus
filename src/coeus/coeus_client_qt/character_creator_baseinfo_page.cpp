@@ -31,7 +31,7 @@ bool CharacterCreator_BaseInfoPage::validatePage()
         return false;
     }
 
-    registerField("nickname", _ui->txtNickname);
+    setField("nickname", _ui->txtNickname->text());
     _ui->lblTip->setText(QStringLiteral(""));
 
     return true;

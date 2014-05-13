@@ -12,8 +12,11 @@ public:
     CharacterCreator_SummaryPage(QWidget *parent = 0);
     ~CharacterCreator_SummaryPage();
 
+public:
+    void updateDescriptions();
+
 private:
-    Ui::CharacterCreator_SummaryPage *ui;
+    Ui::CharacterCreator_SummaryPage* _ui;
 };
 
 #endif // CHARACTER_CREATOR_SUMMARY_PAGE_H
