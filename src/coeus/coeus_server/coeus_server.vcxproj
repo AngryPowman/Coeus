@@ -27,7 +27,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -164,9 +164,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bag_cell.cpp" />
-    <ClCompile Include="bag_common.cpp" />
-    <ClCompile Include="bag_manager.cpp" />
     <ClCompile Include="character_create_handler.cpp" />
     <ClCompile Include="config_loader.cpp" />
     <ClCompile Include="data_manager.cpp" />
@@ -186,9 +183,6 @@
     <ClCompile Include="user_service_handler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bag_cell.h" />
-    <ClInclude Include="bag_common.h" />
-    <ClInclude Include="bag_manager.h" />
     <ClInclude Include="cached_object.h" />
     <ClInclude Include="config_loader.h" />
     <ClInclude Include="data_manager.h" />

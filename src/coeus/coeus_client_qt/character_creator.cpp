@@ -30,7 +30,8 @@ CharacterCreator::~CharacterCreator()
 
 bool CharacterCreator::validateCurrentPage()
 {
-    if (this->page(this->nextId())->isFinalPage())
+    QWizardPage* finalPage = this->page(this->nextId());
+    if (finalPage != nullptr && finalPage->isFinalPage())
     {
         WidgetManager::getInstance().characterCreator_SummaryPage()->updateDescriptions();
     }

@@ -58,6 +58,7 @@ public:
     QCheckBox *chkCharacteristic_9;
     QCheckBox *chkCharacteristic_19;
     QCheckBox *chkCharacteristic_29;
+    QLabel *lblTip;
 
     void setupUi(QWizardPage *CharacterCreator_CharacteristicPage)
     {
@@ -264,6 +265,11 @@ public:
 
         gridLayout->addWidget(chkCharacteristic_29, 9, 2, 1, 1);
 
+        lblTip = new QLabel(CharacterCreator_CharacteristicPage);
+        lblTip->setObjectName(QStringLiteral("lblTip"));
+        lblTip->setGeometry(QRect(189, 360, 367, 16));
+        lblTip->setTextFormat(Qt::RichText);
+        lblTip->setWordWrap(true);
 
         retranslateUi(CharacterCreator_CharacteristicPage);
 
@@ -273,7 +279,7 @@ public:
     void retranslateUi(QWizardPage *CharacterCreator_CharacteristicPage)
     {
         CharacterCreator_CharacteristicPage->setWindowTitle(QApplication::translate("CharacterCreator_CharacteristicPage", "\346\200\247\346\240\274\347\211\271\345\276\201", 0));
-        label->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "<html><head/><body><p>\350\247\222\350\211\262\346\200\247\346\240\274\345\260\206\345\206\263\345\256\232\344\275\240\344\270\216\346\270\270\346\210\217NPC\344\271\213\351\227\264\347\232\204\344\272\244\344\272\222\346\200\247\345\222\214\345\245\221\345\220\210\345\272\246\357\274\214\344\271\237\344\274\232\345\275\261\345\223\215\345\211\247\346\203\205\347\232\204\350\265\260\345\220\221\343\200\202</p><p>\346\234\200\345\244\232\345\217\257\344\273\245\351\200\211\346\213\25112\351\241\271\343\200\202</p></body></html>", 0));
+        label->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "<html><head/><body><p>\350\247\222\350\211\262\346\200\247\346\240\274\345\260\206\345\206\263\345\256\232\344\275\240\344\270\216\346\270\270\346\210\217NPC\344\271\213\351\227\264\347\232\204\344\272\244\344\272\222\346\200\247\345\222\214\345\245\221\345\220\210\345\272\246\357\274\214\344\271\237\344\274\232\345\275\261\345\223\215\345\211\247\346\203\205\347\232\204\350\265\260\345\220\221\343\200\202</p><p>\350\207\263\345\260\221\351\200\211\346\213\2511\351\241\271\357\274\214\346\234\200\345\244\232\345\217\257\344\273\245\351\200\211\346\213\25112\351\241\271\343\200\202</p></body></html>", 0));
         chkCharacteristic_0->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\345\226\204\350\211\257", 0));
         chkCharacteristic_10->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\345\250\230\347\202\256", 0));
         chkCharacteristic_20->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\351\253\230\346\231\272\345\225\206", 0));
@@ -304,6 +310,7 @@ public:
         chkCharacteristic_9->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\346\210\220\347\206\237", 0));
         chkCharacteristic_19->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\346\265\256\350\272\201", 0));
         chkCharacteristic_29->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "\346\207\222\346\203\260", 0));
+        lblTip->setText(QApplication::translate("CharacterCreator_CharacteristicPage", "<html><head/><body><p><br/></p></body></html>", 0));
     } // retranslateUi
 
 };

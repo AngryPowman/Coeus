@@ -42,7 +42,7 @@
     </font>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;角色性格将决定你与游戏NPC之间的交互性和契合度，也会影响剧情的走向。&lt;/p&gt;&lt;p&gt;最多可以选择12项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;角色性格将决定你与游戏NPC之间的交互性和契合度，也会影响剧情的走向。&lt;/p&gt;&lt;p&gt;至少选择1项，最多可以选择12项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -362,6 +362,25 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="lblTip">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>360</y>
+     <width>367</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::RichText</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

@@ -3,6 +3,9 @@
 #include "character_creator_left_guides_widget.h"
 #include "widget_manager.h"
 
+#define TEST_CHARACTERISTIC(value)  \
+
+
 CharacterCreator_CharacteristicPage::CharacterCreator_CharacteristicPage(QWidget *parent)
     : QWizardPage(parent), _checkCount(0)
 {
@@ -45,19 +48,27 @@ CharacterCreator_CharacteristicPage::~CharacterCreator_CharacteristicPage()
 
 bool CharacterCreator_CharacteristicPage::validatePage()
 {
-    setField("characteristic_values", _characteristicValues);
+    if (_checkCount == 0)
+    {
+        _ui->lblTip->setText(QStringLiteral("<font color=red>至少选择1项性格。</font>"));
+        return false;
+    }
+
+    wizard()->setProperty("characteristic_values", _characteristicValues);
+
+    QMessageBox::StandardButton result = QMessageBox::StandardButton::No;
     if (_checkCount < MaxCharacteristicOptions)
     {
-        QMessageBox::StandardButton result = QMessageBox::question(
+        result = QMessageBox::question(
             this,
             QStringLiteral("询问"),
             QStringLiteral("目前还可以选择更多的性格，是否放弃直接进入下一页？"),
             QMessageBox::Yes | QMessageBox::No);
-
-        return (result == QMessageBox::StandardButton::Yes);
     }
 
-    return true;
+    _ui->lblTip->setText("");
+    return (result == QMessageBox::StandardButton::Yes);
+
 }
 
 void CharacterCreator_CharacteristicPage::onChecked(bool checked)
@@ -77,7 +88,8 @@ void CharacterCreator_CharacteristicPage::onChecked(bool checked)
         {
             if (checkbox->isChecked())
             {
-                _characteristicValues |= checkbox->property("characteristicValue").toInt();
+                Characteristic value = static_cast<Characteristic>(checkbox->property("characteristicValue").toInt());
+                _characteristicValues |= value;
             }
 
             if (enabled == false)
@@ -91,6 +103,8 @@ void CharacterCreator_CharacteristicPage::onChecked(bool checked)
             {
                 checkbox->setEnabled(enabled);
             }
+
+            //qDebug() << checkbox->text() + ((_characteristicValues & KindHearted) == 1 ? "(true)" : "(false)");
         }
     };
 

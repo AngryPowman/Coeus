@@ -21,6 +21,7 @@ class CharacterConfig
 public:
     bool parse();
     const CharacterList& characterList() { return _characterList; }
+    const std::string& toName(CharacterType type) { return _characterList[type].name; }
 
 private:
     CharacterList _characterList;
