@@ -86,7 +86,7 @@ void GameLogin::slotOnLoginBtn()
 {
     if (GameUtil::checkEmailValid(_ui.cmbAccount->currentText().toStdString()) == false)
     {
-        QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("别乱写个帐号忽悠我。"));
+        QMessageBox::warning(this, "警告", "别乱写个帐号忽悠我。");
         _ui.cmbAccount->setFocus();
         return;
     }
@@ -96,7 +96,7 @@ void GameLogin::slotOnLoginBtn()
     {
         if (_ui.txtPassword->text().length() == 0)
         {
-            QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("不输入密码就登录，你是猴子请过来的逗比吗？"));
+            QMessageBox::warning(this, "警告", "不输入密码就登录，你是猴子请过来的逗比吗？");
             _ui.txtPassword->selectAll();
             _ui.txtPassword->setFocus();
             return;
@@ -104,7 +104,7 @@ void GameLogin::slotOnLoginBtn()
 
         if (_ui.txtPassword->text().length() > 32)
         {
-            QMessageBox::warning(this, QStringLiteral("警告"), QStringLiteral("你的密码这么长，你家里人知道吗？"));
+            QMessageBox::warning(this, "警告", "你的密码这么长，你家里人知道吗？");
             _ui.txtPassword->selectAll();
             _ui.txtPassword->setFocus();
             return;
@@ -152,11 +152,11 @@ void GameLogin::slotMoveGravatarAnimation()
 
 void GameLogin::loginProcess()
 {
-    _ui.lblStateTips->setText(QStringLiteral("正在连接服务器"));
+    _ui.lblStateTips->setText("正在连接服务器");
     this->repaint();
     if (GameNetwork::getInstance().connectServer())
     {
-        _ui.lblStateTips->setText(QStringLiteral("正在验证用户名和密码"));
+        _ui.lblStateTips->setText("正在验证用户名和密码");
         Protocol::CSLoginReq loginReq;
         loginReq.account = _ui.cmbAccount->currentText().toStdString();
 
@@ -200,7 +200,7 @@ void GameLogin::changePanel(Panel panel)
         setAnimationControlEnabled(true);
         _ui.graphicsGravatar->move(_gravatarOriginX, _ui.graphicsGravatar->pos().y());
 
-        _ui.btnLogin->setText(QStringLiteral("登录"));
+        _ui.btnLogin->setText("登录");
     }
     else if (panel == PANEL_LOGINNING)
     {
@@ -214,7 +214,7 @@ void GameLogin::changePanel(Panel panel)
         _moveGravatar->setSingleShot(false);
         _moveGravatar->start(1);
 
-        _ui.btnLogin->setText(QStringLiteral("取消"));
+        _ui.btnLogin->setText("取消");
     }
     else
     {
@@ -222,7 +222,7 @@ void GameLogin::changePanel(Panel panel)
         _ui.frameServerSelector->setVisible(true);
         _ui.frameLogin->setVisible(false);
 
-        _ui.btnLogin->setText(QStringLiteral("进入游戏"));
+        _ui.btnLogin->setText("进入游戏");
 
     }
 }
@@ -243,19 +243,19 @@ void GameLogin::onConnectFailed(const QAbstractSocket::SocketError& error)
     switch (error)
     {
         case QAbstractSocket::ConnectionRefusedError:
-            statusText += QStringLiteral("无法连接到服务器。"); break;
+            statusText += "无法连接到服务器。"; break;
         case QAbstractSocket::RemoteHostClosedError:
             break;
         case QAbstractSocket::HostNotFoundError:
-            statusText += QStringLiteral("无法找到服务器。"); break;
+            statusText += "无法找到服务器。"; break;
         case QAbstractSocket::SocketTimeoutError:
-            statusText += QStringLiteral("连接服务器超时。"); break;
+            statusText += "连接服务器超时。"; break;
         case QAbstractSocket::NetworkError:
-            statusText += QStringLiteral("网络错误。"); break;
+            statusText += "网络错误。"; break;
         case QAbstractSocket::AddressInUseError:
-            statusText += QStringLiteral("无法使用当前端口。"); break;
+            statusText += "无法使用当前端口。"; break;
         case QAbstractSocket::SocketAddressNotAvailableError:
-            statusText += QStringLiteral("网络地址不可用。"); break;
+            statusText += "网络地址不可用。"; break;
         case QAbstractSocket::UnsupportedSocketOperationError
             :break;
         case QAbstractSocket::UnfinishedSocketOperationError
@@ -271,10 +271,10 @@ void GameLogin::onConnectFailed(const QAbstractSocket::SocketError& error)
         case QAbstractSocket::ProxyConnectionTimeoutError:
             break;
         case QAbstractSocket::ProxyNotFoundError:
-            statusText += QStringLiteral("无法找到代理服务器。"); 
+            statusText += "无法找到代理服务器。"; 
             break;
         case QAbstractSocket::ProxyProtocolError:
-            statusText += QStringLiteral("使用了错误的代理协议。"); 
+            statusText += "使用了错误的代理协议。"; 
             break;
         case QAbstractSocket::OperationError:
             break;
@@ -285,7 +285,7 @@ void GameLogin::onConnectFailed(const QAbstractSocket::SocketError& error)
         case QAbstractSocket::TemporaryError:
             break;
         case QAbstractSocket::UnknownSocketError:
-            statusText += QStringLiteral("未知网络错误，请联系客服（根本就没有客服）。"); break;
+            statusText += "未知网络错误，请联系客服（根本就没有客服）。"; break;
             break;
     }
 
@@ -293,7 +293,7 @@ void GameLogin::onConnectFailed(const QAbstractSocket::SocketError& error)
     {
         statusText += errorCodeText;
         //this->_ui.lblErrorTip->setText(statusText);
-        QMessageBox::critical(this, QStringLiteral("登录失败"), statusText);
+        QMessageBox::critical(this, "登录失败", statusText);
     }
 
     GameNetwork::getInstance().close();
@@ -305,7 +305,7 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
     {
         if (loginRsp.login_result)
         {
-            _ui.lblStateTips->setText(QStringLiteral("登录成功，正在获取游戏数据"));
+            _ui.lblStateTips->setText("登录成功，正在获取游戏数据");
 
             //保存登录配置
             LoginConfig::getInstance().setRememberPassword(_ui.chkRememberPassword);
@@ -333,7 +333,7 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
         else
         {
             changePanel(PANEL_DEFAULT);
-            QMessageBox::critical(this, QStringLiteral("登录失败"), QStringLiteral("用户名和密码不匹配。"));
+            QMessageBox::critical(this, "登录失败", "用户名和密码不匹配。");
         }
     }
 }
@@ -386,12 +386,12 @@ void GameLogin::slotOpenHomepageAction()
 
 void GameLogin::slotHelpAction()
 {
-    QMessageBox::information(this, QStringLiteral("帮助"), QStringLiteral("就这么个玩意儿你还想要什么帮助？"));
+    QMessageBox::information(this, "帮助", "就这么个玩意儿你还想要什么帮助？");
 }
 
 void GameLogin::slotAboutAction()
 {
-    QMessageBox::about(this, QStringLiteral("关于"), "Author by AngryPowman\n\nhttp://powman.org");
+    QMessageBox::about(this, "关于", "Author by AngryPowman\n\nhttp://powman.org");
 }
 
 void GameLogin::slotRegisterAction()

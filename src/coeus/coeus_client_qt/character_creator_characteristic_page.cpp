@@ -50,7 +50,7 @@ bool CharacterCreator_CharacteristicPage::validatePage()
 {
     if (_checkCount == 0)
     {
-        _ui->lblTip->setText(QStringLiteral("<font color=red>至少选择1项性格。</font>"));
+        _ui->lblTip->setText("<font color=red>至少选择1项性格。</font>");
         return false;
     }
 
@@ -61,14 +61,16 @@ bool CharacterCreator_CharacteristicPage::validatePage()
     {
         result = QMessageBox::question(
             this,
-            QStringLiteral("询问"),
-            QStringLiteral("目前还可以选择更多的性格，是否放弃直接进入下一页？"),
+            "询问",
+            "目前还可以选择更多的性格，是否放弃直接进入下一页？",
             QMessageBox::Yes | QMessageBox::No);
+
+        _ui->lblTip->setText("");
+        return (result == QMessageBox::StandardButton::Yes);
     }
 
     _ui->lblTip->setText("");
-    return (result == QMessageBox::StandardButton::Yes);
-
+    return true;
 }
 
 void CharacterCreator_CharacteristicPage::onChecked(bool checked)

@@ -4,7 +4,7 @@
 #include "ui_login_dialog.h"
 #include "qt_coeus_common.h"
 
-#define PASSWORD_HOLDER_TEXT (QStringLiteral("[要更改已保存的密码，请输入新密码]"))
+#define PASSWORD_HOLDER_TEXT ("[要更改已保存的密码，请输入新密码]")
 
 class GameSetting;
 class GameLogin : public QMainWindow

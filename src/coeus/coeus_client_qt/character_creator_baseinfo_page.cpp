@@ -32,7 +32,7 @@ bool CharacterCreator_BaseInfoPage::validatePage()
     }
 
     wizard()->setProperty("nickname", _ui->txtNickname->text());
-    _ui->lblTip->setText(QStringLiteral(""));
+    _ui->lblTip->setText("");
 
     return true;
 }
@@ -72,7 +72,7 @@ void CharacterCreator_BaseInfoPage::onCreateCharacterRsp(const Protocol::SCCreat
 {
     if (createCharacterRsp.result == false)
     {
-        QMessageBox::critical(this, QStringLiteral("失败"), QStringLiteral("无法创建角色。"));
+        QMessageBox::critical(this, "失败", "无法创建角色。");
         exit(0);
     }
     else
