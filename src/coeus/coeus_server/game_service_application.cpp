@@ -1,5 +1,4 @@
 #include "game_service_application.h"
-#include "game_opcode_registry.h"
 #include "game_session.h"
 #include "game_message_dispatcher.h"
 #include "venus_net/message_dispatcher.h"
@@ -17,9 +16,15 @@ GameServiceApplication::~GameServiceApplication()
 
 int GameServiceApplication::start(int argc, char** argv)
 {
-	Logger::getInstance().initialize(this->logger());
-	GameOpcodeRegistry::getInstance().initialize<GameSession>();
-	GameService::getInstance().initialize();
+    Logger::getInstance().initialize(this->logger());
+    if (GameService::getInstance().initialize() == false)
+    {
+        error_log("Failed to initialize GameService!");
+        GameService::getInstance().destroy();
+        return -1;
+    }
+
+    GameOpcodeRegistry::getInstance().initialize<GameSession>();
 
     Venus::ServiceApplicationParams params;
     params.listen_address = ServerConfig::getInstance().listenAddress;

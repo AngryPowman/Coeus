@@ -27,7 +27,7 @@ bool CharacterCreator_BaseInfoPage::validatePage()
 {
     if (_ui->txtNickname->text().size() == 0)
     {
-        _ui->lblTip->setText(QStringLiteral("<font color=red>昵称不能为空。</font>"));
+        _ui->lblTip->setText("<font color=red>昵称不能为空。</font>");
         return false;
     }
 

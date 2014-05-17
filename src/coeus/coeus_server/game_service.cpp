@@ -1,6 +1,5 @@
 #include "game_service.h"
 #include "db_define.h"
-
 #include <Poco/Data/Common.h>
 #include "game_database.h"
 #include "game_session_manager.h"
@@ -9,10 +8,8 @@
 #include "game_common/config/config_manager.h"
 
 #define CHECK_INITIALIZE(result, x, s) \
-	if (result) \
-	debug_log(x); \
-	else \
-    error_log(s); return false;
+if (result) { debug_log(x); } \
+ else { error_log(s); return false; }
 
 GameService::GameService()
 {
@@ -31,6 +28,7 @@ bool GameService::initialize()
         ConfigLoader::getInstance().initialize(ConfigManager::getInstancePtr());
 		ConfigManager::getInstance().start();
         ConfigManager::getInstance().wait();
+
 
 		CHECK_INITIALIZE(GameDatabase::getInstance().initialize(), "Database init OK.", "Database init failed.");
 		CHECK_INITIALIZE(PlayerManager::getInstance().initialize(), "PlayerManager init OK.", "PlayerManager init failed.");
