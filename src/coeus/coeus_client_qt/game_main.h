@@ -9,6 +9,12 @@ class GameChatWidget;
 
 namespace Ui { class GameMainDialog; };
 
+enum GameView
+{
+    GV_MOVIE,
+    GV_GENERAL
+};
+
 class GameMain : public QMainWindow
 {
     Q_OBJECT
@@ -21,6 +27,9 @@ public:
     void initControl();
 
 public:
+    void initGame(bool needCreate = false);
+    void loadGameData();
+    void changeView(GameView gameView);
 
 private slots:
     void slotOnAboutQT();

@@ -32,7 +32,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(CharacterCreator->sizePolicy().hasHeightForWidth());
         CharacterCreator->setSizePolicy(sizePolicy);
-        CharacterCreator->setMinimumSize(QSize(600, 500));
+        CharacterCreator->setMinimumSize(QSize(640, 500));
         CharacterCreator->setMaximumSize(QSize(640, 500));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));

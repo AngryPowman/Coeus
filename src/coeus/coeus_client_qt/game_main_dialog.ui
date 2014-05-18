@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>604</width>
-    <height>391</height>
+    <width>851</width>
+    <height>598</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>混沌之门</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <property name="documentMode">
    <bool>false</bool>
@@ -32,7 +35,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>604</width>
+     <width>851</width>
      <height>23</height>
     </rect>
    </property>
@@ -107,7 +110,7 @@
    <addaction name="action_World"/>
    <addaction name="action_Friends"/>
   </widget>
-  <widget class="QToolBar" name="toolBar_2">
+  <widget class="QToolBar" name="tbTop">
    <property name="windowTitle">
     <string>toolBar_2</string>
    </property>

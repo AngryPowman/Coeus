@@ -6,6 +6,7 @@
 #include "game_chat_widget.h"
 #include "game_bag.h"
 #include "widget_manager.h"
+#include "character_creator.h"
 
 GameMain::GameMain(QWidget* parent /*= 0*/)
     : QMainWindow(parent)
@@ -13,7 +14,10 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     _ui = new Ui::GameMainDialog();
     _ui->setupUi(this);
 
-    initControl();
+    QDesktopWidget* desk = QApplication::desktop();
+    int wd = desk->width();
+    int ht = desk->height();
+    this->move((wd - width()) / 2, (ht - height()) / 2);
 }
 
 GameMain::~GameMain()
@@ -33,8 +37,6 @@ void GameMain::initControl()
     splitterMain->setStretchFactor(1, 1);
     GameStatusBarWidget* gameStatusBarWidget
         = WidgetManager::getInstance().gameStatusBarWidget(dynamic_cast<QWidget*>(splitterMain));
-
-    gameStatusBarWidget->initStatus(3740133615);
 
     QSplitter* splitterRight = new QSplitter(Qt::Vertical, splitterMain);
     splitterRight->setOpaqueResize(true);
@@ -77,4 +79,42 @@ void GameMain::slotOnBagActionTriggered(bool checked)
     {
         gameBag->hide();
     }
+}
+
+void GameMain::initGame(bool needCreate /*= false*/)
+{
+    if (needCreate == true)
+    {
+        changeView(GameView::GV_MOVIE);
+        CharacterCreator* characterCreator = WidgetManager::getInstance().characterCreator();
+
+        QRect rect(characterCreator->geometry());
+        rect.setLeft(this->geometry().left());
+        rect.setTop(this->geometry().top());
+        this->setGeometry(rect);
+        this->setCentralWidget(characterCreator);
+        //characterCreator->setWindowModality(Qt::WindowModality::WindowModal);
+        //characterCreator->show();
+    }
+
+    //initControl();
+}
+
+void GameMain::changeView(GameView gameView)
+{
+    if (gameView == GameView::GV_MOVIE)
+    {
+        //this->setStyleSheet("background-color: rgb(0, 0, 0);");
+        
+        _ui->menubar->setVisible(false);
+        _ui->tbTop->setVisible(false);
+        _ui->tbLeftSide->setVisible(false);
+    }
+}
+
+void GameMain::loadGameData()
+{
+    GameStatusBarWidget* gameStatusBarWidget
+        = WidgetManager::getInstance().gameStatusBarWidget();
+    gameStatusBarWidget->initStatus(3740133615);
 }

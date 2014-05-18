@@ -50,6 +50,9 @@ void GameLogin::initControl()
         _isPasswordDigest = true;
     }
 
+    _ui.chkRememberPassword->setChecked(LoginConfig::getInstance().getRememberPassword());
+    _ui.chkAutoLogin->setChecked(LoginConfig::getInstance().getAutoLogin());
+
     _gravatarOriginX = _ui.graphicsGravatar->geometry().left();
     _frameLoginInitialPoint = _ui.frameLogin->pos();
 
@@ -316,17 +319,10 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
 
             LoginConfig::getInstance().saveToFile();
 
-            if (static_cast<bool>(loginRsp.character_create_require) == true)
-            {
-                CharacterCreator* characterCreator = WidgetManager::getInstance().characterCreator();
-                characterCreator->setWindowModality(Qt::WindowModality::WindowModal);
-                characterCreator->show();
-            }
-            else
-            {
-                GameMain* gameMain = WidgetManager::getInstance().gameMain();
-                gameMain->show();
-            }
+            //enter game
+            GameMain* gameMain = WidgetManager::getInstance().gameMain();
+            gameMain->initGame(static_cast<bool>(loginRsp.character_create_require));
+            gameMain->show();
 
             this->close();
         }

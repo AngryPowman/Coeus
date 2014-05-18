@@ -32,6 +32,9 @@ void GameSession::characterCreateHandler(const NetworkPacket::Ptr& packet)
         return;
     }
 
+    // Todo : validate nickname regulation
+    // ...
+
     Protocol::SCCreateCharacter response;
     response.result = (createCharacterRequest.gender == Gender::Female || createCharacterRequest.gender == Gender::Male);
     response.result = (

@@ -46,13 +46,14 @@ public:
     QMenu *menu;
     QMenu *menuSidebar;
     QToolBar *tbLeftSide;
-    QToolBar *toolBar_2;
+    QToolBar *tbTop;
 
     void setupUi(QMainWindow *GameMainDialog)
     {
         if (GameMainDialog->objectName().isEmpty())
             GameMainDialog->setObjectName(QStringLiteral("GameMainDialog"));
-        GameMainDialog->resize(604, 391);
+        GameMainDialog->resize(851, 598);
+        GameMainDialog->setStyleSheet(QStringLiteral(""));
         GameMainDialog->setDocumentMode(false);
         GameMainDialog->setDockOptions(QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks);
         GameMainDialog->setUnifiedTitleAndToolBarOnMac(true);
@@ -103,7 +104,7 @@ public:
         GameMainDialog->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GameMainDialog);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 604, 23));
+        menubar->setGeometry(QRect(0, 0, 851, 23));
         menu_G = new QMenu(menubar);
         menu_G->setObjectName(QStringLiteral("menu_G"));
         menu = new QMenu(menubar);
@@ -120,9 +121,9 @@ public:
         tbLeftSide->setToolButtonStyle(Qt::ToolButtonIconOnly);
         tbLeftSide->setFloatable(false);
         GameMainDialog->addToolBar(Qt::LeftToolBarArea, tbLeftSide);
-        toolBar_2 = new QToolBar(GameMainDialog);
-        toolBar_2->setObjectName(QStringLiteral("toolBar_2"));
-        GameMainDialog->addToolBar(Qt::TopToolBarArea, toolBar_2);
+        tbTop = new QToolBar(GameMainDialog);
+        tbTop->setObjectName(QStringLiteral("tbTop"));
+        GameMainDialog->addToolBar(Qt::TopToolBarArea, tbTop);
 
         menubar->addAction(menu_G->menuAction());
         menubar->addAction(menu->menuAction());
@@ -179,7 +180,7 @@ public:
         menu->setTitle(QApplication::translate("GameMainDialog", "\345\205\263\344\272\216", 0));
         menuSidebar->setTitle(QApplication::translate("GameMainDialog", "menuSidebar", 0));
         tbLeftSide->setWindowTitle(QApplication::translate("GameMainDialog", "toolBar", 0));
-        toolBar_2->setWindowTitle(QApplication::translate("GameMainDialog", "toolBar_2", 0));
+        tbTop->setWindowTitle(QApplication::translate("GameMainDialog", "toolBar_2", 0));
     } // retranslateUi
 
 };
