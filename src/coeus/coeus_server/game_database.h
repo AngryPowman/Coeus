@@ -52,13 +52,13 @@ public:
     bool isNicknameExist(const std::string& nickname);
 
     //加载角色（全部数据）
-    bool loadCharacterInfo(uint64 userGuid, PlayerDB* playerDB);
+    bool loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& fullData);
 
     //保存角色（全部数据）
-    bool saveCharacterInfo(uint64 userGuid, PlayerDB* playerDB);
+    bool saveCharacterInfo(uint64 userGuid, const Protocol::PlayerFullData& fullData);
 
     //创建角色（基本数据）
-    bool createCharacter(uint64 userGuid, uint8 characterType, const std::string& nickname, uint8 gender, uint8 belief);
+    bool createCharacter(uint64 userGuid, uint8 characterType, const std::string& nickname, uint8 gender, const Protocol::Epic& epic);
 
 private:
     Poco::Data::Session* _db_session;

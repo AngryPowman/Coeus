@@ -17,7 +17,7 @@ enum Gender
     Female = 0,   // 女性
     Male,         // 男性
 
-    GenderMax
+    GenderMaxFlag
 };
 
 enum Belief
@@ -25,7 +25,7 @@ enum Belief
     UniverseFederal = 0, // 宇宙联邦
     PowerOfDestiny,      // 自然之力
     Dark,                // 黑暗教廷
-    BeliefMax
+    BeliefMaxFlag
 };
 
 enum CharacterType
@@ -34,7 +34,7 @@ enum CharacterType
     SpaceTraveler,      // 时空旅行者
     Inventor,           // 大发明家
 
-    CharacterTypeMax,
+    CharacterTypeMaxFlag,
 };
 
 enum Characteristic
@@ -76,6 +76,29 @@ enum LoginResult
     LR_LOGIN_SUCCESS,       // 登录成功
     LR_ACCOUNT_DISMATCH,    // 用户名和密码不匹配
     LR_USER_BANNED,         // 用户被封号
+};
+
+
+struct Epic
+{
+    enum FamilyType
+    {
+        AnofficialFamily,   //官宦家庭
+        RichFamily,         //富豪家庭
+        CommonFamily,       //普通家庭
+        NeedyFamily,        //贫苦家庭
+
+        FamilyMaxFlag
+    };
+
+    enum StoryType
+    {
+        FinderStory,        //追寻之路
+        SeekerStory,        //探索之路
+        ChallengerStory,    //强者之路
+
+        StoryMaxFlag
+    };
 };
 
 #endif // !__GAME_DEFINE_H__

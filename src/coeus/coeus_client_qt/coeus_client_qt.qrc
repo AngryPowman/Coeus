@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="coeus_client_qt">
+    <file>no.png</file>
+    <file>yes.png</file>
     <file>right_arrow.png</file>
     <file>AngryPowman.jpg</file>
     <file>coeus_boy.png</file>

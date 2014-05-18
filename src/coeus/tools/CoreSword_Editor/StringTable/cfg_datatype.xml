@@ -23,4 +23,18 @@
     <Member MemberName="power" MemberType="uint32" Purpose="variable" MemberNote="" />
     <Member MemberName="level" MemberType="uint16" Purpose="variable" MemberNote="" />
   </Type>
+  <Type VariableType="2" TypeName="Epic" Description="">
+    <Member MemberName="family_type" MemberType="uint8" Purpose="variable" MemberNote="家庭背景" />
+    <Member MemberName="story_type" MemberType="uint8" Purpose="variable" MemberNote="我的故事" />
+    <Member MemberName="characteristic" MemberType="uint32" Purpose="variable" MemberNote="" />
+  </Type>
+  <Type VariableType="2" TypeName="PlayerFullData" Description="">
+    <Member MemberName="userid" MemberType="uint64" Purpose="variable" MemberNote="" />
+    <Member MemberName="character_id" MemberType="uint64" Purpose="variable" MemberNote="" />
+    <Member MemberName="character_type" MemberType="uint8" Purpose="variable" MemberNote="" />
+    <Member MemberName="nickname" MemberType="std::string" Purpose="variable" MemberNote="" />
+    <Member MemberName="gender" MemberType="uint8" Purpose="variable" MemberNote="" />
+    <Member MemberName="epic" MemberType="Epic" Purpose="variable" MemberNote="" />
+    <Member MemberName="last_login" MemberType="int64" Purpose="variable" MemberNote="" />
+  </Type>
 </XMLDataType>

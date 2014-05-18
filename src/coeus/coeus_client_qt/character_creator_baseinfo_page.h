@@ -19,7 +19,7 @@ public:
     bool validatePage();
 
     //void onGetRandomNicknameRsp(const Protocol::SCGetRandomNameRsp& randomNicknameRsp);
-    //void onCreateCharacterRsp(const Protocol::SCCreateCharacterRsp& createCharacterRsp);
+    //void onCreateCharacterRsp(const Protocol::SCCreateCharacter& createCharacterRsp);
 
 private slots:
     //void slotOnRandomNickname();

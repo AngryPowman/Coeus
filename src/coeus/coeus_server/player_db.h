@@ -4,6 +4,7 @@
 #include "venus_net/venus_net.h"
 #include "game_database.h"
 #include "cached_object.h"
+#include "game_common/game_define.h"
 
 class PlayerDB
 {
@@ -19,7 +20,6 @@ public:
         register_ip = "";
 		register_time = 0;
 		last_login = 0;
-
         gender = 0;
         nickname = "";
 	}
@@ -35,11 +35,11 @@ public:
     //=======================================================
     // 游戏角色相关
     //=======================================================
-    uint64 player_id;        //角色唯一ID
+    uint64 player_id;           //角色唯一ID
     uint8 character_type;       //角色类型（职业）
     std::string nickname;       //昵称
-    uint8 belief;               //信仰
     uint8 gender;               //性别
+    Protocol::Epic epic;        //史诗
 };
 
 #endif

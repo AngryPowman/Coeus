@@ -54,7 +54,7 @@ bool CharacterCreator_CharacteristicPage::validatePage()
         return false;
     }
 
-    wizard()->setProperty("characteristic_values", _characteristicValues);
+    wizard()->setProperty("characteristic", _characteristicValues);
 
     QMessageBox::StandardButton result = QMessageBox::StandardButton::No;
     if (_checkCount < MaxCharacteristicOptions)

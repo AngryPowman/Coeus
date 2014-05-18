@@ -4,13 +4,13 @@
 #include "player_db.h"
 
 Player::Player(uint64 playerId, GameSession* session)
-	: _playerId(playerId), _playerDB(new PlayerDB()), _session(session), _cachedLastLogin(0)
+    : _playerId(playerId), _playerFullData(new Protocol::PlayerFullData()), _session(session), _cachedLastLogin(0)
 {
 }
 
 Player::~Player()
 {
-	SAFE_DELETE(_playerDB);
+    SAFE_DELETE(_playerFullData);
 }
 
 void Player::onLogin()
@@ -30,17 +30,17 @@ void Player::onLogout()
 
 void Player::nickname(const std::string& nickname)
 {
-	_playerDB->nickname = nickname;
+    _playerFullData->nickname = nickname;
 }
 
 const std::string& Player::nickname() const
 {
-	return _playerDB->nickname;
+    return _playerFullData->nickname;
 }
 
-PlayerDB* Player::DB()
+Protocol::PlayerFullData& Player::DB()
 {
-	return _playerDB;
+    return *_playerFullData;
 }
 
 GameSession* Player::session()
@@ -55,22 +55,22 @@ uint64 Player::playerId() const
 
 void Player::gender(int32 gender)
 {
-	_playerDB->gender = gender;
+    _playerFullData->gender = gender;
 }
 
 int32 Player::gender() const
 {
-	return _playerDB->gender;
+    return _playerFullData->gender;
 }
 
 void Player::lastLogin(int64 last_login)
 {
-	_playerDB->last_login = last_login;
+    _playerFullData->last_login = last_login;
 }
 
 int64 Player::lastLogin() const
 {
-	return _playerDB->last_login;
+    return _playerFullData->last_login;
 }
 
 void Player::cachedLastLogin(int64 last_login)

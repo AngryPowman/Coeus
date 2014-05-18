@@ -7,7 +7,7 @@ CharacterCreator::CharacterCreator(QWidget* parent /*= 0*/)
 {
     _ui = new Ui::CharacterCreator;
     _ui->setupUi(this);
-    _createRequest = new Protocol::CSCreateCharacterReq;
+    _createRequest = new Protocol::CSCreateCharacter;
 
     addPage(WidgetManager::getInstance().characterCreator_IntrodutionPage());
     addPage(WidgetManager::getInstance().characterCreator_BaseInfoPage());
@@ -30,13 +30,20 @@ CharacterCreator::~CharacterCreator()
 
 bool CharacterCreator::validateCurrentPage()
 {
-    QWizardPage* finalPage = this->page(this->nextId());
-    if (finalPage != nullptr && finalPage->isFinalPage())
+    if (currentPage()->validatePage() == false)
     {
-        WidgetManager::getInstance().characterCreator_SummaryPage()->updateDescriptions();
+        return false;
     }
+    else
+    {
+        QWizardPage* finalPage = this->page(this->nextId());
+        if (finalPage != nullptr && finalPage->isFinalPage())
+        {
+            WidgetManager::getInstance().characterCreator_SummaryPage()->updateDescriptions();
+        }
 
-    return currentPage()->validatePage();
+        return true;
+    }
 }
 /*
 int CharacterCreator::nextId() const

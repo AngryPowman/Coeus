@@ -11,7 +11,7 @@ DataManager::~DataManager()
 
 }
 
-void DataManager::loadPlayerData(uint64 playerId, PlayerDB* playerDb)
+void DataManager::loadPlayerData(uint64 playerId, Protocol::PlayerFullData& fullData)
 {
-	GameDatabase::getInstance().loadCharacterInfo(playerId, playerDb);
+    GameDatabase::getInstance().loadCharacterInfo(playerId, fullData);
 }

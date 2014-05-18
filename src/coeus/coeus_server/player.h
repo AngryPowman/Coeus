@@ -5,7 +5,10 @@
 #include "cached_object.h"
 
 class GameSession;
-class PlayerDB;
+namespace Protocol
+{
+    struct PlayerFullData;
+}
 
 enum PlayerGender
 {
@@ -47,12 +50,12 @@ public:
 	uint32 gold() const;
 
 public:
-	PlayerDB* DB();
+    Protocol::PlayerFullData& DB();
 	GameSession* session();
 
 private:
 	uint64 _playerId;
-	PlayerDB* _playerDB;
+	Protocol::PlayerFullData* _playerFullData;
 	GameSession* _session;
 
 private:

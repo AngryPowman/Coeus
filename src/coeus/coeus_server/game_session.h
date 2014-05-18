@@ -27,7 +27,6 @@ public:
     void registerHandler(const NetworkPacket::Ptr& packet);
 
     //½ÇÉ«´´½¨
-    void getRandomNicknameHandler(const NetworkPacket::Ptr& packet);
     void checkNicknameExist(const NetworkPacket::Ptr& packet);
     void characterCreateHandler(const NetworkPacket::Ptr& packer);
 

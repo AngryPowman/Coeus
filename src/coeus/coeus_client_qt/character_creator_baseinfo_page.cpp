@@ -54,13 +54,13 @@ void CharacterCreator_BaseInfoPage::slotOnCreateBtn()
         return;
     }
 
-    Protocol::CSCreateCharacterReq createCharacterReq;
+    Protocol::CSCreateCharacter createCharacterReq;
     createCharacterReq.nickname = _ui->txtNickname->text().toStdString();
     createCharacterReq.belief = _ui->cmbBelif->currentIndex();
     createCharacterReq.gender = _ui->optMale->isChecked() ? Gender::Male : Gender::Female;
     createCharacterReq.character_type = _ui->cmbAvatarList->currentIndex();
 
-    GameNetwork::getInstance().sendMessage(Opcodes::CSCreateCharacterReq, createCharacterReq);
+    GameNetwork::getInstance().sendMessage(Opcodes::CSCreateCharacter, createCharacterReq);
 }
 
 void CharacterCreator_BaseInfoPage::onGetRandomNicknameRsp(const Protocol::SCGetRandomNameRsp& randomNicknameRsp)
@@ -68,7 +68,7 @@ void CharacterCreator_BaseInfoPage::onGetRandomNicknameRsp(const Protocol::SCGet
     _ui->txtNickname->setText(QString::fromStdString(randomNicknameRsp.random_name.c_str()));
 }
 
-void CharacterCreator_BaseInfoPage::onCreateCharacterRsp(const Protocol::SCCreateCharacterRsp& createCharacterRsp)
+void CharacterCreator_BaseInfoPage::onCreateCharacterRsp(const Protocol::SCCreateCharacter& createCharacterRsp)
 {
     if (createCharacterRsp.result == false)
     {

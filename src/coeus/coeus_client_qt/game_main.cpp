@@ -23,6 +23,11 @@ GameMain::~GameMain()
 
 void GameMain::initControl()
 {
+    // video widget
+    //QLabel* videoWidget = new QLabel(this);
+    //videoWidget->setBackgroundRole();
+    //this->setCentralWidget(videoWidget);
+
     // init game ui layout
     QSplitter* splitterMain = new QSplitter(Qt::Horizontal, this);
     splitterMain->setStretchFactor(1, 1);

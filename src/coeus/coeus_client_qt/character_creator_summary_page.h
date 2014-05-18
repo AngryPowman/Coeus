@@ -13,6 +13,7 @@ public:
     ~CharacterCreator_SummaryPage();
 
 public:
+    bool validatePage();
     void updateDescriptions();
 
 private:

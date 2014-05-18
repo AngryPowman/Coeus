@@ -84,22 +84,30 @@ bool GameDatabase::isNicknameExist(const std::string& nickname)
     return (preparedStatement.execute() > 0);
 }
 
-bool GameDatabase::loadCharacterInfo(uint64 userGuid, PlayerDB* playerDB)
+bool GameDatabase::loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& fullData)
 {
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_NICKNAME_IN_USE);
     preparedStatement.statement(),
         Poco::Data::limit(1),
         Poco::Data::use(userGuid),
         Poco::Data::into(userGuid),
-        Poco::Data::into(playerDB->character_type),
-        Poco::Data::into(playerDB->nickname),
-        Poco::Data::into(playerDB->gender),
-        Poco::Data::into(playerDB->belief);
+        Poco::Data::into(fullData.character_type),
+        Poco::Data::into(fullData.nickname),
+        Poco::Data::into(fullData.gender),
+        Poco::Data::into(fullData.epic.characteristic),
+        Poco::Data::into(fullData.epic.family_type),
+        Poco::Data::into(fullData.epic.story_type);
 
     return (preparedStatement.execute() > 0);
 }
 
-bool GameDatabase::createCharacter(uint64 userGuid, uint8 characterType, const std::string& nickname, uint8 gender, uint8 belief)
+bool GameDatabase::createCharacter(
+    uint64 userGuid, 
+    uint8 characterType, 
+    const std::string& nickname, 
+    uint8 gender, 
+    const Protocol::Epic& epic
+    )
 {
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_INSERT_NEW_CHARACTER);
     preparedStatement.statement(),
@@ -108,22 +116,26 @@ bool GameDatabase::createCharacter(uint64 userGuid, uint8 characterType, const s
         Poco::Data::use(characterType),
         Poco::Data::use(nickname),
         Poco::Data::use(gender),
-        Poco::Data::use(belief);
+        Poco::Data::use(epic.characteristic),
+        Poco::Data::use(epic.family_type),
+        Poco::Data::use(epic.story_type);
 
     return (preparedStatement.execute() == 0);
 }
 
-bool GameDatabase::saveCharacterInfo(uint64 userGuid, PlayerDB* playerDB)
+bool GameDatabase::saveCharacterInfo(uint64 userGuid, const Protocol::PlayerFullData& fullData)
 {
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_SAVE_CHARACTER);
     preparedStatement.statement(),
         Poco::Data::limit(1), 
         Poco::Data::use(userGuid),
         Poco::Data::use(userGuid),
-        Poco::Data::use(playerDB->character_type),
-        Poco::Data::use(playerDB->nickname),
-        Poco::Data::use(playerDB->gender),
-        Poco::Data::use(playerDB->belief);
+        Poco::Data::use(fullData.character_type),
+        Poco::Data::use(fullData.nickname),
+        Poco::Data::use(fullData.gender),
+        Poco::Data::use(fullData.epic.characteristic),
+        Poco::Data::use(fullData.epic.family_type),
+        Poco::Data::use(fullData.epic.story_type);
 
     return (preparedStatement.execute() > 0);
 }

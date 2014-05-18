@@ -109,7 +109,7 @@
     </font>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;游戏昵称长度为4-20个字符，可由大小写英文字母、数字、中文、下划线组成。&lt;/p&gt;&lt;p&gt;点击[检查]按钮验证输入昵称是否可用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;游戏昵称可由大小写英文字母、中文组成，长度为4-20个字节（汉字占2个字节，英文字母占1字节）。&lt;/p&gt;&lt;p&gt;点击[检查]按钮验证输入昵称是否可用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -122,7 +122,7 @@
    <property name="geometry">
     <rect>
      <x>219</x>
-     <y>246</y>
+     <y>342</y>
      <width>367</width>
      <height>16</height>
     </rect>
@@ -135,6 +135,93 @@
    </property>
    <property name="wordWrap">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>216</y>
+     <width>145</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>长度符合4-20字节的限制</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>237</y>
+     <width>145</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>不包含空格</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>258</y>
+     <width>157</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>名字仅允许使用中文和英文</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblArrow">
+   <property name="geometry">
+    <rect>
+     <x>219</x>
+     <y>216</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="coeus_client_qt.qrc">:/coeus_client_qt/yes.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblArrow_2">
+   <property name="geometry">
+    <rect>
+     <x>219</x>
+     <y>237</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="coeus_client_qt.qrc">:/coeus_client_qt/yes.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblArrow_3">
+   <property name="geometry">
+    <rect>
+     <x>219</x>
+     <y>258</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="coeus_client_qt.qrc">:/coeus_client_qt/yes.png</pixmap>
    </property>
   </widget>
  </widget>

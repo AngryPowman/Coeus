@@ -4,7 +4,7 @@
 
 TARGET = coeus_client_qt
 DESTDIR = ../Win32/Release
-QT += core opengl widgets gui QtANGLE
+QT += core opengl widgets gui QtANGLE multimedia
 CONFIG += release
 CONFIG += static
 DEFINES += WIN64 QT_DLL QT_OPENGL_LIB QT_WIDGETS_LIB

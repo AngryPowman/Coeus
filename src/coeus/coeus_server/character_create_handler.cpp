@@ -6,36 +6,24 @@
 #include "player.h"
 #include "player_manager.h"
 
-void GameSession::getRandomNicknameHandler(const NetworkPacket::Ptr& packet)
-{
-    Protocol::CSGetRandomNameReq getRandomNicknameRequest;
-    DECODE_MESSAGE(getRandomNicknameRequest, packet);
-
-    uint8 gender = getRandomNicknameRequest.gender;
-    Protocol::SCGetRandomNameRsp nicknameResponse;
-    nicknameResponse.random_name = (gender == Gender::Female ? "·ßÅ­µÄÒ¦æ©" : "·ßÅ­µÄÅÝÃæ");
-
-    this->send_message(Opcodes::SCGetRandomNameRsp, nicknameResponse);
-}
-
 
 void GameSession::checkNicknameExist(const NetworkPacket::Ptr& packet)
 {
-    Protocol::CSCheckNicknameExistReq checkNicknameExistRequest;
+    Protocol::CSCheckNicknameExist checkNicknameExistRequest;
     DECODE_MESSAGE(checkNicknameExistRequest, packet);
 
     if (!checkNicknameExistRequest.nickname.empty())
     {
-        Protocol::SCCheckNicknameExistRsp response;
+        Protocol::SCCheckNicknameExist response;
         response.result = GameDatabase::getInstance().isNicknameExist(checkNicknameExistRequest.nickname);
-        this->send_message(Opcodes::SCCheckNicknameExistRsp, response);
+        this->send_message(Opcodes::SCCheckNicknameExist, response);
     }
 }
 
 
 void GameSession::characterCreateHandler(const NetworkPacket::Ptr& packet)
 {
-    Protocol::CSCreateCharacterReq createCharacterRequest;
+    Protocol::CSCreateCharacter createCharacterRequest;
     DECODE_MESSAGE(createCharacterRequest, packet);
 
     if (createCharacterRequest.nickname.empty())
@@ -44,29 +32,42 @@ void GameSession::characterCreateHandler(const NetworkPacket::Ptr& packet)
         return;
     }
 
-    Protocol::SCCreateCharacterRsp response;
-    response.result = (createCharacterRequest.belief > Belief::UniverseFederal && createCharacterRequest.belief < Belief::BeliefMax);
+    Protocol::SCCreateCharacter response;
     response.result = (createCharacterRequest.gender == Gender::Female || createCharacterRequest.gender == Gender::Male);
-    response.result = (createCharacterRequest.character_type >= CharacterType::MirrorHunter && createCharacterRequest.character_type < CharacterType::CharacterTypeMax);
-       
+    response.result = (
+        createCharacterRequest.character_type >= CharacterType::MirrorHunter &&
+        createCharacterRequest.character_type < CharacterType::CharacterTypeMaxFlag
+        );
+    response.result = (createCharacterRequest.epic.characteristic > 0);
+
+    response.result = (
+        createCharacterRequest.epic.family_type >= Epic::FamilyType::AnofficialFamily && 
+        createCharacterRequest.epic.family_type < Epic::FamilyType::FamilyMaxFlag
+        );
+
+    response.result = (
+        createCharacterRequest.epic.story_type >= Epic::StoryType::FinderStory &&
+        createCharacterRequest.epic.story_type < Epic::StoryType::StoryMaxFlag
+        );
+
     if (response.result && GameDatabase::getInstance().createCharacter(
         _userGuid, 
         createCharacterRequest.character_type,
         createCharacterRequest.nickname,
         createCharacterRequest.gender,
-        createCharacterRequest.belief))
+        createCharacterRequest.epic))
     {
         Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
         if (player != nullptr)
         {
-            PlayerDB* playerDB = player->DB();
-            playerDB->nickname = createCharacterRequest.nickname;
-            playerDB->player_id = _userGuid;
-            playerDB->belief = createCharacterRequest.belief;
-            playerDB->character_type = createCharacterRequest.character_type;
-            playerDB->gender = createCharacterRequest.gender;
+            Protocol::PlayerFullData& fullData = player->DB();
+            fullData.nickname = createCharacterRequest.nickname;
+            fullData.character_id = _userGuid;
+            fullData.character_type = createCharacterRequest.character_type;
+            fullData.gender = createCharacterRequest.gender;
+            fullData.epic = createCharacterRequest.epic;
         }
 
-        this->send_message(Opcodes::SCCreateCharacterRsp, response);
+        this->send_message(Opcodes::SCCreateCharacter, response);
     }
 }

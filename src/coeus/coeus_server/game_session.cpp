@@ -47,13 +47,11 @@ bool GameSession::loadPlayer()
         Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
         if (player != nullptr)
         {
-            PlayerDB* playerDB = player->DB();
-            if (playerDB != nullptr)
-            {
-                DataManager::getInstance().loadPlayerData(_userGuid, playerDB);
-                this->setPlayerContext(player);
-                return true;
-            }
+            Protocol::PlayerFullData& fullData = player->DB();
+
+            DataManager::getInstance().loadPlayerData(_userGuid, fullData);
+            this->setPlayerContext(player);
+            return true;
         }
     }
 

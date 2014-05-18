@@ -35,7 +35,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;家庭背景&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;家庭背景&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -48,7 +48,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;我的目标&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;我的故事&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -62,7 +62,7 @@
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
-     <widget class="QRadioButton" name="radioButton_6">
+     <widget class="QRadioButton" name="rdbFinderStory">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -76,27 +76,27 @@
        <bool>true</bool>
       </property>
       <attribute name="buttonGroup">
-       <string notr="true">buttonGroup</string>
+       <string notr="true">btnGroup_StoryType</string>
       </attribute>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QRadioButton" name="radioButton_7">
+     <widget class="QRadioButton" name="rdbSeekerStory">
       <property name="text">
        <string>我崇尚自由，年少轻狂时背井离乡踏上了冒险之路，决心探索宇宙中任何角落</string>
       </property>
       <attribute name="buttonGroup">
-       <string notr="true">buttonGroup</string>
+       <string notr="true">btnGroup_StoryType</string>
       </attribute>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QRadioButton" name="radioButton_8">
+     <widget class="QRadioButton" name="rdbChallengerStory">
       <property name="text">
        <string>自幼跟随一名强大的宇宙气导师学习，立志打败宇宙中有名的强者</string>
       </property>
       <attribute name="buttonGroup">
-       <string notr="true">buttonGroup</string>
+       <string notr="true">btnGroup_StoryType</string>
       </attribute>
      </widget>
     </item>
@@ -113,7 +113,7 @@
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="rdbAnofficialFamily">
       <property name="text">
        <string>我生在一个官宦世家，家族掌握政治大权，是个官二代</string>
       </property>
@@ -121,37 +121,37 @@
        <bool>true</bool>
       </property>
       <attribute name="buttonGroup">
-       <string notr="true">buttonGroup_2</string>
+       <string notr="true">btnGroup_FamilyType</string>
       </attribute>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QRadioButton" name="radioButton_2">
+     <widget class="QRadioButton" name="rdbRichFamily">
       <property name="text">
        <string>我生在一个富可敌国的家庭，家族有着大量高科技产业，是个富二代</string>
       </property>
       <attribute name="buttonGroup">
-       <string notr="true">buttonGroup_2</string>
+       <string notr="true">btnGroup_FamilyType</string>
       </attribute>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QRadioButton" name="radioButton_3">
+     <widget class="QRadioButton" name="rdbCommonFamily">
       <property name="text">
        <string>我生在一个普通家庭，虽不能挥金如土，倒也丰衣足食</string>
       </property>
       <attribute name="buttonGroup">
-       <string notr="true">buttonGroup_2</string>
+       <string notr="true">btnGroup_FamilyType</string>
       </attribute>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QRadioButton" name="radioButton_4">
+     <widget class="QRadioButton" name="rdbNeedyFamily">
       <property name="text">
-       <string>我出生在一个贫苦家庭，三餐不饱，但骨子里渴望站在宇宙之巅</string>
+       <string>我出生在一个落魄家庭，一贫如洗 ，无立锥之地</string>
       </property>
       <attribute name="buttonGroup">
-       <string notr="true">buttonGroup_2</string>
+       <string notr="true">btnGroup_FamilyType</string>
       </attribute>
      </widget>
     </item>
@@ -187,7 +187,7 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="btnGroup_FamilyType"/>
+  <buttongroup name="btnGroup_StoryType"/>
  </buttongroups>
 </ui>

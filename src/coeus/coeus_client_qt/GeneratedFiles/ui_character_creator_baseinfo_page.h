@@ -29,6 +29,12 @@ public:
     QLabel *label_3;
     QLabel *label;
     QLabel *lblTip;
+    QLabel *label_2;
+    QLabel *label_4;
+    QLabel *label_5;
+    QLabel *lblArrow;
+    QLabel *lblArrow_2;
+    QLabel *lblArrow_3;
 
     void setupUi(QWizardPage *CharacterCreator_BaseInfoPage)
     {
@@ -74,9 +80,30 @@ public:
         label->setWordWrap(true);
         lblTip = new QLabel(CharacterCreator_BaseInfoPage);
         lblTip->setObjectName(QStringLiteral("lblTip"));
-        lblTip->setGeometry(QRect(219, 246, 367, 16));
+        lblTip->setGeometry(QRect(219, 342, 367, 16));
         lblTip->setTextFormat(Qt::RichText);
         lblTip->setWordWrap(true);
+        label_2 = new QLabel(CharacterCreator_BaseInfoPage);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(240, 216, 145, 16));
+        label_4 = new QLabel(CharacterCreator_BaseInfoPage);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(240, 237, 145, 16));
+        label_5 = new QLabel(CharacterCreator_BaseInfoPage);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(240, 258, 157, 16));
+        lblArrow = new QLabel(CharacterCreator_BaseInfoPage);
+        lblArrow->setObjectName(QStringLiteral("lblArrow"));
+        lblArrow->setGeometry(QRect(219, 216, 16, 16));
+        lblArrow->setPixmap(QPixmap(QString::fromUtf8(":/coeus_client_qt/yes.png")));
+        lblArrow_2 = new QLabel(CharacterCreator_BaseInfoPage);
+        lblArrow_2->setObjectName(QStringLiteral("lblArrow_2"));
+        lblArrow_2->setGeometry(QRect(219, 237, 16, 16));
+        lblArrow_2->setPixmap(QPixmap(QString::fromUtf8(":/coeus_client_qt/yes.png")));
+        lblArrow_3 = new QLabel(CharacterCreator_BaseInfoPage);
+        lblArrow_3->setObjectName(QStringLiteral("lblArrow_3"));
+        lblArrow_3->setGeometry(QRect(219, 258, 16, 16));
+        lblArrow_3->setPixmap(QPixmap(QString::fromUtf8(":/coeus_client_qt/yes.png")));
 
         retranslateUi(CharacterCreator_BaseInfoPage);
 
@@ -89,8 +116,14 @@ public:
         txtNickname->setPlaceholderText(QApplication::translate("CharacterCreator_BaseInfoPage", "\350\257\267\350\276\223\345\205\245\346\270\270\346\210\217\346\230\265\347\247\260", 0));
         btnCheckNickname->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "\346\243\200\346\237\245", 0));
         label_3->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "\346\270\270\346\210\217\346\230\265\347\247\260", 0));
-        label->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "<html><head/><body><p>\346\270\270\346\210\217\346\230\265\347\247\260\351\225\277\345\272\246\344\270\2724-20\344\270\252\345\255\227\347\254\246\357\274\214\345\217\257\347\224\261\345\244\247\345\260\217\345\206\231\350\213\261\346\226\207\345\255\227\346\257\215\343\200\201\346\225\260\345\255\227\343\200\201\344\270\255\346\226\207\343\200\201\344\270\213\345\210\222\347\272\277\347\273\204\346\210\220\343\200\202</p><p>\347\202\271\345\207\273[\346\243\200\346\237\245]\346\214\211\351\222\256\351\252\214\350\257\201\350\276\223\345\205\245\346\230\265\347\247\260\346\230\257\345\220\246\345\217\257\347\224\250\343\200\202</p></body></html>", 0));
+        label->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "<html><head/><body><p>\346\270\270\346\210\217\346\230\265\347\247\260\345\217\257\347\224\261\345\244\247\345\260\217\345\206\231\350\213\261\346\226\207\345\255\227\346\257\215\343\200\201\344\270\255\346\226\207\347\273\204\346\210\220\357\274\214\351\225\277\345\272\246\344\270\2724-20\344\270\252\345\255\227\350\212\202\357\274\210\346\261\211\345\255\227\345\215\2402\344\270\252\345\255\227\350\212\202\357\274\214\350\213\261\346\226\207\345\255\227\346\257\215\345\215\2401\345\255\227\350\212\202\357\274\211\343\200\202</p><p>\347\202\271\345\207\273[\346\243\200\346\237\245]\346\214\211\351\222\256\351\252\214\350\257\201\350\276\223\345\205\245\346\230\265\347\247\260\346\230\257\345\220\246\345\217\257\347\224\250\343\200\202</p></body></html>", 0));
         lblTip->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "<html><head/><body><p><br/></p></body></html>", 0));
+        label_2->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "\351\225\277\345\272\246\347\254\246\345\220\2104-20\345\255\227\350\212\202\347\232\204\351\231\220\345\210\266", 0));
+        label_4->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "\344\270\215\345\214\205\345\220\253\347\251\272\346\240\274", 0));
+        label_5->setText(QApplication::translate("CharacterCreator_BaseInfoPage", "\345\220\215\345\255\227\344\273\205\345\205\201\350\256\270\344\275\277\347\224\250\344\270\255\346\226\207\345\222\214\350\213\261\346\226\207", 0));
+        lblArrow->setText(QString());
+        lblArrow_2->setText(QString());
+        lblArrow_3->setText(QString());
     } // retranslateUi
 
 };

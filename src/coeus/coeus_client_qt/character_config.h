@@ -8,9 +8,9 @@ struct CharacterInfo
 {
     std::string name;
     std::string detail;
-    std::string avatar[Gender::GenderMax];
-    std::string cg[Gender::GenderMax];
-    std::string splash[Gender::GenderMax];
+    std::string avatar[Gender::GenderMaxFlag];
+    std::string cg[Gender::GenderMaxFlag];
+    std::string splash[Gender::GenderMaxFlag];
 };
 
 typedef std::vector<CharacterInfo> CharacterList;

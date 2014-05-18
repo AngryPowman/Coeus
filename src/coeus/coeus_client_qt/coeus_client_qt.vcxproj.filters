@@ -238,86 +238,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeneratedFiles\ui_login_dialog.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_gamesys_setting_dialog.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utils.h">
-      <Filter>core\common</Filter>
-    </ClInclude>
-    <ClInclude Include="game_opcode_registry.h">
-      <Filter>core\network</Filter>
-    </ClInclude>
-    <ClInclude Include="widget_manager.h">
-      <Filter>core\common</Filter>
-    </ClInclude>
-    <ClInclude Include="qt_coeus_common.h">
-      <Filter>core\common</Filter>
-    </ClInclude>
-    <ClInclude Include="game_handler.h">
-      <Filter>core\network</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_game_main_dialog.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="game_launcher.h">
-      <Filter>qt_main</Filter>
-    </ClInclude>
-    <ClInclude Include="login_config.h">
-      <Filter>core\config\cofiguration</Filter>
-    </ClInclude>
-    <ClInclude Include="config_loader.h">
-      <Filter>core\config</Filter>
-    </ClInclude>
-    <ClInclude Include="character_config.h">
-      <Filter>core\config\cofiguration</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_npc_dialogue_box.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_game_statusbar_widget.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_game_chat_widget.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_game_map_widget.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_game_bag_dialog.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_creator_characteristic_page.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_creator_epic_page.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_creator_introdution_page.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_creator_dialog.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_creator_baseinfo_page.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_creator_career_belief_page.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_creator_left_guides_widget.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_definition.h">
-      <Filter>core\common</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_character_creator_summary_page.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
       <Filter>qt_main</Filter>
     </CustomBuild>
@@ -416,6 +336,84 @@
     </CustomBuild>
     <CustomBuild Include="character_creator_summary_page.h">
       <Filter>core\logic\character_creator</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_launcher.h">
+      <Filter>qt_main</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_character_creator_baseinfo_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_character_creator_career_belief_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_character_creator_characteristic_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_character_creator_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_character_creator_epic_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_character_creator_introdution_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_character_creator_left_guides_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_character_creator_summary_page.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_game_bag_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_game_chat_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_game_main_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_game_map_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_game_statusbar_widget.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_npc_dialogue_box.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_gamesys_setting_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_login_dialog.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_coeus_common.h">
+      <Filter>core\common</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ui_definition.h">
+      <Filter>core\common</Filter>
+    </CustomBuild>
+    <CustomBuild Include="widget_manager.h">
+      <Filter>core\common</Filter>
+    </CustomBuild>
+    <CustomBuild Include="utils.h">
+      <Filter>core\common</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_opcode_registry.h">
+      <Filter>core\network</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_handler.h">
+      <Filter>core\network</Filter>
+    </CustomBuild>
+    <CustomBuild Include="config_loader.h">
+      <Filter>core\config</Filter>
+    </CustomBuild>
+    <CustomBuild Include="character_config.h">
+      <Filter>core\config\cofiguration</Filter>
+    </CustomBuild>
+    <CustomBuild Include="login_config.h">
+      <Filter>core\config\cofiguration</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

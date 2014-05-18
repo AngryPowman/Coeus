@@ -67,9 +67,6 @@
     <Filter Include="data\dbc">
       <UniqueIdentifier>{2c4a58ff-17d0-4e63-be02-a9663ed7c301}</UniqueIdentifier>
     </Filter>
-    <Filter Include="logic\item">
-      <UniqueIdentifier>{1087d424-491d-45af-9741-dba1b4b3baab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="logic\player">
       <UniqueIdentifier>{08a7a91c-a7b1-4c12-a433-4bda64e71928}</UniqueIdentifier>
     </Filter>
