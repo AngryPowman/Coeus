@@ -46,7 +46,7 @@ public:
 
     void retranslateUi(QWizard *CharacterCreator)
     {
-        Q_UNUSED(CharacterCreator);
+        CharacterCreator->setWindowTitle(QString());
     } // retranslateUi
 
 };

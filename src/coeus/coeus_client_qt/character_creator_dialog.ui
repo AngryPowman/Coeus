@@ -33,6 +33,9 @@
     <family>微软雅黑</family>
    </font>
   </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
   <property name="wizardStyle">
    <enum>QWizard::AeroStyle</enum>
   </property>

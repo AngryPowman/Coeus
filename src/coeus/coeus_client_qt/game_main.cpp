@@ -83,32 +83,44 @@ void GameMain::slotOnBagActionTriggered(bool checked)
 
 void GameMain::initGame(bool needCreate /*= false*/)
 {
+    static QRect originRect(this->geometry());
+    static QSize originMaximumSize(this->maximumSize());
+    static QSize originMinimumSize(this->minimumSize());
     if (needCreate == true)
     {
         changeView(GameView::GV_MOVIE);
         CharacterCreator* characterCreator = WidgetManager::getInstance().characterCreator();
-
         QRect rect(characterCreator->geometry());
         rect.setLeft(this->geometry().left());
         rect.setTop(this->geometry().top());
         this->setGeometry(rect);
         this->setCentralWidget(characterCreator);
-        //characterCreator->setWindowModality(Qt::WindowModality::WindowModal);
-        //characterCreator->show();
+        this->setMaximumSize(characterCreator->size());
+        this->setMinimumSize(characterCreator->size());
     }
+    else
+    {
+        this->setGeometry(originRect);
+        this->setMaximumSize(originMaximumSize);
+        this->setMinimumSize(originMinimumSize);
 
-    //initControl();
+        initControl();
+    }
 }
 
 void GameMain::changeView(GameView gameView)
 {
     if (gameView == GameView::GV_MOVIE)
     {
-        //this->setStyleSheet("background-color: rgb(0, 0, 0);");
-        
         _ui->menubar->setVisible(false);
         _ui->tbTop->setVisible(false);
         _ui->tbLeftSide->setVisible(false);
+    }
+    else if (gameView == GameView::GV_GENERAL)
+    {
+        _ui->menubar->setVisible(true);
+        _ui->tbTop->setVisible(true);
+        _ui->tbLeftSide->setVisible(true);
     }
 }
 

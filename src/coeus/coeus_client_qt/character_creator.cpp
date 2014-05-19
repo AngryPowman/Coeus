@@ -18,7 +18,7 @@ CharacterCreator::CharacterCreator(QWidget* parent /*= 0*/)
 
     setButtonText(QWizard::BackButton, "上一步");
     setButtonText(QWizard::NextButton, "下一步");
-    setButtonText(QWizard::CancelButton, "返回登录界面");
+    setButtonText(QWizard::CancelButton, "退出");
     setButtonText(QWizard::FinishButton, "完成创建");
 }
 

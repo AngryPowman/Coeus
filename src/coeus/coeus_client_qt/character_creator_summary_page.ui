@@ -45,7 +45,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>恭喜你！你已经完成了所有信息的填写。勾选[我同意以上描述]并点击[完成创建]进入游戏。</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;你已经完成了所有信息的填写。勾选 &lt;span style=&quot; font-weight:600;&quot;&gt;我同意以上内容 &lt;/span&gt;并点击 &lt;span style=&quot; font-weight:600;&quot;&gt;完成创建 &lt;/span&gt;进入游戏。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="wordWrap">
     <bool>true</bool>
