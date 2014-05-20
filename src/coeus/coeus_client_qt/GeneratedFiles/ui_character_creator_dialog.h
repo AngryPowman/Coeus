@@ -37,6 +37,8 @@ public:
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         CharacterCreator->setFont(font);
+        CharacterCreator->setMouseTracking(false);
+        CharacterCreator->setModal(true);
         CharacterCreator->setWizardStyle(QWizard::AeroStyle);
 
         retranslateUi(CharacterCreator);

@@ -2,16 +2,16 @@
 
 void GameSession::getPropertiesHandler(const NetworkPacket::Ptr& packet)
 {
-    Protocol::CSPropertiesReq propertiesRequest;
+    Protocol::CSCharacterInitialDataReq propertiesRequest;
     DECODE_MESSAGE(propertiesRequest, packet);
 
-    Protocol::SCPropertiesRsp response;
-    response.basic_properties.exp = 100;
-    response.basic_properties.next_exp = 500;
-    response.basic_properties.hp = 1000;
-    response.basic_properties.max_hp = 2000;
-    response.basic_properties.power = 12000;
-    response.basic_properties.level = 1;
+    Protocol::SCCharacterInitialDataRsp response;
+    response.char_initial_data.exp = 100;
+    response.char_initial_data.next_exp = 500;
+    response.char_initial_data.hp = 1000;
+    response.char_initial_data.max_hp = 2000;
+    response.char_initial_data.power = 12000;
+    response.char_initial_data.level = 1;
 
-    send_message(Opcodes::SCPropertiesRsp, response);
+    send_message(Opcodes::SCCharacterInitialDataRsp, response);
 }

@@ -19,6 +19,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -31,9 +32,14 @@ public:
     QTabWidget *tabWidget;
     QWidget *tab;
     QHBoxLayout *horizontalLayout;
-    QWidget *tab_3;
+    QTextBrowser *txtDefaultChat;
     QWidget *widget;
-    QWidget *tab_2;
+    QHBoxLayout *horizontalLayout_2;
+    QTextBrowser *txtWorldChat;
+    QWidget *tab_3;
+    QHBoxLayout *horizontalLayout_3;
+    QTextBrowser *txtDefaultChat_3;
+    QWidget *widget1;
     QWidget *tab_4;
     QGridLayout *gridLayout;
     QComboBox *cmbChannel;
@@ -45,7 +51,7 @@ public:
         if (GameChatWidget->objectName().isEmpty())
             GameChatWidget->setObjectName(QStringLiteral("GameChatWidget"));
         GameChatWidget->setWindowModality(Qt::NonModal);
-        GameChatWidget->resize(486, 191);
+        GameChatWidget->resize(567, 227);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -65,16 +71,35 @@ public:
         tab->setObjectName(QStringLiteral("tab"));
         horizontalLayout = new QHBoxLayout(tab);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        txtDefaultChat = new QTextBrowser(tab);
+        txtDefaultChat->setObjectName(QStringLiteral("txtDefaultChat"));
+
+        horizontalLayout->addWidget(txtDefaultChat);
+
         tabWidget->addTab(tab, QString());
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QStringLiteral("tab_3"));
-        tabWidget->addTab(tab_3, QString());
         widget = new QWidget();
         widget->setObjectName(QStringLiteral("widget"));
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        txtWorldChat = new QTextBrowser(widget);
+        txtWorldChat->setObjectName(QStringLiteral("txtWorldChat"));
+
+        horizontalLayout_2->addWidget(txtWorldChat);
+
         tabWidget->addTab(widget, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tabWidget->addTab(tab_2, QString());
+        tab_3 = new QWidget();
+        tab_3->setObjectName(QStringLiteral("tab_3"));
+        horizontalLayout_3 = new QHBoxLayout(tab_3);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        txtDefaultChat_3 = new QTextBrowser(tab_3);
+        txtDefaultChat_3->setObjectName(QStringLiteral("txtDefaultChat_3"));
+
+        horizontalLayout_3->addWidget(txtDefaultChat_3);
+
+        tabWidget->addTab(tab_3, QString());
+        widget1 = new QWidget();
+        widget1->setObjectName(QStringLiteral("widget1"));
+        tabWidget->addTab(widget1, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
         tabWidget->addTab(tab_4, QString());
@@ -122,7 +147,7 @@ public:
 
         retranslateUi(GameChatWidget);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(GameChatWidget);
@@ -132,9 +157,9 @@ public:
     {
         GameChatWidget->setWindowTitle(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("GameChatWidget", "\351\273\230\350\256\244", 0));
+        tabWidget->setTabText(tabWidget->indexOf(widget), QApplication::translate("GameChatWidget", "\344\270\226\347\225\214", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("GameChatWidget", "\347\247\201\350\201\212", 0));
-        tabWidget->setTabText(tabWidget->indexOf(widget), QApplication::translate("GameChatWidget", "\345\267\245\344\274\232", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("GameChatWidget", "\351\230\237\344\274\215", 0));
+        tabWidget->setTabText(tabWidget->indexOf(widget1), QApplication::translate("GameChatWidget", "\345\205\254\344\274\232", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("GameChatWidget", "\347\263\273\347\273\237", 0));
         cmbChannel->clear();
         cmbChannel->insertItems(0, QStringList()

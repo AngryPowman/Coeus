@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>851</width>
+    <width>720</width>
     <height>598</height>
    </rect>
   </property>
@@ -15,9 +15,6 @@
   </property>
   <property name="styleSheet">
    <string notr="true"/>
-  </property>
-  <property name="documentMode">
-   <bool>false</bool>
   </property>
   <property name="dockOptions">
    <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
@@ -35,7 +32,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>851</width>
+     <width>720</width>
      <height>23</height>
     </rect>
    </property>

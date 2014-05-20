@@ -69,6 +69,9 @@
       <Extensions>cpp;cxx;c;def</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
+    <Filter Include="core\logic\data">
+      <UniqueIdentifier>{5da1c4e4-3dec-42db-bbf2-237406a8bc22}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -235,6 +238,15 @@
     </ClCompile>
     <ClCompile Include="character_creator_summary_page.cpp">
       <Filter>core\logic\character_creator</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_loader.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_loader.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="game_loader.cpp">
+      <Filter>core\logic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -415,8 +427,19 @@
     <CustomBuild Include="login_config.h">
       <Filter>core\config\cofiguration</Filter>
     </CustomBuild>
+    <CustomBuild Include="game_loader.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_loader.h">
+      <Filter>core\logic</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="coeus_client_qt.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_game_loader.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

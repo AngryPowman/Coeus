@@ -45,9 +45,9 @@
     </msg>
   </category>
   <category CategoryName="角色属性">
-    <msg MsgId="15000" MsgProperty="0" MsgName="CSPropertiesReq" MsgNote="请求玩家属性" MsgRemark="" ErrorList="" />
-    <msg MsgId="15001" MsgProperty="1" MsgName="SCPropertiesRsp" MsgNote="玩家属性返回" MsgRemark="" ErrorList="">
-      <param DataType="CharacterBasicProperties" Purpose="variable" ParamName="basic_properties" ParamNote="基本属性" />
+    <msg MsgId="15000" MsgProperty="0" MsgName="CSCharacterInitialDataReq" MsgNote="请求玩家初始数据" MsgRemark="" ErrorList="" />
+    <msg MsgId="15001" MsgProperty="1" MsgName="SCCharacterInitialDataRsp" MsgNote="玩家属性返回" MsgRemark="" ErrorList="">
+      <param DataType="CharacterInitialData" Purpose="variable" ParamName="char_initial_data" ParamNote="" />
     </msg>
   </category>
 </MSG_CFG>

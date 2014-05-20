@@ -33,8 +33,14 @@
     <family>微软雅黑</family>
    </font>
   </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
    <string/>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
   </property>
   <property name="wizardStyle">
    <enum>QWizard::AeroStyle</enum>

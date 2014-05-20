@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>397</width>
+    <width>329</width>
     <height>72</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <item>
     <widget class="QProgressBar" name="progressBar">
      <property name="value">
-      <number>24</number>
+      <number>0</number>
      </property>
     </widget>
    </item>
@@ -25,6 +25,9 @@
     <widget class="QLabel" name="label">
      <property name="text">
       <string>初始化游戏....</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

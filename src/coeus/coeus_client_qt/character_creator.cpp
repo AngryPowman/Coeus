@@ -3,7 +3,8 @@
 #include "widget_manager.h"
 
 CharacterCreator::CharacterCreator(QWidget* parent /*= 0*/)
-    : QWizard(parent)
+    : QWizard(parent),
+    _leftMouseButtonPressed(false)
 {
     _ui = new Ui::CharacterCreator;
     _ui->setupUi(this);
@@ -20,6 +21,12 @@ CharacterCreator::CharacterCreator(QWidget* parent /*= 0*/)
     setButtonText(QWizard::NextButton, "下一步");
     setButtonText(QWizard::CancelButton, "退出");
     setButtonText(QWizard::FinishButton, "完成创建");
+
+    //Qt::WindowFlags flags = 0;
+    //flags |= Qt::WindowMinimizeButtonHint;
+    //flags |= Qt::WindowCloseButtonHint;
+    //flags |= Qt::MSWindowsFixedSizeDialogHint;
+    //this->setWindowFlags(flags);
 }
 
 CharacterCreator::~CharacterCreator()
@@ -45,6 +52,27 @@ bool CharacterCreator::validateCurrentPage()
         return true;
     }
 }
+
+void CharacterCreator::mousePressEvent(QMouseEvent* event)
+{
+    _leftMouseButtonPressed = true;
+    event->ignore();
+}
+
+void CharacterCreator::mouseReleaseEvent(QMouseEvent* event)
+{
+    _leftMouseButtonPressed = false;
+    event->ignore();
+}
+
+void CharacterCreator::mouseMoveEvent(QMouseEvent* event)
+{
+    if (_leftMouseButtonPressed)
+        WidgetManager::getInstance().gameMain()->setCentralWidget(this);
+
+    event->ignore();
+}
+
 /*
 int CharacterCreator::nextId() const
 {

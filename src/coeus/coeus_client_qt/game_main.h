@@ -6,12 +6,15 @@
 class GameStatusBarWidget;
 class GameMapWidget;
 class GameChatWidget;
+class QSplitter;
 
 namespace Ui { class GameMainDialog; };
 
 enum GameView
 {
     GV_MOVIE,
+    GV_CHAR_CREATOR,
+    GV_DATA_LOADER,
     GV_GENERAL
 };
 
@@ -37,6 +40,7 @@ private slots:
 
 private:
     Ui::GameMainDialog* _ui;
+    QSplitter* _splitterMain;
 };
 
 #endif // !__GAME_MAIN_H__

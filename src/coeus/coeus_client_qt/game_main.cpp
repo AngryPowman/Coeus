@@ -18,6 +18,33 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     int wd = desk->width();
     int ht = desk->height();
     this->move((wd - width()) / 2, (ht - height()) / 2);
+
+    // init man layout
+    _splitterMain = new QSplitter(Qt::Horizontal, this);
+    _splitterMain->setStretchFactor(1, 1);
+    GameStatusBarWidget* gameStatusBarWidget
+        = WidgetManager::getInstance().gameStatusBarWidget(dynamic_cast<QWidget*>(_splitterMain));
+
+    QSplitter* splitterRight = new QSplitter(Qt::Vertical, _splitterMain);
+    splitterRight->setOpaqueResize(true);
+
+    GameMapWidget* gameMapWidget = WidgetManager::getInstance().gameMapWidget(splitterRight);
+    GameChatWidget* gameChatWidget = WidgetManager::getInstance().gameChatWidget(splitterRight);
+
+    _splitterMain->setVisible(false);
+
+    // init left side toolbar
+    _ui->menuSidebar->menuAction()->setVisible(false);
+    _ui->tbLeftSide->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonIconOnly);
+    _ui->action_CharacterDetails->setIcon(QIcon("images/ui/lsb_char_details.png"));
+    _ui->action_Bag->setIcon(QIcon("images/ui/lsb_bag.png"));
+    _ui->action_Equipment->setIcon(QIcon("images/ui/lsb_equipment.png"));
+    _ui->action_World->setIcon(QIcon("images/ui/lsb_world.png"));
+    _ui->action_Friends->setIcon(QIcon("images/ui/lsb_friends.png"));
+
+    // connect signal to slots
+    connect(_ui->actionAbout_QT, SIGNAL(triggered()), this, SLOT(slotOnAboutQT()));
+    connect(_ui->action_Bag, SIGNAL(triggered(bool)), this, SLOT(slotOnBagActionTriggered(bool)));
 }
 
 GameMain::~GameMain()
@@ -33,31 +60,7 @@ void GameMain::initControl()
     //this->setCentralWidget(videoWidget);
 
     // init game ui layout
-    QSplitter* splitterMain = new QSplitter(Qt::Horizontal, this);
-    splitterMain->setStretchFactor(1, 1);
-    GameStatusBarWidget* gameStatusBarWidget
-        = WidgetManager::getInstance().gameStatusBarWidget(dynamic_cast<QWidget*>(splitterMain));
 
-    QSplitter* splitterRight = new QSplitter(Qt::Vertical, splitterMain);
-    splitterRight->setOpaqueResize(true);
-
-    GameMapWidget* gameMapWidget = WidgetManager::getInstance().gameMapWidget(splitterRight);
-    GameChatWidget* gameChatWidget = WidgetManager::getInstance().gameChatWidget(splitterRight);
-
-    this->setCentralWidget(splitterMain);
-
-    // init left side toolbar
-    _ui->menuSidebar->menuAction()->setVisible(false);
-    _ui->tbLeftSide->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonIconOnly);
-    _ui->action_CharacterDetails->setIcon(QIcon("images/ui/lsb_char_details.png"));
-    _ui->action_Bag->setIcon(QIcon("images/ui/lsb_bag.png"));
-    _ui->action_Equipment->setIcon(QIcon("images/ui/lsb_equipment.png"));
-    _ui->action_World->setIcon(QIcon("images/ui/lsb_world.png"));
-    _ui->action_Friends->setIcon(QIcon("images/ui/lsb_friends.png"));
-
-    // connect signal to slots
-    connect(_ui->actionAbout_QT, SIGNAL(triggered()), this, SLOT(slotOnAboutQT()));
-    connect(_ui->action_Bag, SIGNAL(triggered(bool)), this, SLOT(slotOnBagActionTriggered(bool)));
 }
 
 void GameMain::slotOnAboutQT()
@@ -83,44 +86,67 @@ void GameMain::slotOnBagActionTriggered(bool checked)
 
 void GameMain::initGame(bool needCreate /*= false*/)
 {
-    static QRect originRect(this->geometry());
-    static QSize originMaximumSize(this->maximumSize());
-    static QSize originMinimumSize(this->minimumSize());
     if (needCreate == true)
     {
-        changeView(GameView::GV_MOVIE);
-        CharacterCreator* characterCreator = WidgetManager::getInstance().characterCreator();
-        QRect rect(characterCreator->geometry());
-        rect.setLeft(this->geometry().left());
-        rect.setTop(this->geometry().top());
-        this->setGeometry(rect);
-        this->setCentralWidget(characterCreator);
-        this->setMaximumSize(characterCreator->size());
-        this->setMinimumSize(characterCreator->size());
+        changeView(GameView::GV_CHAR_CREATOR);
     }
     else
     {
-        this->setGeometry(originRect);
-        this->setMaximumSize(originMaximumSize);
-        this->setMinimumSize(originMinimumSize);
-
-        initControl();
+        changeView(GameView::GV_GENERAL);
+        loadGameData();
     }
 }
 
 void GameMain::changeView(GameView gameView)
 {
-    if (gameView == GameView::GV_MOVIE)
+    static QRect originRect(this->geometry());
+    static QSize originMaximumSize(this->maximumSize());
+    static QSize originMinimumSize(this->minimumSize());
+
+    switch (gameView)
     {
-        _ui->menubar->setVisible(false);
-        _ui->tbTop->setVisible(false);
-        _ui->tbLeftSide->setVisible(false);
-    }
-    else if (gameView == GameView::GV_GENERAL)
-    {
-        _ui->menubar->setVisible(true);
-        _ui->tbTop->setVisible(true);
-        _ui->tbLeftSide->setVisible(true);
+        case GV_MOVIE:
+        {
+            _ui->menubar->setVisible(false);
+            _ui->tbTop->setVisible(false);
+            _ui->tbLeftSide->setVisible(false);
+            this->setCentralWidget(nullptr);
+            break;
+        }
+        case GV_CHAR_CREATOR:
+        {
+            _ui->menubar->setVisible(false);
+            _ui->tbTop->setVisible(false);
+            _ui->tbLeftSide->setVisible(false);
+            CharacterCreator* characterCreator = WidgetManager::getInstance().characterCreator();
+            this->setCentralWidget(characterCreator);
+            
+            this->adjustSize();
+            Qt::WindowFlags flags = 0;
+            flags |= Qt::MSWindowsFixedSizeDialogHint;
+            this->setWindowFlags(flags);
+            break;
+        }
+        case GV_DATA_LOADER:
+            break;
+        case GV_GENERAL:
+        {
+            _ui->menubar->setVisible(true);
+            _ui->tbTop->setVisible(true);
+            _ui->tbLeftSide->setVisible(true);
+            this->setCentralWidget(_splitterMain);
+            this->setGeometry(originRect);
+            Qt::WindowFlags flags = 0;
+            flags |= Qt::WindowMaximizeButtonHint;
+            flags |= Qt::WindowCloseButtonHint;
+            flags |= Qt::WindowMinimizeButtonHint;
+            this->setWindowFlags(flags);
+
+            _splitterMain->setVisible(true);
+            break;
+        }
+        default:
+            break;
     }
 }
 
@@ -128,5 +154,5 @@ void GameMain::loadGameData()
 {
     GameStatusBarWidget* gameStatusBarWidget
         = WidgetManager::getInstance().gameStatusBarWidget();
-    gameStatusBarWidget->initStatus(3740133615);
+    gameStatusBarWidget->initStatus(3740133620);
 }

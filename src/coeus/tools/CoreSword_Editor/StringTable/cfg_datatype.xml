@@ -11,17 +11,15 @@
   <Type VariableType="0" TypeName="uint32" Description="" />
   <Type VariableType="0" TypeName="uint64" Description="" />
   <Type VariableType="0" TypeName="std::string" Description="" />
-  <Type VariableType="2" TypeName="CharacterBasicInfo" Description="角色基本数据">
+  <Type VariableType="2" TypeName="CharacterInitialData" Description="角色基本数据">
     <Member MemberName="nickname" MemberType="std::string" Purpose="variable" MemberNote="角色昵称" />
     <Member MemberName="character_type" MemberType="uint8" Purpose="variable" MemberNote="角色类型（职业）" />
-  </Type>
-  <Type VariableType="2" TypeName="CharacterBasicProperties" Description="">
-    <Member MemberName="hp" MemberType="int32" Purpose="variable" MemberNote="" />
-    <Member MemberName="max_hp" MemberType="int32" Purpose="variable" MemberNote="" />
-    <Member MemberName="exp" MemberType="int32" Purpose="variable" MemberNote="" />
-    <Member MemberName="next_exp" MemberType="int32" Purpose="variable" MemberNote="" />
-    <Member MemberName="power" MemberType="uint32" Purpose="variable" MemberNote="" />
-    <Member MemberName="level" MemberType="uint16" Purpose="variable" MemberNote="" />
+    <Member MemberName="hp" MemberType="int32" Purpose="variable" MemberNote="生命值" />
+    <Member MemberName="max_hp" MemberType="int32" Purpose="variable" MemberNote="最大生命值" />
+    <Member MemberName="exp" MemberType="int32" Purpose="variable" MemberNote="经验值" />
+    <Member MemberName="next_exp" MemberType="int32" Purpose="variable" MemberNote="升级需要的经验值" />
+    <Member MemberName="power" MemberType="uint32" Purpose="variable" MemberNote="战斗力" />
+    <Member MemberName="level" MemberType="uint16" Purpose="variable" MemberNote="等级" />
   </Type>
   <Type VariableType="2" TypeName="Epic" Description="">
     <Member MemberName="family_type" MemberType="uint8" Purpose="variable" MemberNote="家庭背景" />

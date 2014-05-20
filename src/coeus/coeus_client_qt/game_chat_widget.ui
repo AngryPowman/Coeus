@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>486</width>
-    <height>191</height>
+    <width>567</width>
+    <height>227</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -35,7 +35,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <property name="usesScrollButtons">
       <bool>true</bool>
@@ -50,21 +50,35 @@
       <attribute name="title">
        <string>默认</string>
       </attribute>
-      <layout class="QHBoxLayout" name="horizontalLayout"/>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QTextBrowser" name="txtDefaultChat"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="">
+      <attribute name="title">
+       <string>世界</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QTextBrowser" name="txtWorldChat"/>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
        <string>私聊</string>
       </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QTextBrowser" name="txtDefaultChat_3"/>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="widget">
       <attribute name="title">
-       <string>工会</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="tab_2">
-      <attribute name="title">
-       <string>队伍</string>
+       <string>公会</string>
       </attribute>
      </widget>
      <widget class="QWidget" name="tab_4">

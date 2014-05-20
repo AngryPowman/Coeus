@@ -71,6 +71,16 @@ enum Characteristic
     Lazy                 = 0x1D,   //ÀÁ¶è
 };
 
+enum ChatChannel
+{
+    WorldChatChannel,   // World Chat
+    PrivateChatChannel, // Private Chat
+    GuildChatChannel,   // Guild Chat
+    SystemChannel,      // System Message
+
+    ChatChannelMaxFlag
+};
+
 enum LoginResult
 {
     LR_LOGIN_SUCCESS,       // µÇÂ¼³É¹¦
