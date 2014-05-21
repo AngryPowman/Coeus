@@ -50,4 +50,9 @@
       <param DataType="CharacterInitialData" Purpose="variable" ParamName="char_initial_data" ParamNote="" />
     </msg>
   </category>
+  <category CategoryName="在线聊天">
+    <msg MsgId="20000" MsgProperty="0" MsgName="CSSendWorldChatMessage" MsgNote="发送世界聊天信息" MsgRemark="" ErrorList="">
+      <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天信息" />
+    </msg>
+  </category>
 </MSG_CFG>
