@@ -76,6 +76,9 @@
     <Filter Include="session\handler">
       <UniqueIdentifier>{a93f03ad-ddf5-4f68-9bf5-01eff465b944}</UniqueIdentifier>
     </Filter>
+    <Filter Include="logic\chat">
+      <UniqueIdentifier>{792313ff-c8d7-4325-ae42-1c47fd218a30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_define_item.h">

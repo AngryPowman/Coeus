@@ -44,25 +44,25 @@
       <bool>false</bool>
      </property>
      <property name="tabsClosable">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>默认</string>
+       <string>全部</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QTextBrowser" name="txtDefaultChat"/>
+        <widget class="QTextBrowser" name="txtAllMessages"/>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="widget">
       <attribute name="title">
        <string>世界</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QTextBrowser" name="txtWorldChat"/>
+        <widget class="QTextBrowser" name="txtWorldMessages"/>
        </item>
       </layout>
      </widget>
@@ -72,7 +72,7 @@
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QTextBrowser" name="txtDefaultChat_3"/>
+        <widget class="QTextBrowser" name="txtPrivateMessages"/>
        </item>
       </layout>
      </widget>
@@ -80,16 +80,45 @@
       <attribute name="title">
        <string>公会</string>
       </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QTextBrowser" name="txtGuildMessages"/>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string>系统</string>
       </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QTextBrowser" name="txtSystemMessages"/>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
    <item>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QComboBox" name="cmbTargetName">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>176</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="0">
       <widget class="QComboBox" name="cmbChannel">
        <property name="sizePolicy">
@@ -111,7 +140,7 @@
        </item>
        <item>
         <property name="text">
-         <string>/M 地图</string>
+         <string>/P 私聊</string>
         </property>
        </item>
        <item>
@@ -119,44 +148,28 @@
          <string>/G 工会</string>
         </property>
        </item>
-       <item>
-        <property name="text">
-         <string>/T 队伍</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>/B 当前</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QComboBox" name="cmbTargetName">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>176</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="editable">
-        <bool>true</bool>
-       </property>
       </widget>
      </item>
      <item row="0" column="2">
-      <widget class="QLineEdit" name="txtChatContent">
+      <widget class="QLineEdit" name="txtChatMessage">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="btnSend">
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>23</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>发送</string>
        </property>
       </widget>
      </item>

@@ -36,6 +36,12 @@ namespace GameUtil
 		return std::regex_match(passwordHash, regex);
 	}
 
+    // 昵称是否合法
+    static bool checkNicknameValid(const std::string& nickname)
+    {
+        return true;
+    }
+
     // 对密码进行编码
     // 算法：password = md5(sha1(base64()))
     static std::string toPasswordDigest(const std::string& plain_password)

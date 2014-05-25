@@ -51,9 +51,26 @@
     </msg>
   </category>
   <category CategoryName="在线聊天">
-    <msg MsgId="20000" MsgProperty="0" MsgName="CSSendChatMessageReq" MsgNote="发送聊天信息" MsgRemark="" ErrorList="">
-      <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天信息" />
+    <msg MsgId="20000" MsgProperty="0" MsgName="CSSendPublicChatMessageReq" MsgNote="发送公共聊天" MsgRemark="包括世界、公会等多人聊天" ErrorList="">
       <param DataType="uint8" Purpose="variable" ParamName="channel" ParamNote="频道" />
+      <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天内容" />
+    </msg>
+    <msg MsgId="20001" MsgProperty="0" MsgName="CSSendPrivateChatMessageByIdReq" MsgNote="发送私聊消息（通过GUID）" MsgRemark="" ErrorList="">
+      <param DataType="uint64" Purpose="variable" ParamName="target_id" ParamNote="目标玩家ID" />
+      <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天内容" />
+    </msg>
+    <msg MsgId="20002" MsgProperty="0" MsgName="CSSendPrivateChatMessageByNameReq" MsgNote="发送私聊消息（通过昵称）" MsgRemark="" ErrorList="">
+      <param DataType="std::string" Purpose="variable" ParamName="target_name" ParamNote="目标玩家昵称" />
+      <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天内容" />
+    </msg>
+    <msg MsgId="20003" MsgProperty="1" MsgName="SCPublicChatMessageNotification" MsgNote="公共聊天消息通知" MsgRemark="" ErrorList="">
+      <param DataType="uint8" Purpose="variable" ParamName="channel" ParamNote="频道" />
+      <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天内容" />
+    </msg>
+    <msg MsgId="20004" MsgProperty="1" MsgName="SCPrivateChatMessageNotification" MsgNote="私聊消息通知" MsgRemark="" ErrorList="">
+      <param DataType="uint64" Purpose="variable" ParamName="target_id" ParamNote="目标玩家ID" />
+      <param DataType="std::string" Purpose="variable" ParamName="target_name" ParamNote="目标玩家昵称" />
+      <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天内容" />
     </msg>
   </category>
 </MSG_CFG>
