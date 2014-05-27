@@ -63,6 +63,12 @@ void GameChatWidget::slotOnSendClicked()
         return;
     }
 
+	if (_ui->txtChatMessage->text().isEmpty())
+	{
+		addChatMessage(ChatChannel::SystemChannel, QStringLiteral("ÄãÏëËµÊ²Ã´£¿"));
+		return;
+	}
+
     switch (_currentChannel)
     {
         case ChatChannel::WorldChatChannel:
