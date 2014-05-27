@@ -52,7 +52,7 @@ public:
     {
         if (GameMainDialog->objectName().isEmpty())
             GameMainDialog->setObjectName(QStringLiteral("GameMainDialog"));
-        GameMainDialog->resize(720, 598);
+        GameMainDialog->resize(887, 598);
         GameMainDialog->setStyleSheet(QStringLiteral(""));
         GameMainDialog->setDockOptions(QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks);
         GameMainDialog->setUnifiedTitleAndToolBarOnMac(true);
@@ -103,7 +103,7 @@ public:
         GameMainDialog->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GameMainDialog);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 720, 23));
+        menubar->setGeometry(QRect(0, 0, 887, 21));
         menu_G = new QMenu(menubar);
         menu_G->setObjectName(QStringLiteral("menu_G"));
         menu = new QMenu(menubar);

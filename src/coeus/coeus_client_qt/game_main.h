@@ -37,9 +37,13 @@ public:
 private slots:
     void slotOnAboutQT();
     void slotOnBagActionTriggered(bool checked);
+	void resizeEvent(QResizeEvent* event);
 
 private:
     Ui::GameMainDialog* _ui;
+	Qt::WindowFlags _defaultWindowFlags;
+	GameView _currentView;
+	QSize _orginSize;
     QSplitter* _splitterMain;
 };
 

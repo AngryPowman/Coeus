@@ -83,6 +83,6 @@ bool CharacterCreator_SummaryPage::validatePage()
     createCharacter.epic.story_type = story_type;
 
     GameNetwork::getInstance().sendMessage(Opcodes::CSCreateCharacter, createCharacter);
-    WidgetManager::getInstance().gameMain()->changeView(GameView::GV_GENERAL);
+	WidgetManager::getInstance().gameMain()->initGame(false);
     return true;
 }

@@ -14,6 +14,9 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     _ui = new Ui::GameMainDialog();
     _ui->setupUi(this);
 
+	_defaultWindowFlags = this->windowFlags();
+	_orginSize = this->size();
+
     QDesktopWidget* desk = QApplication::desktop();
     int wd = desk->width();
     int ht = desk->height();
@@ -93,7 +96,7 @@ void GameMain::initGame(bool needCreate /*= false*/)
     else
     {
         changeView(GameView::GV_GENERAL);
-        loadGameData();
+        //loadGameData();
     }
 }
 
@@ -102,7 +105,8 @@ void GameMain::changeView(GameView gameView)
     static QRect originRect(this->geometry());
     static QSize originMaximumSize(this->maximumSize());
     static QSize originMinimumSize(this->minimumSize());
-
+	
+	_currentView = gameView;
     switch (gameView)
     {
         case GV_MOVIE:
@@ -122,9 +126,6 @@ void GameMain::changeView(GameView gameView)
             this->setCentralWidget(characterCreator);
             
             this->adjustSize();
-            Qt::WindowFlags flags = 0;
-            flags |= Qt::MSWindowsFixedSizeDialogHint;
-            this->setWindowFlags(flags);
             break;
         }
         case GV_DATA_LOADER:
@@ -134,15 +135,9 @@ void GameMain::changeView(GameView gameView)
             _ui->menubar->setVisible(true);
             _ui->tbTop->setVisible(true);
             _ui->tbLeftSide->setVisible(true);
-            this->setCentralWidget(_splitterMain);
-            this->setGeometry(originRect);
-            Qt::WindowFlags flags = 0;
-            flags |= Qt::WindowMaximizeButtonHint;
-            flags |= Qt::WindowCloseButtonHint;
-            flags |= Qt::WindowMinimizeButtonHint;
-            this->setWindowFlags(flags);
+			_splitterMain->setVisible(true);
 
-            _splitterMain->setVisible(true);
+			this->setCentralWidget(_splitterMain);
             break;
         }
         default:
@@ -155,4 +150,12 @@ void GameMain::loadGameData()
     GameStatusBarWidget* gameStatusBarWidget
         = WidgetManager::getInstance().gameStatusBarWidget();
     gameStatusBarWidget->initStatus(3740133620);
+}
+
+void GameMain::resizeEvent(QResizeEvent* event)
+{
+	if (_currentView == GameView::GV_CHAR_CREATOR)
+	{
+		this->adjustSize();
+	}
 }

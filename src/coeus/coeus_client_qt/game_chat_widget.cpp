@@ -12,6 +12,7 @@ GameChatWidget::GameChatWidget(QWidget* parent)
     connect(_ui->btnSend, SIGNAL(clicked()), this, SLOT(slotOnSendClicked()));
 
     _ui->cmbChannel->setCurrentIndex(ChatChannel::WorldChatChannel);
+	slotChannelListIndexChanged(ChatChannel::WorldChatChannel);
 
     addChatMessage(ChatChannel::WorldChatChannel, "Test message in plain text.", "AngryPowman");
     addChatMessage(ChatChannel::WorldChatChannel, "Test <font color=red>message</font> in html.", "AngryPowman");
