@@ -22,16 +22,21 @@ public:
     void send_error(uint32 errorCode, const std::string& reason);
 
 public:
-    //注册 && 登录
+    //Register && Login
     void loginHandler(const NetworkPacket::Ptr& packet);
     void registerHandler(const NetworkPacket::Ptr& packet);
 
-    //角色创建
+    //Character creation
     void checkNicknameExist(const NetworkPacket::Ptr& packet);
     void characterCreateHandler(const NetworkPacket::Ptr& packer);
 
-    //属性相关
+    //Properties
     void getPropertiesHandler(const NetworkPacket::Ptr& packet);
+
+	//Chatting
+	void publicChatHandler(const NetworkPacket::Ptr& packet);
+	void privateChatByIdHandler(const NetworkPacket::Ptr& packet);
+	void privateChatByNameHandler(const NetworkPacket::Ptr& packet);
 
 private:
     void setPlayerContext(Player* player);

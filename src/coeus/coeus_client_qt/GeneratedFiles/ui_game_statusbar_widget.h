@@ -101,6 +101,7 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         lblNickname = new QLabel(GameStatusBarWidget);
         lblNickname->setObjectName(QStringLiteral("lblNickname"));
+        lblNickname->setWordWrap(true);
 
         verticalLayout->addWidget(lblNickname);
 
@@ -154,7 +155,7 @@ public:
 
         verticalLayout->addLayout(gridLayout_4);
 
-        verticalSpacer = new QSpacerItem(20, 2, QSizePolicy::Minimum, QSizePolicy::Fixed);
+        verticalSpacer = new QSpacerItem(20, 13, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer);
 

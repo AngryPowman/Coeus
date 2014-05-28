@@ -5,6 +5,7 @@
 #include "cached_object.h"
 
 class GameSession;
+class ChatManager;
 namespace Protocol
 {
     struct PlayerFullData;
@@ -38,8 +39,8 @@ public:
 	void gender(int32 gender);
 	int32 gender() const;
 
-	void nickname(const std::string& nickname);
-	const std::string& nickname() const;
+	void nickname(const std::string&& nickname);
+	const std::string&& nickname() const;
 
 	void lastLogin(int64 last_login);
 	int64 lastLogin() const;
@@ -50,13 +51,15 @@ public:
 	uint32 gold() const;
 
 public:
-    Protocol::PlayerFullData& DB();
+    Protocol::PlayerFullData& fullData();
+	ChatManager* chatManager();
 	GameSession* session();
 
 private:
 	uint64 _playerId;
 	Protocol::PlayerFullData* _playerFullData;
 	GameSession* _session;
+	ChatManager* _chatManager;
 
 private:
 	int64 _cachedLastLogin;

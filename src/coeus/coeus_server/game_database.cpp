@@ -86,7 +86,7 @@ bool GameDatabase::isNicknameExist(const std::string& nickname)
 
 bool GameDatabase::loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& fullData)
 {
-    PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_NICKNAME_IN_USE);
+	PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_LOAD_CHARACTER);
     preparedStatement.statement(),
         Poco::Data::limit(1),
         Poco::Data::use(userGuid),

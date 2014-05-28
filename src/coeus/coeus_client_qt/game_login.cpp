@@ -6,6 +6,7 @@
 #include "game_common/game_define.h"
 #include "game_common/game_util.h"
 #include "login_config.h"
+#include "game_data.h"
 
 GameLogin::GameLogin(QWidget *parent)
     : QMainWindow(parent), 
@@ -309,6 +310,7 @@ void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
         if (loginRsp.login_result)
         {
             _ui.lblStateTips->setText("登录成功，正在获取游戏数据");
+			GameData::getInstance().fullData.character_id = loginRsp.player_id;
 
             //保存登录配置
             LoginConfig::getInstance().setRememberPassword(_ui.chkRememberPassword);

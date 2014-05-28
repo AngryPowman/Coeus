@@ -34,5 +34,6 @@
     <Member MemberName="gender" MemberType="uint8" Purpose="variable" MemberNote="" />
     <Member MemberName="epic" MemberType="Epic" Purpose="variable" MemberNote="" />
     <Member MemberName="last_login" MemberType="int64" Purpose="variable" MemberNote="" />
+    <Member MemberName="initial_data" MemberType="CharacterInitialData" Purpose="variable" MemberNote="" />
   </Type>
 </XMLDataType>

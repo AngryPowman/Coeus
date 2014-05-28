@@ -63,7 +63,7 @@ void GameSession::characterCreateHandler(const NetworkPacket::Ptr& packet)
         Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
         if (player != nullptr)
         {
-            Protocol::PlayerFullData& fullData = player->DB();
+            Protocol::PlayerFullData& fullData = player->fullData();
             fullData.nickname = createCharacterRequest.nickname;
             fullData.character_id = _userGuid;
             fullData.character_type = createCharacterRequest.character_type;

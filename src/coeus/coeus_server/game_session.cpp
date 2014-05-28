@@ -47,7 +47,7 @@ bool GameSession::loadPlayer()
         Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
         if (player != nullptr)
         {
-            Protocol::PlayerFullData& fullData = player->DB();
+            Protocol::PlayerFullData& fullData = player->fullData();
 
             DataManager::getInstance().loadPlayerData(_userGuid, fullData);
             this->setPlayerContext(player);
@@ -58,3 +58,4 @@ bool GameSession::loadPlayer()
     error_log("Acquire free player object failed in player pool. player == nullptr.");
     return false;
 }
+

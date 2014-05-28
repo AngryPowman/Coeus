@@ -2,6 +2,7 @@
 #define GAME_CHAT_WIDGET_H
 
 #include <QWidget>
+#include "qt_coeus_common.h"
 #include "game_common/game_define.h"
 
 namespace Ui { class GameChatWidget; };
@@ -15,6 +16,8 @@ public:
     ~GameChatWidget();
 
 public:
+	void onPublicChatMessageNotification(const Protocol::SCPublicChatMessageNotification& publicChatMessagenotification);
+	void onPrivateChatMessageNotification(const Protocol::SCPrivateChatMessageNotification& privateChatMessagenotification);
     void addChatMessage(ChatChannel channel, const QString& message, const QString& targetName = "");
 
 private slots:

@@ -2,21 +2,29 @@
 #include "game_session.h"
 #include "game_database.h"
 #include "player_db.h"
+#include "chat_manager.h"
 
 Player::Player(uint64 playerId, GameSession* session)
-    : _playerId(playerId), _playerFullData(new Protocol::PlayerFullData()), _session(session), _cachedLastLogin(0)
+    : _playerId(playerId),
+	_playerFullData(new Protocol::PlayerFullData()), 
+	_session(session), 
+	_cachedLastLogin(0),
+	_chatManager(nullptr)
 {
 }
 
 Player::~Player()
 {
     SAFE_DELETE(_playerFullData);
+	SAFE_DELETE(_chatManager);
 }
 
 void Player::onLogin()
 {
     // TODO: Æô¶¯ĞÄÌø¼ì²é
     // ...
+
+	_chatManager = new ChatManager(this);
 }
 
 void Player::onLogout()
@@ -28,17 +36,17 @@ void Player::onLogout()
 	// save data to db
 }
 
-void Player::nickname(const std::string& nickname)
+void Player::nickname(const std::string&& nickname)
 {
     _playerFullData->nickname = nickname;
 }
 
-const std::string& Player::nickname() const
+const std::string&& Player::nickname() const
 {
-    return _playerFullData->nickname;
+    return std::forward<std::string>(_playerFullData->nickname);
 }
 
-Protocol::PlayerFullData& Player::DB()
+Protocol::PlayerFullData& Player::fullData()
 {
     return *_playerFullData;
 }
@@ -102,4 +110,9 @@ void Player::send_message(uint32 opcode, NetworkMessage& message)
 {
     if (_session != nullptr)
         _session->send_message(opcode, message);
+}
+
+ChatManager* Player::chatManager()
+{
+	return _chatManager;
 }

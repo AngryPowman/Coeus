@@ -165,6 +165,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="character_create_handler.cpp" />
+    <ClCompile Include="chat_handler.cpp" />
+    <ClCompile Include="chat_manager.cpp" />
     <ClCompile Include="config_loader.cpp" />
     <ClCompile Include="data_manager.cpp" />
     <ClCompile Include="game_database.cpp" />
@@ -184,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cached_object.h" />
+    <ClInclude Include="chat_manager.h" />
     <ClInclude Include="config_loader.h" />
     <ClInclude Include="data_manager.h" />
     <ClInclude Include="db_define.h" />

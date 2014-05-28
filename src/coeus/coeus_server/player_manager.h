@@ -9,6 +9,22 @@ class DataManager;
 class PlayerManager
 	: public Venus::Singleton<PlayerManager>
 {
+	struct PlayerNameFinder
+	{
+		PlayerNameFinder(const std::string& playerName)
+		: _playerName(playerName)
+		{
+		}
+
+		bool operator()(const std::map<uint64, Player*>::value_type& pair)
+		{
+			return pair.second->nickname() == _playerName;
+		}
+
+	private:
+		const std::string& _playerName;
+	};
+
 public:
 	bool initialize();
 	void destroy();
@@ -19,6 +35,8 @@ public:
 
 public:
 	Player* getPlayer(uint64 playerId);
+	Player* getPlayer(const std::string& playerName);
+	const std::string&& getPlayerNameById(uint64 playerId);
 	size_t playerCount() const;
 	void killOffline(Player* player, bool offlineNotify = true);
 	Player* loadFromCache(uint64 playerId);
@@ -30,9 +48,10 @@ private:
 	void removeCache(uint64 playerId);
 
 private:
-	Venus::ObjectPool<Player> _player_pool;
-	adap_map<uint64, Player*> _players;
-	adap_map<uint64, Player*> _cachedPlayers;
+	typedef adap_map<uint64, Player*> PlayerContainer;
+	Venus::ObjectPool<Player> _playerPool;
+	PlayerContainer _players;
+	PlayerContainer _cachedPlayers;
 	DataManager* _dataManager;
 };
 

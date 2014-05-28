@@ -156,6 +156,7 @@
     <ClCompile Include="character_creator_career_belief_page.cpp" />
     <ClCompile Include="character_creator_left_guides_widget.cpp" />
     <ClCompile Include="character_creator_summary_page.cpp" />
+    <ClCompile Include="chat_handler.cpp" />
     <ClCompile Include="create_character_handler.cpp" />
     <ClCompile Include="game_bag.cpp" />
     <ClCompile Include="character_creator.cpp" />
@@ -1779,6 +1780,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="game_data.h" />
     <ClInclude Include="GeneratedFiles\ui_game_loader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

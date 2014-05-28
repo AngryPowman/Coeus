@@ -94,3 +94,19 @@ void GameChatWidget::slotOnSendClicked()
             break;
     }
 }
+
+void GameChatWidget::onPublicChatMessageNotification(const Protocol::SCPublicChatMessageNotification& publicChatMessagenotification)
+{
+	addChatMessage(
+		static_cast<ChatChannel>(publicChatMessagenotification.channel),
+		QString::fromStdString(publicChatMessagenotification.message));
+}
+
+void GameChatWidget::onPrivateChatMessageNotification(const Protocol::SCPrivateChatMessageNotification& privateChatMessagenotification)
+{
+	addChatMessage(
+		ChatChannel::PrivateChatChannel,
+		QString::fromStdString(privateChatMessagenotification.message),
+		QString::fromStdString(privateChatMessagenotification.target_name)
+		);
+}

@@ -21,6 +21,7 @@ void GameStatusBarWidget::initStatus(uint64 character_guid)
 
 void GameStatusBarWidget::onPropertiesRsp(const Protocol::SCCharacterInitialDataRsp& characterInitialDataRsp)
 {
+	_ui->lblNickname->setText(QString::fromStdString(characterInitialDataRsp.char_initial_data.nickname));
     if (characterInitialDataRsp.char_initial_data.max_hp != 0)
     {
         float percent = (

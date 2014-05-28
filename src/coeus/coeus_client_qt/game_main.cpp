@@ -7,6 +7,7 @@
 #include "game_bag.h"
 #include "widget_manager.h"
 #include "character_creator.h"
+#include "game_data.h"
 
 GameMain::GameMain(QWidget* parent /*= 0*/)
     : QMainWindow(parent)
@@ -96,7 +97,7 @@ void GameMain::initGame(bool needCreate /*= false*/)
     else
     {
         changeView(GameView::GV_GENERAL);
-        //loadGameData();
+        loadGameData();
     }
 }
 
@@ -149,7 +150,7 @@ void GameMain::loadGameData()
 {
     GameStatusBarWidget* gameStatusBarWidget
         = WidgetManager::getInstance().gameStatusBarWidget();
-    gameStatusBarWidget->initStatus(3740133620);
+	gameStatusBarWidget->initStatus(GameData::getInstance().fullData.character_id);
 }
 
 void GameMain::resizeEvent(QResizeEvent* event)

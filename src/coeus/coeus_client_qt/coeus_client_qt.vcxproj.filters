@@ -248,6 +248,9 @@
     <ClCompile Include="game_loader.cpp">
       <Filter>core\logic</Filter>
     </ClCompile>
+    <ClCompile Include="chat_handler.cpp">
+      <Filter>core\network\handlers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -440,6 +443,9 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_game_loader.h">
       <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_data.h">
+      <Filter>core\logic\data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

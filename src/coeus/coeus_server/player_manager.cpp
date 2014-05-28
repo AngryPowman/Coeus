@@ -1,6 +1,7 @@
 #include "player_manager.h"
 #include "player.h"
 #include "data_manager.h"
+#include <algorithm>
 
 bool PlayerManager::initialize()
 {
@@ -17,7 +18,7 @@ Player* PlayerManager::createPlayer(uint64 playerId, GameSession* session)
 {
 	if (session != nullptr)
 	{
-        Player* player = _player_pool.acquire(playerId, session);
+        Player* player = _playerPool.acquire(playerId, session);
         if (player != nullptr)
         {
 		    addPlayer(player);
@@ -47,6 +48,31 @@ Player* PlayerManager::getPlayer(uint64 playerId)
 {
 	auto iter = _players.find(playerId);
 	return iter != _players.end() ? iter->second : nullptr;
+}
+
+Player* PlayerManager::getPlayer(const std::string& playerName)
+{
+	PlayerContainer::iterator iter = _players.end();
+	iter = std::find_if(_players.begin(), _players.end(), 
+		PlayerManager::PlayerNameFinder(std::move(playerName)));
+	if (iter != _players.end())
+	{
+		return iter->second;
+	}
+
+	return nullptr;
+}
+
+
+const std::string&& PlayerManager::getPlayerNameById(uint64 playerId)
+{
+	Player* player = getPlayer(playerId);
+	if (player != nullptr)
+	{
+		return player->nickname();
+	}
+
+	return std::forward<const std::string>(std::string());
 }
 
 size_t PlayerManager::playerCount() const
@@ -103,5 +129,5 @@ void PlayerManager::removePlayer(uint64 playerId)
 void PlayerManager::destroyPlayer(Player* player)
 {
 	removePlayer(player);
-	_player_pool.release(player);
+	_playerPool.release(player);
 }

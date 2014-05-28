@@ -8,6 +8,8 @@ OPCODE_REGISTER_BEGIN(GameOpcodeRegistry, GameHandler)
     REGISTER_HANDLER(Opcodes::SCLoginRsp, loginHandler);
     REGISTER_HANDLER(Opcodes::SCCreateCharacter, createCharacterHandler);
     REGISTER_HANDLER(Opcodes::SCCharacterInitialDataRsp, propertiesHandler);
+	REGISTER_HANDLER(Opcodes::SCPublicChatMessageNotification, publicChatNotificationHandler);
+	REGISTER_HANDLER(Opcodes::SCPrivateChatMessageNotification, privateNotificationHandler);
 OPCODE_REGISTER_END()
 
 #endif
