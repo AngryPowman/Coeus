@@ -66,6 +66,7 @@
     <msg MsgId="20003" MsgProperty="1" MsgName="SCPublicChatMessageNotification" MsgNote="公共聊天消息通知" MsgRemark="" ErrorList="">
       <param DataType="uint8" Purpose="variable" ParamName="channel" ParamNote="频道" />
       <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天内容" />
+      <param DataType="std::string" Purpose="variable" ParamName="target_name" ParamNote="目标玩家昵称" />
     </msg>
     <msg MsgId="20004" MsgProperty="1" MsgName="SCPrivateChatMessageNotification" MsgNote="私聊消息通知" MsgRemark="" ErrorList="">
       <param DataType="uint64" Purpose="variable" ParamName="target_id" ParamNote="目标玩家ID" />

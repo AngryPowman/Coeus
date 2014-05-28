@@ -20,11 +20,11 @@ void ChatManager::sendPrivateChat(uint64 targetId, const std::string& chatMessag
 	if (player != nullptr)
 	{
 		Protocol::SCPrivateChatMessageNotification privateChatMessageNotification;
-		privateChatMessageNotification.target_id = _player->playerId();
-		privateChatMessageNotification.target_name = PlayerManager::getInstance().getPlayerNameById(targetId);
+		privateChatMessageNotification.target_id = targetId;
+		privateChatMessageNotification.target_name = player->nickname();
 		privateChatMessageNotification.message = chatMessage;
 
-		_player->send_message(Opcodes::SCPrivateChatMessageNotification, privateChatMessageNotification);
+		player->send_message(Opcodes::SCPrivateChatMessageNotification, privateChatMessageNotification);
 	}
 }
 
@@ -42,5 +42,6 @@ void ChatManager::sendPublicChat(ChatChannel channel, const std::string& chatMes
 	Protocol::SCPublicChatMessageNotification publicChatMessageNotification;
 	publicChatMessageNotification.channel = channel;
 	publicChatMessageNotification.message = chatMessage;
+	publicChatMessageNotification.target_name = _player->nickname();
 	GameSessionManager::getInstance().broadcast(Opcodes::SCPublicChatMessageNotification, publicChatMessageNotification);
 }
