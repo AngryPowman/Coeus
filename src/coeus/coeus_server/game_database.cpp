@@ -163,9 +163,9 @@ bool GameDatabase::initialize()
         Poco::Data::MySQL::Connector::registerConnector();
 
         char connectionString[512] = {0};
-        sprintf(
-            connectionString, 
-            "host=%s;port=%s;user=%s;password=%s;db=%s;auto-reconnect=true",
+		sprintf(
+			connectionString,
+			"host=%s;port=%s;user=%s;password=%s;db=%s;auto-reconnect=true",
             ServerConfig::getInstance().mysql_host.c_str(),
             ServerConfig::getInstance().mysql_port.c_str(),
             ServerConfig::getInstance().mysql_user.c_str(),

@@ -1,4 +1,4 @@
-ï»¿#include "game_chat_widget.h"
+#include "game_chat_widget.h"
 #include "ui_game_chat_widget.h"
 #include "qt_coeus_common.h"
 
@@ -25,7 +25,7 @@ GameChatWidget::~GameChatWidget()
 
 void GameChatWidget::addChatMessage(ChatChannel channel, const QString& message, const QString& targetName/* = ""*/)
 {
-    const static QString channelName[ChatChannelMaxFlag] = {"[ä¸–ç•Œ]", "[ç§èŠ]", "[å…¬ä¼š]", "[ç³»ç»Ÿ]"};
+    const static QString channelName[ChatChannelMaxFlag] = {"[ÊÀ½ç]", "[Ë½ÁÄ]", "[¹«»á]", "[ÏµÍ³]"};
 
     QString speaker = "[<a href = \"#\">" + targetName + "</a>] ";
     QString content = "<b>" + channelName[channel] + (channel == ChatChannel::SystemChannel ? " " : speaker) + "</b>" + message;
@@ -60,13 +60,13 @@ void GameChatWidget::slotOnSendClicked()
 {
     if (_currentChannel == ChatChannel::PrivateChatChannel && _ui->cmbTargetName->currentText().isEmpty())
     {
-        addChatMessage(ChatChannel::SystemChannel, QStringLiteral("å¿…é¡»è¾“å…¥ä¸€ä¸ªæ˜µç§°"));
+        addChatMessage(ChatChannel::SystemChannel, QStringLiteral("±ØĞëÊäÈëÒ»¸öêÇ³Æ"));
         return;
     }
 
 	if (_ui->txtChatMessage->text().isEmpty())
 	{
-		addChatMessage(ChatChannel::SystemChannel, QStringLiteral("ä½ æƒ³è¯´ä»€ä¹ˆï¼Ÿ"));
+		addChatMessage(ChatChannel::SystemChannel, QStringLiteral("ÄãÏëËµÊ²Ã´£¿"));
 		return;
 	}
 
@@ -83,14 +83,15 @@ void GameChatWidget::slotOnSendClicked()
         }
         case ChatChannel::PrivateChatChannel:
         {
+			QTextCodec* gbk = QTextCodec::codecForName("gbk");
             Protocol::CSSendPrivateChatMessageByNameReq privateChatMessageByNameReq;
-			privateChatMessageByNameReq.target_name = _ui->cmbTargetName->currentText().toStdString();
+			privateChatMessageByNameReq.target_name = gbk->fromUnicode(_ui->cmbTargetName->currentText()).constData();
             privateChatMessageByNameReq.message = _ui->txtChatMessage->text().toStdString();
-            GameNetwork::getInstance().sendMessage(Opcodes::CSSendPrivateChatMessageByNameReq, privateChatMessageByNameReq);
+			GameNetwork::getInstance().sendMessage(Opcodes::CSSendPrivateChatMessageByNameReq, privateChatMessageByNameReq);
             break;
         }
         default:
-            QMessageBox::critical(this, QStringLiteral("èŠå¤©"), QStringLiteral("No such channel."), QMessageBox::Yes);
+            QMessageBox::critical(this, QStringLiteral("ÁÄÌì"), QStringLiteral("No such channel."), QMessageBox::Yes);
             break;
     }
 }

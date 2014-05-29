@@ -160,3 +160,11 @@ void GameMain::resizeEvent(QResizeEvent* event)
 		this->adjustSize();
 	}
 }
+
+void GameMain::onCreateCharacterRsp(const Protocol::SCCreateCharacter& createCharacter)
+{
+	if (createCharacter.result)
+	{
+		initGame(false);
+	}
+}

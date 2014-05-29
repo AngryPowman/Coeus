@@ -51,6 +51,10 @@ bool GameSession::loadPlayer()
 
             DataManager::getInstance().loadPlayerData(_userGuid, fullData);
             this->setPlayerContext(player);
+
+			//保存本次登录时间
+			player->cachedLastLogin(Poco::Timestamp().epochTime());
+
             return true;
         }
     }

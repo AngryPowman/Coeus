@@ -36,14 +36,14 @@ void Player::onLogout()
 	// save data to db
 }
 
-void Player::nickname(const std::string&& nickname)
+void Player::nickname(const std::string& nickname)
 {
     _playerFullData->nickname = nickname;
 }
 
-const std::string&& Player::nickname() const
+const std::string& Player::nickname() const
 {
-    return std::forward<std::string>(_playerFullData->nickname);
+    return _playerFullData->nickname;
 }
 
 Protocol::PlayerFullData& Player::fullData()

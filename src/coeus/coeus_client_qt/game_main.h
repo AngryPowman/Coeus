@@ -34,6 +34,9 @@ public:
     void loadGameData();
     void changeView(GameView gameView);
 
+public:
+	void onCreateCharacterRsp(const Protocol::SCCreateCharacter& createCharacter);
+
 private slots:
     void slotOnAboutQT();
     void slotOnBagActionTriggered(bool checked);

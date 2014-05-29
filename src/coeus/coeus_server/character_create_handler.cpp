@@ -60,7 +60,7 @@ void GameSession::characterCreateHandler(const NetworkPacket::Ptr& packet)
         createCharacterRequest.gender,
         createCharacterRequest.epic))
     {
-        Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
+        /*Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
         if (player != nullptr)
         {
             Protocol::PlayerFullData& fullData = player->fullData();
@@ -69,7 +69,14 @@ void GameSession::characterCreateHandler(const NetworkPacket::Ptr& packet)
             fullData.character_type = createCharacterRequest.character_type;
             fullData.gender = createCharacterRequest.gender;
             fullData.epic = createCharacterRequest.epic;
-        }
+        }*/
+
+		//加载角色相关数据
+		if (this->loadPlayer())
+		{
+			debug_log("Player %ull login successful.", _userGuid);
+			debug_log("Total online player count = %d", PlayerManager::getInstance().playerCount());
+		}
 
         this->send_message(Opcodes::SCCreateCharacter, response);
     }

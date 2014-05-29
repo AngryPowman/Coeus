@@ -39,8 +39,8 @@ public:
 	void gender(int32 gender);
 	int32 gender() const;
 
-	void nickname(const std::string&& nickname);
-	const std::string&& nickname() const;
+	void nickname(const std::string& nickname);
+	const std::string& nickname() const;
 
 	void lastLogin(int64 last_login);
 	int64 lastLogin() const;

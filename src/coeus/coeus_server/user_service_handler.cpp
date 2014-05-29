@@ -110,6 +110,7 @@ void GameSession::loginHandler(const NetworkPacket::Ptr& packet)
 		//验证帐号和密码是否匹配
 		bool auth_result = GameDatabase::getInstance().userAuth(loginRequest.account, loginRequest.password);
 		login_response.login_result = auth_result;
+		login_response.player_id = _userGuid;
 
 		if (auth_result == false)
 		{
@@ -134,9 +135,6 @@ void GameSession::loginHandler(const NetworkPacket::Ptr& packet)
                 //加载角色相关数据
                 if (this->loadPlayer())
                 {
-                    //保存本次登录时间
-                    _player->cachedLastLogin(Poco::Timestamp().epochTime());
-
                     debug_log("Player %ull login successful.", _userGuid);
                     debug_log("Total online player count = %d", PlayerManager::getInstance().playerCount());
                 }

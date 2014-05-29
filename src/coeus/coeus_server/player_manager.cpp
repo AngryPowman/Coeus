@@ -69,7 +69,7 @@ const std::string&& PlayerManager::getPlayerNameById(uint64 playerId)
 	Player* player = getPlayer(playerId);
 	if (player != nullptr)
 	{
-		return player->nickname();
+		return std::forward<const std::string>(player->nickname());
 	}
 
 	return std::forward<const std::string>(std::string());
