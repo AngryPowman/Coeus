@@ -32,115 +32,46 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTreeWidget" name="gameItemWidget">
-    <property name="geometry">
-     <rect>
-      <x>364</x>
-      <y>204</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <property name="rootIsDecorated">
-     <bool>false</bool>
-    </property>
-    <property name="itemsExpandable">
-     <bool>false</bool>
-    </property>
-    <column>
-     <property name="text">
-      <string>物品名称</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>类型</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>持有数量</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>描述</string>
-     </property>
-    </column>
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <property name="text">
-      <string>阿波罗激光枪\n</string>
-     </property>
-     <property name="text">
-      <string>武器</string>
-     </property>
-     <property name="text">
-      <string>1</string>
-     </property>
-     <property name="text">
-      <string>小口径激光枪，威力惊人。</string>
-     </property>
+     <widget class="QTableView" name="tableView"/>
     </item>
     <item>
-     <property name="text">
-      <string>老肉鸡的推荐信</string>
-     </property>
-     <property name="text">
-      <string>任务物品</string>
-     </property>
-     <property name="text">
-      <string>1</string>
-     </property>
-     <property name="text">
-      <string>去面试鉴黄师的推荐信。</string>
-     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>使用</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>丢弃</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </item>
-   </widget>
-   <widget class="QTableView" name="tableView">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>40</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QWidget" name="">
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="text">
-          <string>使用</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>丢弃</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
+   </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

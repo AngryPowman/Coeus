@@ -17,8 +17,8 @@ GameBag::GameBag(QWidget *parent)
 
     //QStandardItem* standardItem = new QStandardItem();
     GameItemModel* itemModel = new GameItemModel(1, 1);
-
     _ui->tableView->setModel(itemModel);
+
     QStringList headerList;
     headerList << "No." << "ID" << "Name" << "Age" << "Sex" << "Show";
     //_ui->tableView->setHorizontalHeaderLabels(headerList);
@@ -28,14 +28,15 @@ GameBag::GameBag(QWidget *parent)
     _ui->tableView->setItemDelegateForColumn(GameItemDelegate::ItemGeneral, new GameItemDelegate(parent));
     QTreeWidgetItem* item = new QTreeWidgetItem();
     item->setText(0, "aaaaaa");
-    //_ui->treeView->addTopLevelItem(item);
-    //_ui->treeView->
 
     for (int i = 0; i < 10; i++)
     {
         QModelIndex index = itemModel->index(i, 0, QModelIndex());
         itemModel->setData(index, i);
     }
+
+    _ui->tableView->resizeColumnsToContents();
+    _ui->tableView->verticalHeader()->setDefaultSectionSize(GameItemDelegate::DEFAULT_ITEM_SEL_SIZE);
 }
 
 GameBag::~GameBag()

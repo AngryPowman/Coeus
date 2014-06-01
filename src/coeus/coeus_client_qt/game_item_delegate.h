@@ -19,6 +19,8 @@ public:
     {
         ItemGeneral
     };
+    static const int DEFAULT_ICON_SIZE = 48;
+    static const int DEFAULT_ITEM_SEL_SIZE = DEFAULT_ICON_SIZE + 10;
 
 public:
     GameItemDelegate::GameItemDelegate(QObject* parent = nullptr)
@@ -40,17 +42,24 @@ public:
         {
             QWidget* itemWidget = new QWidget();
 
-            static QSize sIconSize(48, 48);
+            static QSize sIconSize(DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE);
 
             // draw item icon
             QPixmap itemIconPixmap = QPixmap("images/ui/lsb_char_details.png").scaled(sIconSize);
-            qApp->style()->drawItemPixmap(painter, option.rect, Qt::AlignCenter, QPixmap(itemIconPixmap));
+            qApp->style()->drawItemPixmap(painter, option.rect, Qt::AlignLeft, QPixmap(itemIconPixmap));
 
             // draw item name
-            QString text = "<b>³¾·âµÄÄ§·¨ÃØ¼®</b>";
-            QStyleOptionViewItem myOption = option;
-            myOption.displayAlignment = Qt::AlignLeft | Qt::AlignVCenter;
-            qApp->style()->drawItemText(painter, myOption.rect, myOption.displayAlignment, QApplication::palette(), true, text);
+            QString text = "<b>Magic Book</b>";
+            QStyleOptionViewItem itemNameOption = option;
+            itemNameOption.displayAlignment = Qt::AlignLeft | Qt::AlignVCenter;
+            itemNameOption.rect.setLeft(option.rect.left() + sIconSize.width() + 10);
+            //itemNameOption.rect.setWidth(text.size() * 4);
+
+            //QStyleOptiont xxxOption = option;
+            //xxxOption.
+
+            qApp->style()->drawItemText(painter, itemNameOption.rect, itemNameOption.displayAlignment, QApplication::palette(), true, text, QPalette::ColorRole::Shadow);
+            //qApp->style()->drawControl(QStyle::CE_PushButtonLabel, &xxxOption, painter);
         }
         else
         {

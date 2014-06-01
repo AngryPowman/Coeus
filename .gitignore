@@ -41,3 +41,4 @@
 /3rdparty/poco/lib
 *.pch
 /vsprojects/*.suo
+/bin/client/user.dat
