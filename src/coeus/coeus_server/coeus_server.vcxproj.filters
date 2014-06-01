@@ -12,7 +12,7 @@
       <Filter>session</Filter>
     </ClCompile>
     <ClCompile Include="game_database.cpp">
-      <Filter>config\data</Filter>
+      <Filter>data</Filter>
     </ClCompile>
     <ClCompile Include="user_service_handler.cpp">
       <Filter>session\handler</Filter>
@@ -21,7 +21,7 @@
       <Filter>logic\player</Filter>
     </ClCompile>
     <ClCompile Include="data_manager.cpp">
-      <Filter>config\data</Filter>
+      <Filter>data</Filter>
     </ClCompile>
     <ClCompile Include="player_manager.cpp">
       <Filter>logic\player</Filter>
@@ -42,7 +42,7 @@
       <Filter>session\handler</Filter>
     </ClCompile>
     <ClCompile Include="prepare_statement_manager.cpp">
-      <Filter>config\data</Filter>
+      <Filter>data</Filter>
     </ClCompile>
     <ClCompile Include="chat_manager.cpp">
       <Filter>logic\chat</Filter>
@@ -79,10 +79,10 @@
     <Filter Include="logic\chat">
       <UniqueIdentifier>{792313ff-c8d7-4325-ae42-1c47fd218a30}</UniqueIdentifier>
     </Filter>
-    <Filter Include="config\data">
+    <Filter Include="data">
       <UniqueIdentifier>{0774ac02-def7-4eaa-bb24-187a5af261b0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="config\data\dbc">
+    <Filter Include="data\dbc">
       <UniqueIdentifier>{2c4a58ff-17d0-4e63-be02-a9663ed7c301}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -109,10 +109,10 @@
       <Filter>logic\user</Filter>
     </ClInclude>
     <ClInclude Include="game_database.h">
-      <Filter>config\data</Filter>
+      <Filter>data</Filter>
     </ClInclude>
     <ClInclude Include="player_db.h">
-      <Filter>config\data\dbc</Filter>
+      <Filter>data\dbc</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
       <Filter>logic\player</Filter>
@@ -121,13 +121,13 @@
       <Filter>logic\player</Filter>
     </ClInclude>
     <ClInclude Include="data_manager.h">
-      <Filter>config\data</Filter>
+      <Filter>data</Filter>
     </ClInclude>
     <ClInclude Include="cached_object.h">
-      <Filter>config\data\dbc</Filter>
+      <Filter>data\dbc</Filter>
     </ClInclude>
     <ClInclude Include="item_db.h">
-      <Filter>config\data\dbc</Filter>
+      <Filter>data\dbc</Filter>
     </ClInclude>
     <ClInclude Include="game_service.h">
       <Filter>service</Filter>
@@ -139,10 +139,10 @@
       <Filter>config</Filter>
     </ClInclude>
     <ClInclude Include="db_define.h">
-      <Filter>config\data</Filter>
+      <Filter>data</Filter>
     </ClInclude>
     <ClInclude Include="prepare_statement_manager.h">
-      <Filter>config\data</Filter>
+      <Filter>data</Filter>
     </ClInclude>
     <ClInclude Include="game_opcode_registry.h">
       <Filter>session</Filter>

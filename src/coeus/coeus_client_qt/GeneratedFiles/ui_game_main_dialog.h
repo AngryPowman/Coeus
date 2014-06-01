@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -41,6 +42,7 @@ public:
     QAction *action_Friends;
     QAction *action_World;
     QWidget *centralwidget;
+    QHBoxLayout *horizontalLayout;
     QMenuBar *menubar;
     QMenu *menu_G;
     QMenu *menu;
@@ -52,7 +54,7 @@ public:
     {
         if (GameMainDialog->objectName().isEmpty())
             GameMainDialog->setObjectName(QStringLiteral("GameMainDialog"));
-        GameMainDialog->resize(887, 598);
+        GameMainDialog->resize(1024, 768);
         GameMainDialog->setStyleSheet(QStringLiteral(""));
         GameMainDialog->setDockOptions(QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks);
         GameMainDialog->setUnifiedTitleAndToolBarOnMac(true);
@@ -100,10 +102,14 @@ public:
         centralwidget = new QWidget(GameMainDialog);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         centralwidget->setLayoutDirection(Qt::LeftToRight);
+        horizontalLayout = new QHBoxLayout(centralwidget);
+        horizontalLayout->setSpacing(0());
+        horizontalLayout->setMargin(0());
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         GameMainDialog->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GameMainDialog);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 887, 21));
+        menubar->setGeometry(QRect(0, 0, 1024, 21));
         menu_G = new QMenu(menubar);
         menu_G->setObjectName(QStringLiteral("menu_G"));
         menu = new QMenu(menubar);

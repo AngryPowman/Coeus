@@ -87,16 +87,24 @@ bool GameDatabase::isNicknameExist(const std::string& nickname)
 bool GameDatabase::loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& fullData)
 {
 	PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_LOAD_CHARACTER);
-    preparedStatement.statement(),
-        Poco::Data::limit(1),
-        Poco::Data::use(userGuid),
-        Poco::Data::into(userGuid),
-        Poco::Data::into(fullData.character_type),
-        Poco::Data::into(fullData.nickname),
-        Poco::Data::into(fullData.gender),
-        Poco::Data::into(fullData.epic.characteristic),
-        Poco::Data::into(fullData.epic.family_type),
-        Poco::Data::into(fullData.epic.story_type);
+	preparedStatement.statement(),
+		Poco::Data::limit(1),
+		Poco::Data::use(userGuid),
+		Poco::Data::into(fullData.character_id),
+		Poco::Data::into(fullData.initial_data.character_type),
+		Poco::Data::into(fullData.initial_data.nickname),
+		Poco::Data::into(fullData.gender),
+		Poco::Data::into(fullData.epic.characteristic),
+		Poco::Data::into(fullData.epic.family_type),
+		Poco::Data::into(fullData.epic.story_type),
+		Poco::Data::into(fullData.last_login),
+		Poco::Data::into(fullData.initial_data.level),
+		Poco::Data::into(fullData.initial_data.hp),
+		Poco::Data::into(fullData.initial_data.max_hp),
+		Poco::Data::into(fullData.initial_data.exp),
+		Poco::Data::into(fullData.initial_data.next_exp),
+		Poco::Data::into(fullData.initial_data.power);
+
 
     return (preparedStatement.execute() > 0);
 }
@@ -128,14 +136,21 @@ bool GameDatabase::saveCharacterInfo(uint64 userGuid, const Protocol::PlayerFull
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_SAVE_CHARACTER);
     preparedStatement.statement(),
         Poco::Data::limit(1), 
-        Poco::Data::use(userGuid),
-        Poco::Data::use(userGuid),
-        Poco::Data::use(fullData.character_type),
-        Poco::Data::use(fullData.nickname),
-        Poco::Data::use(fullData.gender),
-        Poco::Data::use(fullData.epic.characteristic),
-        Poco::Data::use(fullData.epic.family_type),
-        Poco::Data::use(fullData.epic.story_type);
+        Poco::Data::use(fullData.userid),
+		Poco::Data::use(fullData.character_id),
+		Poco::Data::use(fullData.initial_data.character_type),
+		Poco::Data::use(fullData.initial_data.nickname),
+		Poco::Data::use(fullData.gender),
+		Poco::Data::use(fullData.epic.characteristic),
+		Poco::Data::use(fullData.epic.family_type),
+		Poco::Data::use(fullData.epic.story_type),
+		Poco::Data::use(fullData.last_login),
+		Poco::Data::use(fullData.initial_data.level),
+		Poco::Data::use(fullData.initial_data.hp),
+		Poco::Data::use(fullData.initial_data.max_hp),
+		Poco::Data::use(fullData.initial_data.exp),
+		Poco::Data::use(fullData.initial_data.next_exp),
+		Poco::Data::use(fullData.initial_data.power);
 
     return (preparedStatement.execute() > 0);
 }

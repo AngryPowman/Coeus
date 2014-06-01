@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
 #endif  
 #endif
-
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
     int ret = GameLauncher::run(argc, argv);
 
 #if defined(_WIN32)

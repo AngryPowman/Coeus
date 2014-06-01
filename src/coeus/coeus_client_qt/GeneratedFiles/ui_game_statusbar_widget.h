@@ -32,9 +32,12 @@ QT_BEGIN_NAMESPACE
 class Ui_GameStatusBarWidget
 {
 public:
+    QVBoxLayout *verticalLayout_6;
+    QHBoxLayout *horizontalLayout_4;
     QVBoxLayout *verticalLayout_3;
-    QHBoxLayout *horizontalLayout_2;
     QGraphicsView *graphicsGravatar;
+    QSpacerItem *verticalSpacer_2;
+    QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout;
     QLabel *lblNickname;
     QLabel *label;
@@ -44,8 +47,8 @@ public:
     QLabel *label_11;
     QLCDNumber *lcdPower;
     QSpacerItem *verticalSpacer;
-    QSpacerItem *horizontalSpacer_2;
-    QHBoxLayout *horizontalLayout_6;
+    QSpacerItem *verticalSpacer_4;
+    QVBoxLayout *verticalLayout_5;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_12;
@@ -53,6 +56,7 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_10;
     QProgressBar *progressExp;
+    QSpacerItem *verticalSpacer_3;
     QTabWidget *tabWidget;
     QWidget *tab_2;
     QVBoxLayout *verticalLayout_4;
@@ -64,18 +68,20 @@ public:
     {
         if (GameStatusBarWidget->objectName().isEmpty())
             GameStatusBarWidget->setObjectName(QStringLiteral("GameStatusBarWidget"));
-        GameStatusBarWidget->resize(216, 676);
+        GameStatusBarWidget->resize(248, 674);
         QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(GameStatusBarWidget->sizePolicy().hasHeightForWidth());
         GameStatusBarWidget->setSizePolicy(sizePolicy);
-        GameStatusBarWidget->setMinimumSize(QSize(216, 0));
-        GameStatusBarWidget->setMaximumSize(QSize(216, 16777215));
-        verticalLayout_3 = new QVBoxLayout(GameStatusBarWidget);
+        GameStatusBarWidget->setMinimumSize(QSize(248, 0));
+        GameStatusBarWidget->setMaximumSize(QSize(248, 16777215));
+        verticalLayout_6 = new QVBoxLayout(GameStatusBarWidget);
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         graphicsGravatar = new QGraphicsView(GameStatusBarWidget);
         graphicsGravatar->setObjectName(QStringLiteral("graphicsGravatar"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -84,7 +90,7 @@ public:
         sizePolicy1.setHeightForWidth(graphicsGravatar->sizePolicy().hasHeightForWidth());
         graphicsGravatar->setSizePolicy(sizePolicy1);
         graphicsGravatar->setMinimumSize(QSize(96, 96));
-        graphicsGravatar->setMaximumSize(QSize(96, 96));
+        graphicsGravatar->setMaximumSize(QSize(80, 80));
         graphicsGravatar->setStyleSheet(QStringLiteral("background-image :url(:/coeus_client_qt/AngryPowman.jpg);"));
         graphicsGravatar->setFrameShape(QFrame::Box);
         graphicsGravatar->setFrameShadow(QFrame::Plain);
@@ -95,8 +101,17 @@ public:
         graphicsGravatar->setInteractive(false);
         graphicsGravatar->setResizeAnchor(QGraphicsView::AnchorViewCenter);
 
-        horizontalLayout_2->addWidget(graphicsGravatar);
+        verticalLayout_3->addWidget(graphicsGravatar, 0, Qt::AlignTop);
 
+        verticalSpacer_2 = new QSpacerItem(20, 18, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_3->addItem(verticalSpacer_2);
+
+
+        horizontalLayout_4->addLayout(verticalLayout_3);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         lblNickname = new QLabel(GameStatusBarWidget);
@@ -162,18 +177,18 @@ public:
 
         horizontalLayout_2->addLayout(verticalLayout);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_2->addItem(horizontalSpacer_2);
+        horizontalLayout_4->addLayout(horizontalLayout_2);
 
 
-        verticalLayout_3->addLayout(horizontalLayout_2);
+        verticalLayout_6->addLayout(horizontalLayout_4);
 
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        verticalSpacer_4 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        verticalLayout_3->addLayout(horizontalLayout_6);
+        verticalLayout_6->addItem(verticalSpacer_4);
 
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         horizontalLayout_3 = new QHBoxLayout();
@@ -246,7 +261,14 @@ public:
         verticalLayout_2->addLayout(horizontalLayout_5);
 
 
-        verticalLayout_3->addLayout(verticalLayout_2);
+        verticalLayout_5->addLayout(verticalLayout_2);
+
+        verticalSpacer_3 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_5->addItem(verticalSpacer_3);
+
+
+        verticalLayout_6->addLayout(verticalLayout_5);
 
         tabWidget = new QTabWidget(GameStatusBarWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
@@ -281,7 +303,7 @@ public:
         tab->setObjectName(QStringLiteral("tab"));
         tabWidget->addTab(tab, QString());
 
-        verticalLayout_3->addWidget(tabWidget);
+        verticalLayout_6->addWidget(tabWidget);
 
 
         retranslateUi(GameStatusBarWidget);
@@ -303,13 +325,13 @@ public:
         graphicsGravatar->setWhatsThis(QApplication::translate("GameStatusBarWidget", "<html><head/><body><p>Gravatar\346\230\257Globally Recognized Avatar\347\232\204\347\274\251\345\206\231\357\274\214\346\230\257gravatar\346\216\250\345\207\272\347\232\204\344\270\200\351\241\271\346\234\215\345\212\241\357\274\214\346\204\217\344\270\272\342\200\234\345\205\250\347\220\203\351\200\232\347\224\250\345\244\264\345\203\217\342\200\235\343\200\202\345\246\202\346\236\234\345\234\250Gravatar\347\232\204\346\234\215\345\212\241\345\231\250\344\270\212\346\224\276\347\275\256\344\272\206\344\275\240\350\207\252\345\267\261\347\232\204\345\244\264\345\203\217\357\274\214\345\217\252\350\246\201\346\217\220\344\276\233\344\270\216\344\271\213\345\205\263\350\201\224\347\232\204email\345\234\260\345\235\200\357\274\214coeus\344\276\277\345\217\257\344\273\245\351\200\232\350\277\207\350\257\245email\350\216\267\345\217\226\345\210\260\344\275\240\347\232\204\344\270\252\346\200\247\345\244\264\345\203\217\357\274\214\345\271\266\344\270\224\345\221\210\347\216\260\347\273\231\345\205\266\345\256\203\345"
                         "\234\250\347\272\277\347\216\251\345\256\266\343\200\202</p><p>\350\256\277\351\227\256\357\274\232<a href=\"http://cn.gravatar.com/\"><span style=\" text-decoration: underline; color:#0000ff;\">http://cn.gravatar.com/</span></a></p></body></html>", 0));
 #endif // QT_NO_WHATSTHIS
-        lblNickname->setText(QApplication::translate("GameStatusBarWidget", "<html><head/><body><p><span style=\" font-weight:600;\">\346\204\244\346\200\222\347\232\204\346\263\241\351\235\242</span></p></body></html>", 0));
+        lblNickname->setText(QApplication::translate("GameStatusBarWidget", "<html><head/><body><p><span style=\" font-weight:600;\">\344\270\215\345\260\204\350\204\270\350\277\230\346\230\257\345\245\275\346\234\213\345\217\213</span></p></body></html>", 0));
         label->setText(QApplication::translate("GameStatusBarWidget", "\347\255\211\347\272\247\357\274\2321", 0));
         label_9->setText(QApplication::translate("GameStatusBarWidget", "\350\201\214\344\270\232\357\274\232\351\225\234\345\255\220\347\214\216\344\272\272", 0));
         label_11->setText(QApplication::translate("GameStatusBarWidget", "\346\210\230\346\226\227\345\212\233", 0));
         label_12->setText(QApplication::translate("GameStatusBarWidget", "\347\224\237\345\221\275\345\200\274", 0));
         progressHp->setFormat(QApplication::translate("GameStatusBarWidget", "4600/4600", 0));
-        label_10->setText(QApplication::translate("GameStatusBarWidget", "\345\256\207\345\256\231\346\260\224", 0));
+        label_10->setText(QApplication::translate("GameStatusBarWidget", "\347\273\217\351\252\214\345\200\274", 0));
         progressExp->setFormat(QApplication::translate("GameStatusBarWidget", "%p%", 0));
         QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
         ___qtreewidgetitem->setText(0, QApplication::translate("GameStatusBarWidget", "\344\273\273\345\212\241", 0));

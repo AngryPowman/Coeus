@@ -23,7 +23,7 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     int ht = desk->height();
     this->move((wd - width()) / 2, (ht - height()) / 2);
 
-    // init man layout
+    // init main layout
     _splitterMain = new QSplitter(Qt::Horizontal, this);
     _splitterMain->setStretchFactor(1, 1);
     GameStatusBarWidget* gameStatusBarWidget
@@ -32,7 +32,8 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     QSplitter* splitterRight = new QSplitter(Qt::Vertical, _splitterMain);
     splitterRight->setOpaqueResize(true);
 
-    GameMapWidget* gameMapWidget = WidgetManager::getInstance().gameMapWidget(splitterRight);
+    _mdiAreaMain = new QMdiArea(splitterRight);
+    //GameMapWidget* gameMapWidget = WidgetManager::getInstance().gameMapWidget(splitterRight);
     GameChatWidget* gameChatWidget = WidgetManager::getInstance().gameChatWidget(splitterRight);
 
     _splitterMain->setVisible(false);
@@ -75,11 +76,9 @@ void GameMain::slotOnAboutQT()
 void GameMain::slotOnBagActionTriggered(bool checked)
 {
     GameBag* gameBag = WidgetManager::getInstance().gameBag();
-    Qt::WindowFlags flags = gameBag->windowFlags();
-    flags |= Qt::WindowStaysOnTopHint;
-    gameBag->setWindowFlags(flags);
     if (checked)
     {
+        _mdiAreaMain->addSubWindow(gameBag);
         gameBag->show();
     }
     else

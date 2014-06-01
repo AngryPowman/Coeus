@@ -48,6 +48,7 @@ private:
 	GameView _currentView;
 	QSize _orginSize;
     QSplitter* _splitterMain;
+    QMdiArea* _mdiAreaMain;
 };
 
 #endif // !__GAME_MAIN_H__

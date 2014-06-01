@@ -1,5 +1,6 @@
 #include "game_status_bar_widget.h"
 #include "ui_game_statusbar_widget.h"
+#include "qt_coeus_common.h"
 
 GameStatusBarWidget::GameStatusBarWidget(QWidget *parent)
     : QWidget(parent)
@@ -21,7 +22,7 @@ void GameStatusBarWidget::initStatus(uint64 character_guid)
 
 void GameStatusBarWidget::onPropertiesRsp(const Protocol::SCCharacterInitialDataRsp& characterInitialDataRsp)
 {
-	_ui->lblNickname->setText(QString::fromStdString(characterInitialDataRsp.char_initial_data.nickname));
+	_ui->lblNickname->setText(QString::fromLocal8Bit(characterInitialDataRsp.char_initial_data.nickname.c_str()));
     if (characterInitialDataRsp.char_initial_data.max_hp != 0)
     {
         float percent = (

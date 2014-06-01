@@ -53,13 +53,31 @@ void GameSession::characterCreateHandler(const NetworkPacket::Ptr& packet)
         createCharacterRequest.epic.story_type < Epic::StoryType::StoryMaxFlag
         );
 
-    if (response.result && GameDatabase::getInstance().createCharacter(
+    if (response.result/*GameDatabase::getInstance().createCharacter(
         _userGuid, 
         createCharacterRequest.character_type,
         createCharacterRequest.nickname,
         createCharacterRequest.gender,
-        createCharacterRequest.epic))
+        createCharacterRequest.epic)*/
+        )
     {
+        Protocol::PlayerFullData initialFullData;
+        initialFullData.character_id = _userGuid;
+        initialFullData.userid = _userGuid;
+        initialFullData.initial_data.character_type = createCharacterRequest.character_type;
+        initialFullData.gender = createCharacterRequest.gender;
+        initialFullData.epic = createCharacterRequest.epic;
+        initialFullData.last_login = 0;
+        initialFullData.initial_data.exp = 0;
+        initialFullData.initial_data.next_exp = 0;
+        initialFullData.initial_data.hp = 0;
+        initialFullData.initial_data.max_hp= 0;
+        initialFullData.initial_data.power = 0;
+        initialFullData.initial_data.level = 1;
+        initialFullData.initial_data.nickname = createCharacterRequest.nickname;
+
+        GameDatabase::getInstance().saveCharacterInfo(_userGuid, initialFullData);
+
         /*Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
         if (player != nullptr)
         {

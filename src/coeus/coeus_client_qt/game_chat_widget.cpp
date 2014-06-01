@@ -28,7 +28,7 @@ void GameChatWidget::addChatMessage(ChatChannel channel, const QString& message,
     const static QString channelName[ChatChannelMaxFlag] = {"[世界]", "[私聊]", "[公会]", "[系统]"};
 
     QString speaker = "[<a href = \"#\">" + targetName + "</a>] ";
-    QString content = "<b>" + channelName[channel] + (channel == ChatChannel::SystemChannel ? " " : speaker) + "</b>" + message;
+    QString content = channelName[channel] + (channel == ChatChannel::SystemChannel ? " " : speaker)+ message;
 
     _ui->txtAllMessages->append(content);
     switch (channel)
@@ -83,9 +83,8 @@ void GameChatWidget::slotOnSendClicked()
         }
         case ChatChannel::PrivateChatChannel:
         {
-			QTextCodec* gbk = QTextCodec::codecForName("gbk");
             Protocol::CSSendPrivateChatMessageByNameReq privateChatMessageByNameReq;
-			privateChatMessageByNameReq.target_name = gbk->fromUnicode(_ui->cmbTargetName->currentText()).constData();
+            privateChatMessageByNameReq.target_name = _ui->cmbTargetName->currentText().toLocal8Bit();
             privateChatMessageByNameReq.message = _ui->txtChatMessage->text().toStdString();
 			GameNetwork::getInstance().sendMessage(Opcodes::CSSendPrivateChatMessageByNameReq, privateChatMessageByNameReq);
             break;
@@ -101,7 +100,7 @@ void GameChatWidget::onPublicChatMessageNotification(const Protocol::SCPublicCha
 	addChatMessage(
 		static_cast<ChatChannel>(publicChatMessagenotification.channel),
 		QString::fromStdString(publicChatMessagenotification.message),
-		QString::fromStdString(publicChatMessagenotification.target_name)
+        QString::fromLocal8Bit(publicChatMessagenotification.target_name.c_str())
 		);
 }
 
@@ -110,6 +109,6 @@ void GameChatWidget::onPrivateChatMessageNotification(const Protocol::SCPrivateC
 	addChatMessage(
 		ChatChannel::PrivateChatChannel,
 		QString::fromStdString(privateChatMessagenotification.message),
-		QString::fromStdString(privateChatMessagenotification.target_name)
+        QString::fromLocal8Bit(privateChatMessagenotification.target_name.c_str())
 		);
 }

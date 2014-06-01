@@ -21,7 +21,7 @@ void ChatManager::sendPrivateChat(uint64 targetId, const std::string& chatMessag
 	{
 		Protocol::SCPrivateChatMessageNotification privateChatMessageNotification;
 		privateChatMessageNotification.target_id = targetId;
-		privateChatMessageNotification.target_name = player->nickname();
+        privateChatMessageNotification.target_name = _player->nickname();
 		privateChatMessageNotification.message = chatMessage;
 
 		player->send_message(Opcodes::SCPrivateChatMessageNotification, privateChatMessageNotification);

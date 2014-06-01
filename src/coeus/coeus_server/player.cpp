@@ -38,12 +38,12 @@ void Player::onLogout()
 
 void Player::nickname(const std::string& nickname)
 {
-    _playerFullData->nickname = nickname;
+    _playerFullData->initial_data.nickname = nickname;
 }
 
 const std::string& Player::nickname() const
 {
-    return _playerFullData->nickname;
+	return _playerFullData->initial_data.nickname;
 }
 
 Protocol::PlayerFullData& Player::fullData()
