@@ -100,6 +100,7 @@ public:
 
         tableView = new QTableView(centralWidget);
         tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setStyleSheet(QStringLiteral(""));
 
         verticalLayout->addWidget(tableView);
 

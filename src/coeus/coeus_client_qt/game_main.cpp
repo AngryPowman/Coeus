@@ -8,12 +8,16 @@
 #include "widget_manager.h"
 #include "character_creator.h"
 #include "game_data.h"
+#include "game_common/item_helper.h"
 
 GameMain::GameMain(QWidget* parent /*= 0*/)
     : QMainWindow(parent)
 {
     _ui = new Ui::GameMainDialog();
     _ui->setupUi(this);
+
+    // load configurations
+    ItemHelper::init();
 
 	_defaultWindowFlags = this->windowFlags();
 	_orginSize = this->size();
@@ -59,12 +63,6 @@ GameMain::~GameMain()
 
 void GameMain::initControl()
 {
-    // video widget
-    //QLabel* videoWidget = new QLabel(this);
-    //videoWidget->setBackgroundRole();
-    //this->setCentralWidget(videoWidget);
-
-    // init game ui layout
 
 }
 

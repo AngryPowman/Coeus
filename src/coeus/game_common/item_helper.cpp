@@ -35,4 +35,6 @@ bool ItemHelper::init()
     REGISTER_ITEM_TYPE(ITEM_TYPE_HUNAN_CUISINE,     "Ïæ²Ë");
     REGISTER_ITEM_TYPE(ITEM_TYPE_DRUP_CUISINE,      "Ò©Æ·");
     REGISTER_ITEM_TYPE(ITEM_TYPE_REAGENT_CUISINE,   "ÊÔ¼Á");
+
+    return true;
 }

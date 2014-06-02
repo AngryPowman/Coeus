@@ -9,8 +9,8 @@ GameBag::GameBag(QWidget *parent)
     _ui = new Ui::GameBag();
     _ui->setupUi(this);
 
-    GameItemModel* itemModel = new GameItemModel(10, 1);
-    _ui->tableView->setModel(itemModel);
+    _itemModel = new GameItemModel(10, 1, this);
+    _ui->tableView->setModel(_itemModel);
     _ui->tableView->horizontalHeader()->setVisible(false);
     _ui->tableView->verticalHeader()->setVisible(false);
     _ui->tableView->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
@@ -19,19 +19,23 @@ GameBag::GameBag(QWidget *parent)
     _ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     _ui->tableView->verticalHeader()->setDefaultSectionSize(GameItemDelegate::DEFAULT_ITEM_SEL_SIZE);
     _ui->tableView->resizeColumnsToContents();
+    _ui->tableView->setStyleSheet("selection-background-color: rgba(9, 160, 229, 50)");
 
     for (int i = 0; i < 100; i++)
     {
-        QStandardItem* item = new QStandardItem();
-        itemModel->setItem(i, 0, item);
-        QModelIndex index = item->index();
-
-        GameItem itemData;
-        itemModel->setData(index, QVariant::fromValue<const GameItem&>(itemData), Qt::DisplayRole);
+        GameItem item;
+        this->addItem(item);
     }
 }
 
 GameBag::~GameBag()
 {
     delete _ui;
+}
+
+void GameBag::addItem(const GameItem& gameItem)
+{
+    QStandardItem* standardItem = new QStandardItem();
+    standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
+    _itemModel->insertRow(_itemModel->rowCount(), standardItem);
 }

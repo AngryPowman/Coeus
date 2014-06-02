@@ -52,6 +52,12 @@
     <ClInclude Include="game_item.h">
       <Filter>objects</Filter>
     </ClInclude>
+    <ClInclude Include="item_definition.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="item_helper.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -105,6 +111,9 @@
     </ClCompile>
     <ClCompile Include="config\belif_config.cpp">
       <Filter>config\game_config</Filter>
+    </ClCompile>
+    <ClCompile Include="item_helper.cpp">
+      <Filter>common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
