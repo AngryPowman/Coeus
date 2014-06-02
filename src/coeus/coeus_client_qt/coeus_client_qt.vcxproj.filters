@@ -69,9 +69,6 @@
       <Extensions>cpp;cxx;c;def</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
-    <Filter Include="core\logic\data">
-      <UniqueIdentifier>{5da1c4e4-3dec-42db-bbf2-237406a8bc22}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core\extension">
       <UniqueIdentifier>{05cf32ce-50b2-4289-a51e-2782807c46eb}</UniqueIdentifier>
     </Filter>
@@ -457,7 +454,7 @@
       <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="game_data.h">
-      <Filter>core\logic\data</Filter>
+      <Filter>core\logic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

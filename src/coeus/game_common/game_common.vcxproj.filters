@@ -49,6 +49,9 @@
     <ClInclude Include="config\belif_config.h">
       <Filter>config\game_config</Filter>
     </ClInclude>
+    <ClInclude Include="game_item.h">
+      <Filter>objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -65,6 +68,9 @@
     </Filter>
     <Filter Include="config\game_config">
       <UniqueIdentifier>{048b9dee-b9c9-461c-8594-2c29827c6313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="objects">
+      <UniqueIdentifier>{d20808a5-ac23-4f09-896f-a86cbc32e511}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

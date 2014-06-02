@@ -9,34 +9,26 @@ GameBag::GameBag(QWidget *parent)
     _ui = new Ui::GameBag();
     _ui->setupUi(this);
 
-    Qt::WindowFlags flags = 0/*this->windowFlags()*/;
-    //flags |= Qt::MSWindowsFixedSizeDialogHint;
-    //flags |= Qt::WindowStaysOnTopHint;
-    //flags &= ~Qt::WindowMinimizeButtonHint;
-    //this->setWindowFlags(flags);
-
-    //QStandardItem* standardItem = new QStandardItem();
-    GameItemModel* itemModel = new GameItemModel(1, 1);
+    GameItemModel* itemModel = new GameItemModel(10, 1);
     _ui->tableView->setModel(itemModel);
-
-    QStringList headerList;
-    headerList << "No." << "ID" << "Name" << "Age" << "Sex" << "Show";
-    //_ui->tableView->setHorizontalHeaderLabels(headerList);
+    _ui->tableView->horizontalHeader()->setVisible(false);
     _ui->tableView->verticalHeader()->setVisible(false);
+    _ui->tableView->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
     _ui->tableView->horizontalHeader()->setStretchLastSection(true);
-
     _ui->tableView->setItemDelegateForColumn(GameItemDelegate::ItemGeneral, new GameItemDelegate(parent));
-    QTreeWidgetItem* item = new QTreeWidgetItem();
-    item->setText(0, "aaaaaa");
-
-    for (int i = 0; i < 10; i++)
-    {
-        QModelIndex index = itemModel->index(i, 0, QModelIndex());
-        itemModel->setData(index, i);
-    }
-
-    _ui->tableView->resizeColumnsToContents();
+    _ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     _ui->tableView->verticalHeader()->setDefaultSectionSize(GameItemDelegate::DEFAULT_ITEM_SEL_SIZE);
+    _ui->tableView->resizeColumnsToContents();
+
+    for (int i = 0; i < 100; i++)
+    {
+        QStandardItem* item = new QStandardItem();
+        itemModel->setItem(i, 0, item);
+        QModelIndex index = item->index();
+
+        GameItem itemData;
+        itemModel->setData(index, QVariant::fromValue<const GameItem&>(itemData), Qt::DisplayRole);
+    }
 }
 
 GameBag::~GameBag()

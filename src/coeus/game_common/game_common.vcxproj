@@ -17,6 +17,7 @@
     <ClInclude Include="config\npc_config.h" />
     <ClInclude Include="game_define.h" />
     <ClInclude Include="game_util.h" />
+    <ClInclude Include="game_item.h" />
     <ClInclude Include="jsoncpp\json\autolink.h" />
     <ClInclude Include="jsoncpp\json\config.h" />
     <ClInclude Include="jsoncpp\json\features.h" />

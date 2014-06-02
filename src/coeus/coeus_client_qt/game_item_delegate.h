@@ -9,6 +9,9 @@
 #include <QStandardItemModel>
 #include <QPixmap>
 #include <QApplication>
+#include <QPainter>
+#include <QTextItem>
+#include "game_common/game_item.h"
 
 class GameItemDelegate : public QStyledItemDelegate
 {
@@ -19,8 +22,8 @@ public:
     {
         ItemGeneral
     };
-    static const int DEFAULT_ICON_SIZE = 48;
-    static const int DEFAULT_ITEM_SEL_SIZE = DEFAULT_ICON_SIZE + 10;
+    static const int DEFAULT_ICON_SIZE = 56;
+    static const int DEFAULT_ITEM_SEL_SIZE = DEFAULT_ICON_SIZE;
 
 public:
     GameItemDelegate::GameItemDelegate(QObject* parent = nullptr)
@@ -40,25 +43,36 @@ public:
         QWidget* itemWidget = nullptr;
         if (index.column() == ItemGeneral)
         {
-            QWidget* itemWidget = new QWidget();
-
-            static QSize sIconSize(DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE);
+            static QSize sIconSize(64, 64);
+            const GameItem& gameItem = index.data(Qt::DisplayRole).value<GameItem>();
 
             // draw item icon
-            QPixmap itemIconPixmap = QPixmap("images/ui/lsb_char_details.png").scaled(sIconSize);
+            QPixmap itemIconPixmap = QPixmap(QString::fromStdString(gameItem.icon())).scaled(sIconSize);
             qApp->style()->drawItemPixmap(painter, option.rect, Qt::AlignLeft, QPixmap(itemIconPixmap));
 
             // draw item name
-            QString text = "<b>Magic Book</b>";
+            const QString& itemName = QString::fromStdString(gameItem.name());
             QStyleOptionViewItem itemNameOption = option;
-            itemNameOption.displayAlignment = Qt::AlignLeft | Qt::AlignVCenter;
+            itemNameOption.displayAlignment = Qt::AlignLeft | Qt::AlignTop;
             itemNameOption.rect.setLeft(option.rect.left() + sIconSize.width() + 10);
-            //itemNameOption.rect.setWidth(text.size() * 4);
+            itemNameOption.rect.setTop(option.rect.top() + 16);
+            qApp->style()->drawItemText(painter, itemNameOption.rect, itemNameOption.displayAlignment, QApplication::palette(), true, itemName);
 
-            //QStyleOptiont xxxOption = option;
-            //xxxOption.
+            // draw item description
+            const QString& itemDescription = QString::fromStdString(gameItem.description());
+            QStyleOptionViewItem itemDescriptionOption = option;
+            itemDescriptionOption.displayAlignment = Qt::AlignLeft;
+            itemDescriptionOption.rect.setLeft(option.rect.left() + sIconSize.width() + 10);
+            itemDescriptionOption.rect.setTop(option.rect.top() + 36/* + sIconSize.height() - 10*/);
+            qApp->style()->drawItemText(painter, itemDescriptionOption.rect, itemDescriptionOption.displayAlignment, QApplication::palette(), true, itemDescription, QPalette::ColorRole::Shadow);
 
-            qApp->style()->drawItemText(painter, itemNameOption.rect, itemNameOption.displayAlignment, QApplication::palette(), true, text, QPalette::ColorRole::Shadow);
+            // draw count number
+            const QString& itemCount = QString::number(gameItem.count());
+            QStyleOptionViewItem itemCountOption = option;
+            itemCountOption.displayAlignment = Qt::AlignCenter;
+            itemCountOption.rect.setLeft(option.rect.left() + sIconSize.width() + 64);
+            qApp->style()->drawItemText(painter, itemCountOption.rect, itemCountOption.displayAlignment, QApplication::palette(), true, itemCount);
+
             //qApp->style()->drawControl(QStyle::CE_PushButtonLabel, &xxxOption, painter);
         }
         else
