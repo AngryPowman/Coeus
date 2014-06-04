@@ -49,19 +49,14 @@ void ItemIndexWidget::initGraph()
     itemTypenameLabel->setGeometry(itemTypenameLabelRect);
     itemTypenameLabel->adjustSize();
 
-    /*const QString& itemTypename = QString::fromLocal8Bit(gameItem.typeName().c_str());
-    QStyleOptionViewItem itemTypenameOption = option;
-    itemTypenameOption.displayAlignment = Qt::AlignVCenter;
-    itemTypenameOption.rect.setLeft(option.rect.left() + sIconSize.width() + 230);
-    qApp->style()->drawItemText(painter, itemTypenameOption.rect, itemTypenameOption.displayAlignment, QApplication::palette(), true, itemTypename);
-
     // Draw count number
-    const QString& itemCount = QString::number(gameItem.count());
-    QStyleOptionViewItem itemCountOption = option;
-    itemCountOption.displayAlignment = Qt::AlignVCenter;
-    itemCountOption.rect.setLeft(option.rect.left() + sIconSize.width() + 350);
-    qApp->style()->drawItemText(painter, itemCountOption.rect, itemCountOption.displayAlignment, QApplication::palette(), true, itemCount);
-    */
+    QLabel* itemCountLabel = new QLabel(this);
+    itemCountLabel->setText(QString::number(_gameItem.count()));
+    QRect itemCountLabelRect(itemCountLabel->rect());
+    itemCountLabelRect.setTop(itemNameLabelRect.top() + itemCountLabelRect.height() / 2);
+    itemCountLabelRect.setLeft(itemTypenameLabelRect.left() + 160);
+    itemCountLabel->setGeometry(itemCountLabelRect);
+    itemCountLabel->adjustSize();
 
     this->adjustSize();
 }

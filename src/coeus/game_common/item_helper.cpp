@@ -1,12 +1,6 @@
 #include "item_helper.h"
-#include "item_definition.h"
 
 ItemHelper::ItemType::ItemTypenameRef ItemHelper::ItemType::_itemTypename;
-const std::string& ItemHelper::ItemType::toTypename(uint32 itemType)
-{
-    ItemTypenameRef::const_iterator iter = _itemTypename.find(itemType);
-    return (iter != _itemTypename.end() ? iter->second : _itemTypename[0]);
-}
 
 bool ItemHelper::init()
 {
@@ -38,4 +32,10 @@ bool ItemHelper::init()
     REGISTER_ITEM_TYPE(ITEM_TYPE_REAGENT_CUISINE,   "йт╪а");
 
     return true;
+}
+
+const std::string& ItemHelper::ItemType::toTypename(uint32 itemType)
+{
+    ItemTypenameRef::const_iterator iter = _itemTypename.find(itemType);
+    return (iter != _itemTypename.end() ? iter->second : _itemTypename[0]);
 }

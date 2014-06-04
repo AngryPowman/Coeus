@@ -22,11 +22,11 @@ GameBag::GameBag(QWidget *parent)
     _ui->tableView->resizeColumnsToContents();
     _ui->tableView->setStyleSheet("selection-background-color: rgba(9, 160, 229, 50)");
 
-    for (int i = 0; i < 10; i++)
-    {
-        GameItem item;
-        this->addItem(item);
-    }
+//     for (int i = 0; i < 10; i++)
+//     {
+//         GameItem item;
+//         this->addItem(item);
+//     }
 }
 
 GameBag::~GameBag()
@@ -37,13 +37,10 @@ GameBag::~GameBag()
 void GameBag::addItem(const GameItem& gameItem)
 {
     QStandardItem* standardItem = new QStandardItem();
-    standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
+    //standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
     _itemModel->insertRow(_itemModel->rowCount(), standardItem);
 
     //test
     ItemIndexWidget* itemIndexWidget = new ItemIndexWidget(gameItem);
     itemIndexWidget->initGraph();
-
-    _ui->tableView->setColumnWidth(standardItem->index().column(), 15000);
-    _ui->tableView->setIndexWidget(standardItem->index(), itemIndexWidget);
 }

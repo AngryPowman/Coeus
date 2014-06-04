@@ -1,53 +1,53 @@
 #ifndef __GAME_ITEM_H__
 #define __GAME_ITEM_H__
 
+#include <exception>
 #include <venus_net/venus_net.h>
+#include "config/item_config.h"
+#include "item_exception.h"
 #include "item_helper.h"
 
-class ItemConfig;
+class ItemData;
 class GameItem
 {
 public:
-    GameItem(/*const ItemConfig& itemConfig*/)
-        : _id(0), _type(0), _count(0)
+    GameItem(const ItemData& itemData)
+        : _itemData(itemData), _count(0)
     {
-        _type = 268566528;
-        _icon = "images/ui/lsb_char_details.png";
-        _name = "《代码大全》";
-        _description = "抛掷出去能造成可怕伤害。";
-        _count = 1;
+        if (itemData.maxStack <= 0)
+        {
+            throw BadStackValueException();
+        }
+
+        _count = 0;
     }
 
     virtual ~GameItem() {}
 
 public:
-    inline const uint32 id() const { return _id; }
-    inline const uint32 type() const { return _type; }
-    inline const std::string& typeName() const { return ItemHelper::ItemType::toTypename(_type); }
-    inline const std::string& name() const { return _name; }
-    inline const std::string& description() const { return _description; }
+    inline const uint32 id() const { return _itemData.id; }
+    inline const uint32 type() const { return _itemData.type; }
+    inline const std::string& typeName() const { return ItemHelper::ItemType::toTypename(_itemData.type); }
+    inline const std::string& name() const { return _itemData.name; }
+    inline const std::string& description() const { return _itemData.description; }
+    inline void setCount(uint16 count) { _count = count; }
     inline int count() const { return _count; }
+    inline int maxStack() const { return _itemData.maxStack; }
+    uint32 flags() const { return _itemData.flags; }
 
 #if defined(COEUS_CLIENT)
 public:
-    const std::string& icon() const{ return _icon; }
-private: 
-    std::string _icon;
+    const std::string& icon() const{ return _itemData.icon; }
 #endif
 
 private:
-    uint32 _id;
-    uint32 _type;
-    std::string _name;
-    std::string _description;
-    int _count;
-    bool _allowUse;
-    bool _allowDrop;
+    const ItemData& _itemData;
+    uint16 _count;
 };
 
 #if defined(COEUS_CLIENT)
-    #include <QMetaType>
-    Q_DECLARE_METATYPE(GameItem);
+    //#include <QMetaType>
+    //Q_DECLARE_METATYPE(GameItem);
 #endif
 
 #endif // !__GAME_ITEM_H__

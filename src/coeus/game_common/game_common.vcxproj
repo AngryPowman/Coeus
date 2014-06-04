@@ -14,11 +14,13 @@
     <ClInclude Include="config\belif_config.h" />
     <ClInclude Include="config\configuration.h" />
     <ClInclude Include="config\config_manager.h" />
+    <ClInclude Include="config\item_config.h" />
     <ClInclude Include="config\npc_config.h" />
     <ClInclude Include="game_define.h" />
     <ClInclude Include="game_util.h" />
     <ClInclude Include="game_item.h" />
     <ClInclude Include="item_definition.h" />
+    <ClInclude Include="item_exception.h" />
     <ClInclude Include="item_helper.h" />
     <ClInclude Include="jsoncpp\json\autolink.h" />
     <ClInclude Include="jsoncpp\json\config.h" />
@@ -40,6 +42,7 @@
     <ClCompile Include="config\belif_config.cpp" />
     <ClCompile Include="config\configuration.cpp" />
     <ClCompile Include="config\config_manager.cpp" />
+    <ClCompile Include="config\item_config.cpp" />
     <ClCompile Include="config\npc_config.cpp" />
     <ClCompile Include="item_helper.cpp" />
     <ClCompile Include="jsoncpp\lib_json\json_reader.cpp" />

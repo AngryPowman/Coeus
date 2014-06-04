@@ -1,6 +1,15 @@
 #ifndef __ITEM_DEFINITION_H__
 #define __ITEM_DEFINITION_H__
 
+// 物品标志位
+enum ItemFlag
+{
+    Item_CanUse,        // 可使用
+    Item_CanDrop,       // 可丢弃
+    Item_CanSell,       // 可出售
+    Item_Consumable     // 可消耗
+};
+
 #define ITEM_TYPE_FLAG_1        (0xF0000000)
 #define ITEM_TYPE_FLAG_2        (ITEM_TYPE_FLAG_1    | 0x0FFF0000)
 #define ITEM_TYPE_FLAG_3        (ITEM_TYPE_FLAG_2    | 0x0000F000)
