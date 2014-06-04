@@ -257,6 +257,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_game_item_delegate.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_item_index_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_item_index_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="item_index_widget.cpp">
+      <Filter>core\extension</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -443,6 +452,9 @@
       <Filter>core\logic</Filter>
     </CustomBuild>
     <CustomBuild Include="game_item_delegate.h">
+      <Filter>core\extension</Filter>
+    </CustomBuild>
+    <CustomBuild Include="item_index_widget.h">
       <Filter>core\extension</Filter>
     </CustomBuild>
   </ItemGroup>

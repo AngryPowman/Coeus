@@ -11,6 +11,7 @@
 #include <QApplication>
 #include <QPainter>
 #include <QTextItem>
+#include <QPushButton>
 #include "game_common/game_item.h"
 
 class GameItemDelegate : public QStyledItemDelegate
@@ -40,40 +41,63 @@ public:
 public:
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
     {
-        QWidget* itemWidget = nullptr;
+        QWidget* itemWidget = new QWidget(dynamic_cast<QWidget*>(this->parent()));
         if (index.column() == ItemGeneral)
         {
             static QSize sIconSize(64, 64);
             const GameItem& gameItem = index.data(Qt::DisplayRole).value<GameItem>();
 
-            // draw item icon
+            // Draw item icon
             QPixmap itemIconPixmap = QPixmap(QString::fromStdString(gameItem.icon())).scaled(sIconSize);
             qApp->style()->drawItemPixmap(painter, option.rect, Qt::AlignLeft, QPixmap(itemIconPixmap));
 
-            // draw item name
-            const QString& itemName = QString::fromStdString(gameItem.name());
+            // Draw item name
+            const QString& itemName = QString::fromLocal8Bit(gameItem.name().c_str());
             QStyleOptionViewItem itemNameOption = option;
             itemNameOption.displayAlignment = Qt::AlignLeft | Qt::AlignTop;
             itemNameOption.rect.setLeft(option.rect.left() + sIconSize.width() + 10);
             itemNameOption.rect.setTop(option.rect.top() + 16);
             qApp->style()->drawItemText(painter, itemNameOption.rect, itemNameOption.displayAlignment, QApplication::palette(), true, itemName);
 
-            // draw item description
-            const QString& itemDescription = QString::fromStdString(gameItem.description());
+            // Draw item description
+            const QString& itemDescription = QString::fromLocal8Bit(gameItem.description().c_str());
             QStyleOptionViewItem itemDescriptionOption = option;
             itemDescriptionOption.displayAlignment = Qt::AlignLeft;
             itemDescriptionOption.rect.setLeft(option.rect.left() + sIconSize.width() + 10);
             itemDescriptionOption.rect.setTop(option.rect.top() + 36/* + sIconSize.height() - 10*/);
             qApp->style()->drawItemText(painter, itemDescriptionOption.rect, itemDescriptionOption.displayAlignment, QApplication::palette(), true, itemDescription, QPalette::ColorRole::Shadow);
 
-            // draw count number
+            // Draw item typename
+            const QString& itemTypename = QString::fromLocal8Bit(gameItem.typeName().c_str());
+            QStyleOptionViewItem itemTypenameOption = option;
+            itemTypenameOption.displayAlignment = Qt::AlignVCenter;
+            itemTypenameOption.rect.setLeft(option.rect.left() + sIconSize.width() + 230);
+            qApp->style()->drawItemText(painter, itemTypenameOption.rect, itemTypenameOption.displayAlignment, QApplication::palette(), true, itemTypename);
+
+            // Draw count number
             const QString& itemCount = QString::number(gameItem.count());
             QStyleOptionViewItem itemCountOption = option;
-            itemCountOption.displayAlignment = Qt::AlignCenter;
-            itemCountOption.rect.setLeft(option.rect.left() + sIconSize.width() + 64);
+            itemCountOption.displayAlignment =  Qt::AlignVCenter;
+            itemCountOption.rect.setLeft(option.rect.left() + sIconSize.width() + 350);
             qApp->style()->drawItemText(painter, itemCountOption.rect, itemCountOption.displayAlignment, QApplication::palette(), true, itemCount);
 
-            //qApp->style()->drawControl(QStyle::CE_PushButtonLabel, &xxxOption, painter);
+            // Draw use button
+            QStyleOptionButton useButtonOption;
+            //QRect buttonRect = QApplication::style()->subElementRect(QStyle::SE_PushButtonLayoutItem, &useButtonOption);
+            useButtonOption.rect = option.rect;
+            useButtonOption.text = QStringLiteral("使用");
+            useButtonOption.state |= QStyle::State_Active;
+            useButtonOption.state |= QStyle::State_Enabled;
+            useButtonOption.state |= QStyle::State_Window;
+            useButtonOption.features = QStyleOptionButton::ButtonFeature::DefaultButton;
+            //useButtonOption.rect.setTop(option.rect.top());
+            useButtonOption.rect.setSize(QSize(64, 24));
+            //useButtonOption.rect.setLeft(option.rect.left() + sIconSize.width() + 420);
+            qApp->style()->drawControl(QStyle::CE_PushButton, &useButtonOption, painter);
+
+            QPushButton* button = new QPushButton(itemWidget);
+            button->setText(QStringLiteral("使用"));
+            button->setGeometry(option.rect);
         }
         else
         {
@@ -97,8 +121,7 @@ public:
     {
         if (index.isValid())
         {
-            //QLineEdit* lineE = qobject_cast<QLineEdit*>(editor);
-            //lineE->setText(index.data(Qt::DisplayRole).toString());//text() == data(Qt::DispalyRole).toString()  
+            // ... 
         }
     }
 
@@ -109,8 +132,7 @@ public:
     {
         if (index.isValid())
         {
-            //QLineEdit* lineE = qobject_cast<QLineEdit*>(editor);
-            //model->setData(index, lineE->text());
+            // ...
         }
     }
 
@@ -120,6 +142,12 @@ public:
         ) const
     {
         editor->setGeometry(option.rect);
+    }
+
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
+    {
+        // ...
+        return QStyledItemDelegate::sizeHint(option, index);
     }
 };
 

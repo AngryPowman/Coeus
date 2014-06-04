@@ -2,14 +2,15 @@
 #include "item_definition.h"
 
 ItemHelper::ItemType::ItemTypenameRef ItemHelper::ItemType::_itemTypename;
-const std::string&& ItemHelper::ItemType::toTypename(uint32 itemType)
+const std::string& ItemHelper::ItemType::toTypename(uint32 itemType)
 {
     ItemTypenameRef::const_iterator iter = _itemTypename.find(itemType);
-    return std::forward<const std::string>(iter != _itemTypename.end() ? iter->second : "未知物品");
+    return (iter != _itemTypename.end() ? iter->second : _itemTypename[0]);
 }
 
 bool ItemHelper::init()
 {
+    REGISTER_ITEM_TYPE(0,                           "未知物品");
     REGISTER_ITEM_TYPE(ITEM_TYPE_GENERAL_ITEM,      "普通物品");
     REGISTER_ITEM_TYPE(ITEM_TYPE_ORE,               "矿石");
     REGISTER_ITEM_TYPE(ITEM_TYPE_WOOD,              "木材");

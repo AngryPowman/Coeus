@@ -9,10 +9,12 @@ class GameItem
 {
 public:
     GameItem(/*const ItemConfig& itemConfig*/)
+        : _id(0), _type(0), _count(0)
     {
+        _type = 268566528;
         _icon = "images/ui/lsb_char_details.png";
-        _name = "Magic Book";
-        _description = "This is a rare book.";
+        _name = "《代码大全》";
+        _description = "抛掷出去能造成可怕伤害。";
         _count = 1;
     }
 

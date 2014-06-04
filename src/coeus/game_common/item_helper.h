@@ -11,7 +11,7 @@ public:
     public:
         typedef adap_map<uint32, std::string> ItemTypenameRef;
         static ItemTypenameRef _itemTypename;
-        static const std::string&& toTypename(uint32 itemType);
+        static const std::string& toTypename(uint32 itemType);
     };
     
 public:
