@@ -8,21 +8,28 @@ const static std::string GlobalConfigRoot = "./config/";
 const static std::string ClientConfigRoot = "./config/";
 
 
-#define CFG_PATH(NAME, PATH) \
+#define PATH(NAME, PATH) \
     const static std::string NAME = PATH
+
+namespace GameDirecotry
+{
+    PATH(ItemDirectory, "./images/items/");
+};
 
 namespace ConfigFile
 {
     // global
+    PATH(ItemConfig, "../config/items.json");
+
 
     // for server
-    CFG_PATH(ServerConfig, "./config/server_config.json");
+    PATH(ServerConfig, "./config/server_config.json");
 
     // for client
-    CFG_PATH(LoginConfigPath,     "./user.dat");
-    CFG_PATH(BelifConfigPath,     "./config/belief.json");
-    CFG_PATH(CharacterConfigPath, "./config/character.json");
-    CFG_PATH(NPCConfigPath,       "./config/npc.json");
+    PATH(LoginConfigPath, "./user.dat");
+    PATH(BelifConfigPath, "./config/belief.json");
+    PATH(CharacterConfigPath, "./config/character.json");
+    PATH(NPCConfigPath, "./config/npc.json");
 };
 
 #endif
