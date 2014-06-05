@@ -1,6 +1,7 @@
 #include "item_index_widget.h"
 #include "game_common/game_item.h"
 #include <QtWidgets/QLabel>
+#include "game_common/path_definition.h"
 
 ItemIndexWidget::ItemIndexWidget(const GameItem& item)
     : _gameItem(item)
@@ -18,13 +19,14 @@ void ItemIndexWidget::initGraph()
     static QSize sIconSize(64, 64);
 
     // Draw item icon
-    QPixmap iconPixmap = QPixmap(QString::fromStdString(_gameItem.icon())).scaled(sIconSize);
+    std::string iconPath = GameDirecotry::ItemDirectory + _gameItem.icon();
+    QPixmap iconPixmap = QPixmap(QString::fromStdString(iconPath)).scaled(sIconSize);
     QLabel* iconLable = new QLabel(this);
     iconLable->setPixmap(iconPixmap);
 
     // Draw item name
     QLabel* itemNameLabel = new QLabel(this);
-    itemNameLabel->setText("<b>" + QString::fromLocal8Bit(_gameItem.name().c_str()) + "</b>");
+    itemNameLabel->setText("<b>" + QString::fromStdString(_gameItem.name()) + "</b>");
     QRect itemNameLabelRect(itemNameLabel->rect());
     itemNameLabelRect.setTop(itemNameLabelRect.top() + 10);
     itemNameLabelRect.setLeft(itemNameLabelRect.left() + sIconSize.width() + 4);
@@ -33,7 +35,7 @@ void ItemIndexWidget::initGraph()
 
     // Draw item description
     QLabel* itemDescriptionLabel = new QLabel(this);
-    itemDescriptionLabel->setText(QString::fromLocal8Bit(_gameItem.description().c_str()));
+    itemDescriptionLabel->setText(QString::fromStdString(_gameItem.description()));
     QRect itemDescriptionLabelRect(itemNameLabel->rect());
     itemDescriptionLabelRect.setTop(itemNameLabelRect.top() + itemNameLabelRect.height() + 5);
     itemDescriptionLabelRect.setLeft(itemNameLabelRect.left());
@@ -42,7 +44,7 @@ void ItemIndexWidget::initGraph()
 
     // Draw item typename
     QLabel* itemTypenameLabel = new QLabel(this);
-    itemTypenameLabel->setText(QString::fromLocal8Bit(_gameItem.typeName().c_str()));
+    itemTypenameLabel->setText(QString::fromStdString(_gameItem.typeName()));
     QRect itemTypenameLabelRect(itemTypenameLabel->rect());
     itemTypenameLabelRect.setTop(itemNameLabelRect.top() + itemNameLabelRect.height() / 2);
     itemTypenameLabelRect.setLeft(itemDescriptionLabelRect.left() + 240);

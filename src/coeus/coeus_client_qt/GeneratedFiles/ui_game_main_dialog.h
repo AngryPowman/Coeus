@@ -161,7 +161,7 @@ public:
 
     void retranslateUi(QMainWindow *GameMainDialog)
     {
-        GameMainDialog->setWindowTitle(QApplication::translate("GameMainDialog", "\346\267\267\346\262\214\344\271\213\351\227\250", 0));
+        GameMainDialog->setWindowTitle(QApplication::translate("GameMainDialog", "Coeus", 0));
         action_B->setText(QApplication::translate("GameMainDialog", "\347\251\272\351\227\264\345\202\250\347\211\251\345\231\250(&B)", 0));
         action_F->setText(QApplication::translate("GameMainDialog", "\345\245\275\345\217\213(&F)", 0));
         action_S->setText(QApplication::translate("GameMainDialog", "\345\225\206\345\237\216(&S)", 0));

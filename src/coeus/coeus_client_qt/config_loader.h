@@ -7,6 +7,7 @@
 #include "character_config.h"
 #include "game_common/config/npc_config.h"
 #include "game_common/config/belif_config.h"
+#include "game_common/config/item_config.h"
 
 class ConfigLoader
     : public Venus::Singleton<ConfigLoader>
@@ -18,6 +19,7 @@ public:
         BeliefConfig::getInstance().initialize(manager);
         CharacterConfig::getInstance().initialize(manager);
         NPCConfig::getInstance().initialize(manager);
+        ItemConfig::getInstance().initialize(manager);
     }
 };
 

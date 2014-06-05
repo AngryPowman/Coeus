@@ -22,11 +22,12 @@ GameBag::GameBag(QWidget *parent)
     _ui->tableView->resizeColumnsToContents();
     _ui->tableView->setStyleSheet("selection-background-color: rgba(9, 160, 229, 50)");
 
-//     for (int i = 0; i < 10; i++)
-//     {
-//         GameItem item;
-//         this->addItem(item);
-//     }
+     for (int i = 0; i < 6; i++)
+     {
+         const ItemData* itemData = ItemConfig::getInstance().itemDataById(10000 + i);
+         GameItem* item = new GameItem(itemData);
+         this->addItem(*item);
+     }
 }
 
 GameBag::~GameBag()
@@ -43,4 +44,6 @@ void GameBag::addItem(const GameItem& gameItem)
     //test
     ItemIndexWidget* itemIndexWidget = new ItemIndexWidget(gameItem);
     itemIndexWidget->initGraph();
+
+    _ui->tableView->setIndexWidget(standardItem->index(), itemIndexWidget);
 }
