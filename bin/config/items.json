@@ -1,0 +1,56 @@
+[
+	{
+		"id"   : 10000,
+		"type" : 536936448,
+		"name" : "末日战斧",
+		"description" : "被砍到的敌人将会瞬间爆炸。",
+		"max_stack" : 1,
+		"flags" : 0,
+		"icon" : "536936448_battle_axe.png"
+	},
+	{
+		"id"   : 10001,
+		"type" : 536936448,
+		"name" : "金正恩手枪",
+		"description" : "金正恩使用过的手枪，可以击落美国卫星。",
+		"max_stack" : 1,
+		"flags" : 0,
+		"icon" : "536936448_handgun.png"
+	},
+	{
+		"id"   : 10002,
+		"type" : 269025280,
+		"name" : "《代码大全》",
+		"description" : "抛掷此书能造成成吨伤害。",
+		"max_stack" : 1,
+		"flags" : 0,
+		"icon" : "269025280_code_complete.png"
+	},
+	{
+		"id"   : 10003,
+		"type" : 268894208,
+		"name" : "咆哮的蛋蛋",
+		"description" : "可以孵化一只随机狗类宠物。",
+		"max_stack" : 1,
+		"flags" : 0,
+		"icon" : "268894208_dog_egg.png"
+	},
+	{
+		"id"   : 10004,
+		"type" : 268500992,
+		"name" : "布娃娃",
+		"description" : "一只没什么用的娃娃，也许能用来送给女孩子。",
+		"max_stack" : 1,
+		"flags" : 0,
+		"icon" : "268500992_puppet.png"
+	},
+	{
+		"id"   : 10005,
+		"type" : 268500992,
+		"name" : "安妮的小熊",
+		"description" : "再不还给安妮，就等着她的怒火吧。",
+		"max_stack" : 1,
+		"flags" : 0,
+		"icon" : "268500992_annies_bear.png"
+	}
+]
