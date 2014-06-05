@@ -13,9 +13,9 @@ struct ItemData
     uint16 maxStack;
     uint32 flags;
 
-#if defined(COEUS_CLIENT)
+//#if defined(COEUS_CLIENT)
     std::string icon;
-#endif
+//#endif
 };
 
 typedef adap_map<uint32, ItemData> ItemTable;
@@ -28,6 +28,7 @@ public:
 
 public:
     bool parse();
+    const ItemData* itemDataById(uint32 id) const;
 
 private:
     ItemTable _items;
