@@ -28,6 +28,8 @@ GameBag::GameBag(QWidget *parent)
          GameItem* item = new GameItem(itemData);
          this->addItem(*item);
      }
+
+     _ui->tableView->setRowHeight(0, 150);
 }
 
 GameBag::~GameBag()
@@ -41,7 +43,6 @@ void GameBag::addItem(const GameItem& gameItem)
     //standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
     _itemModel->insertRow(_itemModel->rowCount(), standardItem);
 
-    //test
     ItemIndexWidget* itemIndexWidget = new ItemIndexWidget(gameItem);
     itemIndexWidget->initGraph();
 

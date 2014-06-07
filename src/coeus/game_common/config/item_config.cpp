@@ -33,9 +33,9 @@ bool ItemConfig::parse()
                 throw BadStackValueException();
             }
 
-            #ifdef COEUS_CLIENT
+            //#ifdef COEUS_CLIENT
                 itemData.icon = itemValue["icon"].asString();
-            #endif
+            //#endif
 
             _items[itemData.id] = itemData;
         }

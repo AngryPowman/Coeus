@@ -21,7 +21,6 @@ namespace ConfigFile
     // global
     PATH(ItemConfig, "../config/items.json");
 
-
     // for server
     PATH(ServerConfig, "./config/server_config.json");
 
