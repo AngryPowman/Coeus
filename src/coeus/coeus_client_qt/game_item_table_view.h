@@ -33,5 +33,4 @@ private:
     const QModelIndex* _modelIndex;
 };
 
-
 #endif

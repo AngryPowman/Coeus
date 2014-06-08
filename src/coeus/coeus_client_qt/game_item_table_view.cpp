@@ -32,7 +32,7 @@ GameItemTableView::~GameItemTableView()
 void GameItemTableView::addItem(const GameItem& gameItem)
 {
     QStandardItem* standardItem = new QStandardItem;
-    standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
+    //standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
     _itemModel->insertRow(_itemModel->rowCount(), standardItem);
     this->setRowHeight(standardItem->index().row(), DEFAULT_ITEM_ROW_HEIGHT);
 
