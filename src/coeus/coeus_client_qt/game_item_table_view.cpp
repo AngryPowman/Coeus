@@ -7,7 +7,7 @@
 #include <QHeaderView>
 
 GameItemTableView::GameItemTableView(QWidget* parent /*= nullptr*/)
-    : QTableView(parent)
+    : QTableView(parent), _modelIndex(nullptr)
 {
     _itemModel = new GameItemModel(0, 1, this);
 
@@ -20,7 +20,8 @@ GameItemTableView::GameItemTableView(QWidget* parent /*= nullptr*/)
     this->verticalHeader()->setDefaultSectionSize(DEFAULT_ITEM_ROW_HEIGHT);
     this->resizeRowsToContents();
     this->setStyleSheet("selection-background-color: rgba(9, 160, 229, 50)");
-    //this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    this->connect(this, SIGNAL(pressed(const QModelIndex&)), this, SLOT(onItemPressed(const QModelIndex&)));
 }
 
 GameItemTableView::~GameItemTableView()
@@ -31,7 +32,7 @@ GameItemTableView::~GameItemTableView()
 void GameItemTableView::addItem(const GameItem& gameItem)
 {
     QStandardItem* standardItem = new QStandardItem;
-    //standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
+    standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
     _itemModel->insertRow(_itemModel->rowCount(), standardItem);
     this->setRowHeight(standardItem->index().row(), DEFAULT_ITEM_ROW_HEIGHT);
 
@@ -44,4 +45,22 @@ void GameItemTableView::addItem(const GameItem& gameItem)
 QTableView* GameItemTableView::rawView()
 {
     return dynamic_cast<QTableView*>(this);
+}
+
+void GameItemTableView::selectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
+{
+}
+
+void GameItemTableView::onItemPressed(const QModelIndex& index)
+{
+    this->setUpdatesEnabled(false);
+    if (_modelIndex != nullptr)
+    {
+        this->setRowHeight(_modelIndex->row(), DEFAULT_ITEM_ROW_HEIGHT);
+    }
+    this->setRowHeight(index.row(), 150);
+    this->setUpdatesEnabled(true);
+
+    // Save current model index
+    _modelIndex = const_cast<const QModelIndex*>(&index);
 }

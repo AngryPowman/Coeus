@@ -13,9 +13,10 @@ GameBag::GameBag(QWidget *parent)
     _gameItemTableView = new GameItemTableView(this);
     _ui->horizontalLayout_4->addWidget(_gameItemTableView->rawView());
 
- 	for (int i = 0; i < 6; i++)
+ 	for (int i = 0; i < 100; i++)
  	{
- 		const ItemData* itemData = ItemConfig::getInstance().itemDataById(10000 + i);
+        int id = (i >= 6 ? 0 : i);
+ 		const ItemData* itemData = ItemConfig::getInstance().itemDataById(10000 + id);
  		GameItem* item = new GameItem(itemData);
         _gameItemTableView->addItem(*item);
  	}
