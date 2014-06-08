@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>639</width>
+    <width>695</width>
     <height>423</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>639</width>
+    <width>695</width>
     <height>423</height>
    </size>
   </property>
@@ -110,11 +110,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QTableView" name="tableView">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_4"/>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
