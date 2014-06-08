@@ -64,7 +64,9 @@ public:
         sizePolicy.setHeightForWidth(GameChatWidget->sizePolicy().hasHeightForWidth());
         GameChatWidget->setSizePolicy(sizePolicy);
         verticalLayout = new QVBoxLayout(GameChatWidget);
+        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
         tabWidget = new QTabWidget(GameChatWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setStyleSheet(QStringLiteral(""));

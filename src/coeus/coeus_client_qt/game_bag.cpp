@@ -1,8 +1,8 @@
 #include "game_bag.h"
 #include "ui_game_bag_dialog.h"
-#include <QStandardItem>
-#include "game_item_delegate.h"
-#include "item_index_widget.h"
+#include "game_item_table_view.h"
+#include "game_common/config/item_config.h"
+#include "game_common/game_item.h"
 
 GameBag::GameBag(QWidget *parent)
     : QMainWindow(parent)
@@ -10,41 +10,18 @@ GameBag::GameBag(QWidget *parent)
     _ui = new Ui::GameBag();
     _ui->setupUi(this);
 
-    _itemModel = new GameItemModel(0, 1, this);
-    _ui->tableView->setModel(_itemModel);
-    _ui->tableView->horizontalHeader()->setVisible(false);
-    _ui->tableView->verticalHeader()->setVisible(false);
-    _ui->tableView->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
-    _ui->tableView->horizontalHeader()->setStretchLastSection(true);
-    //_ui->tableView->setItemDelegateForColumn(GameItemDelegate::ItemGeneral, new GameItemDelegate(parent));
-    _ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    _ui->tableView->verticalHeader()->setDefaultSectionSize(GameItemDelegate::DEFAULT_ITEM_SEL_SIZE);
-    _ui->tableView->resizeColumnsToContents();
-    _ui->tableView->setStyleSheet("selection-background-color: rgba(9, 160, 229, 50)");
+    _gameItemTableView = new GameItemTableView(this);
+    _ui->horizontalLayout_4->addWidget(_gameItemTableView->rawView());
 
-     for (int i = 0; i < 6; i++)
-     {
-         const ItemData* itemData = ItemConfig::getInstance().itemDataById(10000 + i);
-         GameItem* item = new GameItem(itemData);
-         this->addItem(*item);
-     }
-
-     _ui->tableView->setRowHeight(0, 150);
+ 	for (int i = 0; i < 6; i++)
+ 	{
+ 		const ItemData* itemData = ItemConfig::getInstance().itemDataById(10000 + i);
+ 		GameItem* item = new GameItem(itemData);
+        _gameItemTableView->addItem(*item);
+ 	}
 }
 
 GameBag::~GameBag()
 {
     delete _ui;
-}
-
-void GameBag::addItem(const GameItem& gameItem)
-{
-    QStandardItem* standardItem = new QStandardItem();
-    //standardItem->setData(QVariant::fromValue<const GameItem&>(gameItem), Qt::DisplayRole);
-    _itemModel->insertRow(_itemModel->rowCount(), standardItem);
-
-    ItemIndexWidget* itemIndexWidget = new ItemIndexWidget(gameItem);
-    itemIndexWidget->initGraph();
-
-    _ui->tableView->setIndexWidget(standardItem->index(), itemIndexWidget);
 }

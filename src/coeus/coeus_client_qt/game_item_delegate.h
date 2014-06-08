@@ -5,13 +5,10 @@
 #include <QTreeWidget>
 #include <QLineEdit>
 #include <QStyledItemDelegate>
-#include <QLabel>
-#include <QStandardItemModel>
 #include <QPixmap>
 #include <QApplication>
 #include <QPainter>
-#include <QTextItem>
-#include <QPushButton>
+#include <QLabel>
 #include "game_common/game_item.h"
 
 class GameItemDelegate : public QStyledItemDelegate
@@ -23,8 +20,6 @@ public:
     {
         ItemGeneral
     };
-    static const int DEFAULT_ICON_SIZE = 56;
-    static const int DEFAULT_ITEM_SEL_SIZE = DEFAULT_ICON_SIZE;
 
 public:
     GameItemDelegate::GameItemDelegate(QObject* parent = nullptr)
@@ -150,26 +145,5 @@ public:
         return QStyledItemDelegate::sizeHint(option, index);
     }
 };
-
-class GameItemModel : public QStandardItemModel
-{
-    Q_OBJECT
-
-public:
-    GameItemModel(QObject* parent = nullptr)
-        : QStandardItemModel(parent) { }
-
-    GameItemModel(int row, int column, QObject* parent = nullptr)
-        : QStandardItemModel(row, column, parent) { }
-
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const
-    {
-        if (Qt::TextAlignmentRole == role)
-            return Qt::AlignCenter;
-
-        return QStandardItemModel::data(index, role);
-    }
-};
-
 
 #endif // !__GAME_ITEM_DELEGATE_H__

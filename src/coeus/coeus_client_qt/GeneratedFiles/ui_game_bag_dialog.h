@@ -21,7 +21,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -37,7 +36,7 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QComboBox *comboBox;
     QCheckBox *checkBox;
-    QTableView *tableView;
+    QHBoxLayout *horizontalLayout_4;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout;
@@ -50,13 +49,13 @@ public:
         if (GameBag->objectName().isEmpty())
             GameBag->setObjectName(QStringLiteral("GameBag"));
         GameBag->setWindowModality(Qt::WindowModal);
-        GameBag->resize(639, 423);
+        GameBag->resize(695, 423);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(GameBag->sizePolicy().hasHeightForWidth());
         GameBag->setSizePolicy(sizePolicy);
-        GameBag->setMinimumSize(QSize(639, 423));
+        GameBag->setMinimumSize(QSize(695, 423));
         GameBag->setAnimated(false);
         GameBag->setDocumentMode(false);
         GameBag->setUnifiedTitleAndToolBarOnMac(false);
@@ -98,11 +97,11 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        tableView = new QTableView(centralWidget);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setStyleSheet(QStringLiteral(""));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
 
-        verticalLayout->addWidget(tableView);
+        verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);

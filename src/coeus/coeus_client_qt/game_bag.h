@@ -6,7 +6,7 @@
 
 namespace Ui { class GameBag; };
 class GameItem;
-class GameItemModel;
+class GameItemTableView;
 class GameBag : public QMainWindow
 {
     Q_OBJECT
@@ -20,7 +20,7 @@ public:
 
 private:
     Ui::GameBag* _ui;
-    GameItemModel* _itemModel;
+    GameItemTableView* _gameItemTableView;
 };
 
 #endif // GAME_BAG_H

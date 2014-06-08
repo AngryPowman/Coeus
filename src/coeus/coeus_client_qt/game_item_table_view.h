@@ -3,16 +3,27 @@
 
 #include <QTableView>
 
-class GameItemTableView
+class GameItem;
+class GameItemModel;
+class GameItemTableView : private QTableView
 {
 	Q_OBJECT
+
 public:
-	GameItemView(QWidget *parent = NULL) : QTableView(parent)
-	{
-		verticalHeader()->hide();
-		horizontalHeader()->hide();
-		pWidget = NULL;
-	}
+    static const int DEFAULT_ICON_SIZE = 64;
+    static const int DEFAULT_ITEM_ROW_HEIGHT = 80;
+
+public:
+	GameItemTableView(QWidget* parent = nullptr);
+	virtual ~GameItemTableView();
+
+public:
+
+    void addItem(const GameItem& gameItem);
+    QTableView* rawView();
+
+private:
+    GameItemModel* _itemModel;
 };
 
 
