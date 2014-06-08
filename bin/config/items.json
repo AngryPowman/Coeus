@@ -12,7 +12,7 @@
 		"id"   : 10001,
 		"type" : 536936448,
 		"name" : "金正恩手枪",
-		"description" : "金正恩使用过的手枪，可以击落美国卫星。",
+		"description" : "金正恩使用过的手枪，可以击落美国卫星。<br/>附加属性：<font color=red>攻击 + 35</font>",
 		"max_stack" : 1,
 		"flags" : 0,
 		"icon" : "536936448_handgun.png"
@@ -21,7 +21,7 @@
 		"id"   : 10002,
 		"type" : 269025280,
 		"name" : "《代码大全》",
-		"description" : "抛掷此书能造成成吨伤害。",
+		"description" : "抛掷此书能造成成吨伤害。<br/><font color=#FF4040>孤身前往荒岛的程序员只要带上这本书就足够了。</font>",
 		"max_stack" : 1,
 		"flags" : 0,
 		"icon" : "269025280_code_complete.png"
