@@ -26,6 +26,9 @@ void ItemIndexWidget::initGraph()
     setItemDescription(QString::fromStdString(_gameItem.description().c_str()));
     setItemTypename(QString::fromStdString(_gameItem.typeName().c_str()));
     setItemCount(_gameItem.count());
+    
+    _ui->btnEmploy->setEnabled(_gameItem.flags() & ItemFlag::Item_CanUse);
+    _ui->btnEmploy->setText(QString::fromStdString(ItemHelper::Employ::toEmployName(_gameItem.type())));
 }
 
 void ItemIndexWidget::setIcon(const QString& icon, const QSize& size)

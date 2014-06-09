@@ -14,7 +14,7 @@
 		"name" : "金正恩手枪",
 		"description" : "金正恩使用过的手枪，可以击落美国卫星。<br/>附加属性：<font color=red>攻击 + 35</font>",
 		"max_stack" : 1,
-		"flags" : 0,
+		"flags" : 2,
 		"icon" : "536936448_handgun.png"
 	},
 	{

@@ -11,8 +11,16 @@ public:
     {
     public:
         typedef adap_map<uint32, std::string> ItemTypenameRef;
-        static ItemTypenameRef _itemTypename;
+        static ItemTypenameRef _itemTypenames;
         static const std::string& toTypename(uint32 itemType);
+    };
+
+    class Employ
+    {
+    public:
+        typedef adap_map<uint32, std::string> EmployNameRef;
+        static EmployNameRef _employNames;
+        static const std::string& toEmployName(uint32 itemType);
     };
 
 public:
@@ -20,6 +28,9 @@ public:
 };
 
 #define REGISTER_ITEM_TYPE(id, name) \
-    ItemHelper::ItemType::_itemTypename[id] = name;
+    ItemHelper::ItemType::_itemTypenames[id] = name;
+
+#define REGISTER_ITEM_EMPLOY_NAME(id, name) \
+    ItemHelper::Employ::_employNames[id] = name;
 
 #endif // !__ITEM_HELPER_H__

@@ -4,10 +4,12 @@
 #pragma execution_character_set("utf-8")
 #endif  
 
-ItemHelper::ItemType::ItemTypenameRef ItemHelper::ItemType::_itemTypename;
+ItemHelper::ItemType::ItemTypenameRef ItemHelper::ItemType::_itemTypenames;
+ItemHelper::ItemType::ItemTypenameRef ItemHelper::Employ::_employNames;
 
 bool ItemHelper::init()
 {
+    // Item name of types
     REGISTER_ITEM_TYPE(0,                           "未知物品");
     REGISTER_ITEM_TYPE(ITEM_TYPE_GENERAL_ITEM,      "普通物品");
     REGISTER_ITEM_TYPE(ITEM_TYPE_ORE,               "矿石");
@@ -35,11 +37,29 @@ bool ItemHelper::init()
     REGISTER_ITEM_TYPE(ITEM_TYPE_DRUP_CUISINE,      "药品");
     REGISTER_ITEM_TYPE(ITEM_TYPE_REAGENT_CUISINE,   "试剂");
 
+    // Item employ name of types
+#if defined(COEUS_CLIENT)
+    REGISTER_ITEM_EMPLOY_NAME(0,                      "使用");
+    REGISTER_ITEM_EMPLOY_NAME(ITEM_TYPE_WEAPON,       "装备");
+    REGISTER_ITEM_EMPLOY_NAME(ITEM_TYPE_CLOTHES,      "装备");
+    REGISTER_ITEM_EMPLOY_NAME(ITEM_TYPE_SHOES,        "装备");
+    REGISTER_ITEM_EMPLOY_NAME(ITEM_TYPE_ITEM_STORAGE, "装备");
+    REGISTER_ITEM_EMPLOY_NAME(ITEM_TYPE_EGG,          "孵化");
+    REGISTER_ITEM_EMPLOY_NAME(ITEM_TYPE_CHEST,        "打开宝箱");
+    REGISTER_ITEM_EMPLOY_NAME(ITEM_TYPE_BOOK,         "阅读");
+#endif
+
     return true;
 }
 
 const std::string& ItemHelper::ItemType::toTypename(uint32 itemType)
 {
-    ItemTypenameRef::const_iterator iter = _itemTypename.find(itemType);
-    return (iter != _itemTypename.end() ? iter->second : _itemTypename[0]);
+    ItemTypenameRef::const_iterator iter = _itemTypenames.find(itemType);
+    return (iter != _itemTypenames.end() ? iter->second : _itemTypenames[0]);
+}
+
+const std::string& ItemHelper::Employ::toEmployName(uint32 itemType)
+{
+    EmployNameRef::const_iterator iter = _employNames.find(itemType);
+    return (iter != _employNames.end() ? iter->second : _employNames[0]);
 }

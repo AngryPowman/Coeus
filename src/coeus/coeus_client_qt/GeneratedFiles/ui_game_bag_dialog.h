@@ -17,7 +17,6 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -32,7 +31,6 @@ public:
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_3;
-    QLineEdit *lineEdit;
     QSpacerItem *horizontalSpacer_2;
     QComboBox *comboBox;
     QCheckBox *checkBox;
@@ -40,9 +38,9 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton;
+    QPushButton *btnEmploy;
+    QPushButton *btnSell;
+    QPushButton *btnDrop;
 
     void setupUi(QMainWindow *GameBag)
     {
@@ -68,22 +66,15 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy1);
-
-        horizontalLayout_3->addWidget(lineEdit);
-
-        horizontalSpacer_2 = new QSpacerItem(260, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+        horizontalSpacer_2 = new QSpacerItem(260, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_3->addItem(horizontalSpacer_2);
 
         comboBox = new QComboBox(centralWidget);
         comboBox->setObjectName(QStringLiteral("comboBox"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
         comboBox->setSizePolicy(sizePolicy1);
 
@@ -113,20 +104,20 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        btnEmploy = new QPushButton(centralWidget);
+        btnEmploy->setObjectName(QStringLiteral("btnEmploy"));
 
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(btnEmploy);
 
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        btnSell = new QPushButton(centralWidget);
+        btnSell->setObjectName(QStringLiteral("btnSell"));
 
-        horizontalLayout->addWidget(pushButton_3);
+        horizontalLayout->addWidget(btnSell);
 
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        btnDrop = new QPushButton(centralWidget);
+        btnDrop->setObjectName(QStringLiteral("btnDrop"));
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(btnDrop);
 
 
         horizontalLayout_2->addLayout(horizontalLayout);
@@ -144,7 +135,6 @@ public:
     void retranslateUi(QMainWindow *GameBag)
     {
         GameBag->setWindowTitle(QApplication::translate("GameBag", "\345\202\250\347\211\251\345\231\250", 0));
-        lineEdit->setPlaceholderText(QApplication::translate("GameBag", "\345\277\253\351\200\237\346\237\245\346\211\276\347\211\251\345\223\201", 0));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
          << QApplication::translate("GameBag", "\351\273\230\350\256\244\346\216\222\345\272\217", 0)
@@ -153,9 +143,9 @@ public:
          << QApplication::translate("GameBag", "\345\217\257\347\224\250\346\200\247\346\216\222\345\272\217", 0)
         );
         checkBox->setText(QApplication::translate("GameBag", "\346\230\276\347\244\272\350\257\246\347\273\206\345\210\206\347\261\273", 0));
-        pushButton_2->setText(QApplication::translate("GameBag", "\344\275\277\347\224\250", 0));
-        pushButton_3->setText(QApplication::translate("GameBag", "\345\207\272\345\224\256", 0));
-        pushButton->setText(QApplication::translate("GameBag", "\344\270\242\345\274\203", 0));
+        btnEmploy->setText(QApplication::translate("GameBag", "\344\275\277\347\224\250", 0));
+        btnSell->setText(QApplication::translate("GameBag", "\345\207\272\345\224\256", 0));
+        btnDrop->setText(QApplication::translate("GameBag", "\344\270\242\345\274\203", 0));
     } // retranslateUi
 
 };

@@ -4,10 +4,11 @@
 // 物品标志位
 enum ItemFlag
 {
-    Item_CanUse,        // 可使用
-    Item_CanDrop,       // 可丢弃
-    Item_CanSell,       // 可出售
-    Item_Consumable     // 可消耗
+    Item_NoFlag     = 0x00,
+    Item_CanUse     = 0x02,    // 可使用
+    Item_CanDrop    = 0x04,    // 可丢弃
+    Item_CanSell    = 0x08,    // 可出售
+    Item_Consumable = 0x10     // 可消耗
 };
 
 #define ITEM_TYPE_FLAG_1        (0xF0000000)

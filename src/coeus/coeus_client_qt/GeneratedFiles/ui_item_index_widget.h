@@ -38,7 +38,7 @@ public:
     QLabel *lblCount;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton;
+    QPushButton *btnEmploy;
     QPushButton *pushButton_2;
     QSpacerItem *verticalSpacer;
 
@@ -126,12 +126,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        pushButton = new QPushButton(ItemIndexWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setMinimumSize(QSize(62, 23));
-        pushButton->setMaximumSize(QSize(62, 23));
+        btnEmploy = new QPushButton(ItemIndexWidget);
+        btnEmploy->setObjectName(QStringLiteral("btnEmploy"));
+        btnEmploy->setMinimumSize(QSize(62, 23));
+        btnEmploy->setMaximumSize(QSize(62, 23));
 
-        horizontalLayout_2->addWidget(pushButton);
+        horizontalLayout_2->addWidget(btnEmploy);
 
         pushButton_2 = new QPushButton(ItemIndexWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
@@ -167,7 +167,7 @@ public:
         lblItemDescription->setText(QApplication::translate("ItemIndexWidget", "Write item description here.", 0));
         lblTypename->setText(QApplication::translate("ItemIndexWidget", "<html><head/><body><p>Typename</p></body></html>", 0));
         lblCount->setText(QApplication::translate("ItemIndexWidget", "999", 0));
-        pushButton->setText(QApplication::translate("ItemIndexWidget", "\344\275\277\347\224\250", 0));
+        btnEmploy->setText(QApplication::translate("ItemIndexWidget", "\344\275\277\347\224\250", 0));
         pushButton_2->setText(QApplication::translate("ItemIndexWidget", "\344\270\242\345\274\203", 0));
     } // retranslateUi
 
