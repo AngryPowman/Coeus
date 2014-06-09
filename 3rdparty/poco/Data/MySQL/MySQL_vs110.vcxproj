@@ -132,7 +132,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>..\..\bin\PocoDataMySQLd.pdb</ProgramDatabaseFile>
-      <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\lib;.\include\libmysql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
       <ImportLibrary>..\..\lib\PocoDataMySQLd.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>

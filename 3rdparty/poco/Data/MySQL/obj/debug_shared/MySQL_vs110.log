@@ -1,21 +1,7 @@
-﻿生成启动时间为 2014/5/16 3:06:49。
-     1>项目“F:\Coeus\3rdparty\poco\Data\MySQL\MySQL_vs110.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         D:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\include /I..\..\Foundation\include /I..\..\Data\include /I.\include\libmysql\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D THREADSAFE /D __LCC__ /D MySQL_EXPORTS /D _WINDLL /D _MBCS /GF /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"obj\debug_shared\\" /Fd"obj\debug_shared\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\Binder.cpp src\Connector.cpp src\Extractor.cpp src\MySQLException.cpp src\MySQLStatementImpl.cpp src\ResultMetadata.cpp src\SessionHandle.cpp src\SessionImpl.cpp src\StatementExecutor.cpp
-         StatementExecutor.cpp
-         SessionImpl.cpp
-         SessionHandle.cpp
-         ResultMetadata.cpp
-         MySQLStatementImpl.cpp
-         MySQLException.cpp
-         Extractor.cpp
-         Connector.cpp
-         Binder.cpp
-         正在生成代码...
-       ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"obj\debug_shared\DLLVersion.res" ..\..\DLLVersion.rc 
-       Link:
-         D:\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\bin\PocoDataMySQLd.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\..\lib libmysql.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\bin\PocoDataMySQLd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\PocoDataMySQLd.lib" /MACHINE:X86 /SAFESEH /DLL obj\debug_shared\DLLVersion.res
+﻿Build started 2014/6/9 23:59:37.
+     1>Project "C:\Code\Coeus\3rdparty\poco\Data\MySQL\MySQL_vs110.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\bin\PocoDataMySQLd.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\..\lib /LIBPATH:.\include\libmysql\lib libmysql.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\bin\PocoDataMySQLd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\lib\PocoDataMySQLd.lib" /MACHINE:X86 /SAFESEH /DLL obj\debug_shared\DLLVersion.res
          obj\debug_shared\Binder.obj
          obj\debug_shared\Connector.obj
          obj\debug_shared\Extractor.obj
@@ -25,9 +11,11 @@
          obj\debug_shared\SessionHandle.obj
          obj\debug_shared\SessionImpl.obj
          obj\debug_shared\StatementExecutor.obj
-     1>LINK : fatal error LNK1104: 无法打开文件“libmysql.lib”
-     1>已完成生成项目“F:\Coeus\3rdparty\poco\Data\MySQL\MySQL_vs110.vcxproj”(Build 个目标)的操作 - 失败。
+     1>Binder.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+            Creating library ..\..\lib\PocoDataMySQLd.lib and object ..\..\lib\PocoDataMySQLd.exp
+         MySQL_vs110.vcxproj -> C:\Code\Coeus\3rdparty\poco\Data\MySQL\..\..\bin\PocoDataMySQLd.dll
+     1>Done Building Project "C:\Code\Coeus\3rdparty\poco\Data\MySQL\MySQL_vs110.vcxproj" (Build target(s)).
 
-生成失败。
+Build succeeded.
 
-已用时间 00:00:15.60
+Time Elapsed 00:00:00.66

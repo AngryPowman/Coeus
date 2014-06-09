@@ -67,6 +67,11 @@
     <Filter Include="core\extension">
       <UniqueIdentifier>{05cf32ce-50b2-4289-a51e-2782807c46eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="qt_main\Generated Files\debug_md">
+      <UniqueIdentifier>{2b0ef00f-8d3d-4b2c-b035-49cfe01f451b}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -75,38 +80,14 @@
     <ClCompile Include="main.cpp">
       <Filter>qt_main</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_login.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_login.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="game_network.cpp">
       <Filter>core\network</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_network.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_network.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_setting.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_setting.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="login_handler.cpp">
       <Filter>core\network\handlers</Filter>
     </ClCompile>
     <ClCompile Include="game_main.cpp">
       <Filter>core\logic</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_main.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_main.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="login_config.cpp">
       <Filter>core\config\cofiguration</Filter>
@@ -117,29 +98,11 @@
     <ClCompile Include="character_config.cpp">
       <Filter>core\config\cofiguration</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_status_bar_widget.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_status_bar_widget.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="game_status_bar_widget.cpp">
       <Filter>core\logic\status_bar</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_chat_widget.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_chat_widget.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="game_chat_widget.cpp">
       <Filter>core\logic\chat</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_map_widget.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_map_widget.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="game_map_widget.cpp">
       <Filter>core\logic\map</Filter>
@@ -153,20 +116,8 @@
     <ClCompile Include="properties_handler.cpp">
       <Filter>core\network\handlers</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_bag.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_bag.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="game_bag.cpp">
       <Filter>core\logic\bag</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_character_creator.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="character_creator.cpp">
       <Filter>core\logic\character_creator</Filter>
@@ -174,71 +125,23 @@
     <ClCompile Include="character_creator_baseinfo_page.cpp">
       <Filter>core\logic\character_creator</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_baseinfo_page.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_baseinfo_page.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="character_creator_characteristic_page.cpp">
       <Filter>core\logic\character_creator</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_characteristic_page.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_characteristic_page.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="character_creator_epic_page.cpp">
       <Filter>core\logic\character_creator</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_epic_page.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_epic_page.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="character_creator_introdution_page.cpp">
       <Filter>core\logic\character_creator</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_introdution_page.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_introdution_page.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="character_creator_career_belief_page.cpp">
       <Filter>core\logic\character_creator</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_career_belief_page.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_career_belief_page.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_left_guides_widget.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_left_guides_widget.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="character_creator_left_guides_widget.cpp">
       <Filter>core\logic\character_creator</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_summary_page.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_summary_page.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="character_creator_summary_page.cpp">
       <Filter>core\logic\character_creator</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_loader.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_loader.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="game_loader.cpp">
       <Filter>core\logic</Filter>
@@ -246,11 +149,74 @@
     <ClCompile Include="chat_handler.cpp">
       <Filter>core\network\handlers</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_item_delegate.cpp">
+    <ClCompile Include="game_item_table_view.cpp">
+      <Filter>core\extension</Filter>
+    </ClCompile>
+    <ClCompile Include="game_item_index_widget.cpp">
+      <Filter>core\extension</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_status_bar_widget.cpp">
       <Filter>qt_main\Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_item_delegate.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_game_status_bar_widget.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_status_bar_widget.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_setting.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_setting.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_setting.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_network.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_network.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_network.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_map_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_map_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_map_widget.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_main.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_main.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_main.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_login.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_login.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_login.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_loader.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_loader.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_loader.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_game_item_table_view.cpp">
       <Filter>qt_main\Generated Files\Debug</Filter>
@@ -258,8 +224,8 @@
     <ClCompile Include="GeneratedFiles\Release\moc_game_item_table_view.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="game_item_table_view.cpp">
-      <Filter>core\extension</Filter>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_item_table_view.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_game_item_model.cpp">
       <Filter>qt_main\Generated Files\Debug</Filter>
@@ -267,14 +233,116 @@
     <ClCompile Include="GeneratedFiles\Release\moc_game_item_model.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_item_model.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_game_item_index_widget.cpp">
       <Filter>qt_main\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_game_item_index_widget.cpp">
       <Filter>qt_main\Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="game_item_index_widget.cpp">
-      <Filter>core\extension</Filter>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_item_index_widget.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_item_delegate.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_item_delegate.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_item_delegate.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_chat_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_chat_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_chat_widget.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_bag.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_bag.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_bag.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_summary_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_summary_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator_summary_page.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_left_guides_widget.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_left_guides_widget.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator_left_guides_widget.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_introdution_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_introdution_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator_introdution_page.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_epic_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_epic_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator_epic_page.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_characteristic_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_characteristic_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator_characteristic_page.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_career_belief_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_career_belief_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator_career_belief_page.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator_baseinfo_page.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator_baseinfo_page.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator_baseinfo_page.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_character_creator.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_character_creator.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
