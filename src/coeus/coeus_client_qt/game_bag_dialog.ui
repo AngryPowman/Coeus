@@ -82,6 +82,16 @@
         </item>
         <item>
          <property name="text">
+          <string>出售价格排序</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>使用频率排序</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>可用性排序</string>
          </property>
         </item>

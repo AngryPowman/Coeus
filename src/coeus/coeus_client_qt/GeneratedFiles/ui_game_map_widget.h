@@ -26,7 +26,7 @@ public:
     {
         if (GameMapWidget->objectName().isEmpty())
             GameMapWidget->setObjectName(QStringLiteral("GameMapWidget"));
-        GameMapWidget->resize(711, 532);
+        GameMapWidget->resize(741, 550);
 
         retranslateUi(GameMapWidget);
 

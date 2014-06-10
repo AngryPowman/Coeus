@@ -344,6 +344,18 @@
     <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator.cpp">
       <Filter>qt_main\Generated Files\debug_md</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_map_view.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_map_view.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_map_view.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="game_map_view.cpp">
+      <Filter>core\logic\map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -544,6 +556,12 @@
     <CustomBuild Include="game_item_index_widget.h">
       <Filter>core\extension</Filter>
     </CustomBuild>
+    <CustomBuild Include="game_map_view.h">
+      <Filter>core\logic\map</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_map_view.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="coeus_client_qt.rc" />
@@ -558,5 +576,13 @@
     <ClInclude Include="GeneratedFiles\ui_item_index_widget.h">
       <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_game_map_view.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="game_map_window.ui">
+      <Filter>core\ui</Filter>
+    </None>
   </ItemGroup>
 </Project>

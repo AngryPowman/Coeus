@@ -54,6 +54,10 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     // connect signal to slots
     connect(_ui->actionAbout_QT, SIGNAL(triggered()), this, SLOT(slotOnAboutQT()));
     connect(_ui->action_Bag, SIGNAL(triggered(bool)), this, SLOT(slotOnBagActionTriggered(bool)));
+
+    // load map viewer
+    GameMapView* gameMapView = WidgetManager::getInstance().gameMapView();
+    _mdiAreaMain->addSubWindow(gameMapView, Qt::Dialog | Qt::FramelessWindowHint);
 }
 
 GameMain::~GameMain()

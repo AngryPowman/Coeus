@@ -12,6 +12,7 @@
 #include "game_map_widget.h"
 #include "game_chat_widget.h"
 #include "game_bag.h"
+#include "game_map_view.h"
 #include "character_creator_baseinfo_page.h"
 #include "character_creator_introdution_page.h"
 #include "character_creator_characteristic_page.h"
@@ -53,6 +54,7 @@ public:
     DEFINE_WIDGET(GameMapWidget, gameMapWidget);
     DEFINE_WIDGET(GameChatWidget, gameChatWidget);
     DEFINE_WIDGET(GameBag, gameBag);
+    DEFINE_WIDGET(GameMapView, gameMapView);
     DEFINE_WIDGET(CharacterCreator_IntrodutionPage, characterCreator_IntrodutionPage);
     DEFINE_WIDGET(CharacterCreator_BaseInfoPage, characterCreator_BaseInfoPage);
     DEFINE_WIDGET(CharacterCreator_CharacteristicPage, characterCreator_CharacteristicPage);
