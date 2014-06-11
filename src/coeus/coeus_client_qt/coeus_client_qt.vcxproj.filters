@@ -72,6 +72,9 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="core\logic\npc">
+      <UniqueIdentifier>{01b99673-4f78-428d-b863-bb6c43dc417a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -356,6 +359,12 @@
     <ClCompile Include="game_map_view.cpp">
       <Filter>core\logic\map</Filter>
     </ClCompile>
+    <ClCompile Include="npc.cpp">
+      <Filter>core\logic\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="npc_manager.cpp">
+      <Filter>core\logic\npc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -579,10 +588,14 @@
     <ClInclude Include="GeneratedFiles\ui_game_map_view.h">
       <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="game_map_window.ui">
-      <Filter>core\ui</Filter>
-    </None>
+    <ClInclude Include="npc_dialogue.h">
+      <Filter>core\logic\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="npc.h">
+      <Filter>core\logic\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="npc_manager.h">
+      <Filter>core\logic\npc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

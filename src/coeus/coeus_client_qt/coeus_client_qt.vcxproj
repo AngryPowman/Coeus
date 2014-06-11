@@ -662,6 +662,8 @@
     <ClCompile Include="login_config.cpp" />
     <ClCompile Include="login_handler.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="npc.cpp" />
+    <ClCompile Include="npc_manager.cpp" />
     <ClCompile Include="properties_handler.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -2765,6 +2767,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_data.h" />
+    <ClInclude Include="npc.h" />
+    <ClInclude Include="npc_dialogue.h" />
+    <ClInclude Include="npc_manager.h" />
     <CustomBuild Include="game_item_table_view.h">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing game_item_table_view.h...</Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='debug_md|Win32'">Moc%27ing game_item_table_view.h...</Message>
@@ -2954,7 +2959,6 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='debug_md|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='debug_md|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
     </CustomBuild>
-    <None Include="game_map_window.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

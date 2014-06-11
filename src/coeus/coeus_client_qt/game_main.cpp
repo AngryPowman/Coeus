@@ -37,9 +37,9 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     splitterRight->setOpaqueResize(true);
 
     _mdiAreaMain = new QMdiArea(splitterRight);
-    //GameMapWidget* gameMapWidget = WidgetManager::getInstance().gameMapWidget(splitterRight);
-    GameChatWidget* gameChatWidget = WidgetManager::getInstance().gameChatWidget(splitterRight);
 
+    // load chat view
+    GameChatWidget* gameChatWidget = WidgetManager::getInstance().gameChatWidget(splitterRight);
     _splitterMain->setVisible(false);
 
     // init left side toolbar
@@ -51,13 +51,14 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     _ui->action_World->setIcon(QIcon("images/ui/lsb_world.png"));
     _ui->action_Friends->setIcon(QIcon("images/ui/lsb_friends.png"));
 
+    // load map view
+    _gameMapView = WidgetManager::getInstance().gameMapView();
+    _mdiAreaMain->addSubWindow(_gameMapView, Qt::Dialog | Qt::FramelessWindowHint);
+    _gameMapView->showMaximized();
+
     // connect signal to slots
     connect(_ui->actionAbout_QT, SIGNAL(triggered()), this, SLOT(slotOnAboutQT()));
     connect(_ui->action_Bag, SIGNAL(triggered(bool)), this, SLOT(slotOnBagActionTriggered(bool)));
-
-    // load map viewer
-    GameMapView* gameMapView = WidgetManager::getInstance().gameMapView();
-    _mdiAreaMain->addSubWindow(gameMapView, Qt::Dialog | Qt::FramelessWindowHint);
 }
 
 GameMain::~GameMain()
@@ -81,11 +82,11 @@ void GameMain::slotOnBagActionTriggered(bool checked)
     if (checked)
     {
         _mdiAreaMain->addSubWindow(gameBag);
-        gameBag->show();
+        gameBag->showNormal();
     }
     else
     {
-        gameBag->hide();
+        //gameBag->hide();
     }
 }
 

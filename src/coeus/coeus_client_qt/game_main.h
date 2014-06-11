@@ -6,6 +6,7 @@
 class GameStatusBarWidget;
 class GameMapWidget;
 class GameChatWidget;
+class GameMapView;
 class QSplitter;
 
 namespace Ui { class GameMainDialog; };
@@ -49,6 +50,7 @@ private:
 	QSize _orginSize;
     QSplitter* _splitterMain;
     QMdiArea* _mdiAreaMain;
+    GameMapView* _gameMapView;
 };
 
 #endif // !__GAME_MAIN_H__

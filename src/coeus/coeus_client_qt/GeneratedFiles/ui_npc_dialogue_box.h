@@ -14,73 +14,137 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QPushButton>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_missionDialogueBox
+class Ui_NPCDialogueBox
 {
 public:
-    QGraphicsView *graphicsView;
-    QTextBrowser *textBrowser;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *lblNPCAvatar;
+    QSpacerItem *verticalSpacer;
+    QVBoxLayout *verticalLayout_3;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_3;
     QFrame *line;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QTextBrowser *textBrowser;
+    QVBoxLayout *verticalLayout_2;
+    QFrame *frame;
 
-    void setupUi(QWidget *missionDialogueBox)
+    void setupUi(QWidget *NPCDialogueBox)
     {
-        if (missionDialogueBox->objectName().isEmpty())
-            missionDialogueBox->setObjectName(QStringLiteral("missionDialogueBox"));
-        missionDialogueBox->resize(435, 148);
-        graphicsView = new QGraphicsView(missionDialogueBox);
-        graphicsView->setObjectName(QStringLiteral("graphicsView"));
-        graphicsView->setGeometry(QRect(10, 15, 86, 86));
-        textBrowser = new QTextBrowser(missionDialogueBox);
+        if (NPCDialogueBox->objectName().isEmpty())
+            NPCDialogueBox->setObjectName(QStringLiteral("NPCDialogueBox"));
+        NPCDialogueBox->resize(581, 122);
+        horizontalLayout = new QHBoxLayout(NPCDialogueBox);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        lblNPCAvatar = new QLabel(NPCDialogueBox);
+        lblNPCAvatar->setObjectName(QStringLiteral("lblNPCAvatar"));
+        lblNPCAvatar->setMinimumSize(QSize(96, 96));
+        lblNPCAvatar->setMaximumSize(QSize(96, 96));
+
+        verticalLayout_4->addWidget(lblNPCAvatar);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer);
+
+
+        horizontalLayout->addLayout(verticalLayout_4);
+
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        label_3 = new QLabel(NPCDialogueBox);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setMinimumSize(QSize(447, 18));
+        label_3->setScaledContents(true);
+        label_3->setWordWrap(true);
+
+        verticalLayout->addWidget(label_3);
+
+        line = new QFrame(NPCDialogueBox);
+        line->setObjectName(QStringLiteral("line"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout->addWidget(line);
+
+
+        verticalLayout_3->addLayout(verticalLayout);
+
+        textBrowser = new QTextBrowser(NPCDialogueBox);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        textBrowser->setGeometry(QRect(105, 15, 321, 86));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(textBrowser->sizePolicy().hasHeightForWidth());
+        textBrowser->setSizePolicy(sizePolicy);
+        textBrowser->setMinimumSize(QSize(445, 36));
+        textBrowser->setMaximumSize(QSize(445, 36));
         textBrowser->setFocusPolicy(Qt::StrongFocus);
         textBrowser->setAutoFillBackground(true);
         textBrowser->setStyleSheet(QStringLiteral("background-color: rgba(255, 255, 255, 0);"));
         textBrowser->setFrameShape(QFrame::NoFrame);
         textBrowser->setFrameShadow(QFrame::Plain);
-        line = new QFrame(missionDialogueBox);
-        line->setObjectName(QStringLiteral("line"));
-        line->setGeometry(QRect(10, 105, 416, 16));
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
-        pushButton = new QPushButton(missionDialogueBox);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(275, 120, 75, 23));
-        pushButton_2 = new QPushButton(missionDialogueBox);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(355, 120, 75, 23));
 
-        retranslateUi(missionDialogueBox);
+        verticalLayout_3->addWidget(textBrowser);
 
-        QMetaObject::connectSlotsByName(missionDialogueBox);
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        frame = new QFrame(NPCDialogueBox);
+        frame->setObjectName(QStringLiteral("frame"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
+        frame->setSizePolicy(sizePolicy1);
+        frame->setFrameShape(QFrame::NoFrame);
+        frame->setFrameShadow(QFrame::Plain);
+        frame->setLineWidth(0);
+
+        verticalLayout_2->addWidget(frame);
+
+
+        verticalLayout_3->addLayout(verticalLayout_2);
+
+
+        horizontalLayout->addLayout(verticalLayout_3);
+
+
+        retranslateUi(NPCDialogueBox);
+
+        QMetaObject::connectSlotsByName(NPCDialogueBox);
     } // setupUi
 
-    void retranslateUi(QWidget *missionDialogueBox)
+    void retranslateUi(QWidget *NPCDialogueBox)
     {
-        missionDialogueBox->setWindowTitle(QApplication::translate("missionDialogueBox", "\345\274\240\344\270\211\357\274\210NPC\357\274\211", 0));
-        textBrowser->setHtml(QApplication::translate("missionDialogueBox", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        NPCDialogueBox->setWindowTitle(QApplication::translate("NPCDialogueBox", "\345\274\240\344\270\211\357\274\210NPC\357\274\211", 0));
+        lblNPCAvatar->setText(QString());
+        label_3->setText(QApplication::translate("NPCDialogueBox", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">\350\200\201\350\202\211\351\270\241 </span><span style=\" font-size:10pt;\">\351\246\226\345\270\255\346\267\253\347\247\275\351\211\264\345\256\232\345\256\230</span></p></body></html>", 0));
+        textBrowser->setHtml(QApplication::translate("NPCDialogueBox", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\345\224\224\342\200\246\342\200\246\351\202\243\344\275\240\345\216\273<a href=\"url_event://type=npc_info&amp;id=10001\"><span style=\" text-decoration: underline; color:#0000ff;\">\350\200\201\350\202\211\351\270\241\351\246\226\345\270\255\351\211\264\345\256\232\345\256\230</span></a>\351\202\243\351\207\214\345\270\256\346\210\221\351\227\256\344\270\200\344\270\213\346\234\200\350\277\221\351\203\275\346\234\211\345\223\252\344\272\233\346\226\260\347\246\217\345\210\251\345\220\247\343\200\202\350\243\205\345\244\207\346\210\221\350\277\231\345\204\277\345\244"
-                        "\232\347\232\204\346\230\257\343\200\202</p></body></html>", 0));
-        pushButton->setText(QApplication::translate("missionDialogueBox", "\346\216\245\345\217\227\344\273\273\345\212\241", 0));
-        pushButton_2->setText(QApplication::translate("missionDialogueBox", "\346\213\222\347\273\235", 0));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\346\210\221\347\232\204<a href=\"#\"><span style=\" text-decoration: underline; color:#0000ff;\">\346\216\250\350\277\233\345\231\250\345\215\212\346\210\220\345\223\201</span></a>\346\216\211\350\220\275\345\234\250\345\256\236\351\252\214\345\256\244\351\207\214\344\272\206\357\274\214\344\275\240\345\270\256\346\210\221\345\216\273\346\213\277\350\277\207\346\235\245\357\274\214\346\210\221\345\260\261\346\212\212<a href=\"#\"><span style=\" text-decoration: underline; color:#0000ff;\">\347\247\215\345\255\220</span></a>\347\273\231\344\275\240\343\200\202</p><"
+                        "/body></html>", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class missionDialogueBox: public Ui_missionDialogueBox {};
+    class NPCDialogueBox: public Ui_NPCDialogueBox {};
 } // namespace Ui
 
 QT_END_NAMESPACE
