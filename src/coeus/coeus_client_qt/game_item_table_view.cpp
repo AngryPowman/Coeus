@@ -53,14 +53,14 @@ void GameItemTableView::selectionChanged(const QItemSelection& selected, const Q
 
 void GameItemTableView::onItemPressed(const QModelIndex& index)
 {
-    this->setUpdatesEnabled(false);
-    if (_modelIndex != nullptr)
-    {
-        this->setRowHeight(_modelIndex->row(), DEFAULT_ITEM_ROW_HEIGHT);
-    }
-    this->setRowHeight(index.row(), 150);
-    this->setUpdatesEnabled(true);
-
-    // Save current model index
-    _modelIndex = const_cast<const QModelIndex*>(&index);
+//     this->setUpdatesEnabled(false);
+//     if (_modelIndex != nullptr)
+//     {
+//         this->setRowHeight(_modelIndex->row(), DEFAULT_ITEM_ROW_HEIGHT);
+//     }
+//     this->setRowHeight(index.row(), 150);
+//     this->setUpdatesEnabled(true);
+// 
+//     // Save current model index
+//     _modelIndex = const_cast<const QModelIndex*>(&index);
 }

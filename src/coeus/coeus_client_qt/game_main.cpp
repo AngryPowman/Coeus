@@ -78,11 +78,11 @@ void GameMain::slotOnAboutQT()
 
 void GameMain::slotOnBagActionTriggered(bool checked)
 {
-    GameBag* gameBag = WidgetManager::getInstance().gameBag();
+    GameBag* gameBag = WidgetManager::getInstance().gameBag(_gameMapView);
     if (checked)
     {
-        _mdiAreaMain->addSubWindow(gameBag);
-        gameBag->showNormal();
+        //_mdiAreaMain->addSubWindow(gameBag);
+        gameBag->show();
     }
     else
     {
