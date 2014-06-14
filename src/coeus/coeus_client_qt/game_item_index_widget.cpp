@@ -3,6 +3,7 @@
 #include <QtWidgets/QLabel>
 #include "game_common/path_definition.h"
 #include "ui_item_index_widget.h"
+#include "widget_helper.h"
 
 ItemIndexWidget::ItemIndexWidget(const GameItem& item)
     : _gameItem(item)
@@ -33,8 +34,7 @@ void ItemIndexWidget::initGraph()
 
 void ItemIndexWidget::setIcon(const QString& icon, const QSize& size)
 {
-    QPixmap iconPixmap = QPixmap(icon).scaled(size);
-    _ui->lblIcon->setPixmap(iconPixmap);
+    WidgetHelper::loadLablePicture(_ui->lblIcon, size, icon);
     _ui->lblIcon->adjustSize();
 }
 

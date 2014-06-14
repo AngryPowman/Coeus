@@ -365,6 +365,21 @@
     <ClCompile Include="npc_manager.cpp">
       <Filter>core\logic\npc</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_dialogue_box.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_dialogue_box.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_dialogue_box.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogue_box.cpp">
+      <Filter>core\logic\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="widget_helper.cpp">
+      <Filter>core\common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -384,9 +399,6 @@
     </CustomBuild>
     <CustomBuild Include="game_main.h">
       <Filter>core\logic</Filter>
-    </CustomBuild>
-    <CustomBuild Include="npc_dialogue_box.ui">
-      <Filter>core\ui</Filter>
     </CustomBuild>
     <CustomBuild Include="game_statusbar_widget.ui">
       <Filter>core\ui</Filter>
@@ -508,9 +520,6 @@
     <CustomBuild Include="GeneratedFiles\ui_game_statusbar_widget.h">
       <Filter>qt_main\Generated Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="GeneratedFiles\ui_npc_dialogue_box.h">
-      <Filter>qt_main\Generated Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="GeneratedFiles\ui_gamesys_setting_dialog.h">
       <Filter>qt_main\Generated Files</Filter>
     </CustomBuild>
@@ -571,6 +580,12 @@
     <CustomBuild Include="game_map_view.ui">
       <Filter>core\ui</Filter>
     </CustomBuild>
+    <CustomBuild Include="dialogue_box.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialogue_box.h">
+      <Filter>core\logic\npc</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="coeus_client_qt.rc" />
@@ -596,6 +611,12 @@
     </ClInclude>
     <ClInclude Include="npc_manager.h">
       <Filter>core\logic\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_dialogue_box.h">
+      <Filter>qt_main\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="widget_helper.h">
+      <Filter>core\common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

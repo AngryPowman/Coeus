@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'npc_dialogue_box.ui'
+** Form generated from reading UI file 'dialogue_box.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_NPC_DIALOGUE_BOX_H
-#define UI_NPC_DIALOGUE_BOX_H
+#ifndef UI_DIALOGUE_BOX_H
+#define UI_DIALOGUE_BOX_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -24,7 +24,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_NPCDialogueBox
+class Ui_DialogueBox
 {
 public:
     QHBoxLayout *horizontalLayout;
@@ -39,16 +39,16 @@ public:
     QVBoxLayout *verticalLayout_2;
     QFrame *frame;
 
-    void setupUi(QWidget *NPCDialogueBox)
+    void setupUi(QWidget *DialogueBox)
     {
-        if (NPCDialogueBox->objectName().isEmpty())
-            NPCDialogueBox->setObjectName(QStringLiteral("NPCDialogueBox"));
-        NPCDialogueBox->resize(581, 122);
-        horizontalLayout = new QHBoxLayout(NPCDialogueBox);
+        if (DialogueBox->objectName().isEmpty())
+            DialogueBox->setObjectName(QStringLiteral("DialogueBox"));
+        DialogueBox->resize(581, 122);
+        horizontalLayout = new QHBoxLayout(DialogueBox);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        lblNPCAvatar = new QLabel(NPCDialogueBox);
+        lblNPCAvatar = new QLabel(DialogueBox);
         lblNPCAvatar->setObjectName(QStringLiteral("lblNPCAvatar"));
         lblNPCAvatar->setMinimumSize(QSize(96, 96));
         lblNPCAvatar->setMaximumSize(QSize(96, 96));
@@ -66,7 +66,7 @@ public:
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        label_3 = new QLabel(NPCDialogueBox);
+        label_3 = new QLabel(DialogueBox);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setMinimumSize(QSize(447, 18));
         label_3->setScaledContents(true);
@@ -74,7 +74,7 @@ public:
 
         verticalLayout->addWidget(label_3);
 
-        line = new QFrame(NPCDialogueBox);
+        line = new QFrame(DialogueBox);
         line->setObjectName(QStringLiteral("line"));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
@@ -84,7 +84,7 @@ public:
 
         verticalLayout_3->addLayout(verticalLayout);
 
-        textBrowser = new QTextBrowser(NPCDialogueBox);
+        textBrowser = new QTextBrowser(DialogueBox);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
@@ -103,7 +103,7 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        frame = new QFrame(NPCDialogueBox);
+        frame = new QFrame(DialogueBox);
         frame->setObjectName(QStringLiteral("frame"));
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy1.setHorizontalStretch(0);
@@ -123,17 +123,17 @@ public:
         horizontalLayout->addLayout(verticalLayout_3);
 
 
-        retranslateUi(NPCDialogueBox);
+        retranslateUi(DialogueBox);
 
-        QMetaObject::connectSlotsByName(NPCDialogueBox);
+        QMetaObject::connectSlotsByName(DialogueBox);
     } // setupUi
 
-    void retranslateUi(QWidget *NPCDialogueBox)
+    void retranslateUi(QWidget *DialogueBox)
     {
-        NPCDialogueBox->setWindowTitle(QApplication::translate("NPCDialogueBox", "\345\274\240\344\270\211\357\274\210NPC\357\274\211", 0));
+        DialogueBox->setWindowTitle(QApplication::translate("DialogueBox", "\345\274\240\344\270\211\357\274\210NPC\357\274\211", 0));
         lblNPCAvatar->setText(QString());
-        label_3->setText(QApplication::translate("NPCDialogueBox", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">\350\200\201\350\202\211\351\270\241 </span><span style=\" font-size:10pt;\">\351\246\226\345\270\255\346\267\253\347\247\275\351\211\264\345\256\232\345\256\230</span></p></body></html>", 0));
-        textBrowser->setHtml(QApplication::translate("NPCDialogueBox", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        label_3->setText(QApplication::translate("DialogueBox", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">\350\200\201\350\202\211\351\270\241 </span><span style=\" font-size:10pt;\">\351\246\226\345\270\255\346\267\253\347\247\275\351\211\264\345\256\232\345\256\230</span></p></body></html>", 0));
+        textBrowser->setHtml(QApplication::translate("DialogueBox", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
@@ -144,9 +144,9 @@ public:
 };
 
 namespace Ui {
-    class NPCDialogueBox: public Ui_NPCDialogueBox {};
+    class DialogueBox: public Ui_DialogueBox {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_NPC_DIALOGUE_BOX_H
+#endif // UI_DIALOGUE_BOX_H
