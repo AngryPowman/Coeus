@@ -34,13 +34,13 @@ public:
     QWidget *tab;
     QHBoxLayout *horizontalLayout;
     QTextBrowser *txtAllMessages;
-    QWidget *widget;
+    QWidget *widget_2;
     QHBoxLayout *horizontalLayout_2;
     QTextBrowser *txtWorldMessages;
     QWidget *tab_3;
     QHBoxLayout *horizontalLayout_3;
     QTextBrowser *txtPrivateMessages;
-    QWidget *widget1;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout_5;
     QTextBrowser *txtGuildMessages;
     QWidget *tab_4;
@@ -57,14 +57,14 @@ public:
         if (GameChatWidget->objectName().isEmpty())
             GameChatWidget->setObjectName(QStringLiteral("GameChatWidget"));
         GameChatWidget->setWindowModality(Qt::NonModal);
-        GameChatWidget->resize(567, 227);
+        GameChatWidget->resize(567, 137);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(GameChatWidget->sizePolicy().hasHeightForWidth());
         GameChatWidget->setSizePolicy(sizePolicy);
         verticalLayout = new QVBoxLayout(GameChatWidget);
-        verticalLayout->setSpacing(0);
+        verticalLayout->setSpacing(2);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         tabWidget = new QTabWidget(GameChatWidget);
@@ -78,47 +78,57 @@ public:
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         horizontalLayout = new QHBoxLayout(tab);
+        horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         txtAllMessages = new QTextBrowser(tab);
         txtAllMessages->setObjectName(QStringLiteral("txtAllMessages"));
 
         horizontalLayout->addWidget(txtAllMessages);
 
         tabWidget->addTab(tab, QString());
-        widget = new QWidget();
-        widget->setObjectName(QStringLiteral("widget"));
-        horizontalLayout_2 = new QHBoxLayout(widget);
+        widget_2 = new QWidget();
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+        horizontalLayout_2 = new QHBoxLayout(widget_2);
+        horizontalLayout_2->setSpacing(0);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        txtWorldMessages = new QTextBrowser(widget);
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        txtWorldMessages = new QTextBrowser(widget_2);
         txtWorldMessages->setObjectName(QStringLiteral("txtWorldMessages"));
 
         horizontalLayout_2->addWidget(txtWorldMessages);
 
-        tabWidget->addTab(widget, QString());
+        tabWidget->addTab(widget_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
         horizontalLayout_3 = new QHBoxLayout(tab_3);
+        horizontalLayout_3->setSpacing(0);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
         txtPrivateMessages = new QTextBrowser(tab_3);
         txtPrivateMessages->setObjectName(QStringLiteral("txtPrivateMessages"));
 
         horizontalLayout_3->addWidget(txtPrivateMessages);
 
         tabWidget->addTab(tab_3, QString());
-        widget1 = new QWidget();
-        widget1->setObjectName(QStringLiteral("widget1"));
-        horizontalLayout_5 = new QHBoxLayout(widget1);
+        widget = new QWidget();
+        widget->setObjectName(QStringLiteral("widget"));
+        horizontalLayout_5 = new QHBoxLayout(widget);
+        horizontalLayout_5->setSpacing(0);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        txtGuildMessages = new QTextBrowser(widget1);
+        horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
+        txtGuildMessages = new QTextBrowser(widget);
         txtGuildMessages->setObjectName(QStringLiteral("txtGuildMessages"));
 
         horizontalLayout_5->addWidget(txtGuildMessages);
 
-        tabWidget->addTab(widget1, QString());
+        tabWidget->addTab(widget, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
         horizontalLayout_4 = new QHBoxLayout(tab_4);
+        horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
         txtSystemMessages = new QTextBrowser(tab_4);
         txtSystemMessages->setObjectName(QStringLiteral("txtSystemMessages"));
 
@@ -185,9 +195,9 @@ public:
     {
         GameChatWidget->setWindowTitle(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("GameChatWidget", "\345\205\250\351\203\250", 0));
-        tabWidget->setTabText(tabWidget->indexOf(widget), QApplication::translate("GameChatWidget", "\344\270\226\347\225\214", 0));
+        tabWidget->setTabText(tabWidget->indexOf(widget_2), QApplication::translate("GameChatWidget", "\344\270\226\347\225\214", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("GameChatWidget", "\347\247\201\350\201\212", 0));
-        tabWidget->setTabText(tabWidget->indexOf(widget1), QApplication::translate("GameChatWidget", "\345\205\254\344\274\232", 0));
+        tabWidget->setTabText(tabWidget->indexOf(widget), QApplication::translate("GameChatWidget", "\345\205\254\344\274\232", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("GameChatWidget", "\347\263\273\347\273\237", 0));
         cmbChannel->clear();
         cmbChannel->insertItems(0, QStringList()

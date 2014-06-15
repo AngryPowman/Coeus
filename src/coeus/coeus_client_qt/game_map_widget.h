@@ -2,8 +2,11 @@
 #define GAME_MAP_WIDGET_H
 
 #include <QWidget>
-namespace Ui {class GameMapWidget;};
 
+namespace Ui {class GameMapWidget;};
+class WorldInfoSideBar;
+class QSplitter;
+class QGraphicsView;
 class GameMapWidget : public QWidget
 {
     Q_OBJECT
@@ -13,7 +16,13 @@ public:
     ~GameMapWidget();
 
 private:
+    bool drawMapPicture(const QString& file);
+
+private:
     Ui::GameMapWidget* _ui;
+    WorldInfoSideBar* _worldInfoSideBar;
+    QSplitter* _splitterMap;
+    QGraphicsView* _mapViewer;
 };
 
 #endif // GAME_MAP_WIDGET_H

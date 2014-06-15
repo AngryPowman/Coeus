@@ -26,7 +26,7 @@ public:
     {
         if (GameMapWidget->objectName().isEmpty())
             GameMapWidget->setObjectName(QStringLiteral("GameMapWidget"));
-        GameMapWidget->resize(741, 550);
+        GameMapWidget->resize(725, 551);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

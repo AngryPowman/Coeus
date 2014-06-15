@@ -29,13 +29,13 @@ class Ui_DialogueBox
 public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_4;
-    QLabel *lblNPCAvatar;
+    QLabel *lblAvatar;
     QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout;
-    QLabel *label_3;
-    QFrame *line;
-    QTextBrowser *textBrowser;
+    QLabel *lblName;
+    QTextBrowser *txtContent;
     QVBoxLayout *verticalLayout_2;
     QFrame *frame;
 
@@ -44,16 +44,23 @@ public:
         if (DialogueBox->objectName().isEmpty())
             DialogueBox->setObjectName(QStringLiteral("DialogueBox"));
         DialogueBox->resize(581, 122);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(DialogueBox->sizePolicy().hasHeightForWidth());
+        DialogueBox->setSizePolicy(sizePolicy);
         horizontalLayout = new QHBoxLayout(DialogueBox);
+        horizontalLayout->setSpacing(2);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        lblNPCAvatar = new QLabel(DialogueBox);
-        lblNPCAvatar->setObjectName(QStringLiteral("lblNPCAvatar"));
-        lblNPCAvatar->setMinimumSize(QSize(96, 96));
-        lblNPCAvatar->setMaximumSize(QSize(96, 96));
+        lblAvatar = new QLabel(DialogueBox);
+        lblAvatar->setObjectName(QStringLiteral("lblAvatar"));
+        lblAvatar->setMinimumSize(QSize(96, 96));
+        lblAvatar->setMaximumSize(QSize(96, 96));
 
-        verticalLayout_4->addWidget(lblNPCAvatar);
+        verticalLayout_4->addWidget(lblAvatar);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -62,54 +69,48 @@ public:
 
         horizontalLayout->addLayout(verticalLayout_4);
 
+        horizontalSpacer = new QSpacerItem(16, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        label_3 = new QLabel(DialogueBox);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setMinimumSize(QSize(447, 18));
-        label_3->setScaledContents(true);
-        label_3->setWordWrap(true);
+        lblName = new QLabel(DialogueBox);
+        lblName->setObjectName(QStringLiteral("lblName"));
+        lblName->setMinimumSize(QSize(447, 18));
+        lblName->setScaledContents(true);
+        lblName->setWordWrap(true);
 
-        verticalLayout->addWidget(label_3);
-
-        line = new QFrame(DialogueBox);
-        line->setObjectName(QStringLiteral("line"));
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
-
-        verticalLayout->addWidget(line);
+        verticalLayout->addWidget(lblName);
 
 
         verticalLayout_3->addLayout(verticalLayout);
 
-        textBrowser = new QTextBrowser(DialogueBox);
-        textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(textBrowser->sizePolicy().hasHeightForWidth());
-        textBrowser->setSizePolicy(sizePolicy);
-        textBrowser->setMinimumSize(QSize(445, 36));
-        textBrowser->setMaximumSize(QSize(445, 36));
-        textBrowser->setFocusPolicy(Qt::StrongFocus);
-        textBrowser->setAutoFillBackground(true);
-        textBrowser->setStyleSheet(QStringLiteral("background-color: rgba(255, 255, 255, 0);"));
-        textBrowser->setFrameShape(QFrame::NoFrame);
-        textBrowser->setFrameShadow(QFrame::Plain);
+        txtContent = new QTextBrowser(DialogueBox);
+        txtContent->setObjectName(QStringLiteral("txtContent"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(txtContent->sizePolicy().hasHeightForWidth());
+        txtContent->setSizePolicy(sizePolicy1);
+        txtContent->setMinimumSize(QSize(445, 36));
+        txtContent->setMaximumSize(QSize(445, 36));
+        txtContent->setFocusPolicy(Qt::StrongFocus);
+        txtContent->setAutoFillBackground(true);
+        txtContent->setStyleSheet(QStringLiteral("background-color: rgba(255, 255, 255, 0);"));
+        txtContent->setFrameShape(QFrame::NoFrame);
+        txtContent->setFrameShadow(QFrame::Plain);
 
-        verticalLayout_3->addWidget(textBrowser);
+        verticalLayout_3->addWidget(txtContent);
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         frame = new QFrame(DialogueBox);
         frame->setObjectName(QStringLiteral("frame"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
-        frame->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
+        frame->setSizePolicy(sizePolicy);
         frame->setFrameShape(QFrame::NoFrame);
         frame->setFrameShadow(QFrame::Plain);
         frame->setLineWidth(0);
@@ -131,9 +132,9 @@ public:
     void retranslateUi(QWidget *DialogueBox)
     {
         DialogueBox->setWindowTitle(QApplication::translate("DialogueBox", "\345\274\240\344\270\211\357\274\210NPC\357\274\211", 0));
-        lblNPCAvatar->setText(QString());
-        label_3->setText(QApplication::translate("DialogueBox", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">\350\200\201\350\202\211\351\270\241 </span><span style=\" font-size:10pt;\">\351\246\226\345\270\255\346\267\253\347\247\275\351\211\264\345\256\232\345\256\230</span></p></body></html>", 0));
-        textBrowser->setHtml(QApplication::translate("DialogueBox", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        lblAvatar->setText(QString());
+        lblName->setText(QApplication::translate("DialogueBox", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">\350\200\201\350\202\211\351\270\241 </span><span style=\" font-size:10pt;\">\351\246\226\345\270\255\346\267\253\347\247\275\351\211\264\345\256\232\345\256\230</span></p></body></html>", 0));
+        txtContent->setHtml(QApplication::translate("DialogueBox", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"

@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -42,7 +41,6 @@ public:
     QAction *action_Friends;
     QAction *action_World;
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout;
     QMenuBar *menubar;
     QMenu *menu_G;
     QMenu *menu;
@@ -103,14 +101,10 @@ public:
         centralwidget = new QWidget(GameMainDialog);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         centralwidget->setLayoutDirection(Qt::LeftToRight);
-        horizontalLayout = new QHBoxLayout(centralwidget);
-        horizontalLayout->setSpacing(0());
-        horizontalLayout->setMargin(0());
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         GameMainDialog->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GameMainDialog);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1024, 23));
+        menubar->setGeometry(QRect(0, 0, 1024, 21));
         menu_G = new QMenu(menubar);
         menu_G->setObjectName(QStringLiteral("menu_G"));
         menu = new QMenu(menubar);

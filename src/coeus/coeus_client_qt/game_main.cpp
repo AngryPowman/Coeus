@@ -9,6 +9,9 @@
 #include "character_creator.h"
 #include "game_data.h"
 #include "game_common/item_helper.h"
+#include "game_map_widget.h"
+#include "world_info_side_bar.h"
+#include "dialogue_box.h"
 
 GameMain::GameMain(QWidget* parent /*= 0*/)
     : QMainWindow(parent)
@@ -29,18 +32,23 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
 
     // init main layout
     _splitterMain = new QSplitter(Qt::Horizontal, this);
-    _splitterMain->setStretchFactor(1, 1);
     GameStatusBarWidget* gameStatusBarWidget
         = WidgetManager::getInstance().gameStatusBarWidget(dynamic_cast<QWidget*>(_splitterMain));
 
+    
     QSplitter* splitterRight = new QSplitter(Qt::Vertical, _splitterMain);
-    splitterRight->setOpaqueResize(true);
 
-    _mdiAreaMain = new QMdiArea(splitterRight);
+    // load map view
+    _gameMapWidget = new GameMapWidget();
 
     // load chat view
-    GameChatWidget* gameChatWidget = WidgetManager::getInstance().gameChatWidget(splitterRight);
+    GameChatWidget* gameChatWidget = WidgetManager::getInstance().gameChatWidget();
     _splitterMain->setVisible(false);
+
+    splitterRight->addWidget(_gameMapWidget);
+    splitterRight->addWidget(gameChatWidget);
+
+    splitterRight->setStretchFactor(1, 0);
 
     // init left side toolbar
     _ui->menuSidebar->menuAction()->setVisible(false);
@@ -50,11 +58,6 @@ GameMain::GameMain(QWidget* parent /*= 0*/)
     _ui->action_Equipment->setIcon(QIcon("images/ui/lsb_equipment.png"));
     _ui->action_World->setIcon(QIcon("images/ui/lsb_world.png"));
     _ui->action_Friends->setIcon(QIcon("images/ui/lsb_friends.png"));
-
-    // load map view
-    _gameMapView = WidgetManager::getInstance().gameMapView();
-    _mdiAreaMain->addSubWindow(_gameMapView, Qt::Dialog | Qt::FramelessWindowHint);
-    _gameMapView->showMaximized();
 
     // connect signal to slots
     connect(_ui->actionAbout_QT, SIGNAL(triggered()), this, SLOT(slotOnAboutQT()));
@@ -78,7 +81,7 @@ void GameMain::slotOnAboutQT()
 
 void GameMain::slotOnBagActionTriggered(bool checked)
 {
-    GameBag* gameBag = WidgetManager::getInstance().gameBag(_gameMapView);
+    GameBag* gameBag = WidgetManager::getInstance().gameBag();
     if (checked)
     {
         //_mdiAreaMain->addSubWindow(gameBag);

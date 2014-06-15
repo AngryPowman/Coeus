@@ -380,6 +380,18 @@
     <ClCompile Include="widget_helper.cpp">
       <Filter>core\common</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_world_info_side_bar.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_world_info_side_bar.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_world_info_side_bar.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="world_info_side_bar.cpp">
+      <Filter>core\logic\map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -586,6 +598,12 @@
     <CustomBuild Include="dialogue_box.h">
       <Filter>core\logic\npc</Filter>
     </CustomBuild>
+    <CustomBuild Include="world_info_side_bar.ui">
+      <Filter>core\ui</Filter>
+    </CustomBuild>
+    <CustomBuild Include="world_info_side_bar.h">
+      <Filter>core\logic\map</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="coeus_client_qt.rc" />
@@ -617,6 +635,9 @@
     </ClInclude>
     <ClInclude Include="widget_helper.h">
       <Filter>core\common</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_world_info_side_bar.h">
+      <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

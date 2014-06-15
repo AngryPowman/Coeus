@@ -13,7 +13,7 @@ public:
     ~DialogueBox();
 
 public:
-    void setAvatarPicture(const std::string& file);
+    void setAvatarPicture(const QString& file);
 
 private:
     Ui::DialogueBox* _ui;
