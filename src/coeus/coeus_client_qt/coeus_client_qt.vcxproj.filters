@@ -347,18 +347,6 @@
     <ClCompile Include="GeneratedFiles\debug_md\moc_character_creator.cpp">
       <Filter>qt_main\Generated Files\debug_md</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_game_map_view.cpp">
-      <Filter>qt_main\Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_game_map_view.cpp">
-      <Filter>qt_main\Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\debug_md\moc_game_map_view.cpp">
-      <Filter>qt_main\Generated Files\debug_md</Filter>
-    </ClCompile>
-    <ClCompile Include="game_map_view.cpp">
-      <Filter>core\logic\map</Filter>
-    </ClCompile>
     <ClCompile Include="npc.cpp">
       <Filter>core\logic\npc</Filter>
     </ClCompile>
@@ -390,6 +378,18 @@
       <Filter>qt_main\Generated Files\debug_md</Filter>
     </ClCompile>
     <ClCompile Include="world_info_side_bar.cpp">
+      <Filter>core\logic\map</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_game_map_viewer.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_game_map_viewer.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_game_map_viewer.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="game_map_viewer.cpp">
       <Filter>core\logic\map</Filter>
     </ClCompile>
   </ItemGroup>
@@ -586,9 +586,6 @@
     <CustomBuild Include="game_item_index_widget.h">
       <Filter>core\extension</Filter>
     </CustomBuild>
-    <CustomBuild Include="game_map_view.h">
-      <Filter>core\logic\map</Filter>
-    </CustomBuild>
     <CustomBuild Include="game_map_view.ui">
       <Filter>core\ui</Filter>
     </CustomBuild>
@@ -602,6 +599,9 @@
       <Filter>core\ui</Filter>
     </CustomBuild>
     <CustomBuild Include="world_info_side_bar.h">
+      <Filter>core\logic\map</Filter>
+    </CustomBuild>
+    <CustomBuild Include="game_map_viewer.h">
       <Filter>core\logic\map</Filter>
     </CustomBuild>
   </ItemGroup>

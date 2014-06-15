@@ -6,7 +6,7 @@
 namespace Ui {class GameMapWidget;};
 class WorldInfoSideBar;
 class QSplitter;
-class QGraphicsView;
+class GameMapViewer;
 class GameMapWidget : public QWidget
 {
     Q_OBJECT
@@ -22,7 +22,7 @@ private:
     Ui::GameMapWidget* _ui;
     WorldInfoSideBar* _worldInfoSideBar;
     QSplitter* _splitterMap;
-    QGraphicsView* _mapViewer;
+    GameMapViewer* _mapViewer;
 };
 
 #endif // GAME_MAP_WIDGET_H

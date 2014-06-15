@@ -2,9 +2,9 @@
 #include "ui_game_map_widget.h"
 #include "world_info_side_bar.h"
 #include <QSplitter>
-#include <QGraphicsView>
 #include <QHBoxLayout>
 #include <QGraphicsPixmapItem>
+#include "game_map_viewer.h"
 
 GameMapWidget::GameMapWidget(QWidget* parent)
     : QWidget(parent)
@@ -19,7 +19,7 @@ GameMapWidget::GameMapWidget(QWidget* parent)
 
     //splitterMap->setOpaqueResize(true);
     hBoxLayout->addWidget(_splitterMap);
-    _mapViewer = new QGraphicsView();
+    _mapViewer = new GameMapViewer();
     _mapViewer->setAcceptDrops(true);
 
     _worldInfoSideBar = new WorldInfoSideBar();
