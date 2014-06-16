@@ -62,6 +62,7 @@ public:
     QTreeWidget *treeWidget;
     QTextBrowser *textBrowser;
     QWidget *tab;
+    QWidget *widget;
 
     void setupUi(QWidget *GameStatusBarWidget)
     {
@@ -304,6 +305,9 @@ public:
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         tabWidget->addTab(tab, QString());
+        widget = new QWidget();
+        widget->setObjectName(QStringLiteral("widget"));
+        tabWidget->addTab(widget, QString());
 
         verticalLayout_5->addWidget(tabWidget);
 
@@ -356,7 +360,8 @@ public:
 "</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\345\211\215\345\276\200\347\240\224\347\251\266\346\211\200\344\270\216<a href=\"[\350\200\201\350\202\211\351\270\241]\"><span style=\" text-decoration: underline; color:#0000ff;\">[\350\200\201\350\202\211\351\270\241]</span></a>\346\267\261\345\205\245\344\272\244\350\260\210\357\274\214\344\272\206\350\247\243\347\273\264\347\272\263\346\226\257\344\270\226\347\225\214\347\232\204\350\265\267\346\272\220\344\270\216\345\216\206\345\217\262\343\200\202</p></body></html>", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("GameStatusBarWidget", "\344\273\273\345\212\241\350\277\275\350\270\252", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("GameStatusBarWidget", "\345\216\273\345\271\264\344\271\260\347\232\204\347\231\273\345\261\261\345\214\205", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("GameStatusBarWidget", "\345\276\256\345\236\213\347\224\265\350\204\221", 0));
+        tabWidget->setTabText(tabWidget->indexOf(widget), QApplication::translate("GameStatusBarWidget", "\345\245\275\345\217\213", 0));
     } // retranslateUi
 
 };

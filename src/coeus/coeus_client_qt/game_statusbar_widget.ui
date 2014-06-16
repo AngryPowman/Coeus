@@ -519,7 +519,12 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>去年买的登山包</string>
+       <string>微型电脑</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="">
+      <attribute name="title">
+       <string>好友</string>
       </attribute>
      </widget>
     </widget>
