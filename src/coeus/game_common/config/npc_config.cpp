@@ -74,26 +74,31 @@ bool NPCConfig::parse()
 
             //解析选项对话节点
             const Json::Value& optionDialogueArr = dialogueValue["dialogue_options"];
-            std::function<void(NPCData::OptionDialogueNodeList&, const Json::Value&)> parseOptionNodeProcessFunc
-                = [&parseOptionNodeProcessFunc](NPCData::OptionDialogueNodeList& optionNodeList, const Json::Value& childOptionDialogueArr)
+            if (optionDialogueArr != Json::nullValue)
             {
-                for (const Json::Value& optionDialogueValue : childOptionDialogueArr)
+                std::function<void(NPCData::OptionDialogueNodeList&, const Json::Value&)> parseOptionNodeProcessFunc
+                    = [&parseOptionNodeProcessFunc](NPCData::OptionDialogueNodeList& optionNodeList, const Json::Value& childOptionDialogueArr)
                 {
-                    NPCData::OptionDialogueNode optionDialogueNode;
-                    optionDialogueNode.show_condition_script = optionDialogueValue["show_condition_script"].asString();
-                    optionDialogueNode.execute_condition_script = optionDialogueValue["execute_condition_script"].asString();
-                    optionDialogueNode.event_script = optionDialogueValue["event_script"].asString();
-                    optionDialogueNode.option_content = optionDialogueValue["option_content"].asString();
-                    for (const Json::Value& contentPartValue : optionDialogueValue["dialogue_content"])
-                        optionDialogueNode.dialogue_parts.push_back(contentPartValue.asString());
+                    for (const Json::Value& optionDialogueValue : childOptionDialogueArr)
+                    {
+                        NPCData::OptionDialogueNode optionDialogueNode;
+                        optionDialogueNode.show_condition_script = optionDialogueValue["show_condition_script"].asString();
+                        optionDialogueNode.execute_condition_script = optionDialogueValue["execute_condition_script"].asString();
+                        optionDialogueNode.event_script = optionDialogueValue["event_script"].asString();
+                        optionDialogueNode.option_content = optionDialogueValue["option_content"].asString();
+                        for (const Json::Value& contentPartValue : optionDialogueValue["dialogue_content"])
+                            optionDialogueNode.dialogue_parts.push_back(contentPartValue.asString());
 
-                    parseOptionNodeProcessFunc(optionDialogueNode.dialogue_options, optionDialogueValue["dialogue_options"]);
+                        parseOptionNodeProcessFunc(optionDialogueNode.dialogue_options, optionDialogueValue["dialogue_options"]);
 
-                    optionNodeList.push_back(optionDialogueNode);
-                }
-            };
+                        optionNodeList.push_back(optionDialogueNode);
+                    }
+                };
 
-            parseOptionNodeProcessFunc(dialogueNode.dialogue_options, optionDialogueArr);
+                parseOptionNodeProcessFunc(dialogueNode.dialogue_options, optionDialogueArr);
+            }
+
+
             npcData.dialogues.dialogue_tree.push_back(dialogueNode);
         }
 

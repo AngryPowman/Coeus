@@ -16,11 +16,10 @@ GameMapViewer::GameMapViewer(QWidget* parent)
     this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     _dialogueBox = new DialogueBox(this);
-    _dialogueBox->setGeometry(
-        0, 
-        this->geometry().bottom()/* + _dialogueBox->height()*/, 
-        _dialogueBox->width(), 
-        _dialogueBox->height());
+    this->resizeEvent(nullptr);
+
+    _dialogueBox->attackNPCData(1001);
+    _dialogueBox->showBox();
 
     _scaleAnimationTimer = new QTimer(parent);
     connect(_scaleAnimationTimer, SIGNAL(timeout()), SLOT(scaleAnimationProcess()));
@@ -59,4 +58,16 @@ void GameMapViewer::wheelEvent(QWheelEvent* event)
 void GameMapViewer::scaleAnimationProcess()
 {
 
+}
+
+void GameMapViewer::resizeEvent(QResizeEvent* event)
+{
+    if (_dialogueBox != nullptr)
+    {
+        _dialogueBox->setGeometry(
+            this->width() / 2 - _dialogueBox->width() / 2,
+            this->geometry().bottom() - _dialogueBox->height() - 50,
+            _dialogueBox->width(),
+            _dialogueBox->height());
+    }
 }

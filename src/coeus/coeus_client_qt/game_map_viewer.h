@@ -14,7 +14,11 @@ public:
     ~GameMapViewer();
 
 public:
+    
+
+private:
     void wheelEvent(QWheelEvent* event);
+    void resizeEvent(QResizeEvent* event);
 
 private slots:
     void scaleAnimationProcess();

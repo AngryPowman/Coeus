@@ -4,7 +4,7 @@
         "name"  : "老肉鸡",                         // NPC名字（如：王二）
         "title" : "首席淫秽鉴定官",                 // NPC称号（如：武器店老板）
 		"category" : "维纳斯NPC",					// NPC分类（仅作备注用）
-        "avatar" : "images/npc/zapline_avatar.png", // NPC头像
+        "avatar" : "images/avatar/zapline.jpg", // NPC头像
         "ai_properties" :
         {
 			"level" : 50,                           // NPC等级
@@ -31,8 +31,8 @@
 					"event_script" : "",
 					"dialogue_content" : 
 					[
-						"Toril在那场惊天大战中牺牲了自己。", 
-						"要是他当初没公布混沌之门的秘密，也不会落到这样的下场。",
+						"Toril在那场惊天大战中牺牲了自己。要是他当初没公布混沌之门的秘密，也不会落到这样的下场。", 
+						"",
 						"真是不作死就不会死啊……"
 					],
 					"dialogue_options" :
@@ -50,6 +50,16 @@
 							],
 							"dialogue_options":[]
 						}
+					]
+				},
+				{
+					"show_condition_script" : "{$level >= 30};",
+					"event_script" : "",
+					"dialogue_content" : 
+					[
+						"勿在浮沙筑高台，一丝心痛叫无奈。卡拉真是好员工，年轻冇用搞起来。", 
+						"喝了五瓶茅台酒，指纹解锁真是赞。现在新人是大爷，中文直接就跪了。",
+						"好诗好诗。"
 					]
 				}
             ],

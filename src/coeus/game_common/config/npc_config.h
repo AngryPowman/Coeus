@@ -63,6 +63,16 @@ class NPCConfig
 public:
 	bool parse();
     const NPCDataList& getNPCList() { return _npcList; }
+    const NPCData* getNPCById(uint32 npcId)
+    {
+        auto iter = _npcList.find(npcId);
+        if (iter != _npcList.end())
+        {
+            return &iter->second;
+        }
+
+        return nullptr;
+    }
 
 private:
     NPCDataList _npcList;

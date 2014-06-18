@@ -13,12 +13,12 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -30,22 +30,24 @@ public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_4;
     QLabel *lblAvatar;
+    QToolButton *toolButton;
     QSpacerItem *verticalSpacer;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout;
-    QSpacerItem *verticalSpacer_2;
     QLabel *lblName;
+    QSpacerItem *verticalSpacer_4;
     QTextBrowser *txtContent;
-    QVBoxLayout *verticalLayout_2;
-    QFrame *frame;
+    QSpacerItem *verticalSpacer_3;
+    QVBoxLayout *linkLayout;
+    QWidget *linksWidget;
 
     void setupUi(QWidget *DialogueBox)
     {
         if (DialogueBox->objectName().isEmpty())
             DialogueBox->setObjectName(QStringLiteral("DialogueBox"));
         DialogueBox->setWindowModality(Qt::NonModal);
-        DialogueBox->resize(569, 104);
+        DialogueBox->resize(585, 144);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -56,11 +58,10 @@ public:
         DialogueBox->setFont(font);
         DialogueBox->setMouseTracking(true);
         DialogueBox->setAutoFillBackground(true);
-        DialogueBox->setStyleSheet(QStringLiteral(""));
         horizontalLayout = new QHBoxLayout(DialogueBox);
         horizontalLayout->setSpacing(2);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout->setContentsMargins(8, 8, 8, 8);
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         lblAvatar = new QLabel(DialogueBox);
@@ -69,6 +70,20 @@ public:
         lblAvatar->setMaximumSize(QSize(96, 96));
 
         verticalLayout_4->addWidget(lblAvatar);
+
+        toolButton = new QToolButton(DialogueBox);
+        toolButton->setObjectName(QStringLiteral("toolButton"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(toolButton->sizePolicy().hasHeightForWidth());
+        toolButton->setSizePolicy(sizePolicy1);
+        toolButton->setCheckable(false);
+        toolButton->setPopupMode(QToolButton::MenuButtonPopup);
+        toolButton->setToolButtonStyle(Qt::ToolButtonFollowStyle);
+        toolButton->setAutoRaise(true);
+
+        verticalLayout_4->addWidget(toolButton);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -84,53 +99,62 @@ public:
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalSpacer_2 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        verticalLayout->addItem(verticalSpacer_2);
-
         lblName = new QLabel(DialogueBox);
         lblName->setObjectName(QStringLiteral("lblName"));
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(lblName->sizePolicy().hasHeightForWidth());
+        lblName->setSizePolicy(sizePolicy2);
         lblName->setMinimumSize(QSize(447, 18));
+        lblName->setMaximumSize(QSize(447, 22));
+        lblName->setTextFormat(Qt::RichText);
         lblName->setScaledContents(true);
         lblName->setWordWrap(true);
 
         verticalLayout->addWidget(lblName);
+
+        verticalSpacer_4 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout->addItem(verticalSpacer_4);
 
 
         verticalLayout_3->addLayout(verticalLayout);
 
         txtContent = new QTextBrowser(DialogueBox);
         txtContent->setObjectName(QStringLiteral("txtContent"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(txtContent->sizePolicy().hasHeightForWidth());
-        txtContent->setSizePolicy(sizePolicy1);
-        txtContent->setMinimumSize(QSize(445, 36));
+        sizePolicy.setHeightForWidth(txtContent->sizePolicy().hasHeightForWidth());
+        txtContent->setSizePolicy(sizePolicy);
         txtContent->setMaximumSize(QSize(445, 36));
         txtContent->setFocusPolicy(Qt::StrongFocus);
         txtContent->setAutoFillBackground(true);
         txtContent->setStyleSheet(QStringLiteral("background-color: rgba(255, 255, 255, 0);"));
         txtContent->setFrameShape(QFrame::NoFrame);
         txtContent->setFrameShadow(QFrame::Plain);
+        txtContent->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        txtContent->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        txtContent->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
+        txtContent->setOpenExternalLinks(true);
 
         verticalLayout_3->addWidget(txtContent);
 
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        frame = new QFrame(DialogueBox);
-        frame->setObjectName(QStringLiteral("frame"));
-        sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
-        frame->setSizePolicy(sizePolicy);
-        frame->setFrameShape(QFrame::NoFrame);
-        frame->setFrameShadow(QFrame::Plain);
-        frame->setLineWidth(0);
+        verticalSpacer_3 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        verticalLayout_2->addWidget(frame);
+        verticalLayout_3->addItem(verticalSpacer_3);
+
+        linkLayout = new QVBoxLayout();
+        linkLayout->setObjectName(QStringLiteral("linkLayout"));
+        linksWidget = new QWidget(DialogueBox);
+        linksWidget->setObjectName(QStringLiteral("linksWidget"));
+        sizePolicy.setHeightForWidth(linksWidget->sizePolicy().hasHeightForWidth());
+        linksWidget->setSizePolicy(sizePolicy);
+
+        linkLayout->addWidget(linksWidget);
 
 
-        verticalLayout_3->addLayout(verticalLayout_2);
+        verticalLayout_3->addLayout(linkLayout);
 
 
         horizontalLayout->addLayout(verticalLayout_3);
@@ -145,6 +169,7 @@ public:
     {
         DialogueBox->setWindowTitle(QApplication::translate("DialogueBox", "\345\274\240\344\270\211\357\274\210NPC\357\274\211", 0));
         lblAvatar->setText(QString());
+        toolButton->setText(QApplication::translate("DialogueBox", "\344\272\244\344\272\222", 0));
         lblName->setText(QApplication::translate("DialogueBox", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">\350\200\201\350\202\211\351\270\241 </span><span style=\" font-size:10pt;\">\351\246\226\345\270\255\346\267\253\347\247\275\351\211\264\345\256\232\345\256\230</span></p></body></html>", 0));
         txtContent->setHtml(QApplication::translate("DialogueBox", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
