@@ -13,9 +13,11 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolButton>
@@ -38,6 +40,12 @@ public:
     QLabel *lblName;
     QSpacerItem *verticalSpacer_4;
     QTextBrowser *txtContent;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *btnPrev;
+    QPushButton *btnNext;
+    QPushButton *btnClose;
+    QFrame *line;
     QSpacerItem *verticalSpacer_3;
     QVBoxLayout *linkLayout;
     QWidget *linksWidget;
@@ -140,6 +148,41 @@ public:
 
         verticalLayout_3->addWidget(txtContent);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+        btnPrev = new QPushButton(DialogueBox);
+        btnPrev->setObjectName(QStringLiteral("btnPrev"));
+        sizePolicy2.setHeightForWidth(btnPrev->sizePolicy().hasHeightForWidth());
+        btnPrev->setSizePolicy(sizePolicy2);
+
+        horizontalLayout_2->addWidget(btnPrev);
+
+        btnNext = new QPushButton(DialogueBox);
+        btnNext->setObjectName(QStringLiteral("btnNext"));
+        sizePolicy2.setHeightForWidth(btnNext->sizePolicy().hasHeightForWidth());
+        btnNext->setSizePolicy(sizePolicy2);
+
+        horizontalLayout_2->addWidget(btnNext);
+
+        btnClose = new QPushButton(DialogueBox);
+        btnClose->setObjectName(QStringLiteral("btnClose"));
+
+        horizontalLayout_2->addWidget(btnClose);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_2);
+
+        line = new QFrame(DialogueBox);
+        line->setObjectName(QStringLiteral("line"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout_3->addWidget(line);
+
         verticalSpacer_3 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout_3->addItem(verticalSpacer_3);
@@ -170,13 +213,15 @@ public:
         DialogueBox->setWindowTitle(QApplication::translate("DialogueBox", "\345\274\240\344\270\211\357\274\210NPC\357\274\211", 0));
         lblAvatar->setText(QString());
         toolButton->setText(QApplication::translate("DialogueBox", "\344\272\244\344\272\222", 0));
-        lblName->setText(QApplication::translate("DialogueBox", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">\350\200\201\350\202\211\351\270\241 </span><span style=\" font-size:10pt;\">\351\246\226\345\270\255\346\267\253\347\247\275\351\211\264\345\256\232\345\256\230</span></p></body></html>", 0));
+        lblName->setText(QString());
         txtContent->setHtml(QApplication::translate("DialogueBox", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\346\210\221\347\232\204<a href=\"#\"><span style=\" text-decoration: underline; color:#0000ff;\">\346\216\250\350\277\233\345\231\250\345\215\212\346\210\220\345\223\201</span></a>\346\216\211\350\220\275\345\234\250\345\256\236\351\252\214\345\256\244\351\207\214\344\272\206\357\274\214\344\275\240\345\270\256\346\210\221\345\216\273\346\213\277\350\277\207\346\235\245\357\274\214\346\210\221\345\260\261\346\212\212<a href=\"#\"><span style=\" text-decoration: underline; color:#0000ff;\">\347\247\215\345\255\220</span></a>\347\273\231\344\275\240\343\200\202</p><"
-                        "/body></html>", 0));
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", 0));
+        btnPrev->setText(QApplication::translate("DialogueBox", "\344\270\212\344\270\200\351\241\265", 0));
+        btnNext->setText(QApplication::translate("DialogueBox", "\344\270\213\344\270\200\351\241\265", 0));
+        btnClose->setText(QApplication::translate("DialogueBox", "\347\273\223\346\235\237\345\257\271\350\257\235", 0));
     } // retranslateUi
 
 };

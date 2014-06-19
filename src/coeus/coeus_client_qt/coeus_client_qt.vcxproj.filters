@@ -392,6 +392,18 @@
     <ClCompile Include="game_map_viewer.cpp">
       <Filter>core\logic\map</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_npc_option_link.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_npc_option_link.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_npc_option_link.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="npc_option_link.cpp">
+      <Filter>core\logic\npc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -603,6 +615,9 @@
     </CustomBuild>
     <CustomBuild Include="game_map_viewer.h">
       <Filter>core\logic\map</Filter>
+    </CustomBuild>
+    <CustomBuild Include="npc_option_link.h">
+      <Filter>core\logic\npc</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

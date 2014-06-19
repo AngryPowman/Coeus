@@ -19,7 +19,7 @@ GameMapViewer::GameMapViewer(QWidget* parent)
     this->resizeEvent(nullptr);
 
     _dialogueBox->attackNPCData(1001);
-    _dialogueBox->showBox();
+    _dialogueBox->showDialogueBox();
 
     _scaleAnimationTimer = new QTimer(parent);
     connect(_scaleAnimationTimer, SIGNAL(timeout()), SLOT(scaleAnimationProcess()));
