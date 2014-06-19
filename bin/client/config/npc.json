@@ -48,6 +48,43 @@
 								"在科技上的造诣也达到了让人仰望的境界。"
 							],
 							"dialogue_options":[]
+						},
+						{
+							"show_condition_script" : "{$level >= 30};",
+							"execute_condition_script" : "{$is_gate_active(1001) == true};",
+							"event_script" : "",
+							"option_content" : "我现在需要做点什么？",
+							"dialogue_content" : 
+							[
+								"据说混沌之们的能量仅能再维持三年时间，你要努力修炼，变成强者，维持时空的均衡。", 
+								"一旦混沌之门失去能量，就会有大量的人被困在其它位面，部分位面也可能因此塌陷，那将是一场巨大的灾难。"
+							],
+							"dialogue_options":
+							[
+								{
+									"show_condition_script" : "{$level >= 30};",
+									"execute_condition_script" : "{$is_gate_active(1001) == true};",
+									"event_script" : "",
+									"option_content" : "我要怎么样才能变得更强？",
+									"dialogue_content" : 
+									[
+										"去找有需要帮助的人，帮他们完成一些任务，不仅能得到客观的报酬，也能获得历练。", 
+										"或者试试到其它世界碰碰运气，也许能挖到一些宝藏什么的，一些世界特有的矿物兴许能卖个好价钱。"
+									],
+									"dialogue_options":[]
+								},
+								{
+									"show_condition_script" : "{$level >= 30};",
+									"execute_condition_script" : "{$is_gate_active(1001) == true};",
+									"event_script" : "",
+									"option_content" : "好的，再见。",
+									"dialogue_content" : 
+									[
+										"去吧，勇士！维纳斯的命运就交给你了。"
+									],
+									"dialogue_options":[]
+								}
+							]
 						}
 					]
 				},
@@ -56,9 +93,33 @@
 					"event_script" : "",
 					"dialogue_content" : 
 					[
-						"勿在浮沙筑高台，一丝心痛叫无奈。卡拉真是好员工，年轻冇用搞起来。", 
-						"喝了五瓶茅台酒，指纹解锁真是赞。现在新人是大爷，中文直接就跪了。",
-						"好诗好诗。"
+						"我如今是在金山做苦工。"
+					],
+					"dialogue_options":
+					[
+						{
+							"show_condition_script" : "{$level >= 30};",
+							"execute_condition_script" : "{$is_gate_active(1001) == true};",
+							"event_script" : "",
+							"option_content" : "怎么样才能进入金山？",
+							"dialogue_content" : 
+							[
+								"在ZPublic提交10000行代码就能获得进入金山的机会。"
+							],
+							"dialogue_options":
+							[
+								{
+									"show_condition_script" : "{$level >= 30};",
+									"execute_condition_script" : "{$is_gate_active(1001) == true};",
+									"event_script" : "",
+									"option_content" : "好的，再见。",
+									"dialogue_content" : 
+									[
+									],
+									"dialogue_options":[]
+								}
+							]
+						}
 					]
 				}
             ],

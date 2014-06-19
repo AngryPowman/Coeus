@@ -1,7 +1,8 @@
 #include "npc_option_link.h"
+#include <QMouseEvent>
 
-NPCOptionLink::NPCOptionLink(const QString& text, QWidget* parent)
-    : QLabel(parent)
+NPCOptionLink::NPCOptionLink(const QString& text, const NPCData::OptionDialogueNode& optionNode, QWidget* parent)
+    : QLabel(parent), _optionNode(optionNode)
 {
     this->setTextFormat(Qt::TextFormat::RichText);
     this->setLinkText(text);
@@ -21,4 +22,12 @@ void NPCOptionLink::setLinkText(const QString& text)
 {
     this->setText("<a href='#'>" + text + "</a>");
     this->adjustSize();
+}
+
+void NPCOptionLink::mouseReleaseEvent(QMouseEvent* event)
+{
+    if (event->button() == Qt::LeftButton)
+    {
+        emit onClicked(this);
+    }
 }

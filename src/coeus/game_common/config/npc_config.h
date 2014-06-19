@@ -35,7 +35,7 @@ struct NPCData
     {
         std::string execute_condition_script;
         std::string option_content;
-        OptionDialogueNodeList dialogue_options;
+        //OptionDialogueNodeList dialogue_options;
     };
 
     struct DialoguesData
