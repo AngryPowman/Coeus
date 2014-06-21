@@ -1,2 +1,2 @@
 @echo off
-buildwin 120 rebuild shared both Win32 nosamples notests devenv
+buildwin 120 build shared both Win32 nosamples notests devenv

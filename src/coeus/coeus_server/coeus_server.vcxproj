@@ -88,9 +88,9 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;COEUS_SERVER;_DEBUG;_CONSOLE;_DB_USE_TYPE=0x2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;COEUS_SERVER;_DEBUG;_CONSOLE;_DB_USE_TYPE=0x1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>..\;..\game_common\jsoncpp;..\..\..\3rdparty\poco\Foundation\include;..\..\..\3rdparty\poco\Util\include;..\..\..\3rdparty\poco\Net\include;..\..\..\3rdparty\poco\Data\SQLite\include;..\..\..\3rdparty\poco\Data\MySQL\include;..\..\..\3rdparty\poco\Data\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessToFile>false</PreprocessToFile>
     </ClCompile>
@@ -98,7 +98,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\lib\;..\..\..\3rdparty\poco\lib\;..\..\..\3rdparty\poco\Data\MySQL\include\libmysql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>venus.lib;game_common.lib;libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>venus.lib;game_common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -129,7 +129,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;COEUS_SERVER;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);DB_USE_TYPE=1</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>..\;..\game_common\jsoncpp;..\..\..\3rdparty\poco\Foundation\include;..\..\..\3rdparty\poco\Util\include;..\..\..\3rdparty\poco\Net\include;..\..\..\3rdparty\poco\Data\SQLite\include;..\..\..\3rdparty\poco\Data\MySQL\include;..\..\..\3rdparty\poco\Data\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
