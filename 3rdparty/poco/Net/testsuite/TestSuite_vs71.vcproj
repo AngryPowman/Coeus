@@ -37,7 +37,8 @@
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
 				DebugInformationFormat="4"
-				DisableSpecificWarnings="4800;"/>
+				DisableSpecificWarnings="4800;"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
@@ -49,7 +50,8 @@
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="bin\TestSuited.pdb"
 				SubSystem="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
@@ -100,7 +102,8 @@
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
 				DebugInformationFormat="0"
-				DisableSpecificWarnings="4800;"/>
+				DisableSpecificWarnings="4800;"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
@@ -114,7 +117,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
@@ -162,7 +166,8 @@
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
 				DebugInformationFormat="4"
-				DisableSpecificWarnings="4800;"/>
+				DisableSpecificWarnings="4800;"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
@@ -175,7 +180,8 @@
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="bin\static_mt\TestSuited.pdb"
 				SubSystem="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
@@ -226,7 +232,8 @@
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
 				DebugInformationFormat="0"
-				DisableSpecificWarnings="4800;"/>
+				DisableSpecificWarnings="4800;"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
@@ -241,7 +248,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
@@ -289,7 +297,8 @@
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
 				DebugInformationFormat="4"
-				DisableSpecificWarnings="4800;"/>
+				DisableSpecificWarnings="4800;"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
@@ -301,7 +310,8 @@
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="bin\static_md\TestSuited.pdb"
 				SubSystem="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
@@ -352,7 +362,8 @@
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
 				DebugInformationFormat="0"
-				DisableSpecificWarnings="4800;"/>
+				DisableSpecificWarnings="4800;"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
@@ -366,7 +377,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
@@ -402,6 +414,8 @@
 				<File
 					RelativePath=".\src\NetCoreTestSuite.h"/>
 				<File
+					RelativePath=".\src\NetworkInterfaceTest.h"/>
+				<File
 					RelativePath=".\src\SocketAddressTest.h"/>
 			</Filter>
 			<Filter
@@ -412,6 +426,8 @@
 					RelativePath=".\src\IPAddressTest.cpp"/>
 				<File
 					RelativePath=".\src\NetCoreTestSuite.cpp"/>
+				<File
+					RelativePath=".\src\NetworkInterfaceTest.cpp"/>
 				<File
 					RelativePath=".\src\SocketAddressTest.cpp"/>
 			</Filter>
@@ -454,8 +470,6 @@
 				<File
 					RelativePath=".\src\MulticastSocketTest.h"/>
 				<File
-					RelativePath=".\src\NetworkInterfaceTest.h"/>
-				<File
 					RelativePath=".\src\RawSocketTest.h"/>
 				<File
 					RelativePath=".\src\SocketsTestSuite.h"/>
@@ -480,8 +494,6 @@
 					RelativePath=".\src\MulticastEchoServer.cpp"/>
 				<File
 					RelativePath=".\src\MulticastSocketTest.cpp"/>
-				<File
-					RelativePath=".\src\NetworkInterfaceTest.cpp"/>
 				<File
 					RelativePath=".\src\RawSocketTest.cpp"/>
 				<File
@@ -722,6 +734,23 @@
 					RelativePath=".\src\ICMPClientTestSuite.cpp"/>
 				<File
 					RelativePath=".\src\ICMPSocketTest.cpp"/>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="NTP">
+			<Filter
+				Name="Header Files">
+				<File
+					RelativePath=".\src\NTPClientTest.h"/>
+				<File
+					RelativePath=".\src\NTPClientTestSuite.h"/>
+			</Filter>
+			<Filter
+				Name="Source Files">
+				<File
+					RelativePath=".\src\NTPClientTest.cpp"/>
+				<File
+					RelativePath=".\src\NTPClientTestSuite.cpp"/>
 			</Filter>
 		</Filter>
 		<Filter

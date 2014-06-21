@@ -2,22 +2,22 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="SQLite">
-      <UniqueIdentifier>{b99b285b-07ea-4d9a-9c82-0a99b529be73}</UniqueIdentifier>
+      <UniqueIdentifier>{28c42c58-7519-42a3-9cb3-28ae3c9e7b4e}</UniqueIdentifier>
     </Filter>
     <Filter Include="SQLite\Header Files">
-      <UniqueIdentifier>{33d5cc55-c860-4c2a-86b1-82cb488b8ffb}</UniqueIdentifier>
+      <UniqueIdentifier>{ef8dff5b-6277-4a20-ac1a-d00f5ddff9be}</UniqueIdentifier>
     </Filter>
     <Filter Include="SQLite\Source Files">
-      <UniqueIdentifier>{f98ca1a7-2260-4628-8b80-25c67ee4dc19}</UniqueIdentifier>
+      <UniqueIdentifier>{eee88d55-f8ae-4ae6-9ae5-1661bc90d8ae}</UniqueIdentifier>
     </Filter>
     <Filter Include="3rdparty">
-      <UniqueIdentifier>{bfa9ca86-3b08-48a3-b7b2-27af3f678eea}</UniqueIdentifier>
+      <UniqueIdentifier>{342f801f-4d5a-4cb5-aab0-1079e7dcc4c5}</UniqueIdentifier>
     </Filter>
     <Filter Include="3rdparty\Header Files">
-      <UniqueIdentifier>{d7351fbe-dbba-4f10-8eab-6b550242029d}</UniqueIdentifier>
+      <UniqueIdentifier>{83e9d0ea-284d-44f9-a362-0af7865a6a31}</UniqueIdentifier>
     </Filter>
     <Filter Include="3rdparty\Source Files">
-      <UniqueIdentifier>{0ee98a80-fab8-42e7-9a87-4e1ee33946bb}</UniqueIdentifier>
+      <UniqueIdentifier>{717ff287-ab17-4386-a662-a9c39ca8847f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +28,9 @@
       <Filter>SQLite\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Poco\Data\SQLite\Extractor.h">
+      <Filter>SQLite\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Poco\Data\SQLite\Notifier.h">
       <Filter>SQLite\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Poco\Data\SQLite\SessionImpl.h">
@@ -59,6 +62,9 @@
     <ClCompile Include="src\Extractor.cpp">
       <Filter>SQLite\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Notifier.cpp">
+      <Filter>SQLite\Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\SessionImpl.cpp">
       <Filter>SQLite\Source Files</Filter>
     </ClCompile>
@@ -74,8 +80,5 @@
     <ClCompile Include="src\sqlite3.c">
       <Filter>3rdparty\Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="..\..\DLLVersion.rc" />
   </ItemGroup>
 </Project>

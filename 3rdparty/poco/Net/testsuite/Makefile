@@ -25,6 +25,7 @@ objects = \
 	MailTestSuite MailMessageTest MailStreamTest \
 	SMTPClientSessionTest POP3ClientSessionTest \
 	RawSocketTest ICMPClientTest ICMPSocketTest ICMPClientTestSuite \
+	NTPClientTest NTPClientTestSuite \
 	WebSocketTest WebSocketTestSuite \
 	SyslogTest
 
@@ -33,3 +34,7 @@ target_version = 1
 target_libs    = PocoNet PocoFoundation CppUnit
 
 include $(POCO_BASE)/build/rules/exec
+
+ifdef POCO_UNBUNDLED
+        SYSLIBS += -lz
+endif

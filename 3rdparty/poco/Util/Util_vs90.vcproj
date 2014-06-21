@@ -31,7 +31,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include"
+				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include;..\JSON\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;Util_EXPORTS"
 				StringPooling="true"
 				MinimalRebuild="true"
@@ -103,7 +103,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include"
+				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include;..\JSON\include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;Util_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -170,7 +170,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include"
+				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include;..\JSON\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;POCO_STATIC;"
 				StringPooling="true"
 				MinimalRebuild="true"
@@ -230,7 +230,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include"
+				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include;..\JSON\include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;POCO_STATIC;"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -283,7 +283,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include"
+				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include;..\JSON\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;POCO_STATIC;"
 				StringPooling="true"
 				MinimalRebuild="true"
@@ -343,7 +343,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include"
+				AdditionalIncludeDirectories=".\include;..\Foundation\include;..\XML\include;..\JSON\include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;POCO_STATIC;"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -420,6 +420,8 @@
 				<File
 					RelativePath=".\include\Poco\Util\IniFileConfiguration.h"/>
 				<File
+					RelativePath=".\include\Poco\Util\JSONConfiguration.h"/>
+				<File
 					RelativePath=".\include\Poco\Util\LayeredConfiguration.h"/>
 				<File
 					RelativePath=".\include\Poco\Util\LoggingConfigurator.h"/>
@@ -444,6 +446,8 @@
 					RelativePath=".\src\FilesystemConfiguration.cpp"/>
 				<File
 					RelativePath=".\src\IniFileConfiguration.cpp"/>
+				<File
+					RelativePath=".\src\JSONConfiguration.cpp"/>
 				<File
 					RelativePath=".\src\LayeredConfiguration.cpp"/>
 				<File
@@ -556,12 +560,14 @@
 		<File
 			RelativePath="..\DLLVersion.rc">
 			<FileConfiguration
-				Name="debug_shared|Win32">
+				Name="debug_shared|Win32"
+				ExcludedFromBuild="true">
 				<Tool
 					Name="VCResourceCompilerTool"/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="release_shared|Win32">
+				Name="release_shared|Win32"
+				ExcludedFromBuild="true">
 				<Tool
 					Name="VCResourceCompilerTool"/>
 			</FileConfiguration>

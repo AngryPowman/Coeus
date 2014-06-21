@@ -30,7 +30,7 @@
  *          Addison-Wesley, 1983. ISBN 0-201-06672-6.
  */
 
-/* @(#) $Id: //poco/1.4/Foundation/src/trees.c#3 $ */
+/* @(#) $Id$ */
 
 /* #define GEN_TREES_H */
 

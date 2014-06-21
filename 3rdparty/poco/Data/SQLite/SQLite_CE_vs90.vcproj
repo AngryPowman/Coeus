@@ -439,6 +439,8 @@
 				<File
 					RelativePath=".\include\Poco\Data\SQLite\Extractor.h"/>
 				<File
+					RelativePath=".\include\Poco\Data\SQLite\Notifier.h"/>
+				<File
 					RelativePath=".\include\Poco\Data\SQLite\SessionImpl.h"/>
 				<File
 					RelativePath=".\include\Poco\Data\SQLite\SQLite.h"/>
@@ -457,6 +459,8 @@
 					RelativePath=".\src\Connector.cpp"/>
 				<File
 					RelativePath=".\src\Extractor.cpp"/>
+				<File
+					RelativePath=".\src\Notifier.cpp"/>
 				<File
 					RelativePath=".\src\SessionImpl.cpp"/>
 				<File
@@ -480,43 +484,6 @@
 					RelativePath=".\src\sqlite3.c"/>
 			</Filter>
 		</Filter>
-		<File
-			RelativePath="..\..\DLLVersion.rc">
-			<FileConfiguration
-				Name="debug_shared|Digi JumpStart (ARMV4I)">
-				<Tool
-					Name="VCResourceCompilerTool"/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="release_shared|Digi JumpStart (ARMV4I)">
-				<Tool
-					Name="VCResourceCompilerTool"/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="debug_static_mt|Digi JumpStart (ARMV4I)"
-				ExcludedFromBuild="true">
-				<Tool
-					Name="VCResourceCompilerTool"/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="release_static_mt|Digi JumpStart (ARMV4I)"
-				ExcludedFromBuild="true">
-				<Tool
-					Name="VCResourceCompilerTool"/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="debug_static_md|Digi JumpStart (ARMV4I)"
-				ExcludedFromBuild="true">
-				<Tool
-					Name="VCResourceCompilerTool"/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="release_static_md|Digi JumpStart (ARMV4I)"
-				ExcludedFromBuild="true">
-				<Tool
-					Name="VCResourceCompilerTool"/>
-			</FileConfiguration>
-		</File>
 	</Files>
 	<Globals/>
 </VisualStudioProject>

@@ -42,7 +42,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\include;..\..\CppUnit\include;..\..\CppUnit\WinTestRunner\include"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;WINVER=0x0500"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;WINVER=0x0501"
 				StringPooling="true"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -132,7 +132,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				AdditionalIncludeDirectories="..\include;..\..\CppUnit\include;..\..\CppUnit\WinTestRunner\include"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;WINVER=0x0500"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;WINVER=0x0501"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -222,7 +222,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				AdditionalIncludeDirectories="..\include;..\..\CppUnit\include;..\..\CppUnit\WinTestRunner\include"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;WINVER=0x0500;POCO_STATIC"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;WINVER=0x0501;POCO_STATIC"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -308,7 +308,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\include;..\..\CppUnit\include;..\..\CppUnit\WinTestRunner\include"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;WINVER=0x0500;POCO_STATIC"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;WINVER=0x0501;POCO_STATIC"
 				StringPooling="true"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -394,7 +394,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\include;..\..\CppUnit\include;..\..\CppUnit\WinTestRunner\include"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;WINVER=0x0500;POCO_STATIC"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;WINVER=0x0501;POCO_STATIC"
 				StringPooling="true"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -485,7 +485,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				AdditionalIncludeDirectories="..\include;..\..\CppUnit\include;..\..\CppUnit\WinTestRunner\include"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;WINVER=0x0500;POCO_STATIC"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;WINVER=0x0501;POCO_STATIC"
 				StringPooling="true"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="false"
@@ -560,6 +560,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\src\ArrayTest.h"
+					>
+				</File>
+				<File
 					RelativePath=".\src\AutoPtrTest.cpp"
 					>
 				</File>
@@ -580,7 +584,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\src\DynamicAnyTest.cpp"
+					RelativePath=".\src\DirectoryIteratorsTest.cpp"
 					>
 				</File>
 				<File
@@ -593,6 +597,10 @@
 				</File>
 				<File
 					RelativePath=".\src\FPETest.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\src\ListMapTest.cpp"
 					>
 				</File>
 				<File
@@ -652,6 +660,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\src\ArrayTest.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\src\AutoPtrTest.h"
 					>
 				</File>
@@ -672,7 +684,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\src\DynamicAnyTest.h"
+					RelativePath=".\src\DirectoryIteratorsTest.h"
 					>
 				</File>
 				<File
@@ -685,6 +697,10 @@
 				</File>
 				<File
 					RelativePath=".\src\FPETest.h"
+					>
+				</File>
+				<File
+					RelativePath=".\src\ListMapTest.h"
 					>
 				</File>
 				<File
@@ -744,6 +760,10 @@
 				Name="Source Files"
 				>
 				<File
+					RelativePath=".\src\Base32Test.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\src\Base64Test.cpp"
 					>
 				</File>
@@ -753,6 +773,10 @@
 				</File>
 				<File
 					RelativePath=".\src\CountingStreamTest.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\src\FIFOBufferStreamTest.cpp"
 					>
 				</File>
 				<File
@@ -800,6 +824,10 @@
 				Name="Header Files"
 				>
 				<File
+					RelativePath=".\src\Base32Test.h"
+					>
+				</File>
+				<File
 					RelativePath=".\src\Base64Test.h"
 					>
 				</File>
@@ -809,6 +837,10 @@
 				</File>
 				<File
 					RelativePath=".\src\CountingStreamTest.h"
+					>
+				</File>
+				<File
+					RelativePath=".\src\FIFOBufferStreamTest.h"
 					>
 				</File>
 				<File
@@ -880,6 +912,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\src\PBKDF2EngineTest.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\src\RandomStreamTest.cpp"
 					>
 				</File>
@@ -913,6 +949,10 @@
 				</File>
 				<File
 					RelativePath=".\src\MD5EngineTest.h"
+					>
+				</File>
+				<File
+					RelativePath=".\src\PBKDF2EngineTest.h"
 					>
 				</File>
 				<File
@@ -1320,6 +1360,10 @@
 				Name="Source Files"
 				>
 				<File
+					RelativePath=".\src\ClockTest.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\src\DateTimeFormatterTest.cpp"
 					>
 				</File>
@@ -1359,6 +1403,10 @@
 			<Filter
 				Name="Header Files"
 				>
+				<File
+					RelativePath=".\src\ClockTest.h"
+					>
+				</File>
 				<File
 					RelativePath=".\src\DateTimeFormatterTest.h"
 					>
@@ -1797,6 +1845,26 @@
 				</File>
 				<File
 					RelativePath=".\src\SimpleHashTableTest.cpp"
+					>
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="Dynamic"
+			>
+			<Filter
+				Name="Source Files"
+				>
+				<File
+					RelativePath=".\src\VarTest.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Header Files"
+				>
+				<File
+					RelativePath=".\src\VarTest.h"
 					>
 				</File>
 			</Filter>

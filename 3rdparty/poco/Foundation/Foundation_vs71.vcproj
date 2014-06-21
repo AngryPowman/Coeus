@@ -385,12 +385,6 @@
 					RelativePath=".\src\Debugger.cpp">
 				</File>
 				<File
-					RelativePath=".\src\DynamicAny.cpp">
-				</File>
-				<File
-					RelativePath=".\src\DynamicAnyHolder.cpp">
-				</File>
-				<File
 					RelativePath=".\src\Environment.cpp">
 				</File>
 				<File
@@ -550,7 +544,13 @@
 					</FileConfiguration>
 				</File>
 				<File
+					RelativePath=".\src\Error.cpp">
+				</File>
+				<File
 					RelativePath=".\src\Exception.cpp">
+				</File>
+				<File
+					RelativePath=".\src\FIFOBufferStream.cpp">
 				</File>
 				<File
 					RelativePath=".\src\Format.cpp">
@@ -766,7 +766,16 @@
 					RelativePath=".\src\NumberParser.cpp">
 				</File>
 				<File
+					RelativePath=".\src\NumericString.cpp">
+				</File>
+				<File
+					RelativePath=".\src\DirectoryIteratorStrategy.cpp">
+				</File>
+				<File
 					RelativePath=".\src\RefCountedObject.cpp">
+				</File>
+				<File
+					RelativePath=".\src\SortedDirectoryIterator.cpp">
 				</File>
 				<File
 					RelativePath=".\src\String.cpp">
@@ -839,7 +848,16 @@
 					RelativePath=".\include\Poco\Environment_WIN32U.h">
 				</File>
 				<File
+					RelativePath=".\include\Poco\Error.h">
+				</File>
+				<File
 					RelativePath=".\include\Poco\Exception.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\FIFOBuffer.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\FIFOBufferStream.h">
 				</File>
 				<File
 					RelativePath=".\include\Poco\Format.h">
@@ -890,10 +908,13 @@
 					RelativePath=".\include\Poco\NumberParser.h">
 				</File>
 				<File
-					RelativePath=".\include\Poco\ObjectPool.h">
+					RelativePath=".\include\Poco\NumericString.h">
 				</File>
 				<File
 					RelativePath=".\include\Poco\Optional.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\ObjectPool.h">
 				</File>
 				<File
 					RelativePath=".\include\Poco\Platform.h">
@@ -918,6 +939,9 @@
 				</File>
 				<File
 					RelativePath=".\include\Poco\SingletonHolder.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\SortedDirectoryIterator.h">
 				</File>
 				<File
 					RelativePath=".\include\Poco\String.h">
@@ -951,6 +975,12 @@
 			<Filter
 				Name="Source Files"
 				Filter="">
+				<File
+					RelativePath=".\src\Base32Decoder.cpp">
+				</File>
+				<File
+					RelativePath=".\src\Base32Encoder.cpp">
+				</File>
 				<File
 					RelativePath=".\src\Base64Decoder.cpp">
 				</File>
@@ -1084,6 +1114,12 @@
 			<Filter
 				Name="Header Files"
 				Filter="">
+				<File
+					RelativePath=".\include\Poco\Base32Decoder.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\Base32Encoder.h">
+				</File>
 				<File
 					RelativePath=".\include\Poco\Base64Decoder.h">
 				</File>
@@ -1885,6 +1921,9 @@
 				</File>
 				<File
 					RelativePath=".\include\Poco\MD5Engine.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\PBKDF2Engine.h">
 				</File>
 				<File
 					RelativePath=".\include\Poco\Random.h">
@@ -4134,6 +4173,9 @@
 				Name="Source Files"
 				Filter="">
 				<File
+					RelativePath=".\src\Clock.cpp">
+				</File>
+				<File
 					RelativePath=".\src\DateTime.cpp">
 				</File>
 				<File
@@ -4243,6 +4285,9 @@
 				Name="Header Files"
 				Filter="">
 				<File
+					RelativePath=".\include\Poco\Clock.h">
+				</File>
+				<File
 					RelativePath=".\include\Poco\DateTime.h">
 				</File>
 				<File
@@ -4284,6 +4329,9 @@
 					RelativePath=".\src\Latin1Encoding.cpp">
 				</File>
 				<File
+					RelativePath=".\src\Latin2Encoding.cpp">
+				</File>
+				<File
 					RelativePath=".\src\Latin9Encoding.cpp">
 				</File>
 				<File
@@ -4311,10 +4359,19 @@
 					RelativePath=".\src\UTF16Encoding.cpp">
 				</File>
 				<File
+					RelativePath=".\src\UTF32Encoding.cpp">
+				</File>
+				<File
 					RelativePath=".\src\UTF8Encoding.cpp">
 				</File>
 				<File
 					RelativePath=".\src\UTF8String.cpp">
+				</File>
+				<File
+					RelativePath=".\src\Windows1250Encoding.cpp">
+				</File>
+				<File
+					RelativePath=".\src\Windows1251Encoding.cpp">
 				</File>
 				<File
 					RelativePath=".\src\Windows1252Encoding.cpp">
@@ -4328,6 +4385,12 @@
 				</File>
 				<File
 					RelativePath=".\include\Poco\Latin1Encoding.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\Latin2Encoding.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\ListMap.h">
 				</File>
 				<File
 					RelativePath=".\include\Poco\Latin9Encoding.h">
@@ -4357,10 +4420,19 @@
 					RelativePath=".\include\Poco\UTF16Encoding.h">
 				</File>
 				<File
+					RelativePath=".\include\Poco\UTF32Encoding.h">
+				</File>
+				<File
 					RelativePath=".\include\Poco\UTF8Encoding.h">
 				</File>
 				<File
 					RelativePath=".\include\Poco\UTF8String.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\Windows1250Encoding.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\Windows1251Encoding.h">
 				</File>
 				<File
 					RelativePath=".\include\Poco\Windows1252Encoding.h">
@@ -4490,6 +4562,15 @@
 				<File
 					RelativePath=".\include\Poco\PriorityStrategy.h">
 				</File>
+				<File
+					RelativePath=".\include\Poco\RecursiveDirectoryIterator.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\RecursiveDirectoryIteratorImpl.h">
+				</File>
+				<File
+					RelativePath=".\include\Poco\DirectoryIteratorStrategy.h">
+				</File>
 			</Filter>
 			<Filter
 				Name="Source Files"
@@ -4613,6 +4694,42 @@
 				</File>
 				<File
 					RelativePath=".\src\HashStatistic.cpp">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="Dynamic"
+			Filter="">
+			<Filter
+				Name="Source Files"
+				Filter="">
+				<File
+					RelativePath=".\src\Var.cpp">
+				</File>
+				<File
+					RelativePath=".\src\VarHolder.cpp">
+				</File>
+				<File
+					RelativePath=".\src\VarIterator.cpp">
+				</File>
+			</Filter>
+			<Filter
+				Name="Header Files"
+				Filter="">
+				<File
+					RelativePath=".\include\poco\dynamic\Pair.h">
+				</File>
+				<File
+					RelativePath=".\include\poco\dynamic\Struct.h">
+				</File>
+				<File
+					RelativePath=".\include\poco\dynamic\Var.h">
+				</File>
+				<File
+					RelativePath=".\include\poco\dynamic\VarHolder.h">
+				</File>
+				<File
+					RelativePath=".\include\poco\dynamic\VarIterator.h">
 				</File>
 			</Filter>
 		</Filter>

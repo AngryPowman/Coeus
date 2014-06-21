@@ -2,28 +2,28 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="ODBC">
-      <UniqueIdentifier>{91bfd267-76d5-4775-ad05-9196cf07d75e}</UniqueIdentifier>
+      <UniqueIdentifier>{b758f069-17ec-404b-a7aa-01c9b4407f9f}</UniqueIdentifier>
     </Filter>
     <Filter Include="ODBC\Header Files">
-      <UniqueIdentifier>{09f35fae-4826-4e58-b7a6-93bbd064bda9}</UniqueIdentifier>
+      <UniqueIdentifier>{4a8b121f-380e-49e5-a48e-547b68b4ddd9}</UniqueIdentifier>
     </Filter>
     <Filter Include="ODBC\Source Files">
-      <UniqueIdentifier>{983c09b4-b09b-459c-a94d-1068bd9b8e9c}</UniqueIdentifier>
+      <UniqueIdentifier>{c4b9d25e-1b12-49d5-9bcb-831efca14854}</UniqueIdentifier>
     </Filter>
     <Filter Include="_Suite">
-      <UniqueIdentifier>{fa0595ed-2e6e-4578-9400-d1e061ecee0e}</UniqueIdentifier>
+      <UniqueIdentifier>{39f83211-efa7-46bd-96e5-581c2192e002}</UniqueIdentifier>
     </Filter>
     <Filter Include="_Suite\Header Files">
-      <UniqueIdentifier>{4dd76569-abc4-45bb-b653-16536f0cd5d7}</UniqueIdentifier>
+      <UniqueIdentifier>{a2236a01-11fc-4af4-bfb9-97185d6631f9}</UniqueIdentifier>
     </Filter>
     <Filter Include="_Suite\Source Files">
-      <UniqueIdentifier>{1f53e069-c83d-4c01-a25c-3bf75c7bb4b3}</UniqueIdentifier>
+      <UniqueIdentifier>{552c7bd0-a9c4-4646-a834-f911f9bb22b3}</UniqueIdentifier>
     </Filter>
     <Filter Include="_Driver">
-      <UniqueIdentifier>{df6b3b6f-7f78-4766-a0ff-7e5b0e1327d3}</UniqueIdentifier>
+      <UniqueIdentifier>{4c1d2bec-c1ed-49bc-82b9-2dabee207dc6}</UniqueIdentifier>
     </Filter>
     <Filter Include="_Driver\Source Files">
-      <UniqueIdentifier>{b800a201-7013-4100-a179-e612b66fb4d0}</UniqueIdentifier>
+      <UniqueIdentifier>{ff26e298-3241-44d1-99b8-cf06c3b48ad8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +46,9 @@
       <Filter>ODBC\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ODBCSQLServerTest.h">
+      <Filter>ODBC\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ODBCTest.h">
       <Filter>ODBC\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SQLExecutor.h">
@@ -75,6 +78,9 @@
       <Filter>ODBC\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ODBCSQLServerTest.cpp">
+      <Filter>ODBC\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ODBCTest.cpp">
       <Filter>ODBC\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SQLExecutor.cpp">

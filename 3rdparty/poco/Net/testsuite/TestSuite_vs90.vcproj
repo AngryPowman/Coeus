@@ -47,7 +47,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -64,7 +65,8 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="bin\TestSuited.pdb"
 				SubSystem="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCALinkTool"/>
 			<Tool
@@ -117,7 +119,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="0"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -134,7 +137,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCALinkTool"/>
 			<Tool
@@ -185,7 +189,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -203,7 +208,8 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="bin\static_mt\TestSuited.pdb"
 				SubSystem="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCALinkTool"/>
 			<Tool
@@ -256,7 +262,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="0"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -274,7 +281,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCALinkTool"/>
 			<Tool
@@ -325,7 +333,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -342,7 +351,8 @@
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="bin\static_md\TestSuited.pdb"
 				SubSystem="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCALinkTool"/>
 			<Tool
@@ -395,7 +405,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="0"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -412,7 +423,8 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCALinkTool"/>
 			<Tool
@@ -442,6 +454,8 @@
 				<File
 					RelativePath=".\src\NetCoreTestSuite.h"/>
 				<File
+					RelativePath=".\src\NetworkInterfaceTest.h"/>
+				<File
 					RelativePath=".\src\SocketAddressTest.h"/>
 			</Filter>
 			<Filter
@@ -452,6 +466,8 @@
 					RelativePath=".\src\IPAddressTest.cpp"/>
 				<File
 					RelativePath=".\src\NetCoreTestSuite.cpp"/>
+				<File
+					RelativePath=".\src\NetworkInterfaceTest.cpp"/>
 				<File
 					RelativePath=".\src\SocketAddressTest.cpp"/>
 			</Filter>
@@ -494,8 +510,6 @@
 				<File
 					RelativePath=".\src\MulticastSocketTest.h"/>
 				<File
-					RelativePath=".\src\NetworkInterfaceTest.h"/>
-				<File
 					RelativePath=".\src\RawSocketTest.h"/>
 				<File
 					RelativePath=".\src\SocketsTestSuite.h"/>
@@ -520,8 +534,6 @@
 					RelativePath=".\src\MulticastEchoServer.cpp"/>
 				<File
 					RelativePath=".\src\MulticastSocketTest.cpp"/>
-				<File
-					RelativePath=".\src\NetworkInterfaceTest.cpp"/>
 				<File
 					RelativePath=".\src\RawSocketTest.cpp"/>
 				<File
@@ -762,6 +774,23 @@
 					RelativePath=".\src\ICMPClientTestSuite.cpp"/>
 				<File
 					RelativePath=".\src\ICMPSocketTest.cpp"/>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="NTP">
+			<Filter
+				Name="Header Files">
+				<File
+					RelativePath=".\src\NTPClientTest.h"/>
+				<File
+					RelativePath=".\src\NTPClientTestSuite.h"/>
+			</Filter>
+			<Filter
+				Name="Source Files">
+				<File
+					RelativePath=".\src\NTPClientTest.cpp"/>
+				<File
+					RelativePath=".\src\NTPClientTestSuite.cpp"/>
 			</Filter>
 		</Filter>
 		<Filter

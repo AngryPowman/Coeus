@@ -46,7 +46,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -64,7 +65,8 @@
 				AdditionalLibraryDirectories="..\lib"
 				SubSystem="1"
 				ImportLibrary="..\lib\PocoNetd.lib"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCALinkTool"/>
 			<Tool
@@ -116,7 +118,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="0"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -136,7 +139,8 @@
 				EnableCOMDATFolding="2"
 				OptimizeForWindows98="0"
 				ImportLibrary="..\lib\PocoNet.lib"
-				TargetMachine="1"/>
+				TargetMachine="1"
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCALinkTool"/>
 			<Tool
@@ -187,7 +191,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -244,7 +249,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="0"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -300,7 +306,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -357,7 +364,8 @@
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="0"
 				CompileAs="0"
-				DisableSpecificWarnings=""/>
+				DisableSpecificWarnings=""
+				AdditionalOptions=""/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"/>
 			<Tool
@@ -392,11 +400,17 @@
 				<File
 					RelativePath=".\include\Poco\Net\IPAddress.h"/>
 				<File
+					RelativePath=".\include\Poco\Net\IPAddressImpl.h"/>
+				<File
 					RelativePath=".\include\Poco\Net\Net.h"/>
 				<File
 					RelativePath=".\include\Poco\Net\NetException.h"/>
 				<File
+					RelativePath=".\include\Poco\Net\NetworkInterface.h"/>
+				<File
 					RelativePath=".\include\Poco\Net\SocketAddress.h"/>
+				<File
+					RelativePath=".\include\Poco\Net\SocketAddressImpl.h"/>
 				<File
 					RelativePath=".\include\Poco\Net\SocketDefs.h"/>
 			</Filter>
@@ -409,9 +423,17 @@
 				<File
 					RelativePath=".\src\IPAddress.cpp"/>
 				<File
+					RelativePath=".\src\IPAddressImpl.cpp"/>
+				<File
+					RelativePath=".\src\Net.cpp"/>
+				<File
 					RelativePath=".\src\NetException.cpp"/>
 				<File
+					RelativePath=".\src\NetworkInterface.cpp"/>
+				<File
 					RelativePath=".\src\SocketAddress.cpp"/>
+				<File
+					RelativePath=".\src\SocketAddressImpl.cpp"/>
 			</Filter>
 		</Filter>
 		<Filter
@@ -426,8 +448,6 @@
 					RelativePath=".\include\Poco\Net\DialogSocket.h"/>
 				<File
 					RelativePath=".\include\Poco\Net\MulticastSocket.h"/>
-				<File
-					RelativePath=".\include\Poco\Net\NetworkInterface.h"/>
 				<File
 					RelativePath=".\include\Poco\Net\RawSocket.h"/>
 				<File
@@ -457,8 +477,6 @@
 					RelativePath=".\src\DialogSocket.cpp"/>
 				<File
 					RelativePath=".\src\MulticastSocket.cpp"/>
-				<File
-					RelativePath=".\src\NetworkInterface.cpp"/>
 				<File
 					RelativePath=".\src\RawSocket.cpp"/>
 				<File
@@ -502,6 +520,8 @@
 				<File
 					RelativePath=".\include\Poco\Net\PartSource.h"/>
 				<File
+					RelativePath=".\include\Poco\Net\PartStore.h"/>
+				<File
 					RelativePath=".\include\Poco\Net\QuotedPrintableDecoder.h"/>
 				<File
 					RelativePath=".\include\Poco\Net\QuotedPrintableEncoder.h"/>
@@ -528,6 +548,8 @@
 					RelativePath=".\src\PartHandler.cpp"/>
 				<File
 					RelativePath=".\src\PartSource.cpp"/>
+				<File
+					RelativePath=".\src\PartStore.cpp"/>
 				<File
 					RelativePath=".\src\QuotedPrintableDecoder.cpp"/>
 				<File
@@ -755,6 +777,8 @@
 				<File
 					RelativePath=".\include\Poco\Net\SocketAcceptor.h"/>
 				<File
+					RelativePath=".\include\Poco\Net\ParallelSocketAcceptor.h"/>
+				<File
 					RelativePath=".\include\Poco\Net\SocketConnector.h"/>
 				<File
 					RelativePath=".\include\Poco\Net\SocketNotification.h"/>
@@ -762,6 +786,8 @@
 					RelativePath=".\include\Poco\Net\SocketNotifier.h"/>
 				<File
 					RelativePath=".\include\Poco\Net\SocketReactor.h"/>
+				<File
+					RelativePath=".\include\Poco\Net\ParallelSocketReactor.h"/>
 			</Filter>
 			<Filter
 				Name="Source Files">
@@ -840,6 +866,27 @@
 			</Filter>
 		</Filter>
 		<Filter
+			Name="NTP">
+			<Filter
+				Name="Header Files">
+				<File
+					RelativePath=".\include\Poco\Net\NTPClient.h"/>
+				<File
+					RelativePath=".\include\Poco\Net\NTPEventArgs.h"/>
+				<File
+					RelativePath=".\include\Poco\Net\NTPPacket.h"/>
+			</Filter>
+			<Filter
+				Name="Source Files">
+				<File
+					RelativePath=".\src\NTPClient.cpp"/>
+				<File
+					RelativePath=".\src\NTPEventArgs.cpp"/>
+				<File
+					RelativePath=".\src\NTPPacket.cpp"/>
+			</Filter>
+		</Filter>
+		<Filter
 			Name="Logging">
 			<Filter
 				Name="Header Files">
@@ -847,6 +894,8 @@
 					RelativePath=".\include\Poco\Net\RemoteSyslogChannel.h"/>
 				<File
 					RelativePath=".\include\Poco\Net\RemoteSyslogListener.h"/>
+				<File
+					RelativePath=".\include\Poco\Net\SMTPChannel.h"/>
 			</Filter>
 			<Filter
 				Name="Source Files">
@@ -854,6 +903,8 @@
 					RelativePath=".\src\RemoteSyslogChannel.cpp"/>
 				<File
 					RelativePath=".\src\RemoteSyslogListener.cpp"/>
+				<File
+					RelativePath=".\src\SMTPChannel.cpp"/>
 			</Filter>
 		</Filter>
 		<Filter
@@ -876,12 +927,14 @@
 		<File
 			RelativePath="..\DLLVersion.rc">
 			<FileConfiguration
-				Name="debug_shared|Win32">
+				Name="debug_shared|Win32"
+				ExcludedFromBuild="true">
 				<Tool
 					Name="VCResourceCompilerTool"/>
 			</FileConfiguration>
 			<FileConfiguration
-				Name="release_shared|Win32">
+				Name="release_shared|Win32"
+				ExcludedFromBuild="true">
 				<Tool
 					Name="VCResourceCompilerTool"/>
 			</FileConfiguration>
