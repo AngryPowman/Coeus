@@ -4,6 +4,7 @@
 #include "server_config.h"
 #include "db_define.h"
 #include "prepare_statement_manager.h"
+#include "Poco/Data/Limit.h"
 
 #if (_DB_USE_TYPE == DB_TYPE_SQLITE)
 #include <Poco/Data/SQLite/Connector.h>
@@ -28,7 +29,7 @@ GameDatabase::~GameDatabase()
 bool GameDatabase::isUserExists(const std::string& username)
 {
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_USER_EXISTS);
-    preparedStatement.statement(), Poco::Data::limit(1), Poco::Data::use(username);
+    preparedStatement.statement(), Poco::Data::Limit(1), Poco::Data::use(username);
     return (preparedStatement.execute() > 0);
 }
 
@@ -37,7 +38,7 @@ bool GameDatabase::userAuth(const std::string& username, const std::string& pass
 {
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_USER_AUTH);
     preparedStatement.statement(),
-        Poco::Data::limit(1), 
+        Poco::Data::Limit(1), 
         Poco::Data::use(username),
         Poco::Data::use(password);
 
@@ -68,7 +69,7 @@ bool GameDatabase::hasCharacter(uint64 user_guid)
 {
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_HAS_CHARACTER);
     preparedStatement.statement(),
-        Poco::Data::limit(1),
+        Poco::Data::Limit(1),
         Poco::Data::use(user_guid);
 
     return (preparedStatement.execute() > 0);
@@ -78,7 +79,7 @@ bool GameDatabase::isNicknameExist(const std::string& nickname)
 {
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_NICKNAME_IN_USE);
     preparedStatement.statement(),
-        Poco::Data::limit(1),
+        Poco::Data::Limit(1),
         Poco::Data::use(nickname);
 
     return (preparedStatement.execute() > 0);
@@ -88,7 +89,7 @@ bool GameDatabase::loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& 
 {
 	PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_LOAD_CHARACTER);
 	preparedStatement.statement(),
-		Poco::Data::limit(1),
+		Poco::Data::Limit(1),
 		Poco::Data::use(userGuid),
 		Poco::Data::into(fullData.character_id),
 		Poco::Data::into(fullData.initial_data.character_type),
@@ -135,7 +136,7 @@ bool GameDatabase::saveCharacterInfo(uint64 userGuid, const Protocol::PlayerFull
 {
     PreparedStatement& preparedStatement = PrepareStatementManager::getPreparedStatement(STMT_SAVE_CHARACTER);
     preparedStatement.statement(),
-        Poco::Data::limit(1), 
+        Poco::Data::Limit(1), 
         Poco::Data::use(fullData.userid),
 		Poco::Data::use(fullData.character_id),
 		Poco::Data::use(fullData.initial_data.character_type),

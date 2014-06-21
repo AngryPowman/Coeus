@@ -1,6 +1,5 @@
 #include "game_service.h"
 #include "db_define.h"
-#include <Poco/Data/Common.h>
 #include "game_database.h"
 #include "game_session_manager.h"
 #include "player_manager.h"

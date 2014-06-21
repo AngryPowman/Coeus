@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>585</width>
-    <height>144</height>
+    <height>149</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -277,7 +277,7 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btnClose">
+        <widget class="QPushButton" name="btnEnd">
          <property name="text">
           <string>结束对话</string>
          </property>

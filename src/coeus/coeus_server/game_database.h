@@ -3,7 +3,6 @@
 
 #include "venus_net/venus_net.h"
 #include "venus_net/singleton.h"
-#include "Poco/Data/Common.h"
 #include "Poco/Data/MySQL/Connector.h"
 #include "Poco/Data/RecordSet.h"
 #include "Poco/Data/SessionFactory.h"

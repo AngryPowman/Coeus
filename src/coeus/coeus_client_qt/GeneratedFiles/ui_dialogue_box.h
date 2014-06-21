@@ -44,7 +44,7 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *btnPrev;
     QPushButton *btnNext;
-    QPushButton *btnClose;
+    QPushButton *btnEnd;
     QFrame *line;
     QSpacerItem *verticalSpacer_3;
     QVBoxLayout *linkLayout;
@@ -55,7 +55,7 @@ public:
         if (DialogueBox->objectName().isEmpty())
             DialogueBox->setObjectName(QStringLiteral("DialogueBox"));
         DialogueBox->setWindowModality(Qt::NonModal);
-        DialogueBox->resize(585, 144);
+        DialogueBox->resize(585, 149);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -168,10 +168,10 @@ public:
 
         horizontalLayout_2->addWidget(btnNext);
 
-        btnClose = new QPushButton(DialogueBox);
-        btnClose->setObjectName(QStringLiteral("btnClose"));
+        btnEnd = new QPushButton(DialogueBox);
+        btnEnd->setObjectName(QStringLiteral("btnEnd"));
 
-        horizontalLayout_2->addWidget(btnClose);
+        horizontalLayout_2->addWidget(btnEnd);
 
 
         verticalLayout_3->addLayout(horizontalLayout_2);
@@ -221,7 +221,7 @@ public:
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", 0));
         btnPrev->setText(QApplication::translate("DialogueBox", "\344\270\212\344\270\200\351\241\265", 0));
         btnNext->setText(QApplication::translate("DialogueBox", "\344\270\213\344\270\200\351\241\265", 0));
-        btnClose->setText(QApplication::translate("DialogueBox", "\347\273\223\346\235\237\345\257\271\350\257\235", 0));
+        btnEnd->setText(QApplication::translate("DialogueBox", "\347\273\223\346\235\237\345\257\271\350\257\235", 0));
     } // retranslateUi
 
 };

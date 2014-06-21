@@ -27,8 +27,6 @@ public:
     void attackNPCData(uint32 npcId);
     void attackNPCData(NPCData* npcData);
     void showDialogueBox();
-    void showOptionDialogueBox(const NPCData::OptionDialogueNode& optionNode);
-    
 
 private:
     void loadAvatar(const QString& file);
@@ -38,10 +36,12 @@ private:
     void updateOptions();
     void updateButtonState();
     void clearOptions();
+    void showOptionDialogueBox(const NPCData::OptionDialogueNode& optionNode);
 
 private slots:
     void slotOnPrevClicked();
     void slotOnNextClicked();
+    void slotOnEndClicked();
     void onLinkClicked(NPCOptionLink* link);
 
 private:

@@ -15,6 +15,7 @@ DialogueBox::DialogueBox(QWidget *parent)
 
     connect(_ui->btnPrev, SIGNAL(clicked()), this, SLOT(slotOnPrevClicked()));
     connect(_ui->btnNext, SIGNAL(clicked()), this, SLOT(slotOnNextClicked()));
+    connect(_ui->btnEnd, SIGNAL(clicked()), this, SLOT(slotOnEndClicked()));
 }
 
 DialogueBox::~DialogueBox()
@@ -159,4 +160,9 @@ void DialogueBox::onLinkClicked(NPCOptionLink* link)
 {
     const NPCData::OptionDialogueNode& optionNode = link->optionNode();
     showOptionDialogueBox(optionNode);
+}
+
+void DialogueBox::slotOnEndClicked()
+{
+    this->hide();
 }
