@@ -1,0 +1,9 @@
+[
+	{
+		"mission_id" : 20000,
+		"mission_category" : "探索之路",
+		"mission_title" : "冒险的准备",
+		"mission_description" : "前往杂货超市购买出门必需品",
+		"script" : "mission_2000.lua"
+	}
+]
