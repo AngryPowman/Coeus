@@ -50,6 +50,9 @@
     <ClCompile Include="chat_handler.cpp">
       <Filter>session\handler</Filter>
     </ClCompile>
+    <ClCompile Include="mission_manager.cpp">
+      <Filter>logic\mission</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="service">
@@ -84,6 +87,9 @@
     </Filter>
     <Filter Include="data\dbc">
       <UniqueIdentifier>{2c4a58ff-17d0-4e63-be02-a9663ed7c301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logic\mission">
+      <UniqueIdentifier>{68a89f7f-0517-4972-93d2-99e54e4178c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +155,12 @@
     </ClInclude>
     <ClInclude Include="chat_manager.h">
       <Filter>logic\chat</Filter>
+    </ClInclude>
+    <ClInclude Include="mission.h">
+      <Filter>logic\mission</Filter>
+    </ClInclude>
+    <ClInclude Include="mission_manager.h">
+      <Filter>logic\mission</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -35,7 +35,9 @@
     <ClInclude Include="jsoncpp\json\value.h" />
     <ClInclude Include="jsoncpp\json\writer.h" />
     <ClInclude Include="jsoncpp\lib_json\json_batchallocator.h" />
+    <ClInclude Include="mission_define.h" />
     <ClInclude Include="path_definition.h" />
+    <ClInclude Include="scripting_addon.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="jsoncpp\lib_json\json_internalarray.inl" />

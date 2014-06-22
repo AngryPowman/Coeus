@@ -176,6 +176,7 @@
     <ClCompile Include="game_session_manager.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="mission_manager.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="player_manager.cpp" />
     <ClCompile Include="properties_handler.cpp" />
@@ -202,6 +203,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="item_db.h" />
+    <ClInclude Include="mission.h" />
+    <ClInclude Include="mission_manager.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_db.h" />
     <ClInclude Include="player_manager.h" />

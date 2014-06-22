@@ -64,6 +64,12 @@
     <ClInclude Include="item_helper.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="scripting_addon.h">
+      <Filter>scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="mission_define.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -83,6 +89,9 @@
     </Filter>
     <Filter Include="objects">
       <UniqueIdentifier>{d20808a5-ac23-4f09-896f-a86cbc32e511}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting">
+      <UniqueIdentifier>{3abc91de-d9b8-4bf2-b22c-b84a5bcbdd7f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
