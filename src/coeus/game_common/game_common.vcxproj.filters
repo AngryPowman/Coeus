@@ -70,6 +70,124 @@
     <ClInclude Include="mission_define.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\ltable.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\ltm.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lua.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lua.hpp">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\luaconf.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lualib.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lundump.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lvm.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lzio.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lapi.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lauxlib.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lcode.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lctype.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\ldebug.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\ldo.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lfunc.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lgc.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\llex.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\llimits.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lmem.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lobject.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lopcodes.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lparser.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lstate.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lstring.h">
+      <Filter>scripting\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_global.hpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_pop.h">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_push.h">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_read.hpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_typetrait.hpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_function_reg.h">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_state.h">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind.h">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_def.h">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal.hpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_call.hpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_def.hpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_functor.hpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClInclude>
+    <ClInclude Include="..\coeus_client_qt\lua_engine.h">
+      <Filter>scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -93,6 +211,12 @@
     <Filter Include="scripting">
       <UniqueIdentifier>{3abc91de-d9b8-4bf2-b22c-b84a5bcbdd7f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scripting\lua">
+      <UniqueIdentifier>{c41384c2-0f29-4c95-9948-e8504319a19a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting\z_lua_bind">
+      <UniqueIdentifier>{6c3e9b04-e829-44e2-9802-46b7efa87c2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="jsoncpp\lib_json\json_internalarray.inl">
@@ -103,6 +227,9 @@
     </None>
     <None Include="jsoncpp\lib_json\json_valueiterator.inl">
       <Filter>jsoncpp</Filter>
+    </None>
+    <None Include="..\..\..\3rdparty\luasrc\Makefile">
+      <Filter>scripting\lua</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +259,117 @@
     </ClCompile>
     <ClCompile Include="item_helper.cpp">
       <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ltable.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ltablib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ltm.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lundump.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lvm.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lzio.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lapi.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lauxlib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lbaselib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lbitlib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lcode.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lcorolib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lctype.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ldblib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ldebug.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ldo.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ldump.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lfunc.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lgc.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\linit.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\liolib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\llex.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lmathlib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lmem.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\loadlib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lobject.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lopcodes.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\loslib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lparser.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lstate.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lstring.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lstrlib.c">
+      <Filter>scripting\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_pop.cpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_push.cpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_function_reg.cpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_state.cpp">
+      <Filter>scripting\z_lua_bind</Filter>
+    </ClCompile>
+    <ClCompile Include="..\coeus_client_qt\lua_engine.cpp">
+      <Filter>scripting</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

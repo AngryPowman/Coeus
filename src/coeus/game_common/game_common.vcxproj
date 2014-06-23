@@ -15,6 +15,45 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lapi.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lauxlib.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lcode.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lctype.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\ldebug.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\ldo.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lfunc.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lgc.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\llex.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\llimits.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lmem.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lobject.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lopcodes.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lparser.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lstate.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lstring.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\ltable.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\ltm.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lua.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lua.hpp" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\luaconf.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lualib.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lundump.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lvm.h" />
+    <ClInclude Include="..\..\..\3rdparty\luasrc\lzio.h" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind.h" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_def.h" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal.hpp" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_call.hpp" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_def.hpp" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_functor.hpp" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_global.hpp" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_pop.h" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_push.h" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_read.hpp" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_typetrait.hpp" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_function_reg.h" />
+    <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_state.h" />
+    <ClInclude Include="..\coeus_client_qt\lua_engine.h" />
     <ClInclude Include="config\belif_config.h" />
     <ClInclude Include="config\configuration.h" />
     <ClInclude Include="config\config_manager.h" />
@@ -38,13 +77,54 @@
     <ClInclude Include="mission_define.h" />
     <ClInclude Include="path_definition.h" />
     <ClInclude Include="scripting_addon.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\3rdparty\luasrc\Makefile">
+      <FileType>Document</FileType>
+    </None>
     <None Include="jsoncpp\lib_json\json_internalarray.inl" />
     <None Include="jsoncpp\lib_json\json_internalmap.inl" />
     <None Include="jsoncpp\lib_json\json_valueiterator.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lapi.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lauxlib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lbaselib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lbitlib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lcode.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lcorolib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lctype.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ldblib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ldebug.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ldo.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ldump.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lfunc.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lgc.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\linit.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\liolib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\llex.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lmathlib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lmem.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\loadlib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lobject.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lopcodes.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\loslib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lparser.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lstate.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lstring.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lstrlib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ltable.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ltablib.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\ltm.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lundump.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lvm.c" />
+    <ClCompile Include="..\..\..\3rdparty\luasrc\lzio.c" />
+    <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_pop.cpp" />
+    <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_push.cpp" />
+    <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_function_reg.cpp" />
+    <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_state.cpp" />
+    <ClCompile Include="..\coeus_client_qt\lua_engine.cpp" />
     <ClCompile Include="config\belif_config.cpp" />
     <ClCompile Include="config\configuration.cpp" />
     <ClCompile Include="config\config_manager.cpp" />
@@ -109,9 +189,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;COEUS_CLIENT;COEUS_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\;jsoncpp;..\..\..\3rdparty\poco\Foundation\include;..\..\..\3rdparty\poco\Util\include;..\..\..\3rdparty\poco\Net\include;..\..\..\3rdparty\poco\Data\SQLite\include;..\..\..\3rdparty\poco\Data\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;jsoncpp;..\..\..\3rdparty;..\..\..\3rdparty\zpublic;..\..\..\3rdparty\poco\Foundation\include;..\..\..\3rdparty\poco\Util\include;..\..\..\3rdparty\poco\Net\include;..\..\..\3rdparty\poco\Data\SQLite\include;..\..\..\3rdparty\poco\Data\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PreprocessToFile>false</PreprocessToFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

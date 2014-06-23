@@ -1,5 +1,6 @@
 #include "game_launcher.h"
 #include <QtPlugin>
+#include <stdio.h>
 
 #if defined(_WIN32)
 #ifdef _DEBUG
@@ -18,6 +19,9 @@
 
 int main(int argc, char *argv[])
 {
+#if defined(_WIN32)
+    //_CrtDumpMemoryLeaks();
+#endif
 
 #if QT_VERSION < QT_VERSION_CHECK(5,0,0)
 #if defined(_MSC_VER) && (_MSC_VER < 1600)
@@ -29,9 +33,5 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
     int ret = GameLauncher::run(argc, argv);
 
-#if defined(_WIN32)
-    //_CrtDumpMemoryLeaks();
-#endif
-    
     return ret;
 }

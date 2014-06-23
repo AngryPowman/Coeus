@@ -5,6 +5,8 @@
 #include "qt_coeus_common.h"
 #include "npc_option_link.h"
 
+#include "npc_scripting_addon.h"
+
 DialogueBox::DialogueBox(QWidget *parent)
     : QWidget(parent), _npcData(nullptr), _dialoguePartIndex(0), _currentDialogueNode(nullptr)
 {
@@ -16,11 +18,19 @@ DialogueBox::DialogueBox(QWidget *parent)
     connect(_ui->btnPrev, SIGNAL(clicked()), this, SLOT(slotOnPrevClicked()));
     connect(_ui->btnNext, SIGNAL(clicked()), this, SLOT(slotOnNextClicked()));
     connect(_ui->btnEnd, SIGNAL(clicked()), this, SLOT(slotOnEndClicked()));
+
+    NPCScriptingAddon scriptingAddon;
+    scriptingAddon.onPve();
 }
 
 DialogueBox::~DialogueBox()
 {
     delete _ui;
+}
+
+void DialogueBox::paintEvent(QPaintEvent* event)
+{
+
 }
 
 void DialogueBox::attackNPCData(uint32 npcId)

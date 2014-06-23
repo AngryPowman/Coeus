@@ -44,6 +44,9 @@ private slots:
     void slotOnEndClicked();
     void onLinkClicked(NPCOptionLink* link);
 
+protected:
+    void paintEvent(QPaintEvent* event);
+
 private:
     Ui::DialogueBox* _ui;
     NPCData* _npcData;

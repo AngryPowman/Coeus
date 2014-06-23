@@ -404,6 +404,9 @@
     <ClCompile Include="npc_option_link.cpp">
       <Filter>logic\npc</Filter>
     </ClCompile>
+    <ClCompile Include="npc_scripting_addon.cpp">
+      <Filter>scripting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -656,6 +659,9 @@
     </ClInclude>
     <ClInclude Include="npc_scripting_addon.h">
       <Filter>scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogues_manager.h">
+      <Filter>logic\npc</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
