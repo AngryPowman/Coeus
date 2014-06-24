@@ -5,6 +5,7 @@
 
 class Player;
 class Mission;
+typedef adap_map<uint32, Mission*> MissionList;
 class MissionManager
 {
 public:
@@ -13,9 +14,10 @@ public:
 
 public:
     bool acceptMission(uint32 missionId);
+    const MissionList& missionList();
 
 private:
-    adap_map<uint32, Mission*> _missions;
+    MissionList _missions;
 };
 
 #endif // !__MISSION_MANAGER_H__

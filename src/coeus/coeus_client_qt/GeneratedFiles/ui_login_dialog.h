@@ -249,7 +249,7 @@ public:
         LoginDialog->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(LoginDialog);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 471, 23));
+        menuBar->setGeometry(QRect(0, 0, 471, 21));
         menu = new QMenu(menuBar);
         menu->setObjectName(QStringLiteral("menu"));
         LoginDialog->setMenuBar(menuBar);
@@ -272,7 +272,7 @@ public:
 
     void retranslateUi(QMainWindow *LoginDialog)
     {
-        LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "\345\217\253\346\210\221\350\213\261\351\233\204", 0));
+        LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "\351\205\267\345\210\260\346\262\241\346\234\213\345\217\213\347\232\204Coeus", 0));
         actionRegister->setText(QApplication::translate("LoginDialog", "\346\263\250\345\206\214\345\270\220\345\217\267(&R)...", 0));
 #ifndef QT_NO_TOOLTIP
         actionRegister->setToolTip(QApplication::translate("LoginDialog", "\346\263\250\345\206\214\345\270\220\345\217\267(R)", 0));

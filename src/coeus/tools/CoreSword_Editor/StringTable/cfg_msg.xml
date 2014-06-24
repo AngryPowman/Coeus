@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes"?>
 <MSG_CFG>
-  <category CategoryName="登录&amp;注册">
+  <category CategoryName="用户系统">
     <msg MsgId="10001" MsgProperty="0" MsgName="CSLoginReq" MsgNote="登录请求" MsgRemark="" ErrorList="">
       <param DataType="std::string" Purpose="variable" ParamName="account" ParamNote="登录帐号（邮箱地址）" />
       <param DataType="std::string" Purpose="variable" ParamName="password" ParamNote="密码" />
@@ -35,7 +35,7 @@
       <param DataType="uint8" Purpose="variable" ParamName="result" ParamNote="结果" />
     </msg>
   </category>
-  <category CategoryName="系统">
+  <category CategoryName="通信系统">
     <msg MsgId="500" MsgProperty="1" MsgName="SCErrorNotify" MsgNote="错误通知" MsgRemark="错误码通知" ErrorList="">
       <param DataType="uint32" Purpose="variable" ParamName="error_code" ParamNote="错误码" />
     </msg>
@@ -72,6 +72,12 @@
       <param DataType="uint64" Purpose="variable" ParamName="target_id" ParamNote="目标玩家ID" />
       <param DataType="std::string" Purpose="variable" ParamName="target_name" ParamNote="目标玩家昵称" />
       <param DataType="std::string" Purpose="variable" ParamName="message" ParamNote="聊天内容" />
+    </msg>
+  </category>
+  <category CategoryName="任务系统">
+    <msg MsgId="22000" MsgProperty="0" MsgName="CSMissionListReq" MsgNote="请求任务列表" MsgRemark="" ErrorList="" />
+    <msg MsgId="22001" MsgProperty="1" MsgName="SCMissionListRsp" MsgNote="任务列表返回" MsgRemark="" ErrorList="">
+      <param DataType="Mission" Purpose="variable" ParamName="mission_list" ParamNote="任务列表" />
     </msg>
   </category>
 </MSG_CFG>

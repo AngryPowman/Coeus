@@ -50,23 +50,6 @@ typedef unsigned long long uint64;
 #define SAFE_DELETE_ARR(x)	if (nullptr != (x)) { delete [] (x); (x) = nullptr; }
 #endif
 
-#ifndef PROP
-#define PROP(type, varname, name) \
-	public: \
-		type get##name() const { return varname; } \
-		void set##name(type var) { varname = var; } \
-	private: \
-		type varname;
-#endif
-
-#ifndef READONLY_PROP
-#define READONLY_PROP(type, varname, name) \
-	public: \
-		const type& get##name() const { return varname; } \
-	private: \
-		type varname;
-#endif
-
 // std
 #include <string>
 #include <functional>
@@ -85,9 +68,9 @@ typedef unsigned long long uint64;
 
 // adaptive map
 #if defined(_WIN32)
-#include <unordered_map>
+#include <hash_map>
 template <typename Key, typename Value>
-class adap_map : public std::unordered_map<Key, Value> {};
+class adap_map : public std::hash_map<Key, Value> {};
 #else
 #include <map>
 template <typename Key, typename Value>

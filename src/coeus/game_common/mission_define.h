@@ -6,4 +6,9 @@ enum MissionType
     MajorMission
 };
 
+enum MissionState
+{
+
+};
+
 #endif
