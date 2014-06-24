@@ -20,6 +20,7 @@
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextBrowser>
@@ -61,6 +62,7 @@ public:
     QVBoxLayout *verticalLayout_4;
     QTreeWidget *treeWidget;
     QTextBrowser *textBrowser;
+    QPushButton *btnDialogueTest;
     QWidget *tab;
     QWidget *widget;
     QWidget *tab_3;
@@ -302,6 +304,11 @@ public:
 
         verticalLayout_4->addWidget(textBrowser);
 
+        btnDialogueTest = new QPushButton(tab_2);
+        btnDialogueTest->setObjectName(QStringLiteral("btnDialogueTest"));
+
+        verticalLayout_4->addWidget(btnDialogueTest);
+
         tabWidget->addTab(tab_2, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
@@ -318,7 +325,7 @@ public:
 
         retranslateUi(GameStatusBarWidget);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(GameStatusBarWidget);
@@ -363,6 +370,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\345\211\215\345\276\200\347\240\224\347\251\266\346\211\200\344\270\216<a href=\"[\350\200\201\350\202\211\351\270\241]\"><span style=\" text-decoration: underline; color:#0000ff;\">[\350\200\201\350\202\211\351\270\241]</span></a>\346\267\261\345\205\245\344\272\244\350\260\210\357\274\214\344\272\206\350\247\243\347\273\264\347\272\263\346\226\257\344\270\226\347\225\214\347\232\204\350\265\267\346\272\220\344\270\216\345\216\206\345\217\262\343\200\202</p></body></html>", 0));
+        btnDialogueTest->setText(QApplication::translate("GameStatusBarWidget", "\345\257\271\350\257\235\346\265\213\350\257\225", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("GameStatusBarWidget", "\344\273\273\345\212\241\350\277\275\350\270\252", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("GameStatusBarWidget", "\345\244\251\344\271\246", 0));
         tabWidget->setTabText(tabWidget->indexOf(widget), QApplication::translate("GameStatusBarWidget", "\350\201\224\347\263\273\344\272\272", 0));

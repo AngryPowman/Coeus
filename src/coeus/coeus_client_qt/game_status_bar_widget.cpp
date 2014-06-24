@@ -1,12 +1,15 @@
 #include "game_status_bar_widget.h"
 #include "ui_game_statusbar_widget.h"
 #include "qt_coeus_common.h"
+#include "dialogue_box.h"
 
 GameStatusBarWidget::GameStatusBarWidget(QWidget *parent)
     : QWidget(parent)
 {
     _ui = new Ui::GameStatusBarWidget();
     _ui->setupUi(this);
+
+    connect(_ui->btnDialogueTest, SIGNAL(clicked()), this, SLOT(slotOnDialogueTest()));
 }
 
 GameStatusBarWidget::~GameStatusBarWidget()
@@ -65,4 +68,9 @@ void GameStatusBarWidget::updateHP(uint32 hp, uint32 maxHp)
 void GameStatusBarWidget::updateExp(uint32 exp)
 {
 
+}
+
+void GameStatusBarWidget::slotOnDialogueTest()
+{
+    DialogueBox::showNPCDialogueBox(1001);
 }

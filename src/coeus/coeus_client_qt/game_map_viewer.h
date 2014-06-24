@@ -4,7 +4,7 @@
 #include <QGraphicsView>
 
 class QTimer;
-class DialogueBox;
+class DialogueBoxWidget;
 class GameMapViewer : public QGraphicsView
 {
     Q_OBJECT
@@ -33,7 +33,7 @@ private:
     int _zoom;
     AinimateFactor _animateFactorCached;
     QTimer* _scaleAnimationTimer;
-    DialogueBox* _dialogueBox;
+    DialogueBoxWidget* _dialogueBox;
 };
 
 #endif // GAME_MAP_VIEW_H

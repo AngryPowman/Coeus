@@ -5,7 +5,7 @@
 #include <venus_net/common.h>
 #include "game_common/config/npc_config.h"
 
-class DialogueBox;
+class DialogueBoxWidget;
 class QMouseEvent;
 class NPCOptionLink : public QLabel
 {
@@ -18,7 +18,7 @@ private:
         TalkOption,
         NewMissionOption,
     };
-    friend class DialogueBox;
+    friend class DialogueBoxWidget;
 
 private:
     NPCOptionLink(const QString& text, const NPCData::OptionDialogueNode& optionNode, QWidget* parent = nullptr);

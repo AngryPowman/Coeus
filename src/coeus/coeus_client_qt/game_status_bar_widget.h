@@ -26,6 +26,9 @@ private:
     void updateHP(uint32 hp, uint32 maxHp);
     void updateExp(uint32 exp);
 
+private slots:
+    void slotOnDialogueTest();
+
 private:
     Ui::GameStatusBarWidget* _ui;
 };

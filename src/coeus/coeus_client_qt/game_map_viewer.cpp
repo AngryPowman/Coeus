@@ -1,6 +1,7 @@
 #include "game_map_viewer.h"
-#include "dialogue_box.h"
+#include "dialogue_box_widget.h"
 #include "widget_helper.h"
+#include "dialogue_box.h"
 #include <QWheelEvent>
 #include <QScrollBar>
 #include <QTimer>
@@ -15,11 +16,10 @@ GameMapViewer::GameMapViewer(QWidget* parent)
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    _dialogueBox = new DialogueBox(this);
+    _dialogueBox = new DialogueBoxWidget(this);
     this->resizeEvent(nullptr);
 
-    _dialogueBox->attackNPCData(1001);
-    _dialogueBox->showDialogueBox();
+    DialogueBox::initialize(_dialogueBox);
 
     _scaleAnimationTimer = new QTimer(parent);
     connect(_scaleAnimationTimer, SIGNAL(timeout()), SLOT(scaleAnimationProcess()));

@@ -11,7 +11,7 @@
 #include "game_common/item_helper.h"
 #include "game_map_widget.h"
 #include "world_info_side_bar.h"
-#include "dialogue_box.h"
+#include "dialogue_box_widget.h"
 
 GameMain::GameMain(QWidget* parent /*= 0*/)
     : QMainWindow(parent)
