@@ -14,7 +14,7 @@ protected:
 protected:
     bool initialize(const std::string& scriptFile)
     {
-        bool result = !(_lua_state.create() && _lua_state.open_all_libs());
+        bool result = (lua_state.create() == 0 && _lua_state.open_all_libs() == 0);
         if (result)
         {
             register_functions();

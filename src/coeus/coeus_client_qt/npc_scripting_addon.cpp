@@ -19,8 +19,7 @@ void NPCScriptingAddon::register_functions()
 bool NPCScriptingAddon::onPve()
 {
     z_lua_state& luaState = lua_state();
-    bool result = luaState.call<bool>("on_pve");
-    return result;
+    return luaState.call<bool>("on_pve");;
 }
 
 int NPCScriptingAddon::get_level(lua_State* L)

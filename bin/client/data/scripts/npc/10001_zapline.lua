@@ -5,6 +5,7 @@ end
 
 function on_pve()
 	local level = get_level()
+	print(level);
 	return true
 end
 
