@@ -91,7 +91,7 @@
       <PreprocessorDefinitions>WIN32;COEUS_SERVER;_DEBUG;_CONSOLE;_DB_USE_TYPE=0x2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>..\;..\game_common\jsoncpp;..\..\..\3rdparty\poco\Foundation\include;..\..\..\3rdparty\poco\Util\include;..\..\..\3rdparty\poco\Net\include;..\..\..\3rdparty\poco\Data\SQLite\include;..\..\..\3rdparty\poco\Data\MySQL\include;..\..\..\3rdparty\poco\Data\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\game_common\jsoncpp;..\..\..\3rdparty;..\..\..\3rdparty\zpublic;..\..\..\3rdparty\poco\Foundation\include;..\..\..\3rdparty\poco\Util\include;..\..\..\3rdparty\poco\Net\include;..\..\..\3rdparty\poco\Data\SQLite\include;..\..\..\3rdparty\poco\Data\MySQL\include;..\..\..\3rdparty\poco\Data\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessToFile>false</PreprocessToFile>
     </ClCompile>
     <Link>
@@ -176,6 +176,7 @@
     <ClCompile Include="game_session_manager.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="login_scripting_addon.cpp" />
     <ClCompile Include="mission_manager.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="player_manager.cpp" />
@@ -203,6 +204,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="item_db.h" />
+    <ClInclude Include="login_scripting_addon.h" />
     <ClInclude Include="mission_manager.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_db.h" />

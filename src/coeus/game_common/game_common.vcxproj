@@ -53,7 +53,6 @@
     <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_typetrait.hpp" />
     <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_function_reg.h" />
     <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_state.h" />
-    <ClInclude Include="..\coeus_client_qt\lua_engine.h" />
     <ClInclude Include="config\belif_config.h" />
     <ClInclude Include="config\configuration.h" />
     <ClInclude Include="config\config_manager.h" />
@@ -75,6 +74,7 @@
     <ClInclude Include="jsoncpp\json\value.h" />
     <ClInclude Include="jsoncpp\json\writer.h" />
     <ClInclude Include="jsoncpp\lib_json\json_batchallocator.h" />
+    <ClInclude Include="lua_engine.h" />
     <ClInclude Include="mission.h" />
     <ClInclude Include="mission_define.h" />
     <ClInclude Include="path_definition.h" />
@@ -126,7 +126,6 @@
     <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_push.cpp" />
     <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_function_reg.cpp" />
     <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_state.cpp" />
-    <ClCompile Include="..\coeus_client_qt\lua_engine.cpp" />
     <ClCompile Include="config\belif_config.cpp" />
     <ClCompile Include="config\configuration.cpp" />
     <ClCompile Include="config\config_manager.cpp" />
@@ -137,6 +136,7 @@
     <ClCompile Include="jsoncpp\lib_json\json_reader.cpp" />
     <ClCompile Include="jsoncpp\lib_json\json_value.cpp" />
     <ClCompile Include="jsoncpp\lib_json\json_writer.cpp" />
+    <ClCompile Include="lua_engine.cpp" />
     <ClCompile Include="mission.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

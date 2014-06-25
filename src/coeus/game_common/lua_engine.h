@@ -8,7 +8,10 @@ class LuaEngine
 protected:
     LuaEngine()
     {
-        
+    }
+
+    virtual ~LuaEngine()
+    {
     }
 
 protected:

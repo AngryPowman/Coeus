@@ -53,6 +53,9 @@
     <ClCompile Include="mission_manager.cpp">
       <Filter>logic\mission</Filter>
     </ClCompile>
+    <ClCompile Include="login_scripting_addon.cpp">
+      <Filter>scripting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="service">
@@ -90,6 +93,9 @@
     </Filter>
     <Filter Include="logic\mission">
       <UniqueIdentifier>{68a89f7f-0517-4972-93d2-99e54e4178c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting">
+      <UniqueIdentifier>{9b8395da-fd2c-4623-bcbc-45a35435afff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +164,9 @@
     </ClInclude>
     <ClInclude Include="mission_manager.h">
       <Filter>logic\mission</Filter>
+    </ClInclude>
+    <ClInclude Include="login_scripting_addon.h">
+      <Filter>scripting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -184,15 +184,15 @@
     <ClInclude Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_bind_internal_functor.hpp">
       <Filter>scripting\z_lua_bind</Filter>
     </ClInclude>
-    <ClInclude Include="..\coeus_client_qt\lua_engine.h">
-      <Filter>scripting</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="config\mission_config.h">
       <Filter>config\game_config</Filter>
     </ClInclude>
     <ClInclude Include="mission.h">
       <Filter>objects</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_engine.h">
+      <Filter>scripting</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -374,14 +374,14 @@
     <ClCompile Include="..\..\..\3rdparty\zpublic\z_lua_bind\z_lua_state.cpp">
       <Filter>scripting\z_lua_bind</Filter>
     </ClCompile>
-    <ClCompile Include="..\coeus_client_qt\lua_engine.cpp">
-      <Filter>scripting</Filter>
-    </ClCompile>
     <ClCompile Include="config\mission_config.cpp">
       <Filter>config\game_config</Filter>
     </ClCompile>
     <ClCompile Include="mission.cpp">
       <Filter>objects</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_engine.cpp">
+      <Filter>scripting</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

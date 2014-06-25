@@ -6,7 +6,6 @@
 #include <QtWidgets/QApplication>
 #include "widget_manager.h"
 #include "game_opcode_registry.h"
-#include "lua_engine.h"
 
 //configurations
 #include "config_loader.h"
