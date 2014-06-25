@@ -1,5 +1,6 @@
 #include "mission_config.h"
 #include "game_common/path_definition.h"
+#include <venus_net/logger.h>
 
 MissionConfig::MissionConfig()
 {
@@ -29,6 +30,11 @@ bool MissionConfig::parse()
 #endif
 
         _missions[mission.missionId()] = mission;
+    }
+    else
+    {
+        error_log("null mission config value");
+        return false;
     }
 
     return true;
