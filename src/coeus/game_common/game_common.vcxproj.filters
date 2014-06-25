@@ -64,9 +64,6 @@
     <ClInclude Include="item_helper.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="scripting_addon.h">
-      <Filter>scripting</Filter>
-    </ClInclude>
     <ClInclude Include="mission_define.h">
       <Filter>common</Filter>
     </ClInclude>
@@ -194,6 +191,9 @@
     <ClInclude Include="lua_engine.h">
       <Filter>scripting</Filter>
     </ClInclude>
+    <ClInclude Include="scripting_addon.h">
+      <Filter>scripting\addons</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -222,6 +222,9 @@
     </Filter>
     <Filter Include="scripting\z_lua_bind">
       <UniqueIdentifier>{6c3e9b04-e829-44e2-9802-46b7efa87c2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting\addons">
+      <UniqueIdentifier>{fefeb5c5-d5c7-4e32-a8f7-25c2707d33bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

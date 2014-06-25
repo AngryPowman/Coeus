@@ -54,7 +54,7 @@
       <Filter>logic\mission</Filter>
     </ClCompile>
     <ClCompile Include="login_scripting_addon.cpp">
-      <Filter>scripting</Filter>
+      <Filter>scripting\addons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +96,9 @@
     </Filter>
     <Filter Include="scripting">
       <UniqueIdentifier>{9b8395da-fd2c-4623-bcbc-45a35435afff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting\addons">
+      <UniqueIdentifier>{b809b91b-e286-4485-8291-ca2d445f5719}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -166,7 +169,7 @@
       <Filter>logic\mission</Filter>
     </ClInclude>
     <ClInclude Include="login_scripting_addon.h">
-      <Filter>scripting</Filter>
+      <Filter>scripting\addons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -78,6 +78,9 @@
     <Filter Include="logic\mission">
       <UniqueIdentifier>{4c846c09-1aff-4ce8-b432-5a296a759191}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scripting\addons">
+      <UniqueIdentifier>{1447aeda-6fed-4c74-b3bc-182b0a930bfb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -395,9 +398,6 @@
     <ClCompile Include="npc_option_link.cpp">
       <Filter>logic\npc</Filter>
     </ClCompile>
-    <ClCompile Include="npc_scripting_addon.cpp">
-      <Filter>scripting</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_dialogue_box_widget.cpp">
       <Filter>qt_main\Generated Files\Debug</Filter>
     </ClCompile>
@@ -412,6 +412,9 @@
     </ClCompile>
     <ClCompile Include="dialogue_box.cpp">
       <Filter>logic\npc</Filter>
+    </ClCompile>
+    <ClCompile Include="npc_scripting_addon.cpp">
+      <Filter>scripting\addons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -663,14 +666,14 @@
     <ClInclude Include="GeneratedFiles\ui_world_info_side_bar.h">
       <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="npc_scripting_addon.h">
-      <Filter>scripting</Filter>
-    </ClInclude>
     <ClInclude Include="dialogues_manager.h">
       <Filter>logic\npc</Filter>
     </ClInclude>
     <ClInclude Include="dialogue_box.h">
       <Filter>logic\npc</Filter>
+    </ClInclude>
+    <ClInclude Include="npc_scripting_addon.h">
+      <Filter>scripting\addons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
