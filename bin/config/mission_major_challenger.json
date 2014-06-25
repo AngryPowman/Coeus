@@ -1,9 +1,0 @@
-[
-	{
-		"mission_id" : 30000,
-		"mission_category" : "第一章 强者之路",
-		"mission_title" : "导师的故事",
-		"mission_description" : "前往杂货超市购买出门必需品",
-		"script" : "mission_3000.lua"
-	}
-]

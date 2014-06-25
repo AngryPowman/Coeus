@@ -1,0 +1,32 @@
+{
+	"finder" : 
+	[
+		{
+			"mission_id" : 10000,
+			"mission_category" : "第一章 追寻之路",
+			"mission_title" : "神秘纹身的真相",
+			"mission_description" : "前往生命科学研究生处了解红色纹身的详细情况。",
+			"script" : "mission_10000.lua"
+		}
+	],
+	"seeker" :
+	[
+		{
+			"mission_id" : 20000,
+			"mission_category" : "第一章 探索之路",
+			"mission_title" : "冒险的准备",
+			"mission_description" : "前往杂货超市购买出门必需品",
+			"script" : "mission_2000.lua"
+		}
+	],
+	"challenger" :
+	[
+		{
+			"mission_id" : 30000,
+			"mission_category" : "第一章 强者之路",
+			"mission_title" : "导师的故事",
+			"mission_description" : "前往杂货超市购买出门必需品",
+			"script" : "mission_3000.lua"
+		}
+	]
+}
