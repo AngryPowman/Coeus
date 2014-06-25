@@ -20,6 +20,7 @@ namespace ConfigFile
 {
     // global
     PATH(ItemConfig, "../config/items.json");
+    PATH(MissionMajorConfig, "../config/mission_major.json");
 
     // for server
     PATH(ServerConfig, "./config/server_config.json");

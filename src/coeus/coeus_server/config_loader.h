@@ -8,7 +8,6 @@ class ConfigLoader : public Venus::Singleton<ConfigLoader>
 {
 public:
 	void initialize(ConfigManager* manager);
-
 };
 
 #endif

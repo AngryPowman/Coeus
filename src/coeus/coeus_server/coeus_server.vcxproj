@@ -203,7 +203,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="item_db.h" />
-    <ClInclude Include="mission.h" />
     <ClInclude Include="mission_manager.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_db.h" />

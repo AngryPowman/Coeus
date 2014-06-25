@@ -20,9 +20,6 @@ GameMapViewer::GameMapViewer(QWidget* parent)
     this->resizeEvent(nullptr);
 
     DialogueBox::initialize(_dialogueBox);
-
-    _scaleAnimationTimer = new QTimer(parent);
-    connect(_scaleAnimationTimer, SIGNAL(timeout()), SLOT(scaleAnimationProcess()));
 }
 
 GameMapViewer::~GameMapViewer()

@@ -156,9 +156,6 @@
     <ClInclude Include="chat_manager.h">
       <Filter>logic\chat</Filter>
     </ClInclude>
-    <ClInclude Include="mission.h">
-      <Filter>logic\mission</Filter>
-    </ClInclude>
     <ClInclude Include="mission_manager.h">
       <Filter>logic\mission</Filter>
     </ClInclude>

@@ -58,6 +58,7 @@
     <ClInclude Include="config\configuration.h" />
     <ClInclude Include="config\config_manager.h" />
     <ClInclude Include="config\item_config.h" />
+    <ClInclude Include="config\mission_config.h" />
     <ClInclude Include="config\npc_config.h" />
     <ClInclude Include="game_define.h" />
     <ClInclude Include="game_util.h" />
@@ -74,6 +75,7 @@
     <ClInclude Include="jsoncpp\json\value.h" />
     <ClInclude Include="jsoncpp\json\writer.h" />
     <ClInclude Include="jsoncpp\lib_json\json_batchallocator.h" />
+    <ClInclude Include="mission.h" />
     <ClInclude Include="mission_define.h" />
     <ClInclude Include="path_definition.h" />
     <ClInclude Include="scripting_addon.h" />
@@ -129,11 +131,13 @@
     <ClCompile Include="config\configuration.cpp" />
     <ClCompile Include="config\config_manager.cpp" />
     <ClCompile Include="config\item_config.cpp" />
+    <ClCompile Include="config\mission_config.cpp" />
     <ClCompile Include="config\npc_config.cpp" />
     <ClCompile Include="item_helper.cpp" />
     <ClCompile Include="jsoncpp\lib_json\json_reader.cpp" />
     <ClCompile Include="jsoncpp\lib_json\json_value.cpp" />
     <ClCompile Include="jsoncpp\lib_json\json_writer.cpp" />
+    <ClCompile Include="mission.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{23B3DA61-A907-41DD-BAC3-E4F1A68B20B3}</ProjectGuid>

@@ -8,6 +8,7 @@
 #include "game_common/config/npc_config.h"
 #include "game_common/config/belif_config.h"
 #include "game_common/config/item_config.h"
+#include "game_common/config/mission_config.h"
 
 class ConfigLoader
     : public Venus::Singleton<ConfigLoader>
@@ -20,6 +21,7 @@ public:
         CharacterConfig::getInstance().initialize(manager);
         NPCConfig::getInstance().initialize(manager);
         ItemConfig::getInstance().initialize(manager);
+        MissionConfig::getInstance().initialize(manager);
     }
 };
 

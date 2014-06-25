@@ -188,6 +188,12 @@
       <Filter>scripting</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="config\mission_config.h">
+      <Filter>config\game_config</Filter>
+    </ClInclude>
+    <ClInclude Include="mission.h">
+      <Filter>objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -370,6 +376,12 @@
     </ClCompile>
     <ClCompile Include="..\coeus_client_qt\lua_engine.cpp">
       <Filter>scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="config\mission_config.cpp">
+      <Filter>config\game_config</Filter>
+    </ClCompile>
+    <ClCompile Include="mission.cpp">
+      <Filter>objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
