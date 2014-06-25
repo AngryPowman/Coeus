@@ -2,7 +2,7 @@
 
 NPCScriptingAddon::NPCScriptingAddon()
 {
-    LuaEngine::initialize("data/scripts/npc/10001_zapline.lua");
+    LuaEngine::initialize("scripts/npc/10001_zapline.lua");
 }
 
 NPCScriptingAddon::~NPCScriptingAddon()

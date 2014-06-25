@@ -13,7 +13,9 @@ const static std::string ClientConfigRoot = "./config/";
 
 namespace GameDirecotry
 {
+    PATH(Shared, "../");
     PATH(ItemDirectory, "./images/items/");
+    PATH(ScriptDirectory, "../scripts/");
 };
 
 namespace ConfigFile

@@ -36,6 +36,7 @@
 *.res
 *.suo
 *.user
+*.luaprj
 /3rdparty/poco/Data/MySQL/obj
 *.suo
 *.sdf

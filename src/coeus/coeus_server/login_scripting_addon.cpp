@@ -2,7 +2,7 @@
 
 LoginScriptingAddon::LoginScriptingAddon()
 {
-    LuaEngine::initialize("data/scripts/npc/10001_zapline.lua");
+    LuaEngine::initialize("scripts/npc/s_npc_10000.lua");
 }
 
 LoginScriptingAddon::~LoginScriptingAddon()

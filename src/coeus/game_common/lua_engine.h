@@ -2,6 +2,7 @@
 #define __LUA_ENGINE_H__
 
 #include "z_lua_bind/z_lua_bind.h"
+#include "path_definition.h"
 
 class LuaEngine
 {
@@ -23,7 +24,7 @@ protected:
             register_functions();
             if (!scriptFile.empty())
             {
-                _lua_state.dofile(scriptFile.c_str());
+                _lua_state.dofile((GameDirecotry::Shared + scriptFile).c_str());
             }
         }
 
