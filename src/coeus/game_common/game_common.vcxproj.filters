@@ -49,23 +49,8 @@
     <ClInclude Include="config\belif_config.h">
       <Filter>config\game_config</Filter>
     </ClInclude>
-    <ClInclude Include="game_item.h">
-      <Filter>objects</Filter>
-    </ClInclude>
-    <ClInclude Include="item_definition.h">
-      <Filter>common</Filter>
-    </ClInclude>
     <ClInclude Include="config\item_config.h">
       <Filter>config\game_config</Filter>
-    </ClInclude>
-    <ClInclude Include="item_exception.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="item_helper.h">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="mission_define.h">
-      <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\3rdparty\luasrc\ltable.h">
       <Filter>scripting\lua</Filter>
@@ -185,14 +170,35 @@
     <ClInclude Include="config\mission_config.h">
       <Filter>config\game_config</Filter>
     </ClInclude>
-    <ClInclude Include="mission.h">
-      <Filter>objects</Filter>
-    </ClInclude>
     <ClInclude Include="lua_engine.h">
       <Filter>scripting</Filter>
     </ClInclude>
     <ClInclude Include="scripting_addon.h">
       <Filter>scripting\addons</Filter>
+    </ClInclude>
+    <ClInclude Include="mission.h">
+      <Filter>common\mission</Filter>
+    </ClInclude>
+    <ClInclude Include="item_helper.h">
+      <Filter>common\item</Filter>
+    </ClInclude>
+    <ClInclude Include="item_exception.h">
+      <Filter>common\item</Filter>
+    </ClInclude>
+    <ClInclude Include="item_definition.h">
+      <Filter>common\item</Filter>
+    </ClInclude>
+    <ClInclude Include="mission_define.h">
+      <Filter>common\mission</Filter>
+    </ClInclude>
+    <ClInclude Include="game_item.h">
+      <Filter>common\item</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogue_mission.h">
+      <Filter>common\mission</Filter>
+    </ClInclude>
+    <ClInclude Include="mission_data.h">
+      <Filter>common\mission</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -211,9 +217,6 @@
     <Filter Include="config\game_config">
       <UniqueIdentifier>{048b9dee-b9c9-461c-8594-2c29827c6313}</UniqueIdentifier>
     </Filter>
-    <Filter Include="objects">
-      <UniqueIdentifier>{d20808a5-ac23-4f09-896f-a86cbc32e511}</UniqueIdentifier>
-    </Filter>
     <Filter Include="scripting">
       <UniqueIdentifier>{3abc91de-d9b8-4bf2-b22c-b84a5bcbdd7f}</UniqueIdentifier>
     </Filter>
@@ -225,6 +228,12 @@
     </Filter>
     <Filter Include="scripting\addons">
       <UniqueIdentifier>{fefeb5c5-d5c7-4e32-a8f7-25c2707d33bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\mission">
+      <UniqueIdentifier>{03dd03ad-6fb6-47bf-8d9c-958384286c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\item">
+      <UniqueIdentifier>{23de428c-9e01-4ee6-ba3c-2942a4b65be9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -265,9 +274,6 @@
     </ClCompile>
     <ClCompile Include="config\item_config.cpp">
       <Filter>config\game_config</Filter>
-    </ClCompile>
-    <ClCompile Include="item_helper.cpp">
-      <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\3rdparty\luasrc\ltable.c">
       <Filter>scripting\lua</Filter>
@@ -380,11 +386,17 @@
     <ClCompile Include="config\mission_config.cpp">
       <Filter>config\game_config</Filter>
     </ClCompile>
-    <ClCompile Include="mission.cpp">
-      <Filter>objects</Filter>
-    </ClCompile>
     <ClCompile Include="lua_engine.cpp">
       <Filter>scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="mission.cpp">
+      <Filter>common\mission</Filter>
+    </ClCompile>
+    <ClCompile Include="item_helper.cpp">
+      <Filter>common\item</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogue_mission.cpp">
+      <Filter>common\mission</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

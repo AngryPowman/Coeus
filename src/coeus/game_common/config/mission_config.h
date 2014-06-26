@@ -15,7 +15,7 @@ public:
     bool parse();
 
 public:
-    adap_map<uint32, Mission> _missions;
+    adap_map<uint32, MissionData> _missions;
 };
 
 #endif // !__MISSION_CONFIG_H__

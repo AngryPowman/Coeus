@@ -59,6 +59,7 @@
     <ClInclude Include="config\item_config.h" />
     <ClInclude Include="config\mission_config.h" />
     <ClInclude Include="config\npc_config.h" />
+    <ClInclude Include="dialogue_mission.h" />
     <ClInclude Include="game_define.h" />
     <ClInclude Include="game_util.h" />
     <ClInclude Include="game_item.h" />
@@ -76,6 +77,7 @@
     <ClInclude Include="jsoncpp\lib_json\json_batchallocator.h" />
     <ClInclude Include="lua_engine.h" />
     <ClInclude Include="mission.h" />
+    <ClInclude Include="mission_data.h" />
     <ClInclude Include="mission_define.h" />
     <ClInclude Include="path_definition.h" />
     <ClInclude Include="scripting_addon.h" />
@@ -132,6 +134,7 @@
     <ClCompile Include="config\item_config.cpp" />
     <ClCompile Include="config\mission_config.cpp" />
     <ClCompile Include="config\npc_config.cpp" />
+    <ClCompile Include="dialogue_mission.cpp" />
     <ClCompile Include="item_helper.cpp" />
     <ClCompile Include="jsoncpp\lib_json\json_reader.cpp" />
     <ClCompile Include="jsoncpp\lib_json\json_value.cpp" />

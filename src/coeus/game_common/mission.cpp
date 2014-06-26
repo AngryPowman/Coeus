@@ -1,7 +1,8 @@
 #include "mission.h"
+#include "mission_data.h"
 
-Mission::Mission()
-    :_missionState(MissionState::MissionState_None)
+Mission::Mission(const MissionData& missionData)
+    : _missionData(missionData), _missionState(MissionState::MissionState_None)
 {
 
 }
@@ -11,25 +12,32 @@ Mission::~Mission()
 
 }
 
-void Mission::missionId(uint32 missionId)
-{
-    _missionId = missionId;
-}
-
 uint32 Mission::missionId()
 {
-    return _missionId;
-}
-
-void Mission::missionType(const MissionType& missionType)
-{
-    _missionType = missionType;
+    return _missionData.missionId;
 }
 
 const MissionType& Mission::missionType() const
 {
-    return _missionType;
+    return _missionData.missionType;
 }
+
+#if defined (COEUS_CLIENT)
+const std::string& Mission::category()
+{
+    return _missionData.category;
+}
+
+const std::string& Mission::title()
+{
+    return _missionData.title;
+}
+
+const std::string& Mission::description()
+{
+    return _missionData.description;
+}
+#endif
 
 void Mission::missionState(const MissionState& missionState)
 {
@@ -40,37 +48,3 @@ const MissionState& Mission::missionState() const
 {
     return _missionState;
 }
-
-#if defined (COEUS_CLIENT)
-
-void Mission::category(const std::string& category)
-{
-    _category = category;
-}
-
-const std::string& Mission::category()
-{
-    return _category;
-}
-
-void Mission::title(const std::string& title)
-{
-    _title = title;
-}
-
-const std::string& Mission::title()
-{
-    return _title;
-}
-
-void Mission::description(const std::string& description)
-{
-    _description = description;
-}
-
-const std::string& Mission::description()
-{
-    return _description;
-}
-
-#endif

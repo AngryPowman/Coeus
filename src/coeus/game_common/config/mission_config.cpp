@@ -1,6 +1,7 @@
 #include "mission_config.h"
 #include "game_common/path_definition.h"
 #include <venus_net/logger.h>
+#include "mission_data.h"
 
 MissionConfig::MissionConfig()
 {
@@ -19,17 +20,17 @@ bool MissionConfig::parse()
 
     if (value != Json::nullValue)
     {
-        Mission mission;
-        mission.missionId(value["id"].asUInt());
-        mission.missionType(static_cast<MissionType>(value["type"].asUInt()));
+        MissionData mission;
+        mission.missionId = value["id"].asUInt();
+        mission.missionType = static_cast<MissionType>(value["type"].asUInt());
 
 #if defined (COEUS_CLIENT)
-        mission.category(value["category"].asString());
-        mission.title(value["title"].asString());
-        mission.description(value["description"].asString());
+        mission.category = value["category"].asString();
+        mission.title = value["title"].asString();
+        mission.description = value["description"].asString();
 #endif
 
-        _missions[mission.missionId()] = mission;
+        _missions[mission.missionId] = mission;
     }
     else
     {
