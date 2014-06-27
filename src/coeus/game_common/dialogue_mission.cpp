@@ -8,11 +8,11 @@ DialogueMission::DialogueMission(const MissionData& missionData)
 DialogueMission::DialogueMission(const MissionData& missionData, uint32 srcNPC, uint32 destNPC)
 : Mission(missionData), _sourceNPCId(srcNPC)
 {
-    _destNPCSet.insert(destNPC);
+    addDestNPCId(destNPC);
 }
 
-DialogueMission::DialogueMission(const MissionData& missionData, uint32 srcNPC, const NPCSet_t& destNPCSet)
-    : Mission(missionData), _sourceNPCId(srcNPC), _destNPCSet(destNPCSet)
+DialogueMission::DialogueMission(const MissionData& missionData, uint32 srcNPC, const NPCSet_t& destNPCList)
+    : Mission(missionData), _sourceNPCId(srcNPC), _destNPCList(destNPCList)
 {
 }
 
@@ -26,26 +26,46 @@ uint32 DialogueMission::getSourceNPCId() const
     return _sourceNPCId;
 }
 
-void DialogueMission::setDestNPCIdSet(const NPCSet_t& destNPCSet)
+void DialogueMission::setDestNPCIdSet(const NPCSet_t& destNPCList)
 {
-    _destNPCSet = destNPCSet;
+    _destNPCList = destNPCList;
 }
 
-const NPCSet_t& DialogueMission::getDestNPCIdSet() const
+const DialogueMission::NPCSet_t& DialogueMission::getDestNPCIdSet() const
 {
-    return _destNPCSet;
+    return _destNPCList;
 }
 
 void DialogueMission::addDestNPCId(uint32 destNPCId)
 {
-    NPCSet_t::const_iterator iter = _destNPCSet.find(destNPCId);
-    if (iter != _destNPCSet.end())
-    {
-        _destNPCSet.insert(destNPCId);
-    }
+    _destNPCList.push_back(DialogueNPC(destNPCId));
 }
 
 void DialogueMission::clearDestNPCList()
 {
-    _destNPCSet.clear();
+    _destNPCList.clear();
+}
+
+void DialogueMission::setFinishedDestNPC(uint32 destNPCId)
+{
+    for (DialogueNPC& npc : _destNPCList)
+    {
+        if (npc.id == destNPCId)
+        {
+            npc.finished = true;
+        }
+    }
+}
+
+bool DialogueMission::isFinished()
+{
+    for (const DialogueNPC& npc : _destNPCList)
+    {
+        if (!npc.finished)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }

@@ -18,7 +18,4 @@ enum MissionState
     MissionState_Failed
 };
 
-#include <set>
-typedef std::set<uint32> NPCSet_t;
-
 #endif
