@@ -275,7 +275,7 @@ p, li { white-space: pre-wrap; }
           </sizepolicy>
          </property>
          <property name="text">
-          <string>下一页</string>
+          <string>继续</string>
          </property>
         </widget>
        </item>
