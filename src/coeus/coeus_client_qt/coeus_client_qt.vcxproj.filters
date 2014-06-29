@@ -81,6 +81,9 @@
     <Filter Include="scripting\addons">
       <UniqueIdentifier>{1447aeda-6fed-4c74-b3bc-182b0a930bfb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scripting\apis">
+      <UniqueIdentifier>{e0a6dfb3-3c41-4091-9438-0a49e08e37ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -674,6 +677,9 @@
     </ClInclude>
     <ClInclude Include="npc_scripting_addon.h">
       <Filter>scripting\addons</Filter>
+    </ClInclude>
+    <ClInclude Include="scripting_apis.h">
+      <Filter>scripting\apis</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

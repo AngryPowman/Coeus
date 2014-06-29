@@ -56,6 +56,9 @@
     <ClCompile Include="login_scripting_addon.cpp">
       <Filter>scripting\addons</Filter>
     </ClCompile>
+    <ClCompile Include="mission_scripting_apis.cpp">
+      <Filter>scripting\apis</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="service">
@@ -99,6 +102,9 @@
     </Filter>
     <Filter Include="scripting\addons">
       <UniqueIdentifier>{b809b91b-e286-4485-8291-ca2d445f5719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting\apis">
+      <UniqueIdentifier>{e4f8a8d1-5a6d-4f6e-a9d1-c0041203fcb5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +176,9 @@
     </ClInclude>
     <ClInclude Include="login_scripting_addon.h">
       <Filter>scripting\addons</Filter>
+    </ClInclude>
+    <ClInclude Include="mission_scripting_apis.h">
+      <Filter>scripting\apis</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -221,7 +221,7 @@ public:
 "</style></head><body style=\" font-family:'\345\276\256\350\275\257\351\233\205\351\273\221'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'SimSun';\"><br /></p></body></html>", 0));
         btnPrev->setText(QApplication::translate("DialogueBox", "\344\270\212\344\270\200\351\241\265", 0));
-        btnNext->setText(QApplication::translate("DialogueBox", "\344\270\213\344\270\200\351\241\265", 0));
+        btnNext->setText(QApplication::translate("DialogueBox", "\347\273\247\347\273\255", 0));
         btnEnd->setText(QApplication::translate("DialogueBox", "\347\273\223\346\235\237\345\257\271\350\257\235", 0));
     } // retranslateUi
 

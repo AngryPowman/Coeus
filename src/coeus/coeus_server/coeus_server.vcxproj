@@ -178,6 +178,7 @@
     </ClCompile>
     <ClCompile Include="login_scripting_addon.cpp" />
     <ClCompile Include="mission_manager.cpp" />
+    <ClCompile Include="mission_scripting_apis.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="player_manager.cpp" />
     <ClCompile Include="properties_handler.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="item_db.h" />
     <ClInclude Include="login_scripting_addon.h" />
     <ClInclude Include="mission_manager.h" />
+    <ClInclude Include="mission_scripting_apis.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_db.h" />
     <ClInclude Include="player_manager.h" />
