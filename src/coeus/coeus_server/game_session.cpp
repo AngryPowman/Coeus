@@ -52,14 +52,18 @@ bool GameSession::loadPlayer()
             DataManager::getInstance().loadPlayerData(_userGuid, fullData);
             this->setPlayerContext(player);
 
-			//保存本次登录时间
-			player->cachedLastLogin(Poco::Timestamp().epochTime());
-
+            player->onLogin();
             return true;
         }
     }
 
     error_log("Acquire free player object failed in player pool. player == nullptr.");
     return false;
+}
+
+void GameSession::logout(const ShutdownReason& reason)
+{
+    _player->onLogout();
+    DataManager::getInstance().savePlayerData(_userGuid, _player->fullData());
 }
 

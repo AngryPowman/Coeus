@@ -170,6 +170,7 @@
     <ClCompile Include="config_loader.cpp" />
     <ClCompile Include="data_manager.cpp" />
     <ClCompile Include="game_database.cpp" />
+    <ClCompile Include="game_message_dispatcher.cpp" />
     <ClCompile Include="game_service.cpp" />
     <ClCompile Include="game_service_application.cpp" />
     <ClCompile Include="game_session.cpp" />

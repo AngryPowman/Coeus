@@ -93,6 +93,7 @@ bool GameDatabase::loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& 
 	preparedStatement.statement(),
 		Poco::Data::Keywords::limit(1),
 		Poco::Data::Keywords::use(userGuid),
+        Poco::Data::Keywords::into(fullData.userid),
 		Poco::Data::Keywords::into(fullData.character_id),
 		Poco::Data::Keywords::into(fullData.initial_data.character_type),
 		Poco::Data::Keywords::into(fullData.initial_data.nickname),

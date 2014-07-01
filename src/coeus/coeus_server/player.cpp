@@ -21,9 +21,20 @@ Player::~Player()
 
 void Player::onLogin()
 {
-    // TODO: Æô¶¯ÐÄÌø¼ì²é
+    // TODO: start heartbeat
     // ...
 
+    // first login
+    if (lastLogin() == 0)
+    {
+        // call scripting addon
+        // ...
+    }
+
+    // save this time
+    cachedLastLogin(Poco::Timestamp().epochTime());
+
+    // initialize module instance
 	_chatManager = new ChatManager(this);
 }
 

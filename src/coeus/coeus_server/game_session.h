@@ -22,6 +22,9 @@ public:
     void send_error(uint32 errorCode, const std::string& reason);
 
 public:
+    void logout(const ShutdownReason& reason);
+
+public:
     //Register && Login
     void loginHandler(const NetworkPacket::Ptr& packet);
     void registerHandler(const NetworkPacket::Ptr& packet);

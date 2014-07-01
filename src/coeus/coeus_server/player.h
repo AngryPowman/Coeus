@@ -44,8 +44,6 @@ public:
 
 	void lastLogin(int64 last_login);
 	int64 lastLogin() const;
-	void cachedLastLogin(int64 last_login);
-	int64 cachedLastLogin() const;
 
 	void gold(uint32 gold);
 	uint32 gold() const;
@@ -56,12 +54,14 @@ public:
 	GameSession* session();
 
 private:
+    void cachedLastLogin(int64 last_login);
+    int64 cachedLastLogin() const;
+
+private:
 	uint64 _playerId;
 	Protocol::PlayerFullData* _playerFullData;
 	GameSession* _session;
 	ChatManager* _chatManager;
-
-private:
 	int64 _cachedLastLogin;
 };
 

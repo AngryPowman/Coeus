@@ -1,6 +1,6 @@
 #include "game_service_application.h"
 #include "game_session.h"
-#include "game_message_dispatcher.h"
+#include "game_opcode_registry.h"
 #include "venus_net/message_dispatcher.h"
 #include "game_service.h"
 #include "server_config.h"

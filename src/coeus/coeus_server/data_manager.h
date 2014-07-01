@@ -15,6 +15,7 @@ public:
 
 public:
     void loadPlayerData(uint64 playerId, Protocol::PlayerFullData& fullData);
+    void savePlayerData(uint64 playerId, const Protocol::PlayerFullData& fullData);
 };
 
 #endif

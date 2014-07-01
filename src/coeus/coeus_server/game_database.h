@@ -21,17 +21,8 @@ public:
     void destroy();
 
 public:
-    //====================================================================
-    // 用户系统
-    //====================================================================
-
-    //检查数据库中一个用户是否存在
     bool isUserExists(const std::string& username);
-
-    //验证帐号和密码是否匹配
     bool userAuth(const std::string& username, const std::string& password);
-
-    //插入新的用户记录
     void insertNewUserRecord(
         uint64 user_guid, 
         const std::string& username,
@@ -40,23 +31,10 @@ public:
         uint64 register_timestamp
         );
 
-    //====================================================================
-    // 角色相关
-    //====================================================================
-
-    //对应的账户下是否存在角色
     bool hasCharacter(uint64 user_guid);
-
-    //检查昵称是否存在
     bool isNicknameExist(const std::string& nickname);
-
-    //加载角色（全部数据）
     bool loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& fullData);
-
-    //保存角色（全部数据）
     bool saveCharacterInfo(uint64 userGuid, const Protocol::PlayerFullData& fullData);
-
-    //创建角色（基本数据）
     bool createCharacter(uint64 userGuid, uint8 characterType, const std::string& nickname, uint8 gender, const Protocol::Epic& epic);
 
 private:

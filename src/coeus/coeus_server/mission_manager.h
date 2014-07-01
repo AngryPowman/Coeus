@@ -14,7 +14,8 @@ public:
 
 public:
     bool acceptMission(uint32 missionId);
-    const MissionList& missionList();
+    const MissionList& missionList() const;
+    std::size_t missionCount();
 
 private:
     MissionList _missions;
