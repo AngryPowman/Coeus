@@ -34,7 +34,7 @@ void Player::onLogin()
     // save this time
     cachedLastLogin(Poco::Timestamp().epochTime());
 
-    // initialize module instance
+    // initialize module instances
 	_chatManager = new ChatManager(this);
 }
 
@@ -43,8 +43,8 @@ void Player::onLogout()
 	this->lastLogin(_cachedLastLogin);
 	debug_log("Updated last login time to %ld.", _cachedLastLogin);
 
-	// ...
-	// save data to db
+    // destroy module instances
+    SAFE_DELETE(_chatManager);
 }
 
 void Player::nickname(const std::string& nickname)

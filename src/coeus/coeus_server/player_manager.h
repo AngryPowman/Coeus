@@ -12,7 +12,7 @@ class PlayerManager
 	struct PlayerNameFinder
 	{
 		PlayerNameFinder(const std::string& playerName)
-		: _playerName(playerName)
+		    : _playerName(playerName)
 		{
 		}
 
