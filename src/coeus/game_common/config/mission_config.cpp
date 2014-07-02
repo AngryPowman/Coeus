@@ -40,3 +40,14 @@ bool MissionConfig::parse()
 
     return true;
 }
+
+const MissionData* MissionConfig::getMissionDataById(uint32 missionId) const
+{
+    auto iter = _missions.find(missionId);
+    if (iter != _missions.end())
+    {
+        return &iter->second;
+    }
+
+    return nullptr;
+}

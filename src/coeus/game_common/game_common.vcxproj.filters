@@ -200,6 +200,9 @@
     <ClInclude Include="mission_data.h">
       <Filter>common\mission</Filter>
     </ClInclude>
+    <ClInclude Include="mission_factory.h">
+      <Filter>common\mission</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -396,6 +399,9 @@
       <Filter>common\item</Filter>
     </ClCompile>
     <ClCompile Include="dialogue_mission.cpp">
+      <Filter>common\mission</Filter>
+    </ClCompile>
+    <ClCompile Include="mission_factory.cpp">
       <Filter>common\mission</Filter>
     </ClCompile>
   </ItemGroup>

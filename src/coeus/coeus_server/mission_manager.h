@@ -17,6 +17,9 @@ public:
     const MissionList& missionList() const;
     std::size_t missionCount();
 
+public:
+    static Mission* createMission(uint32 missionId);
+
 private:
     MissionList _missions;
 };

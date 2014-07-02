@@ -24,7 +24,7 @@ public:
     void missionState(const MissionState& missionState);
     const MissionState& missionState() const;
 
-    virtual bool isFinished() = 0;
+    virtual bool isFinished() { return false; }
 
 private:
     MissionState _missionState;

@@ -146,8 +146,6 @@ private:
         _Ty* obj = _free_objects.top();
         _free_objects.pop();
 
-        debug_log("free objects count = %d", _free_objects.size());
-
         return obj;
     }
 
@@ -164,8 +162,6 @@ private:
 
         for (size_t i = 0; i < size; ++i)
             _free_objects.push(&obj[i]);
-
-        //debug_log("allocated free objects = %d, total bytes = %d", size, size *  sizeof(obj[0]));
     }
 
 private:

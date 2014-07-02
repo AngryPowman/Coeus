@@ -13,6 +13,7 @@ public:
 
 public:
     bool parse();
+    const MissionData* getMissionDataById(uint32 missionId) const;
 
 public:
     adap_map<uint32, MissionData> _missions;
