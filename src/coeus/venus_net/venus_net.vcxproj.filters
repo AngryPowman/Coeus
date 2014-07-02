@@ -88,6 +88,9 @@
     <ClInclude Include="singleton.h">
       <Filter>utils\model</Filter>
     </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="service_application.cpp">

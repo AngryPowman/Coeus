@@ -183,6 +183,7 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="player_manager.cpp" />
     <ClCompile Include="properties_handler.cpp" />
+    <ClCompile Include="scripting.cpp" />
     <ClCompile Include="server_config.cpp" />
     <ClCompile Include="server_main.cpp" />
     <ClCompile Include="prepare_statement_manager.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="player_db.h" />
     <ClInclude Include="player_manager.h" />
+    <ClInclude Include="scripting.h" />
     <ClInclude Include="server_config.h" />
     <ClInclude Include="prepare_statement_manager.h" />
     <ClInclude Include="user_service.h" />

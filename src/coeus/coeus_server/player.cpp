@@ -3,6 +3,8 @@
 #include "game_database.h"
 #include "player_db.h"
 #include "chat_manager.h"
+#include "scripting.h"
+#include "login_scripting_addon.h"
 
 Player::Player(uint64 playerId, GameSession* session)
     : _playerId(playerId),
@@ -29,6 +31,7 @@ void Player::onLogin()
     {
         // call scripting addon
         // ...
+        Scripting::loginScriptingAddon()->on_login(true);
     }
 
     // save this time

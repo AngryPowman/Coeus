@@ -14,8 +14,8 @@ void LoginScriptingAddon::register_functions()
 {
 }
 
-void LoginScriptingAddon::onLogin(bool isFirstLogin)
+void LoginScriptingAddon::on_login(bool isFirstLogin)
 {
     z_lua_state& luaState = lua_state();
-    luaState.call<void>("on_login", isFirstLogin);
+    bool result = luaState.call<bool>("on_login", isFirstLogin);
 }

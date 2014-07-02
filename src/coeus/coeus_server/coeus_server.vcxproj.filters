@@ -62,6 +62,9 @@
     <ClCompile Include="game_message_dispatcher.cpp">
       <Filter>service</Filter>
     </ClCompile>
+    <ClCompile Include="scripting.cpp">
+      <Filter>scripting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="service">
@@ -182,6 +185,9 @@
     </ClInclude>
     <ClInclude Include="mission_scripting_apis.h">
       <Filter>scripting\apis</Filter>
+    </ClInclude>
+    <ClInclude Include="scripting.h">
+      <Filter>scripting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

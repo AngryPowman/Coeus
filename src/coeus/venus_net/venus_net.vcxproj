@@ -260,6 +260,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debug_md|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="tcp_connection.h" />
+    <ClInclude Include="types.h" />
     <ClInclude Include="venus_net.h" />
   </ItemGroup>
   <ItemGroup>

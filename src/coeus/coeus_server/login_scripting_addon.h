@@ -13,7 +13,7 @@ public:
     void register_functions();
 
 public:
-    void onLogin(bool isFirstLogin);
+    void on_login(bool isFirstLogin);
 };
 
 #endif // !__LOGIN_SCRIPTING_ADDON_H__
