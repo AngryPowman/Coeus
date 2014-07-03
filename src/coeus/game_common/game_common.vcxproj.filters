@@ -203,6 +203,9 @@
     <ClInclude Include="mission_factory.h">
       <Filter>common\mission</Filter>
     </ClInclude>
+    <ClInclude Include="mission_cast.h">
+      <Filter>common\mission</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">

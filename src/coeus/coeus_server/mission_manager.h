@@ -18,7 +18,7 @@ public:
     std::size_t missionCount();
 
 public:
-    static Mission* createMission(uint32 missionId);
+    Mission* createMission(uint32 missionId);
 
 private:
     MissionList _missions;

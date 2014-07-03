@@ -13,6 +13,7 @@ public:
     virtual ~MissionFactory();
 
     static Mission* createMission(uint32 missionId);
+    static void destroyMission(Mission* mission);
     static DialogueMission* toDialogueMission(Mission* mission);
 
 private:

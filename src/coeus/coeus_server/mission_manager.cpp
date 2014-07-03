@@ -1,7 +1,8 @@
 #include "mission_manager.h"
 #include "game_common/mission.h"
-#include "game_common/mission_factory.h"
-
+#include "game_common/config/mission_config.h"
+#include "game_common/mission_data.h"
+#include "game_common/dialogue_mission.h"
 MissionManager::MissionManager(Player* player)
 {
 
@@ -20,7 +21,6 @@ bool MissionManager::acceptMission(uint32 missionId)
         return false;
     }
 
-
     return true;
 }
 
@@ -36,5 +36,19 @@ std::size_t MissionManager::missionCount()
 
 Mission* MissionManager::createMission(uint32 missionId)
 {
-    return MissionFactory::createMission(missionId);
+    const MissionData* missionData = MissionConfig::getInstance().getMissionDataById(missionId);
+    if (missionData != nullptr)
+    {
+        switch (missionData->missionType)
+        {
+        case MissionType::MissionType_NPCDialogue:
+            return new DialogueMission(*missionData);
+        default:
+            break;
+        }
+        
+        return new Mission(*missionData);
+    }
+
+    return nullptr;
 }
