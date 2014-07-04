@@ -77,10 +77,14 @@
     <ClInclude Include="jsoncpp\lib_json\json_batchallocator.h" />
     <ClInclude Include="lua_engine.h" />
     <ClInclude Include="mission.h" />
+    <ClInclude Include="mission_addon.h" />
     <ClInclude Include="mission_cast.h" />
     <ClInclude Include="mission_data.h" />
     <ClInclude Include="mission_define.h" />
     <ClInclude Include="mission_factory.h" />
+    <ClInclude Include="mission_addon_impl.h" />
+    <ClInclude Include="mission_addon_local_impl.h" />
+    <ClInclude Include="mission_addon_service_impl.h" />
     <ClInclude Include="path_definition.h" />
     <ClInclude Include="scripting_addon.h" />
     <ClInclude Include="stdafx.h" />

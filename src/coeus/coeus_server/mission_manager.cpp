@@ -13,15 +13,27 @@ MissionManager::~MissionManager()
 
 }
 
-bool MissionManager::acceptMission(uint32 missionId)
+MissionResult MissionManager::acceptMission(uint32 missionId)
 {
     auto iter = _missions.find(missionId);
     if (iter != _missions.end())
     {
-        return false;
+        return MissionResult::MissionResult_Exists;
     }
 
-    return true;
+    Mission* mission = createMission(missionId);
+    if (mission != nullptr)
+    {
+        
+
+        std::pair<MissionList::iterator, bool> result = _missions.insert(std::make_pair(mission->missionId(), mission));
+        if (!result.second)
+        {
+            return MissionResult::MissionResult_Failed;
+        }
+    }
+
+    return MissionResult::MissionResult_Failed;
 }
 
 const MissionList& MissionManager::missionList() const
@@ -39,16 +51,22 @@ Mission* MissionManager::createMission(uint32 missionId)
     const MissionData* missionData = MissionConfig::getInstance().getMissionDataById(missionId);
     if (missionData != nullptr)
     {
+        Mission* mission = nullptr;
         switch (missionData->missionType)
         {
         case MissionType::MissionType_NPCDialogue:
-            return new DialogueMission(*missionData);
+            mission = new DialogueMission(*missionData);
         default:
             break;
         }
-        
-        return new Mission(*missionData);
+
+        return mission;
     }
 
     return nullptr;
+}
+
+void MissionManager::destroyMission(Mission* mission)
+{
+
 }

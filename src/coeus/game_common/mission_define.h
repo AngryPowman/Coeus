@@ -18,4 +18,13 @@ enum MissionState
     MissionState_Failed
 };
 
+// Mission error codes
+enum MissionResult
+{
+    MissionResult_Ok,           // Okay
+    MissionResult_Exists,       // Mission exists
+    MissionResult_BadCondition, // Not meet the conditions
+    MissionResult_Failed,
+};
+
 #endif
