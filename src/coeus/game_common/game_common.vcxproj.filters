@@ -207,16 +207,10 @@
       <Filter>common\mission</Filter>
     </ClInclude>
     <ClInclude Include="mission_addon.h">
-      <Filter>scripting\addons</Filter>
+      <Filter>scripting\addons\mission</Filter>
     </ClInclude>
     <ClInclude Include="mission_addon_impl.h">
-      <Filter>scripting\addons</Filter>
-    </ClInclude>
-    <ClInclude Include="mission_addon_local_impl.h">
-      <Filter>scripting\addons</Filter>
-    </ClInclude>
-    <ClInclude Include="mission_addon_service_impl.h">
-      <Filter>scripting\addons</Filter>
+      <Filter>scripting\addons\mission</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +246,9 @@
     </Filter>
     <Filter Include="common\item">
       <UniqueIdentifier>{23de428c-9e01-4ee6-ba3c-2942a4b65be9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting\addons\mission">
+      <UniqueIdentifier>{f145ec29-7e46-436b-87b3-ea50516a95df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -418,6 +415,9 @@
     </ClCompile>
     <ClCompile Include="mission_factory.cpp">
       <Filter>common\mission</Filter>
+    </ClCompile>
+    <ClCompile Include="mission_addon.cpp">
+      <Filter>scripting\addons\mission</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

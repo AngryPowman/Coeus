@@ -681,5 +681,8 @@
     <ClInclude Include="scripting_apis.h">
       <Filter>scripting\apis</Filter>
     </ClInclude>
+    <ClInclude Include="mission_addon_local_impl.h">
+      <Filter>scripting\addons</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

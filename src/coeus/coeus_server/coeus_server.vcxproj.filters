@@ -189,5 +189,8 @@
     <ClInclude Include="scripting.h">
       <Filter>scripting</Filter>
     </ClInclude>
+    <ClInclude Include="mission_addon_service_impl.h">
+      <Filter>scripting\addons</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

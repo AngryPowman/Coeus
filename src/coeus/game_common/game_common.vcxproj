@@ -83,8 +83,6 @@
     <ClInclude Include="mission_define.h" />
     <ClInclude Include="mission_factory.h" />
     <ClInclude Include="mission_addon_impl.h" />
-    <ClInclude Include="mission_addon_local_impl.h" />
-    <ClInclude Include="mission_addon_service_impl.h" />
     <ClInclude Include="path_definition.h" />
     <ClInclude Include="scripting_addon.h" />
     <ClInclude Include="stdafx.h" />
@@ -147,6 +145,7 @@
     <ClCompile Include="jsoncpp\lib_json\json_writer.cpp" />
     <ClCompile Include="lua_engine.cpp" />
     <ClCompile Include="mission.cpp" />
+    <ClCompile Include="mission_addon.cpp" />
     <ClCompile Include="mission_factory.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
