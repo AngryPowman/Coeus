@@ -5,8 +5,14 @@ class MissionAddonImpl;
 class MissionAddon
 {
 public:
-    MissionAddon(MissionAddonImpl* impl);
-    virtual ~MissionAddon();
+    MissionAddon(MissionAddonImpl* impl)
+    {
+        _impl = impl;
+    }
+
+    virtual ~MissionAddon()
+    {
+    }
 
 private:
     MissionAddonImpl* _impl;

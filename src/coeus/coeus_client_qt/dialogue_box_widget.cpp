@@ -22,7 +22,7 @@ DialogueBoxWidget::DialogueBoxWidget(QWidget *parent)
     connect(_ui->btnEnd, SIGNAL(clicked()), this, SLOT(slotOnEndClicked()));
 
     NPCScriptingAddon scriptingAddon;
-    scriptingAddon.onPve();
+    scriptingAddon.on_pve();
 }
 
 DialogueBoxWidget::~DialogueBoxWidget()

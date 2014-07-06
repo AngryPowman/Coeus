@@ -2,7 +2,7 @@
 
 LoginScriptingAddon::LoginScriptingAddon()
 {
-    LuaEngine::initialize("scripts/s_login_scripting.lua");
+    SAFE_LOAD_SCRIPTING("scripts/s_login_scripting.lua");
 }
 
 LoginScriptingAddon::~LoginScriptingAddon()

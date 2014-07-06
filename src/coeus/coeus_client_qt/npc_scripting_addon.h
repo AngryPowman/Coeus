@@ -13,10 +13,7 @@ public:
     void register_functions();
 
 public:
-    bool onPve();
-
-private:
-    static int get_level(lua_State* L);
+    bool on_pve();
 };
 
 

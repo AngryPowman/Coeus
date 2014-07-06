@@ -21,16 +21,25 @@ MissionResult MissionManager::acceptMission(uint32 missionId)
         return MissionResult::MissionResult_Exists;
     }
 
-    Mission* mission = createMission(missionId);
+    Mission::Ptr mission(this->createMission(missionId));
     if (mission != nullptr)
     {
-        
-
-        std::pair<MissionList::iterator, bool> result = _missions.insert(std::make_pair(mission->missionId(), mission));
-        if (!result.second)
+        const MissionData* missionData = MissionConfig::getInstance().getMissionDataById(missionId);
+        if (missionData != nullptr)
         {
-            return MissionResult::MissionResult_Failed;
+            
+
+            // Accept conditions
+            // ...
+
+            std::pair<MissionList::iterator, bool> result = _missions.insert(std::make_pair(mission->missionId(), mission));
+            if (result.second)
+            {
+                return MissionResult::MissionResult_Ok;
+            }
         }
+
+        return MissionResult::MissionResult_Failed;
     }
 
     return MissionResult::MissionResult_Failed;

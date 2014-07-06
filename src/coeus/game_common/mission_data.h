@@ -8,6 +8,7 @@ struct MissionData
 {
     uint32 missionId;
     MissionType missionType;
+    std::string script;
 
 #if defined (COEUS_CLIENT)
     std::string category;

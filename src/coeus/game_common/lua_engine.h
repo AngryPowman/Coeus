@@ -3,42 +3,35 @@
 
 #include "z_lua_bind/z_lua_bind.h"
 #include "path_definition.h"
+#include <memory>
+#include <venus_net/common.h>
+
 
 class LuaEngine
 {
+public:
+    struct LuaData
+    {
+        typedef std::shared_ptr<LuaData> Ptr;
+
+        z_lua_state state;
+        z_lua_function_reg function_register;
+    };
+
+    typedef adap_map<std::string, LuaData::Ptr> LuaStateTable;
+
 protected:
-    LuaEngine()
-    {
-    }
-
-    virtual ~LuaEngine()
-    {
-    }
+    LuaEngine();
+    virtual ~LuaEngine();
 
 protected:
-    bool initialize(const std::string& scriptFile)
-    {
-        bool result = (_lua_state.create() == 0 && _lua_state.open_all_libs() == 0);
-        if (result)
-        {
-            register_functions();
-            if (!scriptFile.empty())
-            {
-                _lua_state.dofile((GameDirecotry::Shared + scriptFile).c_str());
-            }
-        }
-
-        return result;
-    }
+    LuaData* initialize(const std::string& scriptFile);
 
 protected:
     virtual void register_functions() = 0;
-    inline z_lua_state& lua_state() { return _lua_state; }
-    inline z_lua_function_reg& lua_function_reg() { return _lua_function_reg; }
 
 private:
-    z_lua_state _lua_state;
-    z_lua_function_reg _lua_function_reg;
+    static LuaStateTable _luaStateTable;
 };
 
 #endif // !__LUA_ENGINE_H__

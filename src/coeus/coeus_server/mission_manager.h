@@ -3,10 +3,10 @@
 
 #include <venus_net/common.h>
 #include "game_common/mission_define.h"
+#include "game_common/mission.h"
 
 class Player;
-class Mission;
-typedef adap_map<uint32, Mission*> MissionList;
+typedef adap_map<uint32, Mission::Ptr> MissionList;
 class MissionManager
 {
 public:

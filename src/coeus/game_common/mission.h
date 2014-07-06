@@ -2,11 +2,15 @@
 #define __MISSION_H__
 
 #include <venus_net/common.h>
+#include <memory>
 #include "mission_define.h"
 
 struct MissionData;
 class Mission
 {
+public:
+    typedef std::shared_ptr<Mission> Ptr;
+
 public:
     Mission(const MissionData& missionData);
     virtual ~Mission();
