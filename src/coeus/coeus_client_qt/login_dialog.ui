@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>酷到没朋友的Coeus</string>
+   <string>叫我英雄</string>
   </property>
   <property name="windowIcon">
    <iconset resource="coeus_client_qt.qrc">
@@ -329,6 +329,19 @@
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>20</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>注册一号位</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frameServerSelector">
     <property name="geometry">
@@ -513,7 +526,7 @@
      <x>0</x>
      <y>0</y>
      <width>471</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
