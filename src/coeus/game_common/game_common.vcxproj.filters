@@ -206,10 +206,10 @@
     <ClInclude Include="mission_cast.h">
       <Filter>common\mission</Filter>
     </ClInclude>
-    <ClInclude Include="mission_addon.h">
+    <ClInclude Include="mission_scripting_addon.h">
       <Filter>scripting\addons\mission</Filter>
     </ClInclude>
-    <ClInclude Include="mission_addon_impl.h">
+    <ClInclude Include="npc_scripting_addon.h">
       <Filter>scripting\addons\mission</Filter>
     </ClInclude>
   </ItemGroup>
@@ -416,7 +416,10 @@
     <ClCompile Include="mission_factory.cpp">
       <Filter>common\mission</Filter>
     </ClCompile>
-    <ClCompile Include="mission_addon.cpp">
+    <ClCompile Include="mission_scripting_addon.cpp">
+      <Filter>scripting\addons\mission</Filter>
+    </ClCompile>
+    <ClCompile Include="npc_scripting_addon.cpp">
       <Filter>scripting\addons\mission</Filter>
     </ClCompile>
   </ItemGroup>

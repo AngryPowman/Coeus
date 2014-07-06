@@ -1,8 +1,10 @@
 #include "mission_manager.h"
 #include "game_common/mission.h"
 #include "game_common/config/mission_config.h"
-#include "game_common/mission_data.h"
 #include "game_common/dialogue_mission.h"
+#include "game_common/mission_scripting_addon.h"
+#include "game_common/mission_data.h"
+
 MissionManager::MissionManager(Player* player)
 {
 
@@ -27,19 +29,22 @@ MissionResult MissionManager::acceptMission(uint32 missionId)
         const MissionData* missionData = MissionConfig::getInstance().getMissionDataById(missionId);
         if (missionData != nullptr)
         {
-            
-
-            // Accept conditions
-            // ...
+            // Scripting Addon : Check accept conditions
+            MissionScriptingAddon missionScriptingAddon(missionData);
+            if (missionScriptingAddon.on_check_conditions() == false)
+            {
+                return MissionResult::MissionResult_BadCondition;
+            }
 
             std::pair<MissionList::iterator, bool> result = _missions.insert(std::make_pair(mission->missionId(), mission));
             if (result.second)
             {
+                // Scripting Addon : Accepted mission
+                missionScriptingAddon.on_accepted_mission();
+
                 return MissionResult::MissionResult_Ok;
             }
         }
-
-        return MissionResult::MissionResult_Failed;
     }
 
     return MissionResult::MissionResult_Failed;

@@ -208,7 +208,6 @@
     </ClInclude>
     <ClInclude Include="item_db.h" />
     <ClInclude Include="login_scripting_addon.h" />
-    <ClInclude Include="mission_addon_service_impl.h" />
     <ClInclude Include="mission_manager.h" />
     <ClInclude Include="mission_scripting_apis.h" />
     <ClInclude Include="player.h" />

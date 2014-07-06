@@ -6,8 +6,8 @@
 		描述：前往生命科学研究生处了解红色纹身的详细情况。
 --]]
 
-local mission_id = 10000
-local mission_npc_id = 10001
+local mission_id = 1000
+local mission_npc_id = 1000
 
 
 local function on_accepted_mission()
@@ -17,6 +17,10 @@ end
 local function on_finished_mission()
 	
 end
+
+local function on_check_conditions()
+	return true
+end	
 
 local function on_mission_process()
 	start_story_dialogue()

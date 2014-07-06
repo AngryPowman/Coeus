@@ -51,7 +51,10 @@ struct NPCData
     std::string name;
     std::string title;
     std::string category;
+#if defined (COEUS_CLIENT)
     std::string avatar;
+#endif
+    std::string script;
     AIData ai;
     DialoguesData dialogues;
 };

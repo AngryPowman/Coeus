@@ -1,10 +1,11 @@
 [
     {
-        "id"    : 1001,                             // NPC唯一ID
-        "name"  : "老肉鸡",                         // NPC名字（如：王二）
-        "title" : "首席淫秽鉴定官",                 // NPC称号（如：武器店老板）
-		"category" : "维纳斯NPC",					// NPC分类（仅作备注用）
-        "avatar" : "images/avatar/zapline.jpg", // NPC头像
+        "id"    : 1000,                             		// NPC唯一ID
+        "name"  : "老肉鸡",                         		// NPC名字（如：王二）
+        "title" : "首席淫秽鉴定官",                 		// NPC称号（如：武器店老板）
+		"category" : "维纳斯NPC",							// NPC分类（仅作备注用）
+        "avatar" : "images/avatar/zapline.jpg", 			// NPC头像
+		"script" : "scripts/npc/s_npc_1000.lua|scripts/npc/c_npc_1000.lua",
         "ai_properties" :
         {
 			"level" : 50,                           // NPC等级

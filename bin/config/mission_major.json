@@ -2,18 +2,18 @@
 	"finder" : 
 	[
 		{
-			"id" : 10000,
+			"id" : 1000,
 			"type" : 0,
 			"category" : "第一章 追寻之路",
 			"title" : "神秘纹身的真相",
 			"description" : "前往生命科学研究生处了解红色纹身的详细情况。",
-			"script" : "10000.lua"
+			"script" : "scripts/npc/c_mission_10000.lua"
 		}
 	],
 	"seeker" :
 	[
 		{
-			"id" : 20000,
+			"id" : 2000,
 			"type" : 0,
 			"category" : "第一章 探索之路",
 			"title" : "冒险的准备",
@@ -24,7 +24,7 @@
 	"challenger" :
 	[
 		{
-			"id" : 30000,
+			"id" : 3000,
 			"type" : 0,
 			"category" : "第一章 强者之路",
 			"title" : "导师的故事",

@@ -4,8 +4,7 @@
 #include <random>
 #include "qt_coeus_common.h"
 #include "npc_option_link.h"
-
-#include "npc_scripting_addon.h"
+#include "game_common/npc_scripting_addon.h"
 
 DialogueBoxWidget::DialogueBoxWidget(QWidget *parent)
     : QWidget(parent), _npcData(nullptr), _dialoguePartIndex(0), _currentDialogueNode(nullptr)
@@ -20,9 +19,6 @@ DialogueBoxWidget::DialogueBoxWidget(QWidget *parent)
     connect(_ui->btnPrev, SIGNAL(clicked()), this, SLOT(slotOnPrevClicked()));
     connect(_ui->btnNext, SIGNAL(clicked()), this, SLOT(slotOnNextClicked()));
     connect(_ui->btnEnd, SIGNAL(clicked()), this, SLOT(slotOnEndClicked()));
-
-    NPCScriptingAddon scriptingAddon;
-    scriptingAddon.on_pve();
 }
 
 DialogueBoxWidget::~DialogueBoxWidget()

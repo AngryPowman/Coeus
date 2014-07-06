@@ -1,5 +1,6 @@
 #include "npc_config.h"
 #include "game_common/path_definition.h"
+#include "Poco/StringTokenizer.h"
 
 bool NPCConfig::parse()
 {
@@ -15,7 +16,20 @@ bool NPCConfig::parse()
         npcData.name = npcValue["name"].asString();
         npcData.title = npcValue["title"].asString();
         npcData.category = npcValue["category"].asString();
+#if defined (COEUS_CLIENT)
         npcData.avatar = npcValue["avatar"].asString();
+#endif
+        npcData.script = npcValue["script"].asString();
+
+        Poco::StringTokenizer tokenizer(npcData.script, "|", Poco::StringTokenizer::TOK_TRIM);
+        if (tokenizer.count() == 2)
+        {
+#if defined (COEUS_CLIENT)
+            npcData.script = tokenizer[1];
+#else
+            npcData.script = tokenizer[0];
+#endif
+        }
 
         //Ω‚ŒˆAI Ù–‘
         const Json::Value& aiPropertiesValue = npcValue["ai_properties"];

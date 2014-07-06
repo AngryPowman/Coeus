@@ -72,5 +72,5 @@ void GameStatusBarWidget::updateExp(uint32 exp)
 
 void GameStatusBarWidget::slotOnDialogueTest()
 {
-    DialogueBox::showNPCDialogueBox(1001);
+    DialogueBox::showNPCDialogueBox(1000);
 }

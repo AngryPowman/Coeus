@@ -1,8 +1,9 @@
 #include "npc_scripting_addon.h"
+#include "game_common/config/npc_config.h"
 
-NPCScriptingAddon::NPCScriptingAddon()
+NPCScriptingAddon::NPCScriptingAddon(const NPCData* npcData)
 {
-    SAFE_LOAD_SCRIPTING("scripts/npc/c_npc_10000.lua");
+    SAFE_LOAD_SCRIPTING(npcData->script);
 }
 
 NPCScriptingAddon::~NPCScriptingAddon()
@@ -13,7 +14,11 @@ NPCScriptingAddon::~NPCScriptingAddon()
 void NPCScriptingAddon::register_functions()
 {
     z_lua_state& luaState = lua_state();
-    //luaState.reg_function("get_level", get_level);
+}
+
+void NPCScriptingAddon::on_start_dialogue()
+{
+
 }
 
 bool NPCScriptingAddon::on_pve()

@@ -416,9 +416,6 @@
     <ClCompile Include="dialogue_box.cpp">
       <Filter>logic\npc</Filter>
     </ClCompile>
-    <ClCompile Include="npc_scripting_addon.cpp">
-      <Filter>scripting\addons</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -675,14 +672,8 @@
     <ClInclude Include="dialogue_box.h">
       <Filter>logic\npc</Filter>
     </ClInclude>
-    <ClInclude Include="npc_scripting_addon.h">
-      <Filter>scripting\addons</Filter>
-    </ClInclude>
     <ClInclude Include="scripting_apis.h">
       <Filter>scripting\apis</Filter>
-    </ClInclude>
-    <ClInclude Include="mission_addon_local_impl.h">
-      <Filter>scripting\addons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
