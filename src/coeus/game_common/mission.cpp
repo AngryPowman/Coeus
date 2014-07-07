@@ -1,15 +1,19 @@
 #include "mission.h"
 #include "mission_data.h"
+#include "mission_args.h"
 
-Mission::Mission(const MissionData& missionData)
-    : _missionData(missionData), _missionState(MissionState::MissionState_None)
+Mission::Mission(const MissionData& missionData, std::size_t args_size/* = 0*/)
+    : _missionData(missionData), _missionState(MissionState::MissionState_None), _missionArgs(nullptr)
 {
-
+    if (args_size <= 128)
+    {
+        _missionArgs = new MissionArgs(0);
+    }
 }
 
 Mission::~Mission()
 {
-
+    SAFE_DELETE(_missionArgs);
 }
 
 uint32 Mission::missionId()

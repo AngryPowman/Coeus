@@ -41,6 +41,9 @@ public:
 	void privateChatByIdHandler(const NetworkPacket::Ptr& packet);
 	void privateChatByNameHandler(const NetworkPacket::Ptr& packet);
 
+    // Missions
+    void missionListHandler(const NetworkPacket::Ptr& packet);
+
 private:
     void setPlayerContext(Player* player);
     bool loadPlayer();

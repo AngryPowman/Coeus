@@ -6,6 +6,7 @@
 
 class GameSession;
 class ChatManager;
+class MissionManager;
 namespace Protocol
 {
     struct PlayerFullData;
@@ -51,6 +52,7 @@ public:
 public:
     Protocol::PlayerFullData& fullData();
 	ChatManager* chatManager();
+    MissionManager* missionManager();
 	GameSession* session();
 
 private:
@@ -62,6 +64,7 @@ private:
 	Protocol::PlayerFullData* _playerFullData;
 	GameSession* _session;
 	ChatManager* _chatManager;
+    MissionManager* _missionManager;
 	int64 _cachedLastLogin;
 };
 

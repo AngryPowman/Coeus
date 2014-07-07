@@ -37,5 +37,6 @@
   <Type VariableType="2" TypeName="Mission" Description="">
     <Member MemberName="mission_id" MemberType="int32" Purpose="variable" MemberNote="" />
     <Member MemberName="mission_state" MemberType="uint8" Purpose="variable" MemberNote="" />
+    <Member MemberName="mission_args" MemberType="int32" Purpose="array" MemberNote="" />
   </Type>
 </XMLDataType>

@@ -6,13 +6,15 @@
 #include "mission_define.h"
 
 struct MissionData;
+class MissioArgs;
 class Mission
 {
 public:
     typedef std::shared_ptr<Mission> Ptr;
+    typedef std::vector<int32> MissionArgs;
 
 public:
-    Mission(const MissionData& missionData);
+    Mission(const MissionData& missionData, std::size_t args_size = 0);
     virtual ~Mission();
 
 public:
@@ -30,9 +32,17 @@ public:
 
     virtual bool isFinished() { return false; }
 
+public:
+    /*template <typename T>
+    T* misionCast()
+    {
+        return dynamic_cast<T*>(this);
+    }*/
+
 private:
     MissionState _missionState;
     const MissionData& _missionData;
+    MissionArgs* _missionArgs;
 };
 
 #endif // !__MISSION_H__

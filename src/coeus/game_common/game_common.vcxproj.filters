@@ -203,14 +203,14 @@
     <ClInclude Include="mission_factory.h">
       <Filter>common\mission</Filter>
     </ClInclude>
-    <ClInclude Include="mission_cast.h">
-      <Filter>common\mission</Filter>
-    </ClInclude>
     <ClInclude Include="mission_scripting_addon.h">
       <Filter>scripting\addons\mission</Filter>
     </ClInclude>
     <ClInclude Include="npc_scripting_addon.h">
       <Filter>scripting\addons\mission</Filter>
+    </ClInclude>
+    <ClInclude Include="mission_args.h">
+      <Filter>common\mission</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -178,6 +178,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="login_scripting_addon.cpp" />
+    <ClCompile Include="mission_handler.cpp" />
     <ClCompile Include="mission_manager.cpp" />
     <ClCompile Include="mission_scripting_apis.cpp" />
     <ClCompile Include="player.cpp" />

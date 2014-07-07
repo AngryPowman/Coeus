@@ -36,7 +36,7 @@ MissionResult MissionManager::acceptMission(uint32 missionId)
                 return MissionResult::MissionResult_BadCondition;
             }
 
-            std::pair<MissionList::iterator, bool> result = _missions.insert(std::make_pair(mission->missionId(), mission));
+            std::pair<MissionTable::iterator, bool> result = _missions.insert(std::make_pair(mission->missionId(), mission));
             if (result.second)
             {
                 // Scripting Addon : Accepted mission
@@ -50,7 +50,7 @@ MissionResult MissionManager::acceptMission(uint32 missionId)
     return MissionResult::MissionResult_Failed;
 }
 
-const MissionList& MissionManager::missionList() const
+const MissionTable& MissionManager::missionTable() const
 {
     return _missions;
 }

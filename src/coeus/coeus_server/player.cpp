@@ -3,6 +3,7 @@
 #include "game_database.h"
 #include "player_db.h"
 #include "chat_manager.h"
+#include "mission_manager.h"
 #include "scripting.h"
 #include "login_scripting_addon.h"
 
@@ -11,7 +12,8 @@ Player::Player(uint64 playerId, GameSession* session)
 	_playerFullData(new Protocol::PlayerFullData()), 
 	_session(session), 
 	_cachedLastLogin(0),
-	_chatManager(nullptr)
+	_chatManager(nullptr),
+    _missionManager(nullptr)
 {
 }
 
@@ -39,6 +41,7 @@ void Player::onLogin()
 
     // initialize module instances
 	_chatManager = new ChatManager(this);
+    _missionManager = new MissionManager(this);
 }
 
 void Player::onLogout()
@@ -48,6 +51,7 @@ void Player::onLogout()
 
     // destroy module instances
     SAFE_DELETE(_chatManager);
+    SAFE_DELETE(_missionManager);
 }
 
 void Player::nickname(const std::string& nickname)
@@ -129,4 +133,9 @@ void Player::send_message(uint32 opcode, NetworkMessage& message)
 ChatManager* Player::chatManager()
 {
 	return _chatManager;
+}
+
+MissionManager* Player::missionManager()
+{
+    return _missionManager;
 }

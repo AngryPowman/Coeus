@@ -65,6 +65,9 @@
     <ClCompile Include="scripting.cpp">
       <Filter>scripting</Filter>
     </ClCompile>
+    <ClCompile Include="mission_handler.cpp">
+      <Filter>session\handler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="service">

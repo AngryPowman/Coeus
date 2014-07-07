@@ -84,6 +84,11 @@
     <Filter Include="scripting\apis">
       <UniqueIdentifier>{e0a6dfb3-3c41-4091-9438-0a49e08e37ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\qrc_coeus_client_qt.cpp">
@@ -416,6 +421,18 @@
     <ClCompile Include="dialogue_box.cpp">
       <Filter>logic\npc</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mission_window.cpp">
+      <Filter>qt_main\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mission_window.cpp">
+      <Filter>qt_main\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\debug_md\moc_mission_window.cpp">
+      <Filter>qt_main\Generated Files\debug_md</Filter>
+    </ClCompile>
+    <ClCompile Include="mission_window.cpp">
+      <Filter>logic\mission</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="coeus_client_qt.qrc">
@@ -631,6 +648,12 @@
     <CustomBuild Include="dialogue_box_widget.h">
       <Filter>logic\npc</Filter>
     </CustomBuild>
+    <CustomBuild Include="mission_window.h">
+      <Filter>logic\mission</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mission_window.ui">
+      <Filter>ui</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="coeus_client_qt.rc" />
@@ -674,6 +697,9 @@
     </ClInclude>
     <ClInclude Include="scripting_apis.h">
       <Filter>scripting\apis</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_mission_window.h">
+      <Filter>qt_main\Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

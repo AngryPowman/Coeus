@@ -6,7 +6,7 @@
 #include "game_common/mission.h"
 
 class Player;
-typedef adap_map<uint32, Mission::Ptr> MissionList;
+typedef adap_map<uint32, Mission::Ptr> MissionTable;
 class MissionManager
 {
 public:
@@ -15,7 +15,7 @@ public:
 
 public:
     MissionResult acceptMission(uint32 missionId);
-    const MissionList& missionList() const;
+    const MissionTable& missionTable() const;
     std::size_t missionCount();
 
 public:
@@ -23,7 +23,7 @@ public:
     void destroyMission(Mission* mission);
 
 private:
-    MissionList _missions;
+    MissionTable _missions;
 };
 
 #endif // !__MISSION_MANAGER_H__

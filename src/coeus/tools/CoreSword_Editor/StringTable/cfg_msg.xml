@@ -77,7 +77,8 @@
   <category CategoryName="任务系统">
     <msg MsgId="22000" MsgProperty="0" MsgName="CSMissionListReq" MsgNote="请求任务列表" MsgRemark="" ErrorList="" />
     <msg MsgId="22001" MsgProperty="1" MsgName="SCMissionListRsp" MsgNote="任务列表返回" MsgRemark="" ErrorList="">
-      <param DataType="Mission" Purpose="variable" ParamName="mission_list" ParamNote="任务列表" />
+      <param DataType="Mission" Purpose="array" ParamName="mission_list" ParamNote="任务列表" />
     </msg>
+    <msg MsgId="22002" MsgProperty="1" MsgName="SCAcceptedMissionNotificaion" MsgNote="接受任务通知" MsgRemark="" ErrorList="" />
   </category>
 </MSG_CFG>

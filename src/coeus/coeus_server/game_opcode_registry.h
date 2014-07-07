@@ -13,7 +13,7 @@ OPCODE_REGISTER_BEGIN(GameOpcodeRegistry, GameSession)
 	REGISTER_HANDLER(Opcodes::CSSendPublicChatMessageReq, publicChatHandler);
 	REGISTER_HANDLER(Opcodes::CSSendPrivateChatMessageByIdReq, privateChatByIdHandler);
 	REGISTER_HANDLER(Opcodes::CSSendPrivateChatMessageByNameReq, privateChatByNameHandler);
-
+    REGISTER_HANDLER(Opcodes::CSMissionListReq, privateChatByNameHandler);
 OPCODE_REGISTER_END()
 
 #endif
