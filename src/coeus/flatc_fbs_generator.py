@@ -34,4 +34,4 @@ if __name__ == '__main__':
 	if result == 0:
 		print "Compiled Okay!"
 	else:
-		print "Failed to compile, errorcode = " + result
+		print "Failed to compile, errorcode = " + str(result)
