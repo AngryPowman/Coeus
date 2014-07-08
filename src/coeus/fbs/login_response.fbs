@@ -1,0 +1,8 @@
+namespace Protocol;
+
+table LoginResponse
+{
+	login_result : string;
+	player_id : string;
+	character_create_require : bool;
+}

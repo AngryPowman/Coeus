@@ -1,7 +1,7 @@
-namespace UserService;
+namespace Protocol;
 
-table CSLoginReq
+table LoginRequest
 {
 	account : string;	// login account
 	password : string;  // login password (md5 hash)
-} 
+}
