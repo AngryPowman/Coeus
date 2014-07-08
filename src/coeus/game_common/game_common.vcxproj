@@ -203,7 +203,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;COEUS_CLIENT;COEUS_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\;..\;jsoncpp;..\..\..\3rdparty;..\..\..\3rdparty\zpublic;..\..\..\3rdparty\poco\Foundation\include;..\..\..\3rdparty\poco\Util\include;..\..\..\3rdparty\poco\Net\include;..\..\..\3rdparty\poco\Data\SQLite\include;..\..\..\3rdparty\poco\Data\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;..\;jsoncpp;..\..\..\3rdparty;..\..\..\3rdparty\flatbuffers\include;..\..\..\3rdparty\zpublic;..\..\..\3rdparty\poco\Foundation\include;..\..\..\3rdparty\poco\Util\include;..\..\..\3rdparty\poco\Net\include;..\..\..\3rdparty\poco\Data\SQLite\include;..\..\..\3rdparty\poco\Data\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PreprocessToFile>false</PreprocessToFile>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>

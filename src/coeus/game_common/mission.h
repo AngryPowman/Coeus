@@ -32,13 +32,6 @@ public:
 
     virtual bool isFinished() { return false; }
 
-public:
-    /*template <typename T>
-    T* misionCast()
-    {
-        return dynamic_cast<T*>(this);
-    }*/
-
 private:
     MissionState _missionState;
     const MissionData& _missionData;
