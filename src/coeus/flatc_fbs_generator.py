@@ -30,6 +30,10 @@ if __name__ == '__main__':
 	print "		>> FBS_CXX_OUTPUT : " + FBS_CXX_OUTPUT
 	print "		>> FBS_FILES : " + FBS_FILES
 	
+	#create output directory if not exists
+	if not os.path.exists(FBS_CXX_OUTPUT):
+		os.makedirs(FBS_CXX_OUTPUT)
+	
 	result = os.system(FBS_COMPILER + " -o " +FBS_CXX_OUTPUT + " -c " + FBS_FILES)
 	if result == 0:
 		print "Compiled Okay!"
