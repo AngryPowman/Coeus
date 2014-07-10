@@ -4,6 +4,8 @@
 #include "game_database.h"
 #include "player.h"
 #include "player_manager.h"
+#include "protocol/login_request.fb.h"
+#include "protocol/login_response.fb.h"
 
 void GameSession::registerHandler(const NetworkPacket::Ptr& packet)
 {

@@ -6,7 +6,7 @@
 
 OPCODE_REGISTER_BEGIN(GameOpcodeRegistry, GameSession)
 // 	REGISTER_HANDLER(Opcodes::CSRegisterReq, registerHandler);
-// 	REGISTER_HANDLER(Opcodes::CSLoginReq, loginHandler);
+ 	REGISTER_HANDLER(Opcodes::CSLoginReq, loginHandler);
 //     REGISTER_HANDLER(Opcodes::CSCheckNicknameExist, checkNicknameExist);
 //     REGISTER_HANDLER(Opcodes::CSCreateCharacter, characterCreateHandler);
 //     REGISTER_HANDLER(Opcodes::CSCharacterInitialDataReq, getPropertiesHandler);

@@ -176,10 +176,10 @@ void GameLogin::loginProcess()
 
         auto account = builder.CreateString(_ui.cmbAccount->currentText().toStdString());
         auto password = builder.CreateString(_passwordDigest);
-        auto loginRequest = Protocol::CreateLoginRequest(builder, account, password);
+        flatbuffers::Offset<Protocol::LoginRequest> loginRequest = Protocol::CreateLoginRequest(builder, account, password);
         builder.Finish(loginRequest);
 
-        //GameNetwork::getInstance().sendMessage(Opcodes::CSLoginReq, builder);
+        GameNetwork::getInstance().sendMessage(10001, builder);
     }
 }
 
