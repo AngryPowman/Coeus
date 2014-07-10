@@ -7,6 +7,8 @@
 #include "game_common/game_util.h"
 #include "login_config.h"
 #include "game_data.h"
+#include "flatbuffers/flatbuffers.h"
+#include "protocol/login_request.fb.h"
 
 GameLogin::GameLogin(QWidget *parent)
     : QMainWindow(parent), 
@@ -161,17 +163,24 @@ void GameLogin::loginProcess()
     if (GameNetwork::getInstance().connectServer())
     {
         _ui.lblStateTips->setText("正在验证用户名和密码");
-        Protocol::CSLoginReq loginReq;
-        loginReq.account = _ui.cmbAccount->currentText().toStdString();
+        //Protocol::CSLoginReq loginReq;
+        flatbuffers::FlatBufferBuilder builder;
+
+        //loginReq.account = _ui.cmbAccount->currentText().toStdString();
 
         if (_isPasswordDigest == false)
         {
             _passwordDigest = GameUtil::toPasswordDigest(_ui.txtPassword->text().toStdString());
         }
 
-        loginReq.password = _passwordDigest;
+        //loginReq.password = _passwordDigest;
 
-        GameNetwork::getInstance().sendMessage(Opcodes::CSLoginReq, loginReq);
+        auto account = builder.CreateString(_ui.cmbAccount->currentText().toStdString());
+        auto password = builder.CreateString(_passwordDigest);
+        auto loginRequest = Protocol::CreateLoginRequest(builder, account, password);
+        builder.Finish(loginRequest);
+
+        GameNetwork::getInstance().sendMessage(Opcodes::CSLoginReq, builder);
     }
 }
 

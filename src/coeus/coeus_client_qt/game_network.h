@@ -30,6 +30,9 @@ public:
 public:
     void setConnectServer(int serverId);
     bool connectServer();
+    void sendMessage(uint16 opcode, const flatbuffers::FlatBufferBuilder& message);
+
+    // reserve
     void sendMessage(uint16 opcode, NetworkMessage& message);
     void close();
 

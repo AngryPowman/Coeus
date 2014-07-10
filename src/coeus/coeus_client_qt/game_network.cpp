@@ -4,6 +4,7 @@
 #include "game_opcode_registry.h"
 #include "qt_coeus_common.h"
 #include "widget_manager.h"
+#include "flatbuffers/flatbuffers.h"
 
 GameNetwork::GameNetwork()
     : _blockPacketization(std::bind(&GameNetwork::onMessage, this, std::placeholders::_1))
@@ -52,6 +53,21 @@ void GameNetwork::sendMessage(int16 opcode, const byte* buff, size_t size)
     sendMessage(streamPtr);
 }
 
+void GameNetwork::sendMessage(uint16 opcode, const flatbuffers::FlatBufferBuilder& message)
+{
+    BasicStreamPtr streamPtr(new BasicStream());
+    streamPtr->write((int32)0);
+    streamPtr->write(opcode);
+    // ...
+    // TODO: 包压缩和加密标志预留
+
+    streamPtr->resize(NetworkParam::kHeaderLength + message.GetSize());
+    //message.encode((byte*)streamPtr->b.begin() + NetworkParam::kHeaderLength, message.byteSize());
+    streamPtr->rewriteSize(streamPtr->b.size(), streamPtr->b.begin());
+
+    sendMessage(streamPtr);
+}
+
 void GameNetwork::sendMessage(uint16 opcode, NetworkMessage& message)
 {
     BasicStreamPtr streamPtr(new BasicStream());
@@ -66,6 +82,7 @@ void GameNetwork::sendMessage(uint16 opcode, NetworkMessage& message)
 
     sendMessage(streamPtr);
 }
+
 void GameNetwork::close()
 {
     _socket->abort();
