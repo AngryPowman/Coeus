@@ -117,11 +117,11 @@ struct Type {
 
 // Represents a parsed scalar value, it's type, and field offset.
 struct Value {
-  Value() : constant("0"), offset(-1) {}
-
+  Value() : constant("0"), offset(static_cast<voffset_t>(
+                                ~(static_cast<voffset_t>(0U)))) {}
   Type type;
   std::string constant;
-  int offset;
+  voffset_t offset;
 };
 
 // Helper class that retains the original order of a set of identifiers and
@@ -290,26 +290,40 @@ class Parser {
   std::vector<uint8_t> struct_stack_;
 };
 
+// Container of options that may apply to any of the source/text generators.
+struct GeneratorOptions {
+  bool strict_json;
+  int indent_step;
+
+  GeneratorOptions() : strict_json(false), indent_step(2) {}
+};
+
 // Generate text (JSON) from a given FlatBuffer, and a given Parser
 // object that has been populated with the corresponding schema.
+// If ident_step is 0, no indentation will be generated. Additionally,
+// if it is less than 0, no linefeeds will be generated either.
 // See idl_gen_text.cpp.
+// strict_json adds "quotes" around field names if true.
 extern void GenerateText(const Parser &parser,
                          const void *flatbuffer,
-                         int indent_step,
+                         const GeneratorOptions &opts,
                          std::string *text);
 
 // Generate a C++ header from the definitions in the Parser object.
 // See idl_gen_cpp.
-extern std::string GenerateCPP(const Parser &parser);
+extern std::string GenerateCPP(const Parser &parser,
+                               const std::string &include_guard_ident);
 extern bool GenerateCPP(const Parser &parser,
                         const std::string &path,
-                        const std::string &file_name);
+                        const std::string &file_name,
+                        const GeneratorOptions &opts);
 
 // Generate Java files from the definitions in the Parser object.
 // See idl_gen_java.cpp.
 extern bool GenerateJava(const Parser &parser,
                          const std::string &path,
-                         const std::string &file_name);
+                         const std::string &file_name,
+                         const GeneratorOptions &opts);
 
 }  // namespace flatbuffers
 

@@ -83,7 +83,7 @@ template<> inline Offset<void> atot<Offset<void>>(const char *s) {
   TD(NameSpace, 265, "namespace") \
   TD(RootType, 266, "root_type")
 enum {
-  #define FLATBUFFERS_TOKEN(NAME, VALUE, STRING) kToken ## NAME,
+  #define FLATBUFFERS_TOKEN(NAME, VALUE, STRING) kToken ## NAME = VALUE,
     FLATBUFFERS_GEN_TOKENS(FLATBUFFERS_TOKEN)
   #undef FLATBUFFERS_TOKEN
   #define FLATBUFFERS_TD(ENUM, IDLTYPE, CTYPE, JTYPE) kToken ## ENUM,
@@ -287,7 +287,7 @@ FieldDef &Parser::AddField(StructDef &struct_def,
     // the largest scalar
     struct_def.minalign = std::max(struct_def.minalign, alignment);
     struct_def.PadLastField(alignment);
-    field.value.offset = static_cast<uoffset_t>(struct_def.bytesize);
+    field.value.offset = static_cast<voffset_t>(struct_def.bytesize);
     struct_def.bytesize += size;
   }
   if (struct_def.fields.Add(name, &field))
@@ -306,10 +306,12 @@ void Parser::ParseField(StructDef &struct_def) {
   if (struct_def.fixed && !IsScalar(type.base_type) && !IsStruct(type))
     Error("structs_ may contain only scalar or struct fields");
 
+  FieldDef *typefield = nullptr;
   if (type.base_type == BASE_TYPE_UNION) {
     // For union fields, add a second auto-generated field to hold the type,
     // with _type appended as the name.
-    AddField(struct_def, name + "_type", type.enum_def->underlying_type);
+    typefield = &AddField(struct_def, name + "_type",
+                          type.enum_def->underlying_type);
   }
 
   auto &field = AddField(struct_def, name, type);
@@ -324,6 +326,19 @@ void Parser::ParseField(StructDef &struct_def) {
   field.deprecated = field.attributes.Lookup("deprecated") != nullptr;
   if (field.deprecated && struct_def.fixed)
     Error("can't deprecate fields in a struct");
+
+  if (typefield) {
+    // If this field is a union, and it has a manually assigned id,
+    // the automatically added type field should have an id as well (of N - 1).
+    auto attr = field.attributes.Lookup("id");
+    if (attr) {
+      auto id = atoi(attr->constant.c_str());
+      auto val = new Value();
+      val->type = attr->type;
+      val->constant = NumToString(id - 1);
+      typefield->attributes.Add("id", val);
+    }
+  }
 
   Expect(';');
 }
@@ -580,14 +595,15 @@ void Parser::ParseEnum(bool is_union) {
   if (is_union) {
     enum_def.underlying_type.base_type = BASE_TYPE_UTYPE;
     enum_def.underlying_type.enum_def = &enum_def;
-  } else if (IsNext(':')) {
-    // short is the default type for fields when you use enums,
-    // though people are encouraged to pick any integer type instead.
+  } else {
+    // Give specialized error message, since this type spec used to
+    // be optional in the first FlatBuffers release.
+    if (!IsNext(':')) Error("must specify the underlying integer type for this"
+                            " enum (e.g. \': short\', which was the default).");
+    // Specify the integer type underlying this enum.
     ParseType(enum_def.underlying_type);
     if (!IsInteger(enum_def.underlying_type.base_type))
       Error("underlying enum type must be integral");
-  } else {
-    enum_def.underlying_type.base_type = BASE_TYPE_SHORT;
   }
   ParseMetaData(enum_def);
   Expect('{');
@@ -638,8 +654,6 @@ void Parser::ParseDecl() {
     struct_def.attributes.Lookup("original_order") == nullptr && !fixed;
   Expect('{');
   while (token_ != '}') ParseField(struct_def);
-  struct_def.PadLastField(struct_def.minalign);
-  Expect('}');
   auto force_align = struct_def.attributes.Lookup("force_align");
   if (fixed && force_align) {
     auto align = static_cast<size_t>(atoi(force_align->constant.c_str()));
@@ -651,6 +665,37 @@ void Parser::ParseDecl() {
             "struct\'s natural alignment to 256");
     struct_def.minalign = align;
   }
+  struct_def.PadLastField(struct_def.minalign);
+  // Check if this is a table that has manual id assignments
+  auto &fields = struct_def.fields.vec;
+  if (!struct_def.fixed && fields.size()) {
+    size_t num_id_fields = 0;
+    for (auto it = fields.begin(); it != fields.end(); ++it) {
+      if ((*it)->attributes.Lookup("id")) num_id_fields++;
+    }
+    // If any fields have ids..
+    if (num_id_fields) {
+      // Then all fields must have them.
+      if (num_id_fields != fields.size())
+        Error("either all fields or no fields must have an 'id' attribute");
+      // Simply sort by id, then the fields are the same as if no ids had
+      // been specified.
+      std::sort(fields.begin(), fields.end(),
+        [](const FieldDef *a, const FieldDef *b) -> bool {
+          auto a_id = atoi(a->attributes.Lookup("id")->constant.c_str());
+          auto b_id = atoi(b->attributes.Lookup("id")->constant.c_str());
+          return a_id < b_id;
+      });
+      // Verify we have a contiguous set, and reassign vtable offsets.
+      for (int i = 0; i < static_cast<int>(fields.size()); i++) {
+        if (i != atoi(fields[i]->attributes.Lookup("id")->constant.c_str()))
+          Error("field id\'s must be consecutive from 0, id " +
+                NumToString(i) + " missing or set twice");
+        fields[i]->value.offset = FieldIndexToOffset(static_cast<voffset_t>(i));
+      }
+    }
+  }
+  Expect('}');
 }
 
 bool Parser::SetRootType(const char *name) {
@@ -668,6 +713,7 @@ bool Parser::Parse(const char *source) {
     while (token_ != kTokenEof) {
       if (token_ == kTokenNameSpace) {
         Next();
+        name_space_.clear();
         for (;;) {
           name_space_.push_back(attribute_);
           Expect(kTokenIdentifier);
