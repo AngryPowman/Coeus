@@ -8,7 +8,7 @@ CharacterCreator::CharacterCreator(QWidget* parent /*= 0*/)
 {
     _ui = new Ui::CharacterCreator;
     _ui->setupUi(this);
-    _createRequest = new Protocol::CSCreateCharacter;
+    //_createRequest = new Protocol::CSCreateCharacter;
 
     addPage(WidgetManager::getInstance().characterCreator_IntrodutionPage());
     addPage(WidgetManager::getInstance().characterCreator_BaseInfoPage());
@@ -25,7 +25,7 @@ CharacterCreator::CharacterCreator(QWidget* parent /*= 0*/)
 
 CharacterCreator::~CharacterCreator()
 {
-    delete _createRequest;
+    //delete _createRequest;
     delete _ui;
 }
 

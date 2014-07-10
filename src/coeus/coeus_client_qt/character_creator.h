@@ -5,7 +5,7 @@
 #include "game_common/game_define.h"
 
 namespace Ui { class CharacterCreator; };
-namespace Protocol { struct CSCreateCharacter; };
+//namespace Protocol { struct CSCreateCharacter; };
 
 class CharacterCreator : public QWizard
 {
@@ -28,7 +28,7 @@ private:
     Ui::CharacterCreator* _ui;
     bool _leftMouseButtonPressed;
     QRect _originRect;
-    Protocol::CSCreateCharacter* _createRequest;
+    //Protocol::CSCreateCharacter* _createRequest;
 };
 
 #endif // !__CHARACTER_CREATOR_H__

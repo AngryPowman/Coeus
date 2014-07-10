@@ -50,7 +50,7 @@ public:
 	uint32 gold() const;
 
 public:
-    Protocol::PlayerFullData& fullData();
+    //Protocol::PlayerFullData& fullData();
 	ChatManager* chatManager();
     MissionManager* missionManager();
 	GameSession* session();
@@ -61,7 +61,7 @@ private:
 
 private:
 	uint64 _playerId;
-	Protocol::PlayerFullData* _playerFullData;
+	//Protocol::PlayerFullData* _playerFullData;
 	GameSession* _session;
 	ChatManager* _chatManager;
     MissionManager* _missionManager;

@@ -11,12 +11,12 @@ DataManager::~DataManager()
 
 }
 
-void DataManager::loadPlayerData(uint64 playerId, Protocol::PlayerFullData& fullData)
-{
-    GameDatabase::getInstance().loadCharacterInfo(playerId, fullData);
-}
-
-void DataManager::savePlayerData(uint64 playerId, const Protocol::PlayerFullData& fullData)
-{
-    GameDatabase::getInstance().saveCharacterInfo(playerId, fullData);
-}
+// void DataManager::loadPlayerData(uint64 playerId, Protocol::PlayerFullData& fullData)
+// {
+//     GameDatabase::getInstance().loadCharacterInfo(playerId, fullData);
+// }
+// 
+// void DataManager::savePlayerData(uint64 playerId, const Protocol::PlayerFullData& fullData)
+// {
+//     GameDatabase::getInstance().saveCharacterInfo(playerId, fullData);
+// }

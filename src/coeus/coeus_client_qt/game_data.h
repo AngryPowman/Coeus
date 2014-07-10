@@ -8,7 +8,7 @@ class GameData
 {
 
 public:
-	Protocol::PlayerFullData fullData;
+	//Protocol::PlayerFullData fullData;
 };
 
 #endif

@@ -70,45 +70,45 @@ void GameChatWidget::slotOnSendClicked()
 		return;
 	}
 
-    switch (_currentChannel)
-    {
-        case ChatChannel::WorldChatChannel:
-        case ChatChannel::GuildChatChannel:
-        {
-            Protocol::CSSendPublicChatMessageReq publicChatMessageReq;
-            publicChatMessageReq.channel = _currentChannel;
-            publicChatMessageReq.message = _ui->txtChatMessage->text().toStdString();
-            GameNetwork::getInstance().sendMessage(Opcodes::CSSendPublicChatMessageReq, publicChatMessageReq);
-            break;
-        }
-        case ChatChannel::PrivateChatChannel:
-        {
-            Protocol::CSSendPrivateChatMessageByNameReq privateChatMessageByNameReq;
-            privateChatMessageByNameReq.target_name = _ui->cmbTargetName->currentText().toLocal8Bit();
-            privateChatMessageByNameReq.message = _ui->txtChatMessage->text().toStdString();
-			GameNetwork::getInstance().sendMessage(Opcodes::CSSendPrivateChatMessageByNameReq, privateChatMessageByNameReq);
-            break;
-        }
-        default:
-            QMessageBox::critical(this, QStringLiteral("ÁÄÌì"), QStringLiteral("No such channel."), QMessageBox::Yes);
-            break;
-    }
+//     switch (_currentChannel)
+//     {
+//         case ChatChannel::WorldChatChannel:
+//         case ChatChannel::GuildChatChannel:
+//         {
+//             Protocol::CSSendPublicChatMessageReq publicChatMessageReq;
+//             publicChatMessageReq.channel = _currentChannel;
+//             publicChatMessageReq.message = _ui->txtChatMessage->text().toStdString();
+//             GameNetwork::getInstance().sendMessage(Opcodes::CSSendPublicChatMessageReq, publicChatMessageReq);
+//             break;
+//         }
+//         case ChatChannel::PrivateChatChannel:
+//         {
+//             Protocol::CSSendPrivateChatMessageByNameReq privateChatMessageByNameReq;
+//             privateChatMessageByNameReq.target_name = _ui->cmbTargetName->currentText().toLocal8Bit();
+//             privateChatMessageByNameReq.message = _ui->txtChatMessage->text().toStdString();
+// 			GameNetwork::getInstance().sendMessage(Opcodes::CSSendPrivateChatMessageByNameReq, privateChatMessageByNameReq);
+//             break;
+//         }
+//         default:
+//             QMessageBox::critical(this, QStringLiteral("ÁÄÌì"), QStringLiteral("No such channel."), QMessageBox::Yes);
+//             break;
+//     }
 }
 
-void GameChatWidget::onPublicChatMessageNotification(const Protocol::SCPublicChatMessageNotification& publicChatMessagenotification)
-{
-	addChatMessage(
-		static_cast<ChatChannel>(publicChatMessagenotification.channel),
-		QString::fromStdString(publicChatMessagenotification.message),
-        QString::fromLocal8Bit(publicChatMessagenotification.target_name.c_str())
-		);
-}
-
-void GameChatWidget::onPrivateChatMessageNotification(const Protocol::SCPrivateChatMessageNotification& privateChatMessagenotification)
-{
-	addChatMessage(
-		ChatChannel::PrivateChatChannel,
-		QString::fromStdString(privateChatMessagenotification.message),
-        QString::fromLocal8Bit(privateChatMessagenotification.target_name.c_str())
-		);
-}
+// void GameChatWidget::onPublicChatMessageNotification(const Protocol::SCPublicChatMessageNotification& publicChatMessagenotification)
+// {
+// 	addChatMessage(
+// 		static_cast<ChatChannel>(publicChatMessagenotification.channel),
+// 		QString::fromStdString(publicChatMessagenotification.message),
+//         QString::fromLocal8Bit(publicChatMessagenotification.target_name.c_str())
+// 		);
+// }
+// 
+// void GameChatWidget::onPrivateChatMessageNotification(const Protocol::SCPrivateChatMessageNotification& privateChatMessagenotification)
+// {
+// 	addChatMessage(
+// 		ChatChannel::PrivateChatChannel,
+// 		QString::fromStdString(privateChatMessagenotification.message),
+//         QString::fromLocal8Bit(privateChatMessagenotification.target_name.c_str())
+// 		);
+// }

@@ -39,7 +39,7 @@ public:
     uint8 character_type;       //角色类型（职业）
     std::string nickname;       //昵称
     uint8 gender;               //性别
-    Protocol::Epic epic;        //史诗
+    //Protocol::Epic epic;        //史诗
 };
 
 #endif

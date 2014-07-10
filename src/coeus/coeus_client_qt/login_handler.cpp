@@ -5,8 +5,8 @@
 
 void GameHandler::loginHandler(const NetworkPacket::Ptr& packet)
 {
-    Protocol::SCLoginRsp loginRsp;
-    DECODE_MESSAGE(loginRsp, packet);
-
-    WidgetManager::getInstance().gameLogin()->onLoginRsp(loginRsp);
+//     Protocol::SCLoginRsp loginRsp;
+//     DECODE_MESSAGE(loginRsp, packet);
+// 
+//     WidgetManager::getInstance().gameLogin()->onLoginRsp(loginRsp);
 }

@@ -5,8 +5,8 @@
 
 void GameHandler::createCharacterHandler(const NetworkPacket::Ptr& packet)
 {
-    Protocol::SCCreateCharacter createCharacterRsp;
-    DECODE_MESSAGE(createCharacterRsp, packet);
-
-    WidgetManager::getInstance().gameMain()->onCreateCharacterRsp(createCharacterRsp);
+//     Protocol::SCCreateCharacter createCharacterRsp;
+//     DECODE_MESSAGE(createCharacterRsp, packet);
+// 
+//     WidgetManager::getInstance().gameMain()->onCreateCharacterRsp(createCharacterRsp);
 }

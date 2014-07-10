@@ -1,7 +1,5 @@
 #include "game_session.h"
 #include <venus_net/server_connection.h>
-#include "protocol/protocol.h"
-#include "protocol/opcodes.h"
 #include "player_manager.h"
 #include "data_manager.h"
 
@@ -18,19 +16,19 @@ GameSession::~GameSession()
 
 void GameSession::send_error(uint32 errorCode)
 {
-    Protocol::SCErrorNotify errorNotify;
-    errorNotify.error_code = errorCode;
-
-    send_message(Opcodes::SCErrorNotify, errorNotify);
+//     Protocol::SCErrorNotify errorNotify;
+//     errorNotify.error_code = errorCode;
+// 
+//     send_message(Opcodes::SCErrorNotify, errorNotify);
 }
 
 void GameSession::send_error(uint32 errorCode, const std::string& reason)
 {
-    Protocol::SCErrorExNotify errorExNotify;
-    errorExNotify.error_code = errorCode;
-    errorExNotify.reason = reason;
-
-    send_message(Opcodes::SCErrorExNotify, errorExNotify);
+//     Protocol::SCErrorExNotify errorExNotify;
+//     errorExNotify.error_code = errorCode;
+//     errorExNotify.reason = reason;
+// 
+//     send_message(Opcodes::SCErrorExNotify, errorExNotify);
 }
 
 void GameSession::setPlayerContext(Player* player)
@@ -47,9 +45,9 @@ bool GameSession::loadPlayer()
         Player* player = PlayerManager::getInstance().createPlayer(_userGuid, this);
         if (player != nullptr)
         {
-            Protocol::PlayerFullData& fullData = player->fullData();
+            //Protocol::PlayerFullData& fullData = player->fullData();
 
-            DataManager::getInstance().loadPlayerData(_userGuid, fullData);
+            //DataManager::getInstance().loadPlayerData(_userGuid, fullData);
             this->setPlayerContext(player);
 
             player->onLogin();
@@ -64,6 +62,6 @@ bool GameSession::loadPlayer()
 void GameSession::logout(const ShutdownReason& reason)
 {
     _player->onLogout();
-    DataManager::getInstance().savePlayerData(_userGuid, _player->fullData());
+    //DataManager::getInstance().savePlayerData(_userGuid, _player->fullData());
 }
 

@@ -5,8 +5,8 @@
 
 void GameHandler::propertiesHandler(const NetworkPacket::Ptr& packet)
 {
-    Protocol::SCCharacterInitialDataRsp propertiesRsp;
-    DECODE_MESSAGE(propertiesRsp, packet);
+    //Protocol::SCCharacterInitialDataRsp propertiesRsp;
+    //DECODE_MESSAGE(propertiesRsp, packet);
 
-    WidgetManager::getInstance().gameStatusBarWidget()->onPropertiesRsp(propertiesRsp);
+    //WidgetManager::getInstance().gameStatusBarWidget()->onPropertiesRsp(propertiesRsp);
 }

@@ -33,9 +33,9 @@ public:
 
     bool hasCharacter(uint64 user_guid);
     bool isNicknameExist(const std::string& nickname);
-    bool loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& fullData);
-    bool saveCharacterInfo(uint64 userGuid, const Protocol::PlayerFullData& fullData);
-    bool createCharacter(uint64 userGuid, uint8 characterType, const std::string& nickname, uint8 gender, const Protocol::Epic& epic);
+    //bool loadCharacterInfo(uint64 userGuid, Protocol::PlayerFullData& fullData);
+    //bool saveCharacterInfo(uint64 userGuid, const Protocol::PlayerFullData& fullData);
+    //bool createCharacter(uint64 userGuid, uint8 characterType, const std::string& nickname, uint8 gender, const Protocol::Epic& epic);
 
 private:
     Poco::Data::Session* _db_session;

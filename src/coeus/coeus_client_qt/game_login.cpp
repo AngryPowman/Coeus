@@ -7,7 +7,6 @@
 #include "game_common/game_util.h"
 #include "login_config.h"
 #include "game_data.h"
-#include "flatbuffers/flatbuffers.h"
 #include "protocol/login_request.fb.h"
 
 GameLogin::GameLogin(QWidget *parent)
@@ -180,7 +179,7 @@ void GameLogin::loginProcess()
         auto loginRequest = Protocol::CreateLoginRequest(builder, account, password);
         builder.Finish(loginRequest);
 
-        GameNetwork::getInstance().sendMessage(Opcodes::CSLoginReq, builder);
+        //GameNetwork::getInstance().sendMessage(Opcodes::CSLoginReq, builder);
     }
 }
 
@@ -312,38 +311,38 @@ void GameLogin::onConnectFailed(const QAbstractSocket::SocketError& error)
     GameNetwork::getInstance().close();
 }
 
-void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
-{
-    if (_currentPanel == PANEL_LOGINNING)
-    {
-        if (loginRsp.login_result)
-        {
-            _ui.lblStateTips->setText("登录成功，正在获取游戏数据");
-			GameData::getInstance().fullData.character_id = loginRsp.player_id;
-
-            //保存登录配置
-            LoginConfig::getInstance().setRememberPassword(_ui.chkRememberPassword);
-            LoginConfig::getInstance().setAutoLogin(_ui.chkAutoLogin);
-            LoginConfig::getInstance().saveAccount(
-                _ui.cmbAccount->currentText().toStdString(), 
-                _passwordDigest);
-
-            LoginConfig::getInstance().saveToFile();
-
-            //enter game
-            GameMain* gameMain = WidgetManager::getInstance().gameMain();
-            gameMain->initGame(static_cast<bool>(loginRsp.character_create_require));
-            gameMain->show();
-
-            this->close();
-        }
-        else
-        {
-            changePanel(PANEL_DEFAULT);
-            QMessageBox::critical(this, "登录失败", "用户名和密码不匹配。");
-        }
-    }
-}
+// void GameLogin::onLoginRsp(const Protocol::SCLoginRsp& loginRsp)
+// {
+//     if (_currentPanel == PANEL_LOGINNING)
+//     {
+//         if (loginRsp.login_result)
+//         {
+//             _ui.lblStateTips->setText("登录成功，正在获取游戏数据");
+// 			GameData::getInstance().fullData.character_id = loginRsp.player_id;
+// 
+//             //保存登录配置
+//             LoginConfig::getInstance().setRememberPassword(_ui.chkRememberPassword);
+//             LoginConfig::getInstance().setAutoLogin(_ui.chkAutoLogin);
+//             LoginConfig::getInstance().saveAccount(
+//                 _ui.cmbAccount->currentText().toStdString(), 
+//                 _passwordDigest);
+// 
+//             LoginConfig::getInstance().saveToFile();
+// 
+//             //enter game
+//             GameMain* gameMain = WidgetManager::getInstance().gameMain();
+//             gameMain->initGame(static_cast<bool>(loginRsp.character_create_require));
+//             gameMain->show();
+// 
+//             this->close();
+//         }
+//         else
+//         {
+//             changePanel(PANEL_DEFAULT);
+//             QMessageBox::critical(this, "登录失败", "用户名和密码不匹配。");
+//         }
+//     }
+// }
 
 void GameLogin::slotAutoLoginCheckedChanged(bool checked)
 {

@@ -5,15 +5,15 @@
 #include "game_session.h"
 
 OPCODE_REGISTER_BEGIN(GameOpcodeRegistry, GameSession)
-	REGISTER_HANDLER(Opcodes::CSRegisterReq, registerHandler);
-	REGISTER_HANDLER(Opcodes::CSLoginReq, loginHandler);
-    REGISTER_HANDLER(Opcodes::CSCheckNicknameExist, checkNicknameExist);
-    REGISTER_HANDLER(Opcodes::CSCreateCharacter, characterCreateHandler);
-    REGISTER_HANDLER(Opcodes::CSCharacterInitialDataReq, getPropertiesHandler);
-	REGISTER_HANDLER(Opcodes::CSSendPublicChatMessageReq, publicChatHandler);
-	REGISTER_HANDLER(Opcodes::CSSendPrivateChatMessageByIdReq, privateChatByIdHandler);
-	REGISTER_HANDLER(Opcodes::CSSendPrivateChatMessageByNameReq, privateChatByNameHandler);
-    REGISTER_HANDLER(Opcodes::CSMissionListReq, privateChatByNameHandler);
+// 	REGISTER_HANDLER(Opcodes::CSRegisterReq, registerHandler);
+// 	REGISTER_HANDLER(Opcodes::CSLoginReq, loginHandler);
+//     REGISTER_HANDLER(Opcodes::CSCheckNicknameExist, checkNicknameExist);
+//     REGISTER_HANDLER(Opcodes::CSCreateCharacter, characterCreateHandler);
+//     REGISTER_HANDLER(Opcodes::CSCharacterInitialDataReq, getPropertiesHandler);
+// 	REGISTER_HANDLER(Opcodes::CSSendPublicChatMessageReq, publicChatHandler);
+// 	REGISTER_HANDLER(Opcodes::CSSendPrivateChatMessageByIdReq, privateChatByIdHandler);
+// 	REGISTER_HANDLER(Opcodes::CSSendPrivateChatMessageByNameReq, privateChatByNameHandler);
+//     REGISTER_HANDLER(Opcodes::CSMissionListReq, privateChatByNameHandler);
 OPCODE_REGISTER_END()
 
 #endif

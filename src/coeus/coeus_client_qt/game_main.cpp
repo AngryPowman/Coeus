@@ -155,7 +155,7 @@ void GameMain::loadGameData()
 {
     GameStatusBarWidget* gameStatusBarWidget
         = WidgetManager::getInstance().gameStatusBarWidget();
-	gameStatusBarWidget->initStatus(GameData::getInstance().fullData.character_id);
+//	gameStatusBarWidget->initStatus(GameData::getInstance().fullData.character_id);
 }
 
 void GameMain::resizeEvent(QResizeEvent* event)
@@ -166,10 +166,10 @@ void GameMain::resizeEvent(QResizeEvent* event)
 	}
 }
 
-void GameMain::onCreateCharacterRsp(const Protocol::SCCreateCharacter& createCharacter)
-{
-	if (createCharacter.result)
-	{
-		initGame(false);
-	}
-}
+// void GameMain::onCreateCharacterRsp(const Protocol::SCCreateCharacter& createCharacter)
+// {
+// 	if (createCharacter.result)
+// 	{
+// 		initGame(false);
+// 	}
+// }

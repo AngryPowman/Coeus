@@ -3,7 +3,6 @@
 
 #include "venus_net/common.h"
 #include "venus_net/singleton.h"
-#include "protocol/protocol.h"
 
 class PlayerDB;
 class DataManager
@@ -14,8 +13,8 @@ public:
 	virtual ~DataManager();
 
 public:
-    void loadPlayerData(uint64 playerId, Protocol::PlayerFullData& fullData);
-    void savePlayerData(uint64 playerId, const Protocol::PlayerFullData& fullData);
+    //void loadPlayerData(uint64 playerId, Protocol::PlayerFullData& fullData);
+    //void savePlayerData(uint64 playerId, const Protocol::PlayerFullData& fullData);
 };
 
 #endif

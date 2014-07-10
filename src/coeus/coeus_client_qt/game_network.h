@@ -7,6 +7,8 @@
 #include "venus_net/basic_stream.h"
 #include "venus_net/singleton.h"
 
+namespace flatbuffers { class FlatBufferBuilder; }
+
 class NetworkListener
 {
 public:

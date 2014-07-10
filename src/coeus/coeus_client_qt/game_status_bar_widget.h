@@ -18,7 +18,7 @@ public:
     void initStatus(uint64 character_guid);
 
 public:
-    void onPropertiesRsp(const Protocol::SCCharacterInitialDataRsp& characterInitialDataRsp);
+    //void onPropertiesRsp(const Protocol::SCCharacterInitialDataRsp& characterInitialDataRsp);
 
 private:
     void updateLevel(uint16 level);

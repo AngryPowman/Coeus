@@ -4,16 +4,16 @@
 
 void GameHandler::publicChatNotificationHandler(const NetworkPacket::Ptr& packet)
 {
-	Protocol::SCPublicChatMessageNotification publicChatMessageNotification;
-	DECODE_MESSAGE(publicChatMessageNotification, packet);
-
-	WidgetManager::getInstance().gameChatWidget()->onPublicChatMessageNotification(publicChatMessageNotification);
+// 	Protocol::SCPublicChatMessageNotification publicChatMessageNotification;
+// 	DECODE_MESSAGE(publicChatMessageNotification, packet);
+// 
+// 	WidgetManager::getInstance().gameChatWidget()->onPublicChatMessageNotification(publicChatMessageNotification);
 }
 
 void GameHandler::privateNotificationHandler(const NetworkPacket::Ptr& packet)
 {
-	Protocol::SCPrivateChatMessageNotification privateChatMessageNotification;
-	DECODE_MESSAGE(privateChatMessageNotification, packet);
-
-	WidgetManager::getInstance().gameChatWidget()->onPrivateChatMessageNotification(privateChatMessageNotification);
+// 	Protocol::SCPrivateChatMessageNotification privateChatMessageNotification;
+// 	DECODE_MESSAGE(privateChatMessageNotification, packet);
+// 
+// 	WidgetManager::getInstance().gameChatWidget()->onPrivateChatMessageNotification(privateChatMessageNotification);
 }

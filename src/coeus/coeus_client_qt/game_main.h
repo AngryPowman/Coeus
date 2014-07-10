@@ -37,7 +37,7 @@ public:
     void changeView(GameView gameView);
 
 public:
-	void onCreateCharacterRsp(const Protocol::SCCreateCharacter& createCharacter);
+	//void onCreateCharacterRsp(const Protocol::SCCreateCharacter& createCharacter);
 
 private slots:
     void slotOnAboutQT();

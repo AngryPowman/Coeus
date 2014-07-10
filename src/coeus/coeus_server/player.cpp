@@ -9,7 +9,7 @@
 
 Player::Player(uint64 playerId, GameSession* session)
     : _playerId(playerId),
-	_playerFullData(new Protocol::PlayerFullData()), 
+	//_playerFullData(new Protocol::PlayerFullData()), 
 	_session(session), 
 	_cachedLastLogin(0),
 	_chatManager(nullptr),
@@ -19,7 +19,7 @@ Player::Player(uint64 playerId, GameSession* session)
 
 Player::~Player()
 {
-    SAFE_DELETE(_playerFullData);
+    //SAFE_DELETE(_playerFullData);
 	SAFE_DELETE(_chatManager);
 }
 
@@ -56,18 +56,18 @@ void Player::onLogout()
 
 void Player::nickname(const std::string& nickname)
 {
-    _playerFullData->initial_data.nickname = nickname;
+    //_playerFullData->initial_data.nickname = nickname;
 }
 
 const std::string& Player::nickname() const
 {
-	return _playerFullData->initial_data.nickname;
+    return "";//_playerFullData->initial_data.nickname;
 }
 
-Protocol::PlayerFullData& Player::fullData()
-{
-    return *_playerFullData;
-}
+// Protocol::PlayerFullData& Player::fullData()
+// {
+//     return "";//*_playerFullData;
+// }
 
 GameSession* Player::session()
 {
@@ -81,22 +81,22 @@ uint64 Player::playerId() const
 
 void Player::gender(int32 gender)
 {
-    _playerFullData->gender = gender;
+    //_playerFullData->gender = gender;
 }
 
 int32 Player::gender() const
 {
-    return _playerFullData->gender;
+    return 0;//_playerFullData->gender;
 }
 
 void Player::lastLogin(int64 last_login)
 {
-    _playerFullData->last_login = last_login;
+    //_playerFullData->last_login = last_login;
 }
 
 int64 Player::lastLogin() const
 {
-    return _playerFullData->last_login;
+    return 0;// _playerFullData->last_login;
 }
 
 void Player::cachedLastLogin(int64 last_login)

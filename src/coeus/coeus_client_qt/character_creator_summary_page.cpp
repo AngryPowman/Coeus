@@ -74,15 +74,15 @@ bool CharacterCreator_SummaryPage::validatePage()
     Epic::FamilyType family_type = static_cast<Epic::FamilyType>(wizard()->property("family_type").toUInt());
     Epic::StoryType story_type = static_cast<Epic::StoryType>(wizard()->property("story_type").toUInt());
 
-    Protocol::CSCreateCharacter createCharacter;
-    createCharacter.character_type = character_type;
-    createCharacter.gender = gender;
-    createCharacter.nickname = nickname.toLocal8Bit().constData();
-    createCharacter.epic.characteristic = characteristic;
-    createCharacter.epic.family_type = family_type;
-    createCharacter.epic.story_type = story_type;
+//     Protocol::CSCreateCharacter createCharacter;
+//     createCharacter.character_type = character_type;
+//     createCharacter.gender = gender;
+//     createCharacter.nickname = nickname.toLocal8Bit().constData();
+//     createCharacter.epic.characteristic = characteristic;
+//     createCharacter.epic.family_type = family_type;
+//     createCharacter.epic.story_type = story_type;
+// 
+//     GameNetwork::getInstance().sendMessage(Opcodes::CSCreateCharacter, createCharacter);
 
-    GameNetwork::getInstance().sendMessage(Opcodes::CSCreateCharacter, createCharacter);
-	//WidgetManager::getInstance().gameMain()->initGame(false);
     return true;
 }

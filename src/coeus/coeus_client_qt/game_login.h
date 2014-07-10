@@ -22,7 +22,7 @@ public:
 public:
     //网络事件处理
     void onConnectFailed(const QAbstractSocket::SocketError& error);
-    void onLoginRsp(const Protocol::SCLoginRsp& loginRsp);
+    //void onLoginRsp(const Protocol::SCLoginRsp& loginRsp);
 
 signals:
     void changePanelSignal(Panel panel);

@@ -16,8 +16,8 @@ public:
     ~GameChatWidget();
 
 public:
-	void onPublicChatMessageNotification(const Protocol::SCPublicChatMessageNotification& publicChatMessagenotification);
-	void onPrivateChatMessageNotification(const Protocol::SCPrivateChatMessageNotification& privateChatMessagenotification);
+	//void onPublicChatMessageNotification(const Protocol::SCPublicChatMessageNotification& publicChatMessagenotification);
+	//void onPrivateChatMessageNotification(const Protocol::SCPrivateChatMessageNotification& privateChatMessagenotification);
     void addChatMessage(ChatChannel channel, const QString& message, const QString& targetName = "");
 
 private slots:

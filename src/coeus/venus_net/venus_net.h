@@ -13,7 +13,5 @@
 #include "message_dispatcher.h"
 #include "singleton.h"
 #include "object_pool.h"
-#include "protocol/protocol.h"
-#include "protocol/opcodes.h"
 
 #endif // __VENUS_NET_H__
