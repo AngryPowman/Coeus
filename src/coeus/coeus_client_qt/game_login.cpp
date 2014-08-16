@@ -163,7 +163,7 @@ void GameLogin::loginProcess()
     {
         _ui.lblStateTips->setText("正在验证用户名和密码");
         //Protocol::CSLoginReq loginReq;
-        flatbuffers::FlatBufferBuilder builder;
+        
 
         //loginReq.account = _ui.cmbAccount->currentText().toStdString();
 
@@ -173,10 +173,10 @@ void GameLogin::loginProcess()
         }
 
         //loginReq.password = _passwordDigest;
-
+        flatbuffers::FlatBufferBuilder builder;
         auto account = builder.CreateString(_ui.cmbAccount->currentText().toStdString());
         auto password = builder.CreateString(_passwordDigest);
-        flatbuffers::Offset<Protocol::LoginRequest> loginRequest = Protocol::CreateLoginRequest(builder, account, password);
+        auto loginRequest = Protocol::CreateLoginRequest(builder, account, password);
         builder.Finish(loginRequest);
 
         GameNetwork::getInstance().sendMessage(10001, builder);

@@ -69,10 +69,14 @@ void GameSession::registerHandler(const NetworkPacket::Ptr& packet)
 
 void GameSession::loginHandler(const NetworkPacket::Ptr& packet)
 {
+    const Protocol::LoginRequest* loginRequest = Protocol::GetLoginRequest(&packet->message[0]);
+
 // 	Protocol::CSLoginReq loginRequest;
 // 	DECODE_MESSAGE(loginRequest, packet);
 // 
-// 	debug_log("[User Login] -> (Username='%s', Password='%s')", loginRequest.account.c_str(), loginRequest.password.c_str());
+    debug_log("[User Login] -> (Username='%s', Password='%s')", 
+        loginRequest->account()->c_str(),
+        loginRequest->password()->c_str());
 // 
 // 	//≈–∂œ” œ‰’ ∫≈∑«∑®
 // 	if (GameUtil::checkEmailValid(loginRequest.account) == false)

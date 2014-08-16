@@ -6,3 +6,4 @@ table LoginResponse
 	player_id : string;
 	character_create_require : bool;
 }
+root_type LoginResponse;
